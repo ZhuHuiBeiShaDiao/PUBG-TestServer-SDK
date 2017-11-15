@@ -55,13 +55,13 @@ namespace Classes
 	// Function HitNotifyWidget.HitNotifyWidget_C.GetRandomScale
 	struct UHitNotifyWidget_C_GetRandomScale_Params
 	{
-		struct FVector2D                                   Scale;                                                    // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector2D                                   Scale;                                                    // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function HitNotifyWidget.HitNotifyWidget_C.GetRandomTranslation
 	struct UHitNotifyWidget_C_GetRandomTranslation_Params
 	{
-		struct FVector2D                                   Translation;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector2D                                   Translation;                                              // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function HitNotifyWidget.HitNotifyWidget_C.OnHitNotify

@@ -141,7 +141,7 @@ void UCircleMiniMapWidget_C::OnPrepass_2(class UWidget* BoundWidget)
 
 
 // Function CircleMiniMapWidget.CircleMiniMapWidget_C.On_Arrow_Prepass_1
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -162,7 +162,7 @@ void UCircleMiniMapWidget_C::On_Arrow_Prepass_1(class UWidget* BoundWidget)
 
 
 // Function CircleMiniMapWidget.CircleMiniMapWidget_C.OnPrepass_1
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 

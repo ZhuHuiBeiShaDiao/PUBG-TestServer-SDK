@@ -12,6 +12,24 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.NotifyStackCountUpdated
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UStackCountHandlingPopupWidget_C::NotifyStackCountUpdated()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x684e3416);
+
+	UStackCountHandlingPopupWidget_C_NotifyStackCountUpdated_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.AddStackCount
 // (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -205,11 +223,11 @@ void UStackCountHandlingPopupWidget_C::OnItemDropOtherContainer(class UItem* Ite
 // Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.SetPopup
 // (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupStyle>       PopupStyle                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupStyle                    PopupStyle                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FText                   Message                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 // struct FScriptDelegate         PressedDelegate                (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
 
-void UStackCountHandlingPopupWidget_C::SetPopup(TEnumAsByte<EPopupStyle> PopupStyle, const struct FText& Message, const struct FScriptDelegate& PressedDelegate)
+void UStackCountHandlingPopupWidget_C::SetPopup(EPopupStyle PopupStyle, const struct FText& Message, const struct FScriptDelegate& PressedDelegate)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xbc8ff9f9);
@@ -616,6 +634,31 @@ void UStackCountHandlingPopupWidget_C::ExecuteUbergraph_StackCountHandlingPopupW
 
 	UStackCountHandlingPopupWidget_C_ExecuteUbergraph_StackCountHandlingPopupWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.OnStackCountUpdated__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> SlotInterface                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            StackCount                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UStackCountHandlingPopupWidget_C::OnStackCountUpdated__DelegateSignature(const TScriptInterface<class USlotInterface>& SlotInterface, const TScriptInterface<class USlotContainerInterface>& SlotContainer, int StackCount)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x4ac07015);
+
+	UStackCountHandlingPopupWidget_C_OnStackCountUpdated__DelegateSignature_Params params;
+	params.SlotInterface = SlotInterface;
+	params.SlotContainer = SlotContainer;
+	params.StackCount = StackCount;
 
 	auto flags = fn->FunctionFlags;
 

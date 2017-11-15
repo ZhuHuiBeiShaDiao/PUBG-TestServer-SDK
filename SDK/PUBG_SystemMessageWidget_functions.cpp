@@ -36,10 +36,10 @@ void USystemMessageWidget_C::AddMessage(class UMessageWidget_C* Message)
 // Function SystemMessageWidget.SystemMessageWidget_C.DisplaySystemMessage
 // (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<ESystemMessageType> MessageType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// ESystemMessageType             MessageType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FText                   Message                        (CPF_Parm)
 
-void USystemMessageWidget_C::DisplaySystemMessage(TEnumAsByte<ESystemMessageType> MessageType, const struct FText& Message)
+void USystemMessageWidget_C::DisplaySystemMessage(ESystemMessageType MessageType, const struct FText& Message)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xdc11bb1d);

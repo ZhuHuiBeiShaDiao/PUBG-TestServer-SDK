@@ -23,13 +23,13 @@ namespace Classes
 	// Function InGameMenuWidget.InGameMenuWidget_C.QuitGame
 	struct UInGameMenuWidget_C_QuitGame_Params
 	{
-		TEnumAsByte<EPopupButtonID>                        ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EPopupButtonID                                     ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function InGameMenuWidget.InGameMenuWidget_C.GoToLobby
 	struct UInGameMenuWidget_C_GoToLobby_Params
 	{
-		TEnumAsByte<EPopupButtonID>                        ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EPopupButtonID                                     ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function InGameMenuWidget.InGameMenuWidget_C.BndEvt__OptionButton_K2Node_ComponentBoundEvent_107_OnClickedEventDispatcher__DelegateSignature
@@ -77,6 +77,11 @@ namespace Classes
 	{
 		struct FGeometry*                                  MyGeometry;                                               // (CPF_Parm, CPF_IsPlainOldData)
 		float*                                             InDeltaTime;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InGameMenuWidget.InGameMenuWidget_C.OpenGamepadOption
+	struct UInGameMenuWidget_C_OpenGamepadOption_Params
+	{
 	};
 
 	// Function InGameMenuWidget.InGameMenuWidget_C.ExecuteUbergraph_InGameMenuWidget

@@ -137,7 +137,7 @@ namespace Classes
 	// Function PlayerInfoWidget.PlayerInfoWidget_C.CustomEvent_1
 	struct UPlayerInfoWidget_C_CustomEvent_1_Params
 	{
-		TEnumAsByte<EPopupButtonID>                        ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EPopupButtonID                                     ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function PlayerInfoWidget.PlayerInfoWidget_C.CustomEvent_3

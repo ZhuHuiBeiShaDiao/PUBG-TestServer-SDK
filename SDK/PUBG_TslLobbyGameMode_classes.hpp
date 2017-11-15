@@ -13,11 +13,11 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass TslLobbyGameMode.TSLLobbyGameMode_C
-	// 0x0008 (0x0478 - 0x0470)
+	// 0x0008 (0x0480 - 0x0478)
 	class ATSLLobbyGameMode_C : public ATslEntryGameMode
 	{
 	public:
-		class USceneComponent*                             DefaultSceneRoot;                                         // 0x0470(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		class USceneComponent*                             DefaultSceneRoot;                                         // 0x0478(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 		static UClass* StaticClass()
 		{

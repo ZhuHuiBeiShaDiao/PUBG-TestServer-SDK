@@ -12,338 +12,15 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
-// Function LevelSequence.LevelSequencePlayer.Stop
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void ULevelSequencePlayer::Stop()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x239de12c);
-
-	ULevelSequencePlayer_Stop_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.StartPlayingNextTick
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void ULevelSequencePlayer::StartPlayingNextTick()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x52b2cf1e);
-
-	ULevelSequencePlayer_StartPlayingNextTick_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.SetPlayRate
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// float                          PlayRate                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void ULevelSequencePlayer::SetPlayRate(float PlayRate)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xbb886fe4);
-
-	ULevelSequencePlayer_SetPlayRate_Params params;
-	params.PlayRate = PlayRate;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.SetPlaybackRange
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// float                          NewStartTime                   (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// float                          NewEndTime                     (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void ULevelSequencePlayer::SetPlaybackRange(float NewStartTime, float NewEndTime)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xb07010ce);
-
-	ULevelSequencePlayer_SetPlaybackRange_Params params;
-	params.NewStartTime = NewStartTime;
-	params.NewEndTime = NewEndTime;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.SetPlaybackPosition
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// float                          NewPlaybackPosition            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void ULevelSequencePlayer::SetPlaybackPosition(float NewPlaybackPosition)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xd959cf66);
-
-	ULevelSequencePlayer_SetPlaybackPosition_Params params;
-	params.NewPlaybackPosition = NewPlaybackPosition;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.PlayReverse
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void ULevelSequencePlayer::PlayReverse()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xed282658);
-
-	ULevelSequencePlayer_PlayReverse_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.PlayLooping
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// int                            NumLoops                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void ULevelSequencePlayer::PlayLooping(int NumLoops)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x3a3d7384);
-
-	ULevelSequencePlayer_PlayLooping_Params params;
-	params.NumLoops = NumLoops;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.Play
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void ULevelSequencePlayer::Play()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xd27a8e22);
-
-	ULevelSequencePlayer_Play_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.Pause
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void ULevelSequencePlayer::Pause()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xd50d3652);
-
-	ULevelSequencePlayer_Pause_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.IsPlaying
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool ULevelSequencePlayer::IsPlaying()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x6a25ff66);
-
-	ULevelSequencePlayer_IsPlaying_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.GetPlayRate
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-float ULevelSequencePlayer::GetPlayRate()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xbd25c558);
-
-	ULevelSequencePlayer_GetPlayRate_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.GetPlaybackStart
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-float ULevelSequencePlayer::GetPlaybackStart()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x1a8d3d1);
-
-	ULevelSequencePlayer_GetPlaybackStart_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.GetPlaybackPosition
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-float ULevelSequencePlayer::GetPlaybackPosition()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x5bda65fa);
-
-	ULevelSequencePlayer_GetPlaybackPosition_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.GetPlaybackEnd
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-float ULevelSequencePlayer::GetPlaybackEnd()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xc02af5ca);
-
-	ULevelSequencePlayer_GetPlaybackEnd_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequencePlayer.GetLength
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-float ULevelSequencePlayer::GetLength()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x5a44fd6c);
-
-	ULevelSequencePlayer_GetLength_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function LevelSequence.LevelSequencePlayer.CreateLevelSequencePlayer
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class ULevelSequence*          LevelSequence                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLevelSequencePlaybackSettings Settings                       (CPF_Parm)
+// struct FMovieSceneSequencePlaybackSettings Settings                       (CPF_Parm)
 // class ULevelSequencePlayer*    ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-class ULevelSequencePlayer* ULevelSequencePlayer::STATIC_CreateLevelSequencePlayer(class UObject* WorldContextObject, class ULevelSequence* LevelSequence, const struct FLevelSequencePlaybackSettings& Settings)
+class ULevelSequencePlayer* ULevelSequencePlayer::STATIC_CreateLevelSequencePlayer(class UObject* WorldContextObject, class ULevelSequence* LevelSequence, const struct FMovieSceneSequencePlaybackSettings& Settings)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xdb658a3a);
@@ -364,25 +41,6 @@ class ULevelSequencePlayer* ULevelSequencePlayer::STATIC_CreateLevelSequencePlay
 }
 
 
-// Function LevelSequence.LevelSequencePlayer.ChangePlaybackDirection
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void ULevelSequencePlayer::ChangePlaybackDirection()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x134eb18e);
-
-	ULevelSequencePlayer_ChangePlaybackDirection_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LevelSequence.LevelSequenceActor.SetSequence
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -395,6 +53,119 @@ void ALevelSequenceActor::SetSequence(class ULevelSequence* InSequence)
 
 	ALevelSequenceActor_SetSequence_Params params;
 	params.InSequence = InSequence;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LevelSequence.LevelSequenceActor.SetEventReceivers
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TArray<class AActor*>          AdditionalReceivers            (CPF_Parm, CPF_ZeroConstructor)
+
+void ALevelSequenceActor::SetEventReceivers(TArray<class AActor*> AdditionalReceivers)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x747c9870);
+
+	ALevelSequenceActor_SetEventReceivers_Params params;
+	params.AdditionalReceivers = AdditionalReceivers;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LevelSequence.LevelSequenceActor.SetBinding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
+// Parameters:
+// struct FMovieSceneObjectBindingID Binding                        (CPF_Parm)
+// TArray<class AActor*>          Actors                         (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
+// bool                           bAllowBindingsFromAsset        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ALevelSequenceActor::SetBinding(const struct FMovieSceneObjectBindingID& Binding, TArray<class AActor*> Actors, bool bAllowBindingsFromAsset)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa0812b25);
+
+	ALevelSequenceActor_SetBinding_Params params;
+	params.Binding = Binding;
+	params.Actors = Actors;
+	params.bAllowBindingsFromAsset = bAllowBindingsFromAsset;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LevelSequence.LevelSequenceActor.ResetBindings
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+
+void ALevelSequenceActor::ResetBindings()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x41b218c1);
+
+	ALevelSequenceActor_ResetBindings_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LevelSequence.LevelSequenceActor.ResetBinding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FMovieSceneObjectBindingID Binding                        (CPF_Parm)
+
+void ALevelSequenceActor::ResetBinding(const struct FMovieSceneObjectBindingID& Binding)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7104c05e);
+
+	ALevelSequenceActor_ResetBinding_Params params;
+	params.Binding = Binding;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LevelSequence.LevelSequenceActor.RemoveBinding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FMovieSceneObjectBindingID Binding                        (CPF_Parm)
+// class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ALevelSequenceActor::RemoveBinding(const struct FMovieSceneObjectBindingID& Binding, class AActor* Actor)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x649242d9);
+
+	ALevelSequenceActor_RemoveBinding_Params params;
+	params.Binding = Binding;
+	params.Actor = Actor;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -427,6 +198,32 @@ class ULevelSequence* ALevelSequenceActor::GetSequence(bool Load)
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function LevelSequence.LevelSequenceActor.AddBinding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FMovieSceneObjectBindingID Binding                        (CPF_Parm)
+// class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bAllowBindingsFromAsset        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ALevelSequenceActor::AddBinding(const struct FMovieSceneObjectBindingID& Binding, class AActor* Actor, bool bAllowBindingsFromAsset)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9667d0f2);
+
+	ALevelSequenceActor_AddBinding_Params params;
+	params.Binding = Binding;
+	params.Actor = Actor;
+	params.bAllowBindingsFromAsset = bAllowBindingsFromAsset;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 

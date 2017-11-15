@@ -14,6 +14,11 @@ namespace Classes
 	//Parameters
 	//---------------------------------------------------------------------------
 
+	// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.NotifyStackCountUpdated
+	struct UStackCountHandlingPopupWidget_C_NotifyStackCountUpdated_Params
+	{
+	};
+
 	// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.AddStackCount
 	struct UStackCountHandlingPopupWidget_C_AddStackCount_Params
 	{
@@ -70,7 +75,7 @@ namespace Classes
 	// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.SetPopup
 	struct UStackCountHandlingPopupWidget_C_SetPopup_Params
 	{
-		TEnumAsByte<EPopupStyle>                           PopupStyle;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EPopupStyle                                        PopupStyle;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FText                                       Message;                                                  // (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 		struct FScriptDelegate                             PressedDelegate;                                          // (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
 	};
@@ -186,6 +191,14 @@ namespace Classes
 	struct UStackCountHandlingPopupWidget_C_ExecuteUbergraph_StackCountHandlingPopupWidget_Params
 	{
 		int                                                EntryPoint;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.OnStackCountUpdated__DelegateSignature
+	struct UStackCountHandlingPopupWidget_C_OnStackCountUpdated__DelegateSignature_Params
+	{
+		TScriptInterface<class USlotInterface>             SlotInterface;                                            // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		TScriptInterface<class USlotContainerInterface>    SlotContainer;                                            // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		int                                                StackCount;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 }

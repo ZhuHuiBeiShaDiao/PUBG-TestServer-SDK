@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass BP_FppWeaponSlotHudWidget.BP_FppWeaponSlotHudWidget_C
-	// 0x0000 (0x0278 - 0x0278)
+	// 0x0000 (0x02C8 - 0x02C8)
 	class UBP_FppWeaponSlotHudWidget_C : public UFppWeaponSlotHudBaseWidget
 	{
 	public:

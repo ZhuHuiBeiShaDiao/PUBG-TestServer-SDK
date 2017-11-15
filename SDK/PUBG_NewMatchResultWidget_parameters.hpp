@@ -14,6 +14,12 @@ namespace Classes
 	//Parameters
 	//---------------------------------------------------------------------------
 
+	// Function NewMatchResultWidget.NewMatchResultWidget_C.On_ButtonKillcam_Prepass_1
+	struct UNewMatchResultWidget_C_On_ButtonKillcam_Prepass_1_Params
+	{
+		class UWidget*                                     BoundWidget;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
 	// Function NewMatchResultWidget.NewMatchResultWidget_C.GetAliveTeamMemberCount
 	struct UNewMatchResultWidget_C_GetAliveTeamMemberCount_Params
 	{
@@ -91,7 +97,7 @@ namespace Classes
 	// Function NewMatchResultWidget.NewMatchResultWidget_C.GoToLobby
 	struct UNewMatchResultWidget_C_GoToLobby_Params
 	{
-		TEnumAsByte<EPopupButtonID>                        ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EPopupButtonID                                     ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function NewMatchResultWidget.NewMatchResultWidget_C.OnActionInput
@@ -158,6 +164,11 @@ namespace Classes
 
 	// Function NewMatchResultWidget.NewMatchResultWidget_C.Construct
 	struct UNewMatchResultWidget_C_Construct_Params
+	{
+	};
+
+	// Function NewMatchResultWidget.NewMatchResultWidget_C.BndEvt__ButtonKillcam_K2Node_ComponentBoundEvent_31_OnButtonClickedEvent__DelegateSignature
+	struct UNewMatchResultWidget_C_BndEvt__ButtonKillcam_K2Node_ComponentBoundEvent_31_OnButtonClickedEvent__DelegateSignature_Params
 	{
 	};
 

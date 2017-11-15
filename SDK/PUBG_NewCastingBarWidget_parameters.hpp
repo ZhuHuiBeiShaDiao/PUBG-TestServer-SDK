@@ -60,6 +60,16 @@ namespace Classes
 	{
 	};
 
+	// Function NewCastingBarWidget.NewCastingBarWidget_C.Custom Event_1
+	struct UNewCastingBarWidget_C_Custom_Event_1_Params
+	{
+	};
+
+	// Function NewCastingBarWidget.NewCastingBarWidget_C.Custom Event_2
+	struct UNewCastingBarWidget_C_Custom_Event_2_Params
+	{
+	};
+
 	// Function NewCastingBarWidget.NewCastingBarWidget_C.ExecuteUbergraph_NewCastingBarWidget
 	struct UNewCastingBarWidget_C_ExecuteUbergraph_NewCastingBarWidget_Params
 	{

@@ -209,19 +209,19 @@ namespace Classes
 	// Function HudMain.HudMain_C.Get_ParachuteText_Visibility_1
 	struct UHudMain_C_Get_ParachuteText_Visibility_1_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function HudMain.HudMain_C.Get_VisibilityOnMatchState
 	struct UHudMain_C_Get_VisibilityOnMatchState_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function HudMain.HudMain_C.OnDisplaySystemMessage
 	struct UHudMain_C_OnDisplaySystemMessage_Params
 	{
-		TEnumAsByte<ESystemMessageType>                    MessageType;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		ESystemMessageType                                 MessageType;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FText                                       Message;                                                  // (CPF_Parm)
 	};
 
@@ -240,7 +240,7 @@ namespace Classes
 	// Function HudMain.HudMain_C.Get_HealthBar_FillColorAndOpacity_1
 	struct UHudMain_C_Get_HealthBar_FillColorAndOpacity_1_Params
 	{
-		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function HudMain.HudMain_C.OnKey_SystemMenuOrEscape
@@ -257,7 +257,7 @@ namespace Classes
 	// Function HudMain.HudMain_C.GetFillColorAndOpacity_1
 	struct UHudMain_C_GetFillColorAndOpacity_1_Params
 	{
-		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function HudMain.HudMain_C.Get_DebugInformation_Text_1

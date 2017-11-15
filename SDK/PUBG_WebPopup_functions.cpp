@@ -13,12 +13,12 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function WebPopup.WebPopup_C.SetPopupData
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // struct FString                 PopupId                        (CPF_Parm, CPF_ZeroConstructor)
 // struct FString                 Uri                            (CPF_Parm, CPF_ZeroConstructor)
 // bool                           UseBackgroundColor             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            BackgroundColor                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            BackgroundColor                (CPF_Parm, CPF_IsPlainOldData)
 
 void UWebPopup_C::SetPopupData(const struct FString& PopupId, const struct FString& Uri, bool UseBackgroundColor, const struct FLinearColor& BackgroundColor)
 {

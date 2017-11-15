@@ -11,7 +11,7 @@ namespace Classes
 	template<typename Fn>
 	inline Fn GetVFunction(const void *instance, std::size_t index)
 	{
-		auto vtable = *reinterpret_cast<const void***>(const_cast<void*>(instance));
+		auto vtable = *reinterpret_cast<void***>(const_cast<void*>(instance));
 		return reinterpret_cast<Fn>(vtable[index]);
 	}
 

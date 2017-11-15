@@ -34,7 +34,7 @@ void UPlayerHeadWidget_C::AddAlphaWhenADS(class UWidget* BoundWidget)
 
 
 // Function PlayerHeadWidget.PlayerHeadWidget_C.On_HeadBorder_Prepass_1
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -321,7 +321,7 @@ void UPlayerHeadWidget_C::GetWeaponProcessor(class AWeaponProcessor** WeaponProc
 // Function PlayerHeadWidget.PlayerHeadWidget_C.GetTslWeaponColor
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UPlayerHeadWidget_C::GetTslWeaponColor()
 {
@@ -341,7 +341,7 @@ struct FLinearColor UPlayerHeadWidget_C::GetTslWeaponColor()
 
 
 // Function PlayerHeadWidget.PlayerHeadWidget_C.UpdateIcon
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UPlayerHeadWidget_C::UpdateIcon()
 {
@@ -403,9 +403,9 @@ void UPlayerHeadWidget_C::On_WeaponImageSizeBox_Prepass_1(class UWidget* BoundWi
 // Function PlayerHeadWidget.PlayerHeadWidget_C.GetTslWeaponVisibility
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  Visible                        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// ESlateVisibility               Visible                        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UPlayerHeadWidget_C::GetTslWeaponVisibility(TEnumAsByte<ESlateVisibility>* Visible)
+void UPlayerHeadWidget_C::GetTslWeaponVisibility(ESlateVisibility* Visible)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x3512cdb0);
@@ -634,7 +634,7 @@ void UPlayerHeadWidget_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 // Function PlayerHeadWidget.PlayerHeadWidget_C.SetCharacterIconPosition_UC
 // (FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
 // Parameters:
-// struct FVector2D*              Pos_UC                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D*              Pos_UC                         (CPF_Parm, CPF_IsPlainOldData)
 // bool*                          IsHidden                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UPlayerHeadWidget_C::SetCharacterIconPosition_UC(struct FVector2D* Pos_UC, bool* IsHidden)

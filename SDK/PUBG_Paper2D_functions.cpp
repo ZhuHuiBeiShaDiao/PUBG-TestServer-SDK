@@ -207,7 +207,7 @@ void UPaperFlipbookComponent::Stop()
 // Function Paper2D.PaperFlipbookComponent.SetSpriteColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            NewColor                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewColor                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UPaperFlipbookComponent::SetSpriteColor(const struct FLinearColor& NewColor)
 {
@@ -753,7 +753,7 @@ bool UPaperGroupedSpriteComponent::UpdateInstanceTransform(int InstanceIndex, co
 // (FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // int                            InstanceIndex                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            NewInstanceColor               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewInstanceColor               (CPF_Parm, CPF_IsPlainOldData)
 // bool                           bMarkRenderStateDirty          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
@@ -781,7 +781,7 @@ bool UPaperGroupedSpriteComponent::UpdateInstanceColor(int InstanceIndex, const 
 // Function Paper2D.PaperGroupedSpriteComponent.SortInstancesAlongAxis
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector                 WorldSpaceSortAxis             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 WorldSpaceSortAxis             (CPF_Parm, CPF_IsPlainOldData)
 
 void UPaperGroupedSpriteComponent::SortInstancesAlongAxis(const struct FVector& WorldSpaceSortAxis)
 {
@@ -904,7 +904,7 @@ void UPaperGroupedSpriteComponent::ClearInstances()
 // struct FTransform              Transform                      (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
 // class UPaperSprite*            Sprite                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bWorldSpace                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Color                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Color                          (CPF_Parm, CPF_IsPlainOldData)
 // int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 int UPaperGroupedSpriteComponent::AddInstance(const struct FTransform& Transform, class UPaperSprite* Sprite, bool bWorldSpace, const struct FLinearColor& Color)
@@ -929,10 +929,39 @@ int UPaperGroupedSpriteComponent::AddInstance(const struct FTransform& Transform
 }
 
 
+// Function Paper2D.PaperSpriteBlueprintLibrary.MakeBrushFromSprite
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
+// Parameters:
+// class UPaperSprite*            Sprite                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            Width                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            Height                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FSlateBrush             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
+
+struct FSlateBrush UPaperSpriteBlueprintLibrary::STATIC_MakeBrushFromSprite(class UPaperSprite* Sprite, int Width, int Height)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x36001245);
+
+	UPaperSpriteBlueprintLibrary_MakeBrushFromSprite_Params params;
+	params.Sprite = Sprite;
+	params.Width = Width;
+	params.Height = Height;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Paper2D.PaperSpriteComponent.SetSpriteColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            NewColor                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewColor                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UPaperSpriteComponent::SetSpriteColor(const struct FLinearColor& NewColor)
 {
@@ -1002,7 +1031,7 @@ class UPaperSprite* UPaperSpriteComponent::GetSprite()
 // Function Paper2D.PaperTerrainComponent.SetTerrainColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            NewColor                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewColor                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UPaperTerrainComponent::SetTerrainColor(const struct FLinearColor& NewColor)
 {
@@ -1024,7 +1053,7 @@ void UPaperTerrainComponent::SetTerrainColor(const struct FLinearColor& NewColor
 // Function Paper2D.PaperTileMapComponent.SetTileMapColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            NewColor                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewColor                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UPaperTileMapComponent::SetTileMapColor(const struct FLinearColor& NewColor)
 {
@@ -1099,7 +1128,7 @@ void UPaperTileMapComponent::SetTile(int X, int Y, int Layer, const struct FPape
 // Function Paper2D.PaperTileMapComponent.SetLayerColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            NewColor                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewColor                       (CPF_Parm, CPF_IsPlainOldData)
 // int                            Layer                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UPaperTileMapComponent::SetLayerColor(const struct FLinearColor& NewColor, int Layer)
@@ -1298,7 +1327,7 @@ void UPaperTileMapComponent::GetTilePolygon(int TileX, int TileY, int LayerIndex
 // Function Paper2D.PaperTileMapComponent.GetTileMapColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UPaperTileMapComponent::GetTileMapColor()
 {
@@ -1325,7 +1354,7 @@ struct FLinearColor UPaperTileMapComponent::GetTileMapColor()
 // int                            TileY                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            LayerIndex                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bWorldSpace                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UPaperTileMapComponent::GetTileCornerPosition(int TileX, int TileY, int LayerIndex, bool bWorldSpace)
 {
@@ -1356,7 +1385,7 @@ struct FVector UPaperTileMapComponent::GetTileCornerPosition(int TileX, int Tile
 // int                            TileY                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            LayerIndex                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bWorldSpace                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UPaperTileMapComponent::GetTileCenterPosition(int TileX, int TileY, int LayerIndex, bool bWorldSpace)
 {
@@ -1443,7 +1472,7 @@ void UPaperTileMapComponent::GetMapSize(int* MapWidth, int* MapHeight, int* NumL
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // int                            Layer                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UPaperTileMapComponent::GetLayerColor(int Layer)
 {

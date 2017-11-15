@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function TslLobby.TslLobby_v2_C.ReceiveBeginPlay
-// (FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
 
 void ATslLobby_v2_C::ReceiveBeginPlay()
 {

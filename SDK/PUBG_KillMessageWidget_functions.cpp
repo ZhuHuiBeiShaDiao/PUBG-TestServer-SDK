@@ -135,9 +135,9 @@ void UKillMessageWidget_C::On_MyKills_Prepass_1(class UWidget* BoundWidget)
 
 
 // Function KillMessageWidget.KillMessageWidget_C.GetBrushColor_1
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UKillMessageWidget_C::GetBrushColor_1()
 {
@@ -250,9 +250,9 @@ void UKillMessageWidget_C::GetKillNum(int* KillNum)
 // Function KillMessageWidget.KillMessageWidget_C.Get_Killer_Visibility_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UKillMessageWidget_C::Get_Killer_Visibility_1()
+ESlateVisibility UKillMessageWidget_C::Get_Killer_Visibility_1()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x8c44f778);
@@ -272,9 +272,9 @@ TEnumAsByte<ESlateVisibility> UKillMessageWidget_C::Get_Killer_Visibility_1()
 // Function KillMessageWidget.KillMessageWidget_C.Get_Insert2_Visibility_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UKillMessageWidget_C::Get_Insert2_Visibility_1()
+ESlateVisibility UKillMessageWidget_C::Get_Insert2_Visibility_1()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x81a6c7ea);
@@ -294,9 +294,9 @@ TEnumAsByte<ESlateVisibility> UKillMessageWidget_C::Get_Insert2_Visibility_1()
 // Function KillMessageWidget.KillMessageWidget_C.Get_Insert_Visibility_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UKillMessageWidget_C::Get_Insert_Visibility_1()
+ESlateVisibility UKillMessageWidget_C::Get_Insert_Visibility_1()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xb35fe88a);

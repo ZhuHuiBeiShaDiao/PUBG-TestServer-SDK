@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass BP_TeamWidget.BP_TeamWidget_C
-	// 0x0000 (0x02B0 - 0x02B0)
+	// 0x0000 (0x0300 - 0x0300)
 	class UBP_TeamWidget_C : public UTslTeamWidget
 	{
 	public:

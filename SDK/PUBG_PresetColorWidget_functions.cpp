@@ -15,7 +15,7 @@ namespace Classes
 // Function PresetColorWidget.PresetColorWidget_C.GetContentColorAndOpacity_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UPresetColorWidget_C::GetContentColorAndOpacity_1()
 {

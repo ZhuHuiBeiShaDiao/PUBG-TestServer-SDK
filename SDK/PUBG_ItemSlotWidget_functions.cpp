@@ -500,6 +500,487 @@ void UItemSlotWidget_C::GetSlotContainer(TScriptInterface<class USlotContainerIn
 }
 
 
+// Function ItemSlotWidget.ItemSlotWidget_C.PutSeltItem
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::PutSeltItem()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xaebc3205);
+
+	UItemSlotWidget_C_PutSeltItem_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.StopSelfPutMode
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::StopSelfPutMode()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xc9ae60b);
+
+	UItemSlotWidget_C_StopSelfPutMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.StartSelfPutMode
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// bool                           bResult                        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            StartWeaponIndex               (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::StartSelfPutMode(bool* bResult, int* StartWeaponIndex)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe53e89e5);
+
+	UItemSlotWidget_C_StartSelfPutMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bResult != nullptr)
+		*bResult = params.bResult;
+	if (StartWeaponIndex != nullptr)
+		*StartWeaponIndex = params.StartWeaponIndex;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.IsSelfPutMode
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bIsSelfPutMode                 (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::IsSelfPutMode(bool* bIsSelfPutMode)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x2be8946f);
+
+	UItemSlotWidget_C_IsSelfPutMode_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsSelfPutMode != nullptr)
+		*bIsSelfPutMode = params.bIsSelfPutMode;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.ProcessPressedY
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::ProcessPressedY()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x6ab8637b);
+
+	UItemSlotWidget_C_ProcessPressedY_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.ProcessPressedA
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::ProcessPressedA()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xfaf3dd53);
+
+	UItemSlotWidget_C_ProcessPressedA_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.InitItemSlot
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::InitItemSlot()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x43166d1a);
+
+	UItemSlotWidget_C_InitItemSlot_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnInputBPressed
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnInputBPressed()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xc3976706);
+
+	UItemSlotWidget_C_OnInputBPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnInputYReleased
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnInputYReleased()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd4d32942);
+
+	UItemSlotWidget_C_OnInputYReleased_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnInputYPressed
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnInputYPressed()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5d581ad7);
+
+	UItemSlotWidget_C_OnInputYPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnInputAReleased
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnInputAReleased()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xc738363a);
+
+	UItemSlotWidget_C_OnInputAReleased_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnInputAPressed
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnInputAPressed()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x6e836f6f);
+
+	UItemSlotWidget_C_OnInputAPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.SetupInput_Gamepad
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::SetupInput_Gamepad()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x2cd9490c);
+
+	UItemSlotWidget_C_SetupInput_Gamepad_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnInputX
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnInputX()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd4d8035e);
+
+	UItemSlotWidget_C_OnInputX_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.CheckSubFocus
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bSubFocus                      (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::CheckSubFocus(bool* bSubFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xdee7ac05);
+
+	UItemSlotWidget_C_CheckSubFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bSubFocus != nullptr)
+		*bSubFocus = params.bSubFocus;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.IsAttachmentFocus
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bIsAttachmentFocus             (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::IsAttachmentFocus(bool* bIsAttachmentFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x4ed2c5be);
+
+	UItemSlotWidget_C_IsAttachmentFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsAttachmentFocus != nullptr)
+		*bIsAttachmentFocus = params.bIsAttachmentFocus;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.IsSubFocus
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bIsSubFocus                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::IsSubFocus(bool* bIsSubFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x64b9fe13);
+
+	UItemSlotWidget_C_IsSubFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsSubFocus != nullptr)
+		*bIsSubFocus = params.bIsSubFocus;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.IsEquipmentFocus
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bIsFocus                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::IsEquipmentFocus(bool* bIsFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x326730d9);
+
+	UItemSlotWidget_C_IsEquipmentFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsFocus != nullptr)
+		*bIsFocus = params.bIsFocus;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.GetInventoryWidget_Gamepad
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// class UInventoryWidget_Gamepad_C* NewParam                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::GetInventoryWidget_Gamepad(class UInventoryWidget_Gamepad_C** NewParam)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x28efe07d);
+
+	UItemSlotWidget_C_GetInventoryWidget_Gamepad_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (NewParam != nullptr)
+		*NewParam = params.NewParam;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.GetFocusSlotID
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// EEquipSlotID                   EquipSlotID                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::GetFocusSlotID(EEquipSlotID* EquipSlotID)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8478531a);
+
+	UItemSlotWidget_C_GetFocusSlotID_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (EquipSlotID != nullptr)
+		*EquipSlotID = params.EquipSlotID;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.SaveSlotInfo
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::SaveSlotInfo()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xfc1ea822);
+
+	UItemSlotWidget_C_SaveSlotInfo_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnShowToolTip
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// bool                           bIsGamepad                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::OnShowToolTip(bool bIsGamepad)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5d412122);
+
+	UItemSlotWidget_C_OnShowToolTip_Params params;
+	params.bIsGamepad = bIsGamepad;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.ShowStackcountPopup
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::ShowStackcountPopup()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x2dbcb283);
+
+	UItemSlotWidget_C_ShowStackcountPopup_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnStackCountpopupBtnDown
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UItemSlotWidget_C::OnStackCountpopupBtnDown(EPopupButtonID ButtonID)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x588ad6d);
+
+	UItemSlotWidget_C_OnStackCountpopupBtnDown_Params params;
+	params.ButtonID = ButtonID;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemSlotWidget.ItemSlotWidget_C.On_UseInfo_Text_Prepass_1
 // (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -724,9 +1205,9 @@ void UItemSlotWidget_C::isPickupableDropItemSlot(const TScriptInterface<class US
 
 
 // Function ItemSlotWidget.ItemSlotWidget_C.Get_UseInfo_Text_ColorAndOpacity_1
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UItemSlotWidget_C::Get_UseInfo_Text_ColorAndOpacity_1()
 {
@@ -958,9 +1439,9 @@ void UItemSlotWidget_C::UpdateStackCountVisibility(class UWidget* BoundWidget)
 // Function ItemSlotWidget.ItemSlotWidget_C.DialogButtonDown
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UItemSlotWidget_C::DialogButtonDown(TEnumAsByte<EPopupButtonID> ButtonID)
+void UItemSlotWidget_C::DialogButtonDown(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xc3a369f5);
@@ -1220,9 +1701,9 @@ void UItemSlotWidget_C::CreateTslDragDropOperation(class UTslItemDragDropOperati
 // Function ItemSlotWidget.ItemSlotWidget_C.GetOpenButtonVisibility
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetOpenButtonVisibility()
+ESlateVisibility UItemSlotWidget_C::GetOpenButtonVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xc65f3373);
@@ -1377,9 +1858,9 @@ void UItemSlotWidget_C::Refresh()
 // Function ItemSlotWidget.ItemSlotWidget_C.GetInnerContainerVisibility
 // (FUNC_Private, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetInnerContainerVisibility()
+ESlateVisibility UItemSlotWidget_C::GetInnerContainerVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xeb6043ea);
@@ -1399,9 +1880,9 @@ TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetInnerContainerVisibility()
 // Function ItemSlotWidget.ItemSlotWidget_C.GetPackagedLabelVisibility
 // (FUNC_Private, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetPackagedLabelVisibility()
+ESlateVisibility UItemSlotWidget_C::GetPackagedLabelVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x169ea6e3);
@@ -1421,9 +1902,9 @@ TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetPackagedLabelVisibility()
 // Function ItemSlotWidget.ItemSlotWidget_C.GetIconVisibility
 // (FUNC_Private, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetIconVisibility()
+ESlateVisibility UItemSlotWidget_C::GetIconVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xb1fae4c0);
@@ -1443,9 +1924,9 @@ TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetIconVisibility()
 // Function ItemSlotWidget.ItemSlotWidget_C.GetAmmountTextVisibility
 // (FUNC_Private, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetAmmountTextVisibility()
+ESlateVisibility UItemSlotWidget_C::GetAmmountTextVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xfd2d61c9);
@@ -1487,9 +1968,9 @@ struct FText UItemSlotWidget_C::GetAmmountText()
 // Function ItemSlotWidget.ItemSlotWidget_C.GetUseButtonVisibility
 // (FUNC_Private, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UItemSlotWidget_C::GetUseButtonVisibility()
+ESlateVisibility UItemSlotWidget_C::GetUseButtonVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xddeda230);
@@ -1670,78 +2151,6 @@ void UItemSlotWidget_C::Construct()
 }
 
 
-// Function ItemSlotWidget.ItemSlotWidget_C.OnInputXPressed
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-
-void UItemSlotWidget_C::OnInputXPressed()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x8889ce90);
-
-	UItemSlotWidget_C_OnInputXPressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemSlotWidget.ItemSlotWidget_C.OnInputXReleased
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-
-void UItemSlotWidget_C::OnInputXReleased()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xaa309047);
-
-	UItemSlotWidget_C_OnInputXReleased_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemSlotWidget.ItemSlotWidget_C.UI_Gamepad_B_Pressed
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-
-void UItemSlotWidget_C::UI_Gamepad_B_Pressed()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xf6beb2ff);
-
-	UItemSlotWidget_C_UI_Gamepad_B_Pressed_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemSlotWidget.ItemSlotWidget_C.UI_Gamepad_B_Released
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-
-void UItemSlotWidget_C::UI_Gamepad_B_Released()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xc1ff566a);
-
-	UItemSlotWidget_C_UI_Gamepad_B_Released_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemSlotWidget.ItemSlotWidget_C.Tick
 // (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
 // Parameters:
@@ -1765,45 +2174,6 @@ void UItemSlotWidget_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 }
 
 
-// Function ItemSlotWidget.ItemSlotWidget_C.OnButtonClicked
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UItemSlotWidget_C::OnButtonClicked(TEnumAsByte<EPopupButtonID> ButtonID)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x1999c9b1);
-
-	UItemSlotWidget_C_OnButtonClicked_Params params;
-	params.ButtonID = ButtonID;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function ItemSlotWidget.ItemSlotWidget_C.OnInputWidgetInputB
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-
-void UItemSlotWidget_C::OnInputWidgetInputB()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xa4da45c);
-
-	UItemSlotWidget_C_OnInputWidgetInputB_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function ItemSlotWidget.ItemSlotWidget_C.ExecuteUbergraph_ItemSlotWidget
 // (FUNC_HasDefaults)
 // Parameters:
@@ -1816,6 +2186,24 @@ void UItemSlotWidget_C::ExecuteUbergraph_ItemSlotWidget(int EntryPoint)
 
 	UItemSlotWidget_C_ExecuteUbergraph_ItemSlotWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function ItemSlotWidget.ItemSlotWidget_C.OnDoSlotAction__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_C::OnDoSlotAction__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x1c41604e);
+
+	UItemSlotWidget_C_OnDoSlotAction__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

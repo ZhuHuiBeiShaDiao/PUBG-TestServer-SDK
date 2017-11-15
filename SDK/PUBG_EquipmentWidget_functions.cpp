@@ -1364,6 +1364,70 @@ void UEquipmentWidget_C::OnSlotMoveRight()
 }
 
 
+// Function EquipmentWidget.EquipmentWidget_C.OnEnterSlot_Event_1
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UEquipmentWidget_C::OnEnterSlot_Event_1(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x12d7b95b);
+
+	UEquipmentWidget_C_OnEnterSlot_Event_1_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EquipmentWidget.EquipmentWidget_C.OnLeaveSlot_Event_1
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UEquipmentWidget_C::OnLeaveSlot_Event_1(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xea9e0d8c);
+
+	UEquipmentWidget_C_OnLeaveSlot_Event_1_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EquipmentWidget.EquipmentWidget_C.OnDoSlotAction_Event_1
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UEquipmentWidget_C::OnDoSlotAction_Event_1()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x229b2c90);
+
+	UEquipmentWidget_C_OnDoSlotAction_Event_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function EquipmentWidget.EquipmentWidget_C.ExecuteUbergraph_EquipmentWidget
 // (FUNC_HasDefaults)
 // Parameters:
@@ -1376,6 +1440,91 @@ void UEquipmentWidget_C::ExecuteUbergraph_EquipmentWidget(int EntryPoint)
 
 	UEquipmentWidget_C_ExecuteUbergraph_EquipmentWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EquipmentWidget.EquipmentWidget_C.OnDoSlotAction__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UEquipmentWidget_C::OnDoSlotAction__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb9415054);
+
+	UEquipmentWidget_C_OnDoSlotAction__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EquipmentWidget.EquipmentWidget_C.OnLeaveSlot__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UEquipmentWidget_C::OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe13c8e10);
+
+	UEquipmentWidget_C_OnLeaveSlot__DelegateSignature_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EquipmentWidget.EquipmentWidget_C.OnEnterSlot__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UEquipmentWidget_C::OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xdd10ded);
+
+	UEquipmentWidget_C_OnEnterSlot__DelegateSignature_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function EquipmentWidget.EquipmentWidget_C.OnInventoryDrop__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UDragDropOperation*      Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UEquipmentWidget_C::OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x20a65f52);
+
+	UEquipmentWidget_C_OnInventoryDrop__DelegateSignature_Params params;
+	params.Operation = Operation;
 
 	auto flags = fn->FunctionFlags;
 

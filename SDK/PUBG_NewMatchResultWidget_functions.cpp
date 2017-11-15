@@ -12,6 +12,27 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function NewMatchResultWidget.NewMatchResultWidget_C.On_ButtonKillcam_Prepass_1
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UNewMatchResultWidget_C::On_ButtonKillcam_Prepass_1(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5f8ba2fd);
+
+	UNewMatchResultWidget_C_On_ButtonKillcam_Prepass_1_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function NewMatchResultWidget.NewMatchResultWidget_C.GetAliveTeamMemberCount
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
@@ -284,9 +305,9 @@ void UNewMatchResultWidget_C::On_ButtonSpectator_Prepass_1(class UWidget* BoundW
 // Function NewMatchResultWidget.NewMatchResultWidget_C.GoToLobby
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UNewMatchResultWidget_C::GoToLobby(TEnumAsByte<EPopupButtonID> ButtonID)
+void UNewMatchResultWidget_C::GoToLobby(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x57c17a);
@@ -532,6 +553,24 @@ void UNewMatchResultWidget_C::Construct()
 	if (!fn) fn = UObject::FindObject<UFunction>(0x496a2946);
 
 	UNewMatchResultWidget_C_Construct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function NewMatchResultWidget.NewMatchResultWidget_C.BndEvt__ButtonKillcam_K2Node_ComponentBoundEvent_31_OnButtonClickedEvent__DelegateSignature
+// (FUNC_BlueprintEvent)
+
+void UNewMatchResultWidget_C::BndEvt__ButtonKillcam_K2Node_ComponentBoundEvent_31_OnButtonClickedEvent__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x823b8870);
+
+	UNewMatchResultWidget_C_BndEvt__ButtonKillcam_K2Node_ComponentBoundEvent_31_OnButtonClickedEvent__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

@@ -134,8 +134,8 @@ class UGameplayTask_ClaimResource* UGameplayTask_ClaimResource::STATIC_ClaimReso
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // TScriptInterface<class UGameplayTaskOwnerInterface> TaskOwner                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 SpawnLocation                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FRotator                SpawnRotation                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 SpawnLocation                  (CPF_Parm, CPF_IsPlainOldData)
+// struct FRotator                SpawnRotation                  (CPF_Parm, CPF_IsPlainOldData)
 // class UClass*                  Class                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bSpawnOnlyOnAuthority          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UGameplayTask_SpawnActor* ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
@@ -216,6 +216,24 @@ bool UGameplayTask_SpawnActor::BeginSpawningActor(class UObject* WorldContextObj
 }
 
 
+// DelegateFunction GameplayTasks.GameplayTask_TimeLimitedExecution.TaskFinishDelegate__DelegateSignature
+// (FUNC_MulticastDelegate, FUNC_Public, FUNC_Delegate)
+
+void UGameplayTask_TimeLimitedExecution::TaskFinishDelegate__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x238965bb);
+
+	UGameplayTask_TimeLimitedExecution_TaskFinishDelegate__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function GameplayTasks.GameplayTask_WaitDelay.TaskWaitDelay
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -290,9 +308,9 @@ void UGameplayTasksComponent::OnRep_SimulatedTasks()
 // unsigned char                  Priority                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // TArray<class UClass*>          AdditionalRequiredResources    (CPF_Parm, CPF_ZeroConstructor)
 // TArray<class UClass*>          AdditionalClaimedResources     (CPF_Parm, CPF_ZeroConstructor)
-// TEnumAsByte<EGameplayTaskRunResult> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// EGameplayTaskRunResult         ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<EGameplayTaskRunResult> UGameplayTasksComponent::STATIC_K2_RunGameplayTask(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, class UGameplayTask* Task, unsigned char Priority, TArray<class UClass*> AdditionalRequiredResources, TArray<class UClass*> AdditionalClaimedResources)
+EGameplayTaskRunResult UGameplayTasksComponent::STATIC_K2_RunGameplayTask(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, class UGameplayTask* Task, unsigned char Priority, TArray<class UClass*> AdditionalRequiredResources, TArray<class UClass*> AdditionalClaimedResources)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x1503b6);

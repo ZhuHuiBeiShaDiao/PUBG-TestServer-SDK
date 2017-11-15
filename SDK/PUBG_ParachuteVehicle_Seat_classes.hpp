@@ -13,11 +13,11 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass ParachuteVehicle_Seat.ParachuteVehicle_Seat_C
-	// 0x0008 (0x0430 - 0x0428)
+	// 0x0008 (0x0438 - 0x0430)
 	class AParachuteVehicle_Seat_C : public AParachuteVehicleSeatActor
 	{
 	public:
-		class USceneComponent*                             DefaultSceneRoot;                                         // 0x0428(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		class USceneComponent*                             DefaultSceneRoot;                                         // 0x0430(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 		static UClass* StaticClass()
 		{

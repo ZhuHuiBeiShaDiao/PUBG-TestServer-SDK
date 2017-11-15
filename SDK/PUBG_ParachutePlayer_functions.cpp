@@ -76,9 +76,9 @@ void AParachutePlayer_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayReas
 // class AActor**                 Other                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UPrimitiveComponent**    OtherComp                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool*                          bSelfMoved                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector*                HitLocation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector*                HitNormal                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector*                NormalImpulse                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector*                HitLocation                    (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector*                HitNormal                      (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector*                NormalImpulse                  (CPF_Parm, CPF_IsPlainOldData)
 // struct FHitResult*             Hit                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
 
 void AParachutePlayer_C::ReceiveHit(class UPrimitiveComponent** MyComp, class AActor** Other, class UPrimitiveComponent** OtherComp, bool* bSelfMoved, struct FVector* HitLocation, struct FVector* HitNormal, struct FVector* NormalImpulse, struct FHitResult* Hit)
@@ -126,7 +126,7 @@ void AParachutePlayer_C::ReceiveTick(float* DeltaSeconds)
 
 
 // Function ParachutePlayer.ParachutePlayer_C.ReceiveBeginPlay
-// (FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
 
 void AParachutePlayer_C::ReceiveBeginPlay()
 {

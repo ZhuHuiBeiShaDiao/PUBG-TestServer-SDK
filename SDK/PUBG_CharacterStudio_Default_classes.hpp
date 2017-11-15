@@ -17,7 +17,7 @@ namespace Classes
 	class ACharacterStudio_Default_C : public ACharacterStudio
 	{
 	public:
-		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0430(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_DuplicateTransient)
+		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0430(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 
 		static UClass* StaticClass()
 		{

@@ -144,81 +144,6 @@ void ULobbyWebView_C::WebViewLoad(int ViewIndex, const struct FString& URL)
 }
 
 
-// Function LobbyWebView.LobbyWebView_C.BndEvt__CoherentUIGTWidget_0_K2Node_ComponentBoundEvent_383_UIGTReadyForBindingsSignature__DelegateSignature
-// (FUNC_BlueprintEvent)
-
-void ULobbyWebView_C::BndEvt__CoherentUIGTWidget_0_K2Node_ComponentBoundEvent_383_UIGTReadyForBindingsSignature__DelegateSignature()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xb99e24a);
-
-	ULobbyWebView_C_BndEvt__CoherentUIGTWidget_0_K2Node_ComponentBoundEvent_383_UIGTReadyForBindingsSignature__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LobbyWebView.LobbyWebView_C.J_1
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// class UCoherentUIGTJSPayload*  payload                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void ULobbyWebView_C::J_1(class UCoherentUIGTJSPayload* payload)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x310b8bd5);
-
-	ULobbyWebView_C_J_1_Params params;
-	params.payload = payload;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LobbyWebView.LobbyWebView_C.BndEvt__WebView_1_K2Node_ComponentBoundEvent_545_UIGTReadyForBindingsSignature__DelegateSignature
-// (FUNC_BlueprintEvent)
-
-void ULobbyWebView_C::BndEvt__WebView_1_K2Node_ComponentBoundEvent_545_UIGTReadyForBindingsSignature__DelegateSignature()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xfdd0d223);
-
-	ULobbyWebView_C_BndEvt__WebView_1_K2Node_ComponentBoundEvent_545_UIGTReadyForBindingsSignature__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function LobbyWebView.LobbyWebView_C.BndEvt__WebView_2_K2Node_ComponentBoundEvent_548_UIGTReadyForBindingsSignature__DelegateSignature
-// (FUNC_BlueprintEvent)
-
-void ULobbyWebView_C::BndEvt__WebView_2_K2Node_ComponentBoundEvent_548_UIGTReadyForBindingsSignature__DelegateSignature()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xf16b09d7);
-
-	ULobbyWebView_C_BndEvt__WebView_2_K2Node_ComponentBoundEvent_548_UIGTReadyForBindingsSignature__DelegateSignature_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function LobbyWebView.LobbyWebView_C.Construct
 // (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
 
@@ -269,6 +194,45 @@ void ULobbyWebView_C::Destruct()
 	if (!fn) fn = UObject::FindObject<UFunction>(0x1ac23c3b);
 
 	ULobbyWebView_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LobbyWebView.LobbyWebView_C.J_1
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UCoherentUIGTJSPayload*  payload                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ULobbyWebView_C::J_1(class UCoherentUIGTJSPayload* payload)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x310b8bd5);
+
+	ULobbyWebView_C_J_1_Params params;
+	params.payload = payload;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function LobbyWebView.LobbyWebView_C.BndEvt__CoherentUIGTWidget_0_K2Node_ComponentBoundEvent_383_UIGTReadyForBindingsSignature__DelegateSignature
+// (FUNC_BlueprintEvent)
+
+void ULobbyWebView_C::BndEvt__CoherentUIGTWidget_0_K2Node_ComponentBoundEvent_383_UIGTReadyForBindingsSignature__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb99e24a);
+
+	ULobbyWebView_C_BndEvt__CoherentUIGTWidget_0_K2Node_ComponentBoundEvent_383_UIGTReadyForBindingsSignature__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
 

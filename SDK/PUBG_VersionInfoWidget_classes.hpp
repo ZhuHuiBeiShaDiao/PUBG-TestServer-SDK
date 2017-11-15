@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass VersionInfoWidget.VersionInfoWidget_C
-	// 0x0000 (0x02C8 - 0x02C8)
+	// 0x0000 (0x0318 - 0x0318)
 	class UVersionInfoWidget_C : public UVersionInfoBaseWidget
 	{
 	public:

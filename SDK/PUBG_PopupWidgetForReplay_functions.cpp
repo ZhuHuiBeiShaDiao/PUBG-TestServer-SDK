@@ -15,11 +15,11 @@ namespace Classes
 // Function PopupWidgetForReplay.PopupWidgetForReplay_C.SetPopup
 // (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupStyle>       PopupStyle                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupStyle                    PopupStyle                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FText                   Message                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 // struct FScriptDelegate         PressedDelegate                (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
 
-void UPopupWidgetForReplay_C::SetPopup(TEnumAsByte<EPopupStyle> PopupStyle, const struct FText& Message, const struct FScriptDelegate& PressedDelegate)
+void UPopupWidgetForReplay_C::SetPopup(EPopupStyle PopupStyle, const struct FText& Message, const struct FScriptDelegate& PressedDelegate)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x5800dcc1);
@@ -187,9 +187,9 @@ void UPopupWidgetForReplay_C::HideMyself__DelegateSignature()
 // Function PopupWidgetForReplay.PopupWidgetForReplay_C.ButtonClickDispatcher__DelegateSignature
 // (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    NewParam                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 NewParam                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UPopupWidgetForReplay_C::ButtonClickDispatcher__DelegateSignature(TEnumAsByte<EPopupButtonID> NewParam)
+void UPopupWidgetForReplay_C::ButtonClickDispatcher__DelegateSignature(EPopupButtonID NewParam)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x2fb82ac1);

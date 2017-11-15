@@ -99,9 +99,9 @@ void UHudAlwaysOn_C::On_CharacterCanvas_Prepass_1(class UWidget* BoundWidget)
 // Function HudAlwaysOn.HudAlwaysOn_C.GetVisibilityOnMatchState
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UHudAlwaysOn_C::GetVisibilityOnMatchState()
+ESlateVisibility UHudAlwaysOn_C::GetVisibilityOnMatchState()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xa21cadb0);

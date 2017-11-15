@@ -108,11 +108,11 @@ namespace Classes
 	struct UKismetProceduralMeshLibrary_SliceProceduralMesh_Params
 	{
 		class UProceduralMeshComponent*                    InProcMesh;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-		struct FVector                                     PlanePosition;                                            // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     PlaneNormal;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     PlanePosition;                                            // (CPF_Parm, CPF_IsPlainOldData)
+		struct FVector                                     PlaneNormal;                                              // (CPF_Parm, CPF_IsPlainOldData)
 		bool                                               bCreateOtherHalf;                                         // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UProceduralMeshComponent*                    OutOtherHalfProcMesh;                                     // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-		TEnumAsByte<EProcMeshSliceCapOption>               CapOption;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EProcMeshSliceCapOption                            CapOption;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UMaterialInterface*                          CapMaterial;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
@@ -120,7 +120,7 @@ namespace Classes
 	struct UKismetProceduralMeshLibrary_GetSectionFromStaticMesh_Params
 	{
 		class UStaticMesh*                                 InMesh;                                                   // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		int                                                LODIndex;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		int                                                LodIndex;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		int                                                SectionIndex;                                             // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<struct FVector>                             Vertices;                                                 // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 		TArray<int>                                        Triangles;                                                // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
@@ -132,7 +132,7 @@ namespace Classes
 	// Function ProceduralMeshComponent.KismetProceduralMeshLibrary.GenerateBoxMesh
 	struct UKismetProceduralMeshLibrary_GenerateBoxMesh_Params
 	{
-		struct FVector                                     BoxRadius;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     BoxRadius;                                                // (CPF_Parm, CPF_IsPlainOldData)
 		TArray<struct FVector>                             Vertices;                                                 // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 		TArray<int>                                        Triangles;                                                // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 		TArray<struct FVector>                             Normals;                                                  // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
@@ -153,7 +153,7 @@ namespace Classes
 	struct UKismetProceduralMeshLibrary_CopyProceduralMeshFromStaticMeshComponent_Params
 	{
 		class UStaticMeshComponent*                        StaticMeshComponent;                                      // (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-		int                                                LODIndex;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		int                                                LodIndex;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UProceduralMeshComponent*                    ProcMeshComponent;                                        // (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 		bool                                               bCreateCollision;                                         // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};

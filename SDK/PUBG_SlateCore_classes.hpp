@@ -46,6 +46,22 @@ namespace Classes
 	};
 
 
+	// Class SlateCore.FontFaceInterface
+	// 0x0000 (0x0028 - 0x0028)
+	class UFontFaceInterface : public UInterface
+	{
+	public:
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0x29d7c4d4);
+			return ptr;
+		}
+
+	};
+
+
 	// Class SlateCore.FontProviderInterface
 	// 0x0000 (0x0028 - 0x0028)
 	class UFontProviderInterface : public UInterface

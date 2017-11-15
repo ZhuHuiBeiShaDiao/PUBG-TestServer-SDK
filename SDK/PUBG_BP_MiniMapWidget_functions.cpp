@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function BP_MiniMapWidget.BP_MiniMapWidget_C.OnPrepass_1
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 

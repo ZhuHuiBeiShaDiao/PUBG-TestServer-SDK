@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function AkAudio.AkAmbientSound.StopAmbientSound
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 
 void AAkAmbientSound::StopAmbientSound()
 {
@@ -32,7 +32,7 @@ void AAkAmbientSound::StopAmbientSound()
 
 
 // Function AkAudio.AkAmbientSound.StartAmbientSound
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 
 void AAkAmbientSound::StartAmbientSound()
 {
@@ -74,7 +74,7 @@ bool AAkAmbientSound::IsCurrentlyPlaying()
 
 
 // Function AkAudio.AkComponent.UseReverbVolumes
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // bool                           inUseReverbVolumes             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -118,7 +118,7 @@ void UAkComponent::StopPlayingID(int PlayingID)
 
 
 // Function AkAudio.AkComponent.Stop
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 
 void UAkComponent::Stop()
 {
@@ -137,7 +137,7 @@ void UAkComponent::Stop()
 
 
 // Function AkAudio.AkComponent.SetSwitch
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 SwitchGroup                    (CPF_Parm, CPF_ZeroConstructor)
 // struct FString                 SwitchState                    (CPF_Parm, CPF_ZeroConstructor)
@@ -161,7 +161,7 @@ void UAkComponent::SetSwitch(const struct FString& SwitchGroup, const struct FSt
 
 
 // Function AkAudio.AkComponent.SetStopWhenOwnerDestroyed
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // bool                           bStopWhenOwnerDestroyed        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -183,7 +183,7 @@ void UAkComponent::SetStopWhenOwnerDestroyed(bool bStopWhenOwnerDestroyed)
 
 
 // Function AkAudio.AkComponent.SetRTPCValue
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 RTPC                           (CPF_Parm, CPF_ZeroConstructor)
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -209,7 +209,7 @@ void UAkComponent::SetRTPCValue(const struct FString& RTPC, float Value, int Int
 
 
 // Function AkAudio.AkComponent.SetOutputBusVolume
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // float                          BusVolume                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -231,7 +231,7 @@ void UAkComponent::SetOutputBusVolume(float BusVolume)
 
 
 // Function AkAudio.AkComponent.SetAttenuationScalingFactor
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Event, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -253,7 +253,7 @@ void UAkComponent::SetAttenuationScalingFactor(float Value)
 
 
 // Function AkAudio.AkComponent.SetActiveListeners
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Event, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // int                            in_uListenerMask               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -275,7 +275,7 @@ void UAkComponent::SetActiveListeners(int in_uListenerMask)
 
 
 // Function AkAudio.AkComponent.PostTrigger
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 Trigger                        (CPF_Parm, CPF_ZeroConstructor)
 
@@ -297,7 +297,7 @@ void UAkComponent::PostTrigger(const struct FString& Trigger)
 
 
 // Function AkAudio.AkComponent.PostAssociatedAkEvent
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
@@ -320,7 +320,7 @@ int UAkComponent::PostAssociatedAkEvent()
 
 
 // Function AkAudio.AkComponent.PostAkEventByName
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 in_EventName                   (CPF_Parm, CPF_ZeroConstructor)
 // int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
@@ -345,7 +345,7 @@ int UAkComponent::PostAkEventByName(const struct FString& in_EventName)
 
 
 // Function AkAudio.AkComponent.PostAkEvent
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UAkAudioEvent*           AkEvent                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FString                 in_EventName                   (CPF_Parm, CPF_ZeroConstructor)
@@ -395,7 +395,7 @@ bool UAkComponent::IsCurrentlyPlaying()
 
 
 // Function AkAudio.AkComponent.GetAttenuationRadius
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Event, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
@@ -419,13 +419,16 @@ float UAkComponent::GetAttenuationRadius()
 
 // Function AkAudio.AkComponent.CalculateRelativeSpeed
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// float                          DeltaTime                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UAkComponent::CalculateRelativeSpeed()
+void UAkComponent::CalculateRelativeSpeed(float DeltaTime)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x5c3dfafd);
 
 	UAkComponent_CalculateRelativeSpeed_Params params;
+	params.DeltaTime = DeltaTime;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -456,7 +459,7 @@ void UAkComponent::CalculateDynamicReverb()
 
 
 // Function AkAudio.AkGameplayStatics.UseReverbVolumes
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // bool                           inUseReverbVolumes             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -480,7 +483,7 @@ void UAkGameplayStatics::STATIC_UseReverbVolumes(bool inUseReverbVolumes, class 
 
 
 // Function AkAudio.AkGameplayStatics.UnloadBankByName
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 BankName                       (CPF_Parm, CPF_ZeroConstructor)
 
@@ -502,7 +505,7 @@ void UAkGameplayStatics::STATIC_UnloadBankByName(const struct FString& BankName)
 
 
 // Function AkAudio.AkGameplayStatics.UnloadBank
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UAkAudioBank*            Bank                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FString                 BankName                       (CPF_Parm, CPF_ZeroConstructor)
@@ -526,7 +529,7 @@ void UAkGameplayStatics::STATIC_UnloadBank(class UAkAudioBank* Bank, const struc
 
 
 // Function AkAudio.AkGameplayStatics.StopProfilerCapture
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 
 void UAkGameplayStatics::STATIC_StopProfilerCapture()
 {
@@ -545,7 +548,7 @@ void UAkGameplayStatics::STATIC_StopProfilerCapture()
 
 
 // Function AkAudio.AkGameplayStatics.StopOutputCapture
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 
 void UAkGameplayStatics::STATIC_StopOutputCapture()
 {
@@ -564,7 +567,7 @@ void UAkGameplayStatics::STATIC_StopOutputCapture()
 
 
 // Function AkAudio.AkGameplayStatics.StopAllAmbientSounds
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -586,7 +589,7 @@ void UAkGameplayStatics::STATIC_StopAllAmbientSounds(class UObject* WorldContext
 
 
 // Function AkAudio.AkGameplayStatics.StopAll
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 
 void UAkGameplayStatics::STATIC_StopAll()
 {
@@ -605,7 +608,7 @@ void UAkGameplayStatics::STATIC_StopAll()
 
 
 // Function AkAudio.AkGameplayStatics.StopActor
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -627,7 +630,7 @@ void UAkGameplayStatics::STATIC_StopActor(class AActor* Actor)
 
 
 // Function AkAudio.AkGameplayStatics.StartProfilerCapture
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 Filename                       (CPF_Parm, CPF_ZeroConstructor)
 
@@ -649,7 +652,7 @@ void UAkGameplayStatics::STATIC_StartProfilerCapture(const struct FString& Filen
 
 
 // Function AkAudio.AkGameplayStatics.StartOutputCapture
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 Filename                       (CPF_Parm, CPF_ZeroConstructor)
 
@@ -671,7 +674,7 @@ void UAkGameplayStatics::STATIC_StartOutputCapture(const struct FString& Filenam
 
 
 // Function AkAudio.AkGameplayStatics.StartAllAmbientSounds
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -693,12 +696,12 @@ void UAkGameplayStatics::STATIC_StartAllAmbientSounds(class UObject* WorldContex
 
 
 // Function AkAudio.AkGameplayStatics.SpawnAkComponentAtLocation
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UAkAudioEvent*           AkEvent                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FRotator                Orientation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FRotator                Orientation                    (CPF_Parm, CPF_IsPlainOldData)
 // bool                           AutoPost                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FString                 EventName                      (CPF_Parm, CPF_ZeroConstructor)
 // bool                           AutoDestroy                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -730,7 +733,7 @@ class UAkComponent* UAkGameplayStatics::STATIC_SpawnAkComponentAtLocation(class 
 
 
 // Function AkAudio.AkGameplayStatics.SetSwitch
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FName                   SwitchGroup                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FName                   SwitchState                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -756,7 +759,7 @@ void UAkGameplayStatics::STATIC_SetSwitch(const struct FName& SwitchGroup, const
 
 
 // Function AkAudio.AkGameplayStatics.SetState
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FName                   StateGroup                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FName                   State                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -780,7 +783,7 @@ void UAkGameplayStatics::STATIC_SetState(const struct FName& StateGroup, const s
 
 
 // Function AkAudio.AkGameplayStatics.SetRTPCValue
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FName                   RTPC                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -808,7 +811,7 @@ void UAkGameplayStatics::STATIC_SetRTPCValue(const struct FName& RTPC, float Val
 
 
 // Function AkAudio.AkGameplayStatics.SetOutputBusVolume
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // float                          BusVolume                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -832,7 +835,7 @@ void UAkGameplayStatics::STATIC_SetOutputBusVolume(float BusVolume, class AActor
 
 
 // Function AkAudio.AkGameplayStatics.SetOcclusionRefreshInterval
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // float                          RefreshInterval                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -856,7 +859,7 @@ void UAkGameplayStatics::STATIC_SetOcclusionRefreshInterval(float RefreshInterva
 
 
 // Function AkAudio.AkGameplayStatics.PostTrigger
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FName                   Trigger                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -880,7 +883,7 @@ void UAkGameplayStatics::STATIC_PostTrigger(const struct FName& Trigger, class A
 
 
 // Function AkAudio.AkGameplayStatics.PostEventByName
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 EventName                      (CPF_Parm, CPF_ZeroConstructor)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -906,7 +909,7 @@ void UAkGameplayStatics::STATIC_PostEventByName(const struct FString& EventName,
 
 
 // Function AkAudio.AkGameplayStatics.PostEventAttached
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UAkAudioEvent*           AkEvent                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -939,11 +942,11 @@ int UAkGameplayStatics::STATIC_PostEventAttached(class UAkAudioEvent* AkEvent, c
 
 
 // Function AkAudio.AkGameplayStatics.PostEventAtLocationByName
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 EventName                      (CPF_Parm, CPF_ZeroConstructor)
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FRotator                Orientation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FRotator                Orientation                    (CPF_Parm, CPF_IsPlainOldData)
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UAkGameplayStatics::STATIC_PostEventAtLocationByName(const struct FString& EventName, const struct FVector& Location, const struct FRotator& Orientation, class UObject* WorldContextObject)
@@ -967,11 +970,11 @@ void UAkGameplayStatics::STATIC_PostEventAtLocationByName(const struct FString& 
 
 
 // Function AkAudio.AkGameplayStatics.PostEventAtLocation
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class UAkAudioEvent*           AkEvent                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FRotator                Orientation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FRotator                Orientation                    (CPF_Parm, CPF_IsPlainOldData)
 // struct FString                 EventName                      (CPF_Parm, CPF_ZeroConstructor)
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
@@ -1000,7 +1003,7 @@ int UAkGameplayStatics::STATIC_PostEventAtLocation(class UAkAudioEvent* AkEvent,
 
 
 // Function AkAudio.AkGameplayStatics.PostEvent
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UAkAudioEvent*           AkEvent                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Actor                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -1031,7 +1034,7 @@ int UAkGameplayStatics::STATIC_PostEvent(class UAkAudioEvent* AkEvent, class AAc
 
 
 // Function AkAudio.AkGameplayStatics.LoadInitBank
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 
 void UAkGameplayStatics::STATIC_LoadInitBank()
 {
@@ -1050,7 +1053,7 @@ void UAkGameplayStatics::STATIC_LoadInitBank()
 
 
 // Function AkAudio.AkGameplayStatics.LoadBanks
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
 // Parameters:
 // TArray<class UAkAudioBank*>    SoundBanks                     (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
 // bool                           SynchronizeSoundBanks          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -1074,7 +1077,7 @@ void UAkGameplayStatics::STATIC_LoadBanks(TArray<class UAkAudioBank*> SoundBanks
 
 
 // Function AkAudio.AkGameplayStatics.LoadBankByName
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 BankName                       (CPF_Parm, CPF_ZeroConstructor)
 
@@ -1096,7 +1099,7 @@ void UAkGameplayStatics::STATIC_LoadBankByName(const struct FString& BankName)
 
 
 // Function AkAudio.AkGameplayStatics.LoadBank
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UAkAudioBank*            Bank                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FString                 BankName                       (CPF_Parm, CPF_ZeroConstructor)
@@ -1120,11 +1123,11 @@ void UAkGameplayStatics::STATIC_LoadBank(class UAkAudioBank* Bank, const struct 
 
 
 // Function AkAudio.AkGameplayStatics.GetAkComponent
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class USceneComponent*         AttachToComponent              (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // struct FName                   AttachPointName                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
 // TEnumAsByte<EAttachLocation>   LocationType                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UAkComponent*            ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
@@ -1151,7 +1154,7 @@ class UAkComponent* UAkGameplayStatics::STATIC_GetAkComponent(class USceneCompon
 
 
 // Function AkAudio.AkGameplayStatics.ClearBanks
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 
 void UAkGameplayStatics::STATIC_ClearBanks()
 {
@@ -1170,7 +1173,7 @@ void UAkGameplayStatics::STATIC_ClearBanks()
 
 
 // Function AkAudio.AkGameplayStatics.AddOutputCaptureMarker
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FString                 MarkerText                     (CPF_Parm, CPF_ZeroConstructor)
 

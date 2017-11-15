@@ -688,7 +688,7 @@ void UWeaponEquipmentWidget_C::GetEquipment(class AEquipment** Equipment)
 
 
 // Function WeaponEquipmentWidget.WeaponEquipmentWidget_C.MainPrepass
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -1027,6 +1027,27 @@ void UWeaponEquipmentWidget_C::ExecuteUbergraph_WeaponEquipmentWidget(int EntryP
 
 	UWeaponEquipmentWidget_C_ExecuteUbergraph_WeaponEquipmentWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function WeaponEquipmentWidget.WeaponEquipmentWidget_C.OnInventoryDrop__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UDragDropOperation*      Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWeaponEquipmentWidget_C::OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x1e5f2d8e);
+
+	UWeaponEquipmentWidget_C_OnInventoryDrop__DelegateSignature_Params params;
+	params.Operation = Operation;
 
 	auto flags = fn->FunctionFlags;
 

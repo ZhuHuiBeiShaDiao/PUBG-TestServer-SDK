@@ -13,11 +13,11 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// Class CustomMeshComponent.CustomMeshComponent
-	// 0x0010 (0x0790 - 0x0780)
+	// 0x0010 (0x0940 - 0x0930)
 	class UCustomMeshComponent : public UMeshComponent
 	{
 	public:
-		unsigned char                                      UnknownData00[0x10];                                      // 0x0780(0x0010) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x10];                                      // 0x0930(0x0010) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{

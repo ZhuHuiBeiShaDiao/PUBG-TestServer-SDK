@@ -252,6 +252,48 @@ namespace Classes
 		struct FScriptDelegate                             OnItemSlotFocus;                                          // (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
 	};
 
+	// Function InventoryWidget.InventoryWidget_C.OnInventoryUpdated
+	struct UInventoryWidget_C_OnInventoryUpdated_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.OnEquipmentUpdated
+	struct UInventoryWidget_C_OnEquipmentUpdated_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.OnItemExplorerProxyUpdated
+	struct UInventoryWidget_C_OnItemExplorerProxyUpdated_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.Destruct
+	struct UInventoryWidget_C_Destruct_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.Construct
+	struct UInventoryWidget_C_Construct_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.Tick
+	struct UInventoryWidget_C_Tick_Params
+	{
+		struct FGeometry*                                  MyGeometry;                                               // (CPF_Parm, CPF_IsPlainOldData)
+		float*                                             InDeltaTime;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__VicinityTitleOn_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__VicinityTitleOn_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__VicinityTitleOff_K2Node_ComponentBoundEvent_1_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__VicinityTitleOff_K2Node_ComponentBoundEvent_1_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature_Params
+	{
+	};
+
 	// Function InventoryWidget.InventoryWidget_C.BndEvt__Vicinity_K2Node_ComponentBoundEvent_36_OnChildSlotFocus__DelegateSignature
 	struct UInventoryWidget_C_BndEvt__Vicinity_K2Node_ComponentBoundEvent_36_OnChildSlotFocus__DelegateSignature_Params
 	{
@@ -264,11 +306,6 @@ namespace Classes
 	{
 		TScriptInterface<class USlotInterface>             Slot;                                                     // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TScriptInterface<class USlotContainerInterface>    SlotContainer;                                            // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	};
-
-	// Function InventoryWidget.InventoryWidget_C.Construct
-	struct UInventoryWidget_C_Construct_Params
-	{
 	};
 
 	// Function InventoryWidget.InventoryWidget_C.OnPressed
@@ -353,11 +390,6 @@ namespace Classes
 	{
 	};
 
-	// Function InventoryWidget.InventoryWidget_C.Destruct
-	struct UInventoryWidget_C_Destruct_Params
-	{
-	};
-
 	// Function InventoryWidget.InventoryWidget_C.OnInputRB
 	struct UInventoryWidget_C_OnInputRB_Params
 	{
@@ -414,40 +446,8 @@ namespace Classes
 		float                                              DeltaTime;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
-	// Function InventoryWidget.InventoryWidget_C.OnItemExplorerProxyUpdated
-	struct UInventoryWidget_C_OnItemExplorerProxyUpdated_Params
-	{
-	};
-
-	// Function InventoryWidget.InventoryWidget_C.OnEquipmentUpdated
-	struct UInventoryWidget_C_OnEquipmentUpdated_Params
-	{
-	};
-
-	// Function InventoryWidget.InventoryWidget_C.BndEvt__VicinityTitleOff_K2Node_ComponentBoundEvent_1_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
-	struct UInventoryWidget_C_BndEvt__VicinityTitleOff_K2Node_ComponentBoundEvent_1_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature_Params
-	{
-	};
-
-	// Function InventoryWidget.InventoryWidget_C.BndEvt__VicinityTitleOn_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature
-	struct UInventoryWidget_C_BndEvt__VicinityTitleOn_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature_Params
-	{
-	};
-
-	// Function InventoryWidget.InventoryWidget_C.Tick
-	struct UInventoryWidget_C_Tick_Params
-	{
-		struct FGeometry*                                  MyGeometry;                                               // (CPF_Parm, CPF_IsPlainOldData)
-		float*                                             InDeltaTime;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	};
-
 	// Function InventoryWidget.InventoryWidget_C.OnInteract
 	struct UInventoryWidget_C_OnInteract_Params
-	{
-	};
-
-	// Function InventoryWidget.InventoryWidget_C.OnInventoryUpdated
-	struct UInventoryWidget_C_OnInventoryUpdated_Params
 	{
 	};
 
@@ -463,6 +463,65 @@ namespace Classes
 
 	// Function InventoryWidget.InventoryWidget_C.CustomEvent_1
 	struct UInventoryWidget_C_CustomEvent_1_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Vicinity_K2Node_ComponentBoundEvent_36_OnInventoryDrop__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Vicinity_K2Node_ComponentBoundEvent_36_OnInventoryDrop__DelegateSignature_Params
+	{
+		class UDragDropOperation*                          Operation;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Backpack_K2Node_ComponentBoundEvent_38_OnInventoryDrop__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Backpack_K2Node_ComponentBoundEvent_38_OnInventoryDrop__DelegateSignature_Params
+	{
+		class UDragDropOperation*                          Operation;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Weapon_K2Node_ComponentBoundEvent_56_OnInventoryDrop__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Weapon_K2Node_ComponentBoundEvent_56_OnInventoryDrop__DelegateSignature_Params
+	{
+		class UDragDropOperation*                          Operation;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Character_K2Node_ComponentBoundEvent_69_OnInventoryDrop__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Character_K2Node_ComponentBoundEvent_69_OnInventoryDrop__DelegateSignature_Params
+	{
+		class UDragDropOperation*                          Operation;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Character_K2Node_ComponentBoundEvent_487_OnEnterSlot__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Character_K2Node_ComponentBoundEvent_487_OnEnterSlot__DelegateSignature_Params
+	{
+		TScriptInterface<class USlotInterface>             Slot;                                                     // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		TScriptInterface<class USlotContainerInterface>    SlotContainer;                                            // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Character_K2Node_ComponentBoundEvent_491_OnLeaveSlot__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Character_K2Node_ComponentBoundEvent_491_OnLeaveSlot__DelegateSignature_Params
+	{
+		TScriptInterface<class USlotInterface>             Slot;                                                     // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		TScriptInterface<class USlotContainerInterface>    SlotContainer;                                            // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.OnInventoryDrop_Event
+	struct UInventoryWidget_C_OnInventoryDrop_Event_Params
+	{
+		class UDragDropOperation*                          Operation;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Vicinity_K2Node_ComponentBoundEvent_44_OnDoSlotAction__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Vicinity_K2Node_ComponentBoundEvent_44_OnDoSlotAction__DelegateSignature_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Backpack_K2Node_ComponentBoundEvent_45_OnDoSlotAction__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Backpack_K2Node_ComponentBoundEvent_45_OnDoSlotAction__DelegateSignature_Params
+	{
+	};
+
+	// Function InventoryWidget.InventoryWidget_C.BndEvt__Equipment_K2Node_ComponentBoundEvent_64_OnDoSlotAction__DelegateSignature
+	struct UInventoryWidget_C_BndEvt__Equipment_K2Node_ComponentBoundEvent_64_OnDoSlotAction__DelegateSignature_Params
 	{
 	};
 

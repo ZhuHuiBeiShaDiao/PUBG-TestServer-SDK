@@ -13,14 +13,14 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass Item_Heal_FirstAid.Item_Heal_FirstAid_C
-	// 0x0011 (0x01D1 - 0x01C0)
+	// 0x0011 (0x01E1 - 0x01D0)
 	class UItem_Heal_FirstAid_C : public UCastableItem
 	{
 	public:
-		class ATslCharacter*                               Character;                                                // 0x01C0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              HealLimit;                                                // 0x01C8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		int                                                PrintTime;                                                // 0x01CC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		bool                                               isProcessing;                                             // 0x01D0(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		class ATslCharacter*                               Character;                                                // 0x01D0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              HealLimit;                                                // 0x01D8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		int                                                PrintTime;                                                // 0x01DC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		bool                                               isProcessing;                                             // 0x01E0(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
 		static UClass* StaticClass()
 		{

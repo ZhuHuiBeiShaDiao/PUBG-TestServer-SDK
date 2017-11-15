@@ -77,7 +77,7 @@ namespace Classes
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetCurrentPlayZonePosition
 	struct UBlueZoneGpsWidget_Base_C_GetCurrentPlayZonePosition_Params
 	{
-		struct FVector                                     CurrentPlayzonePosition;                                  // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     CurrentPlayzonePosition;                                  // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.IsResetBp
@@ -95,7 +95,7 @@ namespace Classes
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetNextPlayzonePositionBp
 	struct UBlueZoneGpsWidget_Base_C_GetNextPlayzonePositionBp_Params
 	{
-		struct FVector                                     NextPlayzonePosition;                                     // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     NextPlayzonePosition;                                     // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetBluezoneStateBp
@@ -136,7 +136,7 @@ namespace Classes
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetIsInNextPlayzone
 	struct UBlueZoneGpsWidget_Base_C_GetIsInNextPlayzone_Params
 	{
-		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.IsInNextPlayzoneBp
@@ -161,35 +161,35 @@ namespace Classes
 	struct UBlueZoneGpsWidget_Base_C_GetNextPlayerzoneToCharacterDirection_Params
 	{
 		float                                              Scale;                                                    // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     Direction;                                                // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     Direction;                                                // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetSafeLength
 	struct UBlueZoneGpsWidget_Base_C_GetSafeLength_Params
 	{
 		float                                              SafeLength;                                               // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     A;                                                        // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     B;                                                        // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     A;                                                        // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+		struct FVector                                     B;                                                        // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetBluezonePositionAndRadius
 	struct UBlueZoneGpsWidget_Base_C_GetBluezonePositionAndRadius_Params
 	{
-		struct FVector                                     BluezonePosition;                                         // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     BluezonePosition;                                         // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 		float                                              BluezoneRadius;                                           // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetCurrentPlayzonePositionAndRadius
 	struct UBlueZoneGpsWidget_Base_C_GetCurrentPlayzonePositionAndRadius_Params
 	{
-		struct FVector                                     CurrentPlayzonePosition;                                  // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     CurrentPlayzonePosition;                                  // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 		float                                              CurrentPlayzoneRadius;                                    // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetNextPlayzonePositionAndRadius
 	struct UBlueZoneGpsWidget_Base_C_GetNextPlayzonePositionAndRadius_Params
 	{
-		struct FVector                                     NextPlayzonePosition;                                     // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     NextPlayzonePosition;                                     // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 		float                                              Radius;                                                   // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
@@ -197,8 +197,8 @@ namespace Classes
 	struct UBlueZoneGpsWidget_Base_C_GetDangerLength_Params
 	{
 		float                                              DangerLength;                                             // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     A;                                                        // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     B;                                                        // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     A;                                                        // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+		struct FVector                                     B;                                                        // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.Construct

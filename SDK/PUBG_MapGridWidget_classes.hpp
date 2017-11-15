@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass MapGridWidget.MapGridWidget_C
-	// 0x0000 (0x0640 - 0x0640)
+	// 0x0000 (0x0690 - 0x0690)
 	class UMapGridWidget_C : public UMapGridWidget
 	{
 	public:

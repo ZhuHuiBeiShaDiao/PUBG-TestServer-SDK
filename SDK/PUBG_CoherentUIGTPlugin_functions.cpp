@@ -16,16 +16,16 @@ namespace Classes
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_Const)
 // Parameters:
 // struct FString                 Name                           (CPF_Parm, CPF_ZeroConstructor)
-// class UCoherentUIGTJSEvent*    eventData                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UCoherentUIGTJSEvent*    EventData                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UCoherentUIGTWidget::TriggerJSEvent(const struct FString& Name, class UCoherentUIGTJSEvent* eventData)
+void UCoherentUIGTWidget::TriggerJSEvent(const struct FString& Name, class UCoherentUIGTJSEvent* EventData)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xb6bfad1);
 
 	UCoherentUIGTWidget_TriggerJSEvent_Params params;
 	params.Name = Name;
-	params.eventData = eventData;
+	params.EventData = EventData;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -477,6 +477,491 @@ void UCoherentUIGTJSEvent::AddArray(TArray<int> Array)
 }
 
 
+// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.ReadObject
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UObject*                 Object                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTJSPayload::ReadObject(int Index, class UObject* Object)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa2fb08c8);
+
+	UCoherentUIGTJSPayload_ReadObject_Params params;
+	params.Index = Index;
+	params.Object = Object;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetString
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FString                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm)
+
+struct FString UCoherentUIGTJSPayload::GetString(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x1404089c);
+
+	UCoherentUIGTJSPayload_GetString_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetNumber
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+float UCoherentUIGTJSPayload::GetNumber(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x876116ac);
+
+	UCoherentUIGTJSPayload_GetNumber_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetInt32
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UCoherentUIGTJSPayload::GetInt32(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7d3e8cb1);
+
+	UCoherentUIGTJSPayload_GetInt32_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetBool
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UCoherentUIGTJSPayload::GetBool(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x73325a2b);
+
+	UCoherentUIGTJSPayload_GetBool_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.TriggerJSEvent
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_Const)
+// Parameters:
+// struct FString                 Name                           (CPF_Parm, CPF_ZeroConstructor)
+// class UCoherentUIGTJSEvent*    EventData                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTBaseComponent::TriggerJSEvent(const struct FString& Name, class UCoherentUIGTJSEvent* EventData)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe3326aa5);
+
+	UCoherentUIGTBaseComponent_TriggerJSEvent_Params params;
+	params.Name = Name;
+	params.EventData = EventData;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.ShowPaintRects
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           show                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTBaseComponent::ShowPaintRects(bool show)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x13c39240);
+
+	UCoherentUIGTBaseComponent_ShowPaintRects_Params params;
+	params.show = show;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.SetClickThroughAlphaThreshold
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// float                          threshold                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTBaseComponent::SetClickThroughAlphaThreshold(float threshold)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd052f4dc);
+
+	UCoherentUIGTBaseComponent_SetClickThroughAlphaThreshold_Params params;
+	params.threshold = threshold;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.Resize
+// (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Width                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            Height                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTBaseComponent::Resize(int Width, int Height)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7d67bb0e);
+
+	UCoherentUIGTBaseComponent_Resize_Params params;
+	params.Width = Width;
+	params.Height = Height;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.Reload
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+
+void UCoherentUIGTBaseComponent::Reload()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xc4d2c881);
+
+	UCoherentUIGTBaseComponent_Reload_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.Redraw
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_Const)
+
+void UCoherentUIGTBaseComponent::Redraw()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd63cbfab);
+
+	UCoherentUIGTBaseComponent_Redraw_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.Load
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FString                 path                           (CPF_Parm, CPF_ZeroConstructor)
+
+void UCoherentUIGTBaseComponent::Load(const struct FString& path)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xda4f12f2);
+
+	UCoherentUIGTBaseComponent_Load_Params params;
+	params.path = path;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.IsTransparent
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UCoherentUIGTBaseComponent::IsTransparent()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xebd18eb4);
+
+	UCoherentUIGTBaseComponent_IsTransparent_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.IsReadyToCreateView
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UCoherentUIGTBaseComponent::IsReadyToCreateView()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd7a75ff7);
+
+	UCoherentUIGTBaseComponent_IsReadyToCreateView_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.IsReadyForBindings
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UCoherentUIGTBaseComponent::IsReadyForBindings()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd8555c8e);
+
+	UCoherentUIGTBaseComponent_IsReadyForBindings_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.IsDocumentReady
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UCoherentUIGTBaseComponent::IsDocumentReady()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa677a8d2);
+
+	UCoherentUIGTBaseComponent_IsDocumentReady_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.HasRequestedView
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UCoherentUIGTBaseComponent::HasRequestedView()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe591f9b9);
+
+	UCoherentUIGTBaseComponent_HasRequestedView_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.GetClickThroughAlphaThreshold
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+float UCoherentUIGTBaseComponent::GetClickThroughAlphaThreshold()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5f442bd0);
+
+	UCoherentUIGTBaseComponent_GetClickThroughAlphaThreshold_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.EnableDelayedUpdate
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bEnabled                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTBaseComponent::EnableDelayedUpdate(bool bEnabled)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa04f4328);
+
+	UCoherentUIGTBaseComponent_EnableDelayedUpdate_Params params;
+	params.bEnabled = bEnabled;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBaseComponent.CreateJSEvent
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UCoherentUIGTJSEvent*    ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+class UCoherentUIGTJSEvent* UCoherentUIGTBaseComponent::CreateJSEvent()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd0270b71);
+
+	UCoherentUIGTBaseComponent_CreateJSEvent_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTBlueprintFunctionLibrary.TriggerJSEvent
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UCoherentUIGTBaseComponent* Component                      (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// struct FString                 EventName                      (CPF_Parm, CPF_ZeroConstructor)
+// class UCoherentUIGTJSEvent*    JSEvent                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTBlueprintFunctionLibrary::STATIC_TriggerJSEvent(class UCoherentUIGTBaseComponent* Component, const struct FString& EventName, class UCoherentUIGTJSEvent* JSEvent)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7e7ae117);
+
+	UCoherentUIGTBlueprintFunctionLibrary_TriggerJSEvent_Params params;
+	params.Component = Component;
+	params.EventName = EventName;
+	params.JSEvent = JSEvent;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function CoherentUIGTPlugin.CoherentUIGTBlueprintFunctionLibrary.PurgeCoherentDiskCache
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 
@@ -739,20 +1224,26 @@ void UCoherentUIGTBlueprintFunctionLibrary::STATIC_AddArray(class UCoherentUIGTJ
 }
 
 
-// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.ReadObject
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Function CoherentUIGTPlugin.CoherentUIGTGameHUD.SetupUIGTView
+// (FUNC_Final, FUNC_RequiredAPI, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UObject*                 Object                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FString                 PageUrl                        (CPF_Parm, CPF_ZeroConstructor)
+// bool                           bIsTransparent                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          ClickThroughAlphaThreshold     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          AnimationFrameDefer            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bDelayedUpdate                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UCoherentUIGTJSPayload::ReadObject(int Index, class UObject* Object)
+void ACoherentUIGTGameHUD::SetupUIGTView(const struct FString& PageUrl, bool bIsTransparent, float ClickThroughAlphaThreshold, float AnimationFrameDefer, bool bDelayedUpdate)
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xa2fb08c8);
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8208273c);
 
-	UCoherentUIGTJSPayload_ReadObject_Params params;
-	params.Index = Index;
-	params.Object = Object;
+	ACoherentUIGTGameHUD_SetupUIGTView_Params params;
+	params.PageUrl = PageUrl;
+	params.bIsTransparent = bIsTransparent;
+	params.ClickThroughAlphaThreshold = ClickThroughAlphaThreshold;
+	params.AnimationFrameDefer = AnimationFrameDefer;
+	params.bDelayedUpdate = bDelayedUpdate;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -763,19 +1254,15 @@ void UCoherentUIGTJSPayload::ReadObject(int Index, class UObject* Object)
 }
 
 
-// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetString
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.ToggleCoherentUIGTInputFocus
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FString                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm)
 
-struct FString UCoherentUIGTJSPayload::GetString(int Index)
+void ACoherentUIGTInputActor::ToggleCoherentUIGTInputFocus()
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x1404089c);
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe6ef1796);
 
-	UCoherentUIGTJSPayload_GetString_Params params;
-	params.Index = Index;
+	ACoherentUIGTInputActor_ToggleCoherentUIGTInputFocus_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -783,24 +1270,21 @@ struct FString UCoherentUIGTJSPayload::GetString(int Index)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetNumber
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.SetLineTraceMode
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// TEnumAsByte<EGTInputWidgetLineTraceMode> Mode                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-float UCoherentUIGTJSPayload::GetNumber(int Index)
+void ACoherentUIGTInputActor::SetLineTraceMode(TEnumAsByte<EGTInputWidgetLineTraceMode> Mode)
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x876116ac);
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8d691ef3);
 
-	UCoherentUIGTJSPayload_GetNumber_Params params;
-	params.Index = Index;
+	ACoherentUIGTInputActor_SetLineTraceMode_Params params;
+	params.Mode = Mode;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -808,24 +1292,21 @@ float UCoherentUIGTJSPayload::GetNumber(int Index)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetInt32
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.SetInputPropagationBehaviour
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// TEnumAsByte<ECoherentUIGTInputPropagationBehaviour> Propagation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-int UCoherentUIGTJSPayload::GetInt32(int Index)
+void ACoherentUIGTInputActor::SetInputPropagationBehaviour(TEnumAsByte<ECoherentUIGTInputPropagationBehaviour> Propagation)
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x7d3e8cb1);
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb9bd8084);
 
-	UCoherentUIGTJSPayload_GetInt32_Params params;
-	params.Index = Index;
+	ACoherentUIGTInputActor_SetInputPropagationBehaviour_Params params;
+	params.Propagation = Propagation;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -833,24 +1314,64 @@ int UCoherentUIGTJSPayload::GetInt32(int Index)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function CoherentUIGTPlugin.CoherentUIGTJSPayload.GetBool
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.SetCoherentUIGTViewFocus
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UCoherentUIGTBaseComponent* NewFocusedView                 (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+
+void ACoherentUIGTInputActor::SetCoherentUIGTViewFocus(class UCoherentUIGTBaseComponent* NewFocusedView)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x73dc6559);
+
+	ACoherentUIGTInputActor_SetCoherentUIGTViewFocus_Params params;
+	params.NewFocusedView = NewFocusedView;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.SetCoherentUIGTInputFocus
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           FocusUI                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ACoherentUIGTInputActor::SetCoherentUIGTInputFocus(bool FocusUI)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x4a28fc8);
+
+	ACoherentUIGTInputActor_SetCoherentUIGTInputFocus_Params params;
+	params.FocusUI = FocusUI;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.IsJoystickInputWhileUIGTIsFocusedAllowed_DEPRECATED
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-bool UCoherentUIGTJSPayload::GetBool(int Index)
+bool ACoherentUIGTInputActor::IsJoystickInputWhileUIGTIsFocusedAllowed_DEPRECATED()
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x73325a2b);
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7943b824);
 
-	UCoherentUIGTJSPayload_GetBool_Params params;
-	params.Index = Index;
+	ACoherentUIGTInputActor_IsJoystickInputWhileUIGTIsFocusedAllowed_DEPRECATED_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -860,6 +1381,155 @@ bool UCoherentUIGTJSPayload::GetBool(int Index)
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.IsCoherentUIGTFocused
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool ACoherentUIGTInputActor::IsCoherentUIGTFocused()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x3f0fa3ed);
+
+	ACoherentUIGTInputActor_IsCoherentUIGTFocused_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.Initialize
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<ECollisionChannel> CollisionChannel               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<ETextureAddress>   AddressMode                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<EGTInputWidgetRaycastQuality> RaycastQuality                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            UVChannel                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ACoherentUIGTInputActor::Initialize(TEnumAsByte<ECollisionChannel> CollisionChannel, TEnumAsByte<ETextureAddress> AddressMode, TEnumAsByte<EGTInputWidgetRaycastQuality> RaycastQuality, int UVChannel)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe6fdbc01);
+
+	ACoherentUIGTInputActor_Initialize_Params params;
+	params.CollisionChannel = CollisionChannel;
+	params.AddressMode = AddressMode;
+	params.RaycastQuality = RaycastQuality;
+	params.UVChannel = UVChannel;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.GetInputPropagationBehaviour
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// TEnumAsByte<ECoherentUIGTInputPropagationBehaviour> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+TEnumAsByte<ECoherentUIGTInputPropagationBehaviour> ACoherentUIGTInputActor::GetInputPropagationBehaviour()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf1805518);
+
+	ACoherentUIGTInputActor_GetInputPropagationBehaviour_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.AlwaysAcceptMouseInput
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bAccept                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ACoherentUIGTInputActor::AlwaysAcceptMouseInput(bool bAccept)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9a805b17);
+
+	ACoherentUIGTInputActor_AlwaysAcceptMouseInput_Params params;
+	params.bAccept = bAccept;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTInputActor.AllowJoystickInputWhileUIGTIsFocused_DEPRECATED
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bAllow                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void ACoherentUIGTInputActor::AllowJoystickInputWhileUIGTIsFocused_DEPRECATED(bool bAllow)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf8369b91);
+
+	ACoherentUIGTInputActor_AllowJoystickInputWhileUIGTIsFocused_DEPRECATED_Params params;
+	params.bAllow = bAllow;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CoherentUIGTPlugin.CoherentUIGTLiveView.OnLiveViewSizeRequest
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
+// Parameters:
+// class UCoherentUIGTBaseComponent* baseComponent                  (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// struct FString                 Name                           (CPF_Parm, CPF_ZeroConstructor)
+// int                            Width                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            Height                         (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UCoherentUIGTLiveView::OnLiveViewSizeRequest(class UCoherentUIGTBaseComponent* baseComponent, const struct FString& Name, int* Width, int* Height)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbcba2c4f);
+
+	UCoherentUIGTLiveView_OnLiveViewSizeRequest_Params params;
+	params.baseComponent = baseComponent;
+	params.Name = Name;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Width != nullptr)
+		*Width = params.Width;
+	if (Height != nullptr)
+		*Height = params.Height;
 }
 
 

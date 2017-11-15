@@ -41,7 +41,7 @@ namespace Classes
 	// Function HudAlwaysOn.HudAlwaysOn_C.GetVisibilityOnMatchState
 	struct UHudAlwaysOn_C_GetVisibilityOnMatchState_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function HudAlwaysOn.HudAlwaysOn_C.On_BlueZoneGpsWidget_RoundType_Prepass_1

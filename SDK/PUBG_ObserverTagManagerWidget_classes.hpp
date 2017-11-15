@@ -17,7 +17,7 @@ namespace Classes
 	class UObserverTagManagerWidget_C : public UUserWidget
 	{
 	public:
-		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0240(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_DuplicateTransient)
+		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0240(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		TArray<class UPlayerHeadWidget_C*>                 PlayerHeadWidgets;                                        // 0x0248(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
 
 		static UClass* StaticClass()

@@ -31,7 +31,7 @@ void ACharacterProxyBase_C::UserConstructionScript()
 
 
 // Function CharacterProxyBase.CharacterProxyBase_C.ReceiveBeginPlay
-// (FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
 
 void ACharacterProxyBase_C::ReceiveBeginPlay()
 {

@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function ToolTipGauageWidget.ToolTipGauageWidget_C.Update
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          BeginGap                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          EndGap                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)

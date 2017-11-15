@@ -58,6 +58,52 @@ void UWeaponAttachmentSlotWidget_C::GetSlotContainer(TScriptInterface<class USlo
 }
 
 
+// Function WeaponAttachmentSlotWidget.WeaponAttachmentSlotWidget_C.CheckFirstAttachableSlot
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bAttachable                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWeaponAttachmentSlotWidget_C::CheckFirstAttachableSlot(bool* bAttachable)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x4892fb04);
+
+	UWeaponAttachmentSlotWidget_C_CheckFirstAttachableSlot_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bAttachable != nullptr)
+		*bAttachable = params.bAttachable;
+}
+
+
+// Function WeaponAttachmentSlotWidget.WeaponAttachmentSlotWidget_C.CheckAttachableByFocusSlot
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bAttachable                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWeaponAttachmentSlotWidget_C::CheckAttachableByFocusSlot(bool* bAttachable)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7f4518c9);
+
+	UWeaponAttachmentSlotWidget_C_CheckAttachableByFocusSlot_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bAttachable != nullptr)
+		*bAttachable = params.bAttachable;
+}
+
+
 // Function WeaponAttachmentSlotWidget.WeaponAttachmentSlotWidget_C.InputB
 // (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -524,9 +570,9 @@ struct FEventReply UWeaponAttachmentSlotWidget_C::OnMouseButtonDown(struct FGeom
 // Function WeaponAttachmentSlotWidget.WeaponAttachmentSlotWidget_C.GetSlotVisibility
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UWeaponAttachmentSlotWidget_C::GetSlotVisibility()
+ESlateVisibility UWeaponAttachmentSlotWidget_C::GetSlotVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xf95de47b);

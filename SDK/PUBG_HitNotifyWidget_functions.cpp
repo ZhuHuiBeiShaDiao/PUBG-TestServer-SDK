@@ -148,9 +148,9 @@ void UHitNotifyWidget_C::PlayHitNotifySound()
 
 
 // Function HitNotifyWidget.HitNotifyWidget_C.GetRandomScale
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               Scale                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Scale                          (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UHitNotifyWidget_C::GetRandomScale(struct FVector2D* Scale)
 {
@@ -171,9 +171,9 @@ void UHitNotifyWidget_C::GetRandomScale(struct FVector2D* Scale)
 
 
 // Function HitNotifyWidget.HitNotifyWidget_C.GetRandomTranslation
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               Translation                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Translation                    (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UHitNotifyWidget_C::GetRandomTranslation(struct FVector2D* Translation)
 {
@@ -194,7 +194,7 @@ void UHitNotifyWidget_C::GetRandomTranslation(struct FVector2D* Translation)
 
 
 // Function HitNotifyWidget.HitNotifyWidget_C.OnHitNotify
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          DamagePercent                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // TEnumAsByte<EDamageTypeCategory> DamageTypeCategory             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)

@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass LobbyCharacterFemale.LobbyCharacterFemale_C
-	// 0x0000 (0x0840 - 0x0840)
+	// 0x0000 (0x0880 - 0x0880)
 	class ALobbyCharacterFemale_C : public ALobbyCharacterBase_C
 	{
 	public:

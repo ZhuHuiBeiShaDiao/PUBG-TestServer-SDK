@@ -31,8 +31,23 @@ namespace Classes
 		TEnumAsByte<EAnimWeaponType>                       AnimWeaponType;                                           // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
+	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_60F7F60D46063AC788F6DAA1F7DDBE0D
+	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_60F7F60D46063AC788F6DAA1F7DDBE0D_Params
+	{
+	};
+
+	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_044C21FF45F8C9135ED72E90A1317ACF
+	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_044C21FF45F8C9135ED72E90A1317ACF_Params
+	{
+	};
+
 	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendSpacePlayer_FE57F22747D2CBE68A6B6C8735A0AA7D
 	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendSpacePlayer_FE57F22747D2CBE68A6B6C8735A0AA7D_Params
+	{
+	};
+
+	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_D9BD57E94786BDB98B1024BAA5B2A680
+	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_D9BD57E94786BDB98B1024BAA5B2A680_Params
 	{
 	};
 
@@ -51,23 +66,8 @@ namespace Classes
 	{
 	};
 
-	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_044C21FF45F8C9135ED72E90A1317ACF
-	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_044C21FF45F8C9135ED72E90A1317ACF_Params
-	{
-	};
-
 	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_7DD4DF2E4EE51B857C8F8BBA6ADD08B0
 	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_7DD4DF2E4EE51B857C8F8BBA6ADD08B0_Params
-	{
-	};
-
-	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_60F7F60D46063AC788F6DAA1F7DDBE0D
-	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_60F7F60D46063AC788F6DAA1F7DDBE0D_Params
-	{
-	};
-
-	// Function CharProxy_AnimBP.CharProxy_AnimBP_C.EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_D9BD57E94786BDB98B1024BAA5B2A680
-	struct UCharProxy_AnimBP_C_EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_D9BD57E94786BDB98B1024BAA5B2A680_Params
 	{
 	};
 

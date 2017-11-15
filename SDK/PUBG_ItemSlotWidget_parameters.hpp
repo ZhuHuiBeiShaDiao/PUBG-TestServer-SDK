@@ -147,6 +147,137 @@ namespace Classes
 		TScriptInterface<class USlotContainerInterface>    SlotContainer;                                            // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
+	// Function ItemSlotWidget.ItemSlotWidget_C.PutSeltItem
+	struct UItemSlotWidget_C_PutSeltItem_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.StopSelfPutMode
+	struct UItemSlotWidget_C_StopSelfPutMode_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.StartSelfPutMode
+	struct UItemSlotWidget_C_StartSelfPutMode_Params
+	{
+		bool                                               bResult;                                                  // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		int                                                StartWeaponIndex;                                         // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.IsSelfPutMode
+	struct UItemSlotWidget_C_IsSelfPutMode_Params
+	{
+		bool                                               bIsSelfPutMode;                                           // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.ProcessPressedY
+	struct UItemSlotWidget_C_ProcessPressedY_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.ProcessPressedA
+	struct UItemSlotWidget_C_ProcessPressedA_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.InitItemSlot
+	struct UItemSlotWidget_C_InitItemSlot_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputBPressed
+	struct UItemSlotWidget_C_OnInputBPressed_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputYReleased
+	struct UItemSlotWidget_C_OnInputYReleased_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputYPressed
+	struct UItemSlotWidget_C_OnInputYPressed_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputAReleased
+	struct UItemSlotWidget_C_OnInputAReleased_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputAPressed
+	struct UItemSlotWidget_C_OnInputAPressed_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.SetupInput_Gamepad
+	struct UItemSlotWidget_C_SetupInput_Gamepad_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputX
+	struct UItemSlotWidget_C_OnInputX_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.CheckSubFocus
+	struct UItemSlotWidget_C_CheckSubFocus_Params
+	{
+		bool                                               bSubFocus;                                                // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.IsAttachmentFocus
+	struct UItemSlotWidget_C_IsAttachmentFocus_Params
+	{
+		bool                                               bIsAttachmentFocus;                                       // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.IsSubFocus
+	struct UItemSlotWidget_C_IsSubFocus_Params
+	{
+		bool                                               bIsSubFocus;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.IsEquipmentFocus
+	struct UItemSlotWidget_C_IsEquipmentFocus_Params
+	{
+		bool                                               bIsFocus;                                                 // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.GetInventoryWidget_Gamepad
+	struct UItemSlotWidget_C_GetInventoryWidget_Gamepad_Params
+	{
+		class UInventoryWidget_Gamepad_C*                  NewParam;                                                 // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.GetFocusSlotID
+	struct UItemSlotWidget_C_GetFocusSlotID_Params
+	{
+		EEquipSlotID                                       EquipSlotID;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.SaveSlotInfo
+	struct UItemSlotWidget_C_SaveSlotInfo_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnShowToolTip
+	struct UItemSlotWidget_C_OnShowToolTip_Params
+	{
+		bool                                               bIsGamepad;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.ShowStackcountPopup
+	struct UItemSlotWidget_C_ShowStackcountPopup_Params
+	{
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnStackCountpopupBtnDown
+	struct UItemSlotWidget_C_OnStackCountpopupBtnDown_Params
+	{
+		EPopupButtonID                                     ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
 	// Function ItemSlotWidget.ItemSlotWidget_C.On_UseInfo_Text_Prepass_1
 	struct UItemSlotWidget_C_On_UseInfo_Text_Prepass_1_Params
 	{
@@ -213,7 +344,7 @@ namespace Classes
 	// Function ItemSlotWidget.ItemSlotWidget_C.Get_UseInfo_Text_ColorAndOpacity_1
 	struct UItemSlotWidget_C_Get_UseInfo_Text_ColorAndOpacity_1_Params
 	{
-		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.On_CastingBarLayer_Prepass_1
@@ -279,7 +410,7 @@ namespace Classes
 	// Function ItemSlotWidget.ItemSlotWidget_C.DialogButtonDown
 	struct UItemSlotWidget_C_DialogButtonDown_Params
 	{
-		TEnumAsByte<EPopupButtonID>                        ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		EPopupButtonID                                     ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.On_Brackground_Prepass_1
@@ -354,7 +485,7 @@ namespace Classes
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetOpenButtonVisibility
 	struct UItemSlotWidget_C_GetOpenButtonVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.DispatchRefreshInnerList
@@ -398,25 +529,25 @@ namespace Classes
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetInnerContainerVisibility
 	struct UItemSlotWidget_C_GetInnerContainerVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetPackagedLabelVisibility
 	struct UItemSlotWidget_C_GetPackagedLabelVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetIconVisibility
 	struct UItemSlotWidget_C_GetIconVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetAmmountTextVisibility
 	struct UItemSlotWidget_C_GetAmmountTextVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetAmmountText
@@ -428,7 +559,7 @@ namespace Classes
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetUseButtonVisibility
 	struct UItemSlotWidget_C_GetUseButtonVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.GetIconTexture
@@ -477,26 +608,6 @@ namespace Classes
 	{
 	};
 
-	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputXPressed
-	struct UItemSlotWidget_C_OnInputXPressed_Params
-	{
-	};
-
-	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputXReleased
-	struct UItemSlotWidget_C_OnInputXReleased_Params
-	{
-	};
-
-	// Function ItemSlotWidget.ItemSlotWidget_C.UI_Gamepad_B_Pressed
-	struct UItemSlotWidget_C_UI_Gamepad_B_Pressed_Params
-	{
-	};
-
-	// Function ItemSlotWidget.ItemSlotWidget_C.UI_Gamepad_B_Released
-	struct UItemSlotWidget_C_UI_Gamepad_B_Released_Params
-	{
-	};
-
 	// Function ItemSlotWidget.ItemSlotWidget_C.Tick
 	struct UItemSlotWidget_C_Tick_Params
 	{
@@ -504,21 +615,15 @@ namespace Classes
 		float*                                             InDeltaTime;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
-	// Function ItemSlotWidget.ItemSlotWidget_C.OnButtonClicked
-	struct UItemSlotWidget_C_OnButtonClicked_Params
-	{
-		TEnumAsByte<EPopupButtonID>                        ButtonID;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	};
-
-	// Function ItemSlotWidget.ItemSlotWidget_C.OnInputWidgetInputB
-	struct UItemSlotWidget_C_OnInputWidgetInputB_Params
-	{
-	};
-
 	// Function ItemSlotWidget.ItemSlotWidget_C.ExecuteUbergraph_ItemSlotWidget
 	struct UItemSlotWidget_C_ExecuteUbergraph_ItemSlotWidget_Params
 	{
 		int                                                EntryPoint;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function ItemSlotWidget.ItemSlotWidget_C.OnDoSlotAction__DelegateSignature
+	struct UItemSlotWidget_C_OnDoSlotAction__DelegateSignature_Params
+	{
 	};
 
 	// Function ItemSlotWidget.ItemSlotWidget_C.RefreshFocus__DelegateSignature

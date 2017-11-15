@@ -202,7 +202,7 @@ void AAIController::OnGameplayTaskResourcesClaimed(const struct FGameplayResourc
 // Function AIModule.AIController.MoveToLocation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector                 Dest                           (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
+// struct FVector                 Dest                           (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
 // float                          AcceptanceRadius               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bStopOnOverlap                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bUsePathfinding                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -300,7 +300,7 @@ void AAIController::K2_SetFocus(class AActor* NewFocus)
 // Function AIModule.AIController.K2_SetFocalPoint
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector                 FP                             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 FP                             (CPF_Parm, CPF_IsPlainOldData)
 
 void AAIController::K2_SetFocalPoint(const struct FVector& FP)
 {
@@ -410,7 +410,7 @@ TEnumAsByte<EPathFollowingStatus> AAIController::GetMoveStatus()
 // Function AIModule.AIController.GetImmediateMoveDestination
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector AAIController::GetImmediateMoveDestination()
 {
@@ -457,7 +457,7 @@ class AActor* AAIController::GetFocusActor()
 // (FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // class AActor*                  Actor                          (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector AAIController::GetFocalPointOnActor(class AActor* Actor)
 {
@@ -481,7 +481,7 @@ struct FVector AAIController::GetFocalPointOnActor(class AActor* Actor)
 // Function AIModule.AIController.GetFocalPoint
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector AAIController::GetFocalPoint()
 {
@@ -546,12 +546,34 @@ void AAIController::ClaimTaskResource(class UClass* ResourceClass)
 }
 
 
+// Function AIModule.PathFollowingComponent.OnNavDataRegistered
+// (FUNC_Final, FUNC_Native, FUNC_Protected)
+// Parameters:
+// class ANavigationData*         NavData                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UPathFollowingComponent::OnNavDataRegistered(class ANavigationData* NavData)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa207e0f0);
+
+	UPathFollowingComponent_OnNavDataRegistered_Params params;
+	params.NavData = NavData;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AIModule.PathFollowingComponent.OnActorBump
 // (FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults)
 // Parameters:
 // class AActor*                  SelfActor                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  OtherActor                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 NormalImpulse                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 NormalImpulse                  (CPF_Parm, CPF_IsPlainOldData)
 // struct FHitResult              Hit                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
 
 void UPathFollowingComponent::OnActorBump(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
@@ -577,7 +599,7 @@ void UPathFollowingComponent::OnActorBump(class AActor* SelfActor, class AActor*
 // Function AIModule.PathFollowingComponent.GetPathDestination
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UPathFollowingComponent::GetPathDestination()
 {
@@ -676,8 +698,8 @@ void UAIBlueprintHelperLibrary::STATIC_UnlockAIResourcesWithAnimation(class UAni
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UClass*                  PawnClass                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UBehaviorTree*           BehaviorTree                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FRotator                Rotation                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FRotator                Rotation                       (CPF_Parm, CPF_IsPlainOldData)
 // bool                           bNoCollisionFail               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class APawn*                   ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
@@ -762,7 +784,7 @@ void UAIBlueprintHelperLibrary::STATIC_LockAIResourcesWithAnimation(class UAnimI
 // Function AIModule.AIBlueprintHelperLibrary.IsValidAIRotation
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// struct FRotator                Rotation                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FRotator                Rotation                       (CPF_Parm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UAIBlueprintHelperLibrary::STATIC_IsValidAIRotation(const struct FRotator& Rotation)
@@ -787,7 +809,7 @@ bool UAIBlueprintHelperLibrary::STATIC_IsValidAIRotation(const struct FRotator& 
 // Function AIModule.AIBlueprintHelperLibrary.IsValidAILocation
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UAIBlueprintHelperLibrary::STATIC_IsValidAILocation(const struct FVector& Location)
@@ -812,7 +834,7 @@ bool UAIBlueprintHelperLibrary::STATIC_IsValidAILocation(const struct FVector& L
 // Function AIModule.AIBlueprintHelperLibrary.IsValidAIDirection
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector                 DirectionVector                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 DirectionVector                (CPF_Parm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UAIBlueprintHelperLibrary::STATIC_IsValidAIDirection(const struct FVector& DirectionVector)
@@ -860,7 +882,7 @@ class UBlackboardComponent* UAIBlueprintHelperLibrary::STATIC_GetBlackboard(clas
 
 
 // Function AIModule.AIBlueprintHelperLibrary.GetAIController
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // class AActor*                  ControlledActor                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AAIController*           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
@@ -889,7 +911,7 @@ class AAIController* UAIBlueprintHelperLibrary::STATIC_GetAIController(class AAc
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class APawn*                   Pawn                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Destination                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Destination                    (CPF_Parm, CPF_IsPlainOldData)
 // class AActor*                  TargetActor                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          AcceptanceRadius               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bStopOnOverlap                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -916,152 +938,6 @@ class UAIAsyncTaskBlueprintProxy* UAIBlueprintHelperLibrary::STATIC_CreateMoveTo
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_PushAction
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class UPawnAction*             NewAction                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// TEnumAsByte<EAIRequestPriority> Priority                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UObject*                 Instigator                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UPawnActionsComponent::K2_PushAction(class UPawnAction* NewAction, TEnumAsByte<EAIRequestPriority> Priority, class UObject* Instigator)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x3da218ed);
-
-	UPawnActionsComponent_K2_PushAction_Params params;
-	params.NewAction = NewAction;
-	params.Priority = Priority;
-	params.Instigator = Instigator;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_PerformAction
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class APawn*                   Pawn                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UPawnAction*             Action                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// TEnumAsByte<EAIRequestPriority> Priority                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UPawnActionsComponent::STATIC_K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, TEnumAsByte<EAIRequestPriority> Priority)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x9f0ae258);
-
-	UPawnActionsComponent_K2_PerformAction_Params params;
-	params.Pawn = Pawn;
-	params.Action = Action;
-	params.Priority = Priority;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class UPawnAction*             ActionToAbort                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// TEnumAsByte<EPawnActionAbortState> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-TEnumAsByte<EPawnActionAbortState> UPawnActionsComponent::K2_ForceAbortAction(class UPawnAction* ActionToAbort)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xac6dad54);
-
-	UPawnActionsComponent_K2_ForceAbortAction_Params params;
-	params.ActionToAbort = ActionToAbort;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.PawnActionsComponent.K2_AbortAction
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class UPawnAction*             ActionToAbort                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// TEnumAsByte<EPawnActionAbortState> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-TEnumAsByte<EPawnActionAbortState> UPawnActionsComponent::K2_AbortAction(class UPawnAction* ActionToAbort)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x72ef6ab9);
-
-	UPawnActionsComponent_K2_AbortAction_Params params;
-	params.ActionToAbort = ActionToAbort;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.AISystem.AILoggingVerbose
-// (FUNC_Exec, FUNC_Native, FUNC_Public)
-
-void UAISystem::AILoggingVerbose()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xfd925a9);
-
-	UAISystem_AILoggingVerbose_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AIModule.AISystem.AIIgnorePlayers
-// (FUNC_Exec, FUNC_Native, FUNC_Public)
-
-void UAISystem::AIIgnorePlayers()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x6189a302);
-
-	UAISystem_AIIgnorePlayers_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -1616,8 +1492,8 @@ void UAISense_Blueprint::GetAllListenerActors(TArray<class AActor*>* ListenerAct
 // class AActor*                  DamagedActor                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Instigator                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          DamageAmount                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 EventLocation                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 HitLocation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 EventLocation                  (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector                 HitLocation                    (CPF_Parm, CPF_IsPlainOldData)
 
 void UAISense_Damage::STATIC_ReportDamageEvent(class UObject* WorldContext, class AActor* DamagedActor, class AActor* Instigator, float DamageAmount, const struct FVector& EventLocation, const struct FVector& HitLocation)
 {
@@ -1645,7 +1521,7 @@ void UAISense_Damage::STATIC_ReportDamageEvent(class UObject* WorldContext, clas
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 NoiseLocation                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 NoiseLocation                  (CPF_Parm, CPF_IsPlainOldData)
 // float                          Loudness                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  Instigator                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          MaxRange                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -1725,11 +1601,49 @@ void UAISense_Prediction::STATIC_RequestControllerPredictionEvent(class AAIContr
 }
 
 
+// Function AIModule.AISystem.AILoggingVerbose
+// (FUNC_Exec, FUNC_Native, FUNC_Public)
+
+void UAISystem::AILoggingVerbose()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xfd925a9);
+
+	UAISystem_AILoggingVerbose_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.AISystem.AIIgnorePlayers
+// (FUNC_Exec, FUNC_Native, FUNC_Public)
+
+void UAISystem::AIIgnorePlayers()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x6189a302);
+
+	UAISystem_AIIgnorePlayers_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AIModule.AITask_MoveTo.AIMoveTo
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class AAIController*           Controller                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 GoalLocation                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 GoalLocation                   (CPF_Parm, CPF_IsPlainOldData)
 // class AActor*                  GoalActor                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          AcceptanceRadius               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // TEnumAsByte<EAIOptionFlag>     StopOnOverlap                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -1752,6 +1666,33 @@ class UAITask_MoveTo* UAITask_MoveTo::STATIC_AIMoveTo(class AAIController* Contr
 	params.AcceptPartialPath = AcceptPartialPath;
 	params.bUsePathfinding = bUsePathfinding;
 	params.bLockAILogic = bLockAILogic;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.AITask_RunEQS.RunEQS
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class AAIController*           Controller                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UEnvQuery*               QueryTemplate                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UAITask_RunEQS*          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+class UAITask_RunEQS* UAITask_RunEQS::STATIC_RunEQS(class AAIController* Controller, class UEnvQuery* QueryTemplate)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb5f14f79);
+
+	UAITask_RunEQS_RunEQS_Params params;
+	params.Controller = Controller;
+	params.QueryTemplate = QueryTemplate;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -1802,6 +1743,52 @@ void UBrainComponent::RestartLogic()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.BrainComponent.IsRunning
+// (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UBrainComponent::IsRunning()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x864ab451);
+
+	UBrainComponent_IsRunning_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.BrainComponent.IsPaused
+// (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UBrainComponent::IsPaused()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x39bb55a2);
+
+	UBrainComponent_IsPaused_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -1884,7 +1871,7 @@ void UBehaviorTreeComponent::AddCooldownTagDuration(const struct FGameplayTag& C
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // struct FName                   KeyName                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector                 VectorValue                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 VectorValue                    (CPF_Parm, CPF_IsPlainOldData)
 
 void UBlackboardComponent::SetValueAsVector(const struct FName& KeyName, const struct FVector& VectorValue)
 {
@@ -1932,7 +1919,7 @@ void UBlackboardComponent::SetValueAsString(const struct FName& KeyName, const s
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // struct FName                   KeyName                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FRotator                VectorValue                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FRotator                VectorValue                    (CPF_Parm, CPF_IsPlainOldData)
 
 void UBlackboardComponent::SetValueAsRotator(const struct FName& KeyName, const struct FRotator& VectorValue)
 {
@@ -2149,7 +2136,7 @@ bool UBlackboardComponent::IsVectorValueSet(const struct FName& KeyName)
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // struct FName                   KeyName                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UBlackboardComponent::GetValueAsVector(const struct FName& KeyName)
 {
@@ -2199,7 +2186,7 @@ struct FString UBlackboardComponent::GetValueAsString(const struct FName& KeyNam
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // struct FName                   KeyName                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FRotator                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FRotator                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FRotator UBlackboardComponent::GetValueAsRotator(const struct FName& KeyName)
 {
@@ -2399,7 +2386,7 @@ bool UBlackboardComponent::GetValueAsBool(const struct FName& KeyName)
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // struct FName                   KeyName                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FRotator                ResultRotation                 (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FRotator                ResultRotation                 (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UBlackboardComponent::GetRotationFromEntry(const struct FName& KeyName, struct FRotator* ResultRotation)
@@ -2428,7 +2415,7 @@ bool UBlackboardComponent::GetRotationFromEntry(const struct FName& KeyName, str
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // struct FName                   KeyName                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector                 ResultLocation                 (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 ResultLocation                 (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UBlackboardComponent::GetLocationFromEntry(const struct FName& KeyName, struct FVector* ResultLocation)
@@ -2526,7 +2513,7 @@ void UBTFunctionLibrary::STATIC_StartUsingExternalEvent(class UBTNode* NodeOwner
 // Parameters:
 // class UBTNode*                 NodeOwner                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FBlackboardKeySelector  Key                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FVector                 Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Value                          (CPF_Parm, CPF_IsPlainOldData)
 
 void UBTFunctionLibrary::STATIC_SetBlackboardValueAsVector(class UBTNode* NodeOwner, const struct FBlackboardKeySelector& Key, const struct FVector& Value)
 {
@@ -2578,7 +2565,7 @@ void UBTFunctionLibrary::STATIC_SetBlackboardValueAsString(class UBTNode* NodeOw
 // Parameters:
 // class UBTNode*                 NodeOwner                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FBlackboardKeySelector  Key                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FRotator                Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FRotator                Value                          (CPF_Parm, CPF_IsPlainOldData)
 
 void UBTFunctionLibrary::STATIC_SetBlackboardValueAsRotator(class UBTNode* NodeOwner, const struct FBlackboardKeySelector& Key, const struct FRotator& Value)
 {
@@ -2836,7 +2823,7 @@ class UBehaviorTreeComponent* UBTFunctionLibrary::STATIC_GetOwnerComponent(class
 // Parameters:
 // class UBTNode*                 NodeOwner                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FBlackboardKeySelector  Key                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UBTFunctionLibrary::STATIC_GetBlackboardValueAsVector(class UBTNode* NodeOwner, const struct FBlackboardKeySelector& Key)
 {
@@ -2890,7 +2877,7 @@ struct FString UBTFunctionLibrary::STATIC_GetBlackboardValueAsString(class UBTNo
 // Parameters:
 // class UBTNode*                 NodeOwner                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FBlackboardKeySelector  Key                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FRotator                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FRotator                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FRotator UBTFunctionLibrary::STATIC_GetBlackboardValueAsRotator(class UBTNode* NodeOwner, const struct FBlackboardKeySelector& Key)
 {
@@ -3404,27 +3391,6 @@ void UBTDecorator_BlueprintBase::ReceiveExecutionFinish(class AActor* OwnerActor
 }
 
 
-// Function AIModule.BTDecorator_BlueprintBase.ReceiveConditionCheck
-// (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
-// Parameters:
-// class AActor*                  OwnerActor                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UBTDecorator_BlueprintBase::ReceiveConditionCheck(class AActor* OwnerActor)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xc290d347);
-
-	UBTDecorator_BlueprintBase_ReceiveConditionCheck_Params params;
-	params.OwnerActor = OwnerActor;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AIModule.BTDecorator_BlueprintBase.PerformConditionCheckAI
 // (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
 // Parameters:
@@ -3518,28 +3484,6 @@ bool UBTDecorator_BlueprintBase::IsDecoratorExecutionActive()
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-}
-
-
-// Function AIModule.BTDecorator_BlueprintBase.FinishConditionCheck
-// (FUNC_Final, FUNC_Native, FUNC_Protected, FUNC_BlueprintCallable)
-// Parameters:
-// bool                           bAllowExecution                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UBTDecorator_BlueprintBase::FinishConditionCheck(bool bAllowExecution)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x5bb57f9f);
-
-	UBTDecorator_BlueprintBase_FinishConditionCheck_Params params;
-	params.bAllowExecution = bAllowExecution;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
 }
 
 
@@ -4015,84 +3959,12 @@ void UBTTask_BlueprintBase::FinishAbort()
 }
 
 
-// Function AIModule.PawnAction.GetActionPriority
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
-// Parameters:
-// TEnumAsByte<EAIRequestPriority> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-TEnumAsByte<EAIRequestPriority> UPawnAction::GetActionPriority()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xe382d42f);
-
-	UPawnAction_GetActionPriority_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function AIModule.PawnAction.Finish
-// (FUNC_Native, FUNC_Protected, FUNC_BlueprintCallable)
-// Parameters:
-// TEnumAsByte<EPawnActionResult> WithResult                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UPawnAction::Finish(TEnumAsByte<EPawnActionResult> WithResult)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x871bb9fa);
-
-	UPawnAction_Finish_Params params;
-	params.WithResult = WithResult;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function AIModule.PawnAction.CreateActionInstance
-// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UClass*                  ActionClass                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UPawnAction*             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-class UPawnAction* UPawnAction::STATIC_CreateActionInstance(class UObject* WorldContextObject, class UClass* ActionClass)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x1bb5bb30);
-
-	UPawnAction_CreateActionInstance_Params params;
-	params.WorldContextObject = WorldContextObject;
-	params.ActionClass = ActionClass;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleLocation
 // (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintEvent, FUNC_Const)
 // Parameters:
 // class UObject*                 QuerierObject                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class AActor*                  QuerierActor                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 ResultingLocation              (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 ResultingLocation              (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UEnvQueryContext_BlueprintBase::ProvideSingleLocation(class UObject* QuerierObject, class AActor* QuerierActor, struct FVector* ResultingLocation)
 {
@@ -4393,7 +4265,7 @@ void UEnvQueryGenerator_BlueprintBase::DoItemGeneration(TArray<struct FVector> C
 // Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_Const)
 // Parameters:
-// struct FVector                 GeneratedVector                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 GeneratedVector                (CPF_Parm, CPF_IsPlainOldData)
 
 void UEnvQueryGenerator_BlueprintBase::AddGeneratedVector(const struct FVector& GeneratedVector)
 {
@@ -4434,6 +4306,232 @@ void UEnvQueryGenerator_BlueprintBase::AddGeneratedActor(class AActor* Generated
 }
 
 
+// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          CellSize                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UNavLocalGridManager::STATIC_SetLocalNavigationGridDensity(class UObject* WorldContext, float CellSize)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd0cd67);
+
+	UNavLocalGridManager_SetLocalNavigationGridDensity_Params params;
+	params.WorldContext = WorldContext;
+	params.CellSize = CellSize;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            GridId                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bRebuildGrids                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UNavLocalGridManager::STATIC_RemoveLocalNavigationGrid(class UObject* WorldContext, int GridId, bool bRebuildGrids)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xc4bc4405);
+
+	UNavLocalGridManager_RemoveLocalNavigationGrid_Params params;
+	params.WorldContext = WorldContext;
+	params.GridId = GridId;
+	params.bRebuildGrids = bRebuildGrids;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Start                          (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
+// struct FVector                 End                            (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
+// TArray<struct FVector>         PathPoints                     (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UNavLocalGridManager::STATIC_FindLocalNavigationGridPath(class UObject* WorldContext, const struct FVector& Start, const struct FVector& End, TArray<struct FVector>* PathPoints)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x3fa3cc5b);
+
+	UNavLocalGridManager_FindLocalNavigationGridPath_Params params;
+	params.WorldContext = WorldContext;
+	params.Start = Start;
+	params.End = End;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (PathPoints != nullptr)
+		*PathPoints = params.PathPoints;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TArray<struct FVector>         Locations                      (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
+// int                            Radius2D                       (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          Height                         (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bRebuildGrids                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UNavLocalGridManager::STATIC_AddLocalNavigationGridForPoints(class UObject* WorldContext, TArray<struct FVector> Locations, int Radius2D, float Height, bool bRebuildGrids)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x36fc6192);
+
+	UNavLocalGridManager_AddLocalNavigationGridForPoints_Params params;
+	params.WorldContext = WorldContext;
+	params.Locations = Locations;
+	params.Radius2D = Radius2D;
+	params.Height = Height;
+	params.bRebuildGrids = bRebuildGrids;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
+// int                            Radius2D                       (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          Height                         (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bRebuildGrids                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UNavLocalGridManager::STATIC_AddLocalNavigationGridForPoint(class UObject* WorldContext, const struct FVector& Location, int Radius2D, float Height, bool bRebuildGrids)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf2b1c0a3);
+
+	UNavLocalGridManager_AddLocalNavigationGridForPoint_Params params;
+	params.WorldContext = WorldContext;
+	params.Location = Location;
+	params.Radius2D = Radius2D;
+	params.Height = Height;
+	params.bRebuildGrids = bRebuildGrids;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
+// float                          CapsuleRadius                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          CapsuleHalfHeight              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            Radius2D                       (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          Height                         (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bRebuildGrids                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UNavLocalGridManager::STATIC_AddLocalNavigationGridForCapsule(class UObject* WorldContext, const struct FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int Radius2D, float Height, bool bRebuildGrids)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x2dd3a384);
+
+	UNavLocalGridManager_AddLocalNavigationGridForCapsule_Params params;
+	params.WorldContext = WorldContext;
+	params.Location = Location;
+	params.CapsuleRadius = CapsuleRadius;
+	params.CapsuleHalfHeight = CapsuleHalfHeight;
+	params.Radius2D = Radius2D;
+	params.Height = Height;
+	params.bRebuildGrids = bRebuildGrids;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContext                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
+// struct FVector                 Extent                         (CPF_Parm, CPF_IsPlainOldData)
+// struct FRotator                Rotation                       (CPF_Parm, CPF_IsPlainOldData)
+// int                            Radius2D                       (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// float                          Height                         (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bRebuildGrids                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UNavLocalGridManager::STATIC_AddLocalNavigationGridForBox(class UObject* WorldContext, const struct FVector& Location, const struct FVector& Extent, const struct FRotator& Rotation, int Radius2D, float Height, bool bRebuildGrids)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x52a85716);
+
+	UNavLocalGridManager_AddLocalNavigationGridForBox_Params params;
+	params.WorldContext = WorldContext;
+	params.Location = Location;
+	params.Extent = Extent;
+	params.Rotation = Rotation;
+	params.Radius2D = Radius2D;
+	params.Height = Height;
+	params.bRebuildGrids = bRebuildGrids;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
 // (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -4453,6 +4551,78 @@ void UCrowdFollowingComponent::SuspendCrowdSteering(bool bSuspend)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.PawnAction.GetActionPriority
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
+// Parameters:
+// TEnumAsByte<EAIRequestPriority> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+TEnumAsByte<EAIRequestPriority> UPawnAction::GetActionPriority()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe382d42f);
+
+	UPawnAction_GetActionPriority_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.PawnAction.Finish
+// (FUNC_Native, FUNC_Protected, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<EPawnActionResult> WithResult                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UPawnAction::Finish(TEnumAsByte<EPawnActionResult> WithResult)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x871bb9fa);
+
+	UPawnAction_Finish_Params params;
+	params.WithResult = WithResult;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AIModule.PawnAction.CreateActionInstance
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UClass*                  ActionClass                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UPawnAction*             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+class UPawnAction* UPawnAction::STATIC_CreateActionInstance(class UObject* WorldContextObject, class UClass* ActionClass)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x1bb5bb30);
+
+	UPawnAction_CreateActionInstance_Params params;
+	params.WorldContextObject = WorldContextObject;
+	params.ActionClass = ActionClass;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -4565,6 +4735,114 @@ void UPawnAction_BlueprintBase::ActionFinished(class APawn* ControlledPawn, TEnu
 }
 
 
+// Function AIModule.PawnActionsComponent.K2_PushAction
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UPawnAction*             NewAction                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<EAIRequestPriority> Priority                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UObject*                 Instigator                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UPawnActionsComponent::K2_PushAction(class UPawnAction* NewAction, TEnumAsByte<EAIRequestPriority> Priority, class UObject* Instigator)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x3da218ed);
+
+	UPawnActionsComponent_K2_PushAction_Params params;
+	params.NewAction = NewAction;
+	params.Priority = Priority;
+	params.Instigator = Instigator;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_PerformAction
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class APawn*                   Pawn                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UPawnAction*             Action                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<EAIRequestPriority> Priority                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UPawnActionsComponent::STATIC_K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, TEnumAsByte<EAIRequestPriority> Priority)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9f0ae258);
+
+	UPawnActionsComponent_K2_PerformAction_Params params;
+	params.Pawn = Pawn;
+	params.Action = Action;
+	params.Priority = Priority;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UPawnAction*             ActionToAbort                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<EPawnActionAbortState> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+TEnumAsByte<EPawnActionAbortState> UPawnActionsComponent::K2_ForceAbortAction(class UPawnAction* ActionToAbort)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xac6dad54);
+
+	UPawnActionsComponent_K2_ForceAbortAction_Params params;
+	params.ActionToAbort = ActionToAbort;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_AbortAction
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UPawnAction*             ActionToAbort                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<EPawnActionAbortState> ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+TEnumAsByte<EPawnActionAbortState> UPawnActionsComponent::K2_AbortAction(class UPawnAction* ActionToAbort)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x72ef6ab9);
+
+	UPawnActionsComponent_K2_AbortAction_Params params;
+	params.ActionToAbort = ActionToAbort;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function AIModule.PawnSensingComponent.SetSensingUpdatesEnabled
 // (FUNC_BlueprintAuthorityOnly, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -4656,7 +4934,7 @@ void UPawnSensingComponent::SeePawnDelegate__DelegateSignature(class APawn* Pawn
 // (FUNC_MulticastDelegate, FUNC_Public, FUNC_Delegate, FUNC_HasOutParms, FUNC_HasDefaults)
 // Parameters:
 // class APawn*                   Instigator                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Location                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
 // float                          Volume                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UPawnSensingComponent::HearNoiseDelegate__DelegateSignature(class APawn* Instigator, const struct FVector& Location, float Volume)

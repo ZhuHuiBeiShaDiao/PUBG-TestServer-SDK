@@ -12,6 +12,33 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function UiHelperFunctionsBp.UiHelperFunctionsBp_C.IsSelfputMode_Gamepad
+// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// class UUserWidget*             Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bIsSelfPut                     (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UUiHelperFunctionsBp_C::STATIC_IsSelfputMode_Gamepad(class UUserWidget* Widget, class UObject* __WorldContext, bool* bIsSelfPut)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xcf3f9bd9);
+
+	UUiHelperFunctionsBp_C_IsSelfputMode_Gamepad_Params params;
+	params.Widget = Widget;
+	params.__WorldContext = __WorldContext;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsSelfPut != nullptr)
+		*bIsSelfPut = params.bIsSelfPut;
+}
+
+
 // Function UiHelperFunctionsBp.UiHelperFunctionsBp_C.GetSelfPutAttachment
 // (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
@@ -120,7 +147,7 @@ void UUiHelperFunctionsBp_C::STATIC_GetInventoryWidget(class UUserWidget* Widget
 // (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            NewParam                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewParam                       (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_InventoryFocusingColor(class UObject* __WorldContext, struct FLinearColor* NewParam)
 {
@@ -167,11 +194,11 @@ void UUiHelperFunctionsBp_C::STATIC_IsXBoxOnePlatform(class UObject* __WorldCont
 
 
 // Function UiHelperFunctionsBp.UiHelperFunctionsBp_C.GetCharacterLook
-// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // class UUserWidget*             Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Look                           (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Look                           (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_GetCharacterLook(class UUserWidget* Widget, class UObject* __WorldContext, struct FVector* Look)
 {
@@ -194,11 +221,11 @@ void UUiHelperFunctionsBp_C::STATIC_GetCharacterLook(class UUserWidget* Widget, 
 
 
 // Function UiHelperFunctionsBp.UiHelperFunctionsBp_C.GetCharacterPosititon
-// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // class UUserWidget*             Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Position                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Position                       (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_GetCharacterPosititon(class UUserWidget* Widget, class UObject* __WorldContext, struct FVector* Position)
 {
@@ -221,7 +248,7 @@ void UUiHelperFunctionsBp_C::STATIC_GetCharacterPosititon(class UUserWidget* Wid
 
 
 // Function UiHelperFunctionsBp.UiHelperFunctionsBp_C.GetCharacterAngle
-// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // class UUserWidget*             Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -306,7 +333,7 @@ void UUiHelperFunctionsBp_C::STATIC_GetBluezoneReleaseTimeBp(class UObject* Worl
 // Parameters:
 // float                          Distance                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Color                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Color                          (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_GetDistanceColor(float Distance, class UObject* __WorldContext, struct FLinearColor* Color)
 {
@@ -361,7 +388,7 @@ void UUiHelperFunctionsBp_C::STATIC_IsLastSpectatorTeam(class UUserWidget* Widge
 // (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Color                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Color                          (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_GetTeamColor(class UObject* __WorldContext, struct FLinearColor* Color)
 {
@@ -466,11 +493,11 @@ void UUiHelperFunctionsBp_C::STATIC_GetStateByCharacter(class ATslCharacter* Cha
 
 
 // Function UiHelperFunctionsBp.UiHelperFunctionsBp_C.GetSpectatorColor
-// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // bool                           bISpectator                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Color                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Color                          (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_GetSpectatorColor(bool bISpectator, class UObject* __WorldContext, struct FLinearColor* Color)
 {
@@ -578,7 +605,7 @@ void UUiHelperFunctionsBp_C::STATIC_NotifyWidgetShowed(class UUserWidget* Widget
 // Parameters:
 // int                            MemberNumber                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UObject*                 __WorldContext                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            NewParam                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewParam                       (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UUiHelperFunctionsBp_C::STATIC_GetTeamMarkerColor(int MemberNumber, class UObject* __WorldContext, struct FLinearColor* NewParam)
 {

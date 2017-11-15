@@ -15,7 +15,7 @@ namespace Classes
 // Function KeyReceiverWidget_BP.KeyReceiverWidget_BP_C.GetBorderColorAndOpacity
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UKeyReceiverWidget_BP_C::GetBorderColorAndOpacity()
 {

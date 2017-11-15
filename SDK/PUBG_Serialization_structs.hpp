@@ -53,13 +53,13 @@ namespace Classes
 	// 0x0060
 	struct FStructSerializerBuiltinTestStruct
 	{
-		struct FGuid                                       Guid;                                                     // 0x0000(0x0010) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FGuid                                       Guid;                                                     // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FName                                       Name;                                                     // 0x0010(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FString                                     String;                                                   // 0x0018(0x0010) (CPF_ZeroConstructor)
-		struct FRotator                                    Rotator;                                                  // 0x0028(0x000C) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FRotator                                    Rotator;                                                  // 0x0028(0x000C) (CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
 		struct FText                                       Text;                                                     // 0x0038(0x0018)
-		struct FVector                                     Vector;                                                   // 0x0050(0x000C) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     Vector;                                                   // 0x0050(0x000C) (CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x4];                                       // 0x005C(0x0004) MISSED OFFSET
 	};
 

@@ -29,14 +29,15 @@ namespace Classes
 
 
 	// Class AkAudio.AkAmbientSound
-	// 0x0020 (0x03C0 - 0x03A0)
+	// 0x0020 (0x03C8 - 0x03A8)
 	class AAkAmbientSound : public AActor
 	{
 	public:
-		unsigned char                                      UnknownData00[0x10];                                      // 0x03A0(0x0010) MISSED OFFSET
-		class UAkComponent*                                AkComponent;                                              // 0x03B0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
-		float                                              AutoPlayDistance;                                         // 0x03B8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData01[0x4];                                       // 0x03BC(0x0004) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x10];                                      // 0x03A8(0x0010) MISSED OFFSET
+		class UAkComponent*                                AkComponent;                                              // 0x03B8(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
+		bool                                               AutoPost;                                                 // 0x03C0(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0x3];                                       // 0x03C1(0x0003) MISSED OFFSET
+		float                                              AutoPlayDistance;                                         // 0x03C4(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 		static UClass* StaticClass()
 		{
@@ -71,13 +72,16 @@ namespace Classes
 
 
 	// Class AkAudio.AkAudioEvent
-	// 0x0010 (0x0038 - 0x0028)
+	// 0x0018 (0x0040 - 0x0028)
 	class UAkAudioEvent : public UObject
 	{
 	public:
 		class UAkAudioBank*                                RequiredBank;                                             // 0x0028(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              MaxAttenuationRadius;                                     // 0x0030(0x0004) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+		bool                                               IsInfinite;                                               // 0x0034(0x0001) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData00[0x3];                                       // 0x0035(0x0003) MISSED OFFSET
+		float                                              MinimumDuration;                                          // 0x0038(0x0004) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              MaximumDuration;                                          // 0x003C(0x0004) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 		static UClass* StaticClass()
 		{
@@ -108,20 +112,20 @@ namespace Classes
 
 
 	// Class AkAudio.AkComponent
-	// 0x00F0 (0x03F0 - 0x0300)
+	// 0x0070 (0x0450 - 0x03E0)
 	class UAkComponent : public USceneComponent
 	{
 	public:
-		bool                                               StopWhenOwnerDestroyed;                                   // 0x0300(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		bool                                               bDynamicReverb;                                           // 0x0301(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		bool                                               bUseDoppler;                                              // 0x0302(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData00[0x1];                                       // 0x0303(0x0001) MISSED OFFSET
-		float                                              AttenuationScalingFactor;                                 // 0x0304(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              OcclusionRefreshInterval;                                 // 0x0308(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData01[0x4];                                       // 0x030C(0x0004) MISSED OFFSET
-		class UAkAudioEvent*                               AkAudioEvent;                                             // 0x0310(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FString                                     EventName;                                                // 0x0318(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
-		unsigned char                                      UnknownData02[0xC8];                                      // 0x0328(0x00C8) MISSED OFFSET
+		bool                                               StopWhenOwnerDestroyed;                                   // 0x03E0(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		bool                                               bDynamicReverb;                                           // 0x03E1(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		bool                                               bUseDoppler;                                              // 0x03E2(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData00[0x1];                                       // 0x03E3(0x0001) MISSED OFFSET
+		float                                              AttenuationScalingFactor;                                 // 0x03E4(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              OcclusionRefreshInterval;                                 // 0x03E8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0x4];                                       // 0x03EC(0x0004) MISSED OFFSET
+		class UAkAudioEvent*                               AkAudioEvent;                                             // 0x03F0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FString                                     EventName;                                                // 0x03F8(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
+		unsigned char                                      UnknownData02[0x48];                                      // 0x0408(0x0048) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -146,7 +150,7 @@ namespace Classes
 		int PostAkEvent(class UAkAudioEvent* AkEvent, const struct FString& in_EventName);
 		bool IsCurrentlyPlaying();
 		float GetAttenuationRadius();
-		void CalculateRelativeSpeed();
+		void CalculateRelativeSpeed(float DeltaTime);
 		void CalculateDynamicReverb();
 	};
 
@@ -199,19 +203,19 @@ namespace Classes
 
 
 	// Class AkAudio.AkReverbVolume
-	// 0x0038 (0x0410 - 0x03D8)
+	// 0x0038 (0x0418 - 0x03E0)
 	class AAkReverbVolume : public AVolume
 	{
 	public:
-		unsigned char                                      bEnabled : 1;                                             // 0x03D8(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_Net)
-		unsigned char                                      UnknownData00[0x7];                                       // 0x03D9(0x0007) MISSED OFFSET
-		class UAkAuxBus*                                   AuxBus;                                                   // 0x03E0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FString                                     AuxBusName;                                               // 0x03E8(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
-		float                                              SendLevel;                                                // 0x03F8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              FadeRate;                                                 // 0x03FC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              Priority;                                                 // 0x0400(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData01[0x4];                                       // 0x0404(0x0004) MISSED OFFSET
-		class AAkReverbVolume*                             NextLowerPriorityAkReverbVolume;                          // 0x0408(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
+		unsigned char                                      bEnabled : 1;                                             // 0x03E0(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_Net)
+		unsigned char                                      UnknownData00[0x7];                                       // 0x03E1(0x0007) MISSED OFFSET
+		class UAkAuxBus*                                   AuxBus;                                                   // 0x03E8(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FString                                     AuxBusName;                                               // 0x03F0(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
+		float                                              SendLevel;                                                // 0x0400(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              FadeRate;                                                 // 0x0404(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              Priority;                                                 // 0x0408(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0x4];                                       // 0x040C(0x0004) MISSED OFFSET
+		class AAkReverbVolume*                             NextLowerPriorityAkReverbVolume;                          // 0x0410(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
 
 		static UClass* StaticClass()
 		{
@@ -224,7 +228,7 @@ namespace Classes
 
 
 	// Class AkAudio.AkSettings
-	// 0x0070 (0x0098 - 0x0028)
+	// 0x0078 (0x00A0 - 0x0028)
 	class UAkSettings : public UObject
 	{
 	public:
@@ -233,7 +237,8 @@ namespace Classes
 		struct FFilePath                                   WwiseProjectPath;                                         // 0x0030(0x0010) (CPF_Edit, CPF_Config)
 		struct FDirectoryPath                              WwiseWindowsInstallationPath;                             // 0x0040(0x0010) (CPF_Edit, CPF_Config)
 		struct FFilePath                                   WwiseMacInstallationPath;                                 // 0x0050(0x0010) (CPF_Edit, CPF_Config)
-		unsigned char                                      UnknownData01[0x38];                                      // 0x0060(0x0038) MISSED OFFSET
+		bool                                               SuppressWwiseProjectPathWarnings;                         // 0x0060(0x0001) (CPF_ZeroConstructor, CPF_Config, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0x3F];                                      // 0x0061(0x003F) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -314,6 +319,96 @@ namespace Classes
 		{
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xa6ed0161);
+			return ptr;
+		}
+
+	};
+
+
+	// Class AkAudio.MovieSceneAkAudioEventSection
+	// 0x0020 (0x00F0 - 0x00D0)
+	class UMovieSceneAkAudioEventSection : public UMovieSceneSection
+	{
+	public:
+		class UAkAudioEvent*                               Event;                                                    // 0x00D0(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FString                                     EventName;                                                // 0x00D8(0x0010) (CPF_Edit, CPF_ZeroConstructor)
+		unsigned char                                      UnknownData00[0x8];                                       // 0x00E8(0x0008) MISSED OFFSET
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0xd4463bb2);
+			return ptr;
+		}
+
+	};
+
+
+	// Class AkAudio.MovieSceneAkAudioRTPCSection
+	// 0x0090 (0x0160 - 0x00D0)
+	class UMovieSceneAkAudioRTPCSection : public UMovieSceneSection
+	{
+	public:
+		unsigned char                                      UnknownData00[0x8];                                       // 0x00D0(0x0008) MISSED OFFSET
+		struct FString                                     Name;                                                     // 0x00D8(0x0010) (CPF_Edit, CPF_ZeroConstructor)
+		struct FRichCurve                                  FloatCurve;                                               // 0x00E8(0x0070)
+		unsigned char                                      UnknownData01[0x8];                                       // 0x0158(0x0008) MISSED OFFSET
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0x13fb604f);
+			return ptr;
+		}
+
+	};
+
+
+	// Class AkAudio.MovieSceneAkTrack
+	// 0x0010 (0x00D0 - 0x00C0)
+	class UMovieSceneAkTrack : public UMovieSceneTrack
+	{
+	public:
+		unsigned char                                      UnknownData00[0x8];                                       // 0x00C0(0x0008) MISSED OFFSET
+		unsigned char                                      bIsAMasterTrack : 1;                                      // 0x00C8(0x0001)
+		unsigned char                                      UnknownData01[0x7];                                       // 0x00C9(0x0007) MISSED OFFSET
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0xb82937d4);
+			return ptr;
+		}
+
+	};
+
+
+	// Class AkAudio.MovieSceneAkAudioEventTrack
+	// 0x0000 (0x00D0 - 0x00D0)
+	class UMovieSceneAkAudioEventTrack : public UMovieSceneAkTrack
+	{
+	public:
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0x4c5e15f6);
+			return ptr;
+		}
+
+	};
+
+
+	// Class AkAudio.MovieSceneAkAudioRTPCTrack
+	// 0x0000 (0x00D0 - 0x00D0)
+	class UMovieSceneAkAudioRTPCTrack : public UMovieSceneAkTrack
+	{
+	public:
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0xcc3ceb6b);
 			return ptr;
 		}
 

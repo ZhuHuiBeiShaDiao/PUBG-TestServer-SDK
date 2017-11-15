@@ -80,9 +80,9 @@ void UCountDownWidget_C::On_CountDownText_Prepass_1(class UWidget* BoundWidget)
 // Function CountDownWidget.CountDownWidget_C.Get_CountDownText_Visibility_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UCountDownWidget_C::Get_CountDownText_Visibility_1()
+ESlateVisibility UCountDownWidget_C::Get_CountDownText_Visibility_1()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x57febd67);

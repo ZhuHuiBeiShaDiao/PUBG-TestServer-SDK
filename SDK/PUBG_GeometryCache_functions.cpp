@@ -54,6 +54,28 @@ void UGeometryCacheComponent::Stop()
 }
 
 
+// Function GeometryCache.GeometryCacheComponent.SetStartTimeOffset
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// float                          NewStartTimeOffset             (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UGeometryCacheComponent::SetStartTimeOffset(float NewStartTimeOffset)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa865c072);
+
+	UGeometryCacheComponent_SetStartTimeOffset_Params params;
+	params.NewStartTimeOffset = NewStartTimeOffset;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function GeometryCache.GeometryCacheComponent.SetPlaybackSpeed
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -275,6 +297,29 @@ bool UGeometryCacheComponent::IsLooping()
 	if (!fn) fn = UObject::FindObject<UFunction>(0xa408250a);
 
 	UGeometryCacheComponent_IsLooping_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GeometryCache.GeometryCacheComponent.GetStartTimeOffset
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+float UGeometryCacheComponent::GetStartTimeOffset()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb7d407f6);
+
+	UGeometryCacheComponent_GetStartTimeOffset_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

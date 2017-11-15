@@ -454,6 +454,29 @@ bool UInnerItemSlotListWidget_C::Up()
 }
 
 
+// Function InnerItemSlotListWidget.InnerItemSlotListWidget_C.IsSubFocus
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           bIsSubFocus                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInnerItemSlotListWidget_C::IsSubFocus(bool* bIsSubFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x42e1b391);
+
+	UInnerItemSlotListWidget_C_IsSubFocus_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bIsSubFocus != nullptr)
+		*bIsSubFocus = params.bIsSubFocus;
+}
+
+
 // Function InnerItemSlotListWidget.InnerItemSlotListWidget_C.GetContentCount
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:

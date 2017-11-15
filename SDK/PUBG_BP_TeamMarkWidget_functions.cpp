@@ -76,7 +76,7 @@ void UBP_TeamMarkWidget_C::SetJustification()
 // Function BP_TeamMarkWidget.BP_TeamMarkWidget_C.GetPlayerNameTextAddLocation
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// struct FVector2D               AddLocation                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               AddLocation                    (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UBP_TeamMarkWidget_C::GetPlayerNameTextAddLocation(struct FVector2D* AddLocation)
 {

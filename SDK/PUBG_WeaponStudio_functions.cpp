@@ -106,7 +106,7 @@ void AWeaponStudio_C::SetItem(class UItem** Item)
 
 
 // Function WeaponStudio.WeaponStudio_C.ReceiveBeginPlay
-// (FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
 
 void AWeaponStudio_C::ReceiveBeginPlay()
 {

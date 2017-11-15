@@ -45,7 +45,7 @@ namespace Classes
 
 
 	// Class MovieSceneCapture.MovieSceneCapture
-	// 0x01D8 (0x0200 - 0x0028)
+	// 0x0218 (0x0240 - 0x0028)
 	class UMovieSceneCapture : public UObject
 	{
 	public:
@@ -58,7 +58,7 @@ namespace Classes
 		unsigned char                                      UnknownData01[0x6];                                       // 0x009A(0x0006) MISSED OFFSET
 		struct FString                                     AdditionalCommandLineArguments;                           // 0x00A0(0x0010) (CPF_Edit, CPF_ZeroConstructor, CPF_Config)
 		struct FString                                     InheritedCommandLineArguments;                            // 0x00B0(0x0010) (CPF_Edit, CPF_ZeroConstructor, CPF_Transient)
-		unsigned char                                      UnknownData02[0x140];                                     // 0x00C0(0x0140) MISSED OFFSET
+		unsigned char                                      UnknownData02[0x180];                                     // 0x00C0(0x0180) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -71,7 +71,7 @@ namespace Classes
 
 
 	// Class MovieSceneCapture.AutomatedLevelSequenceCapture
-	// 0x0000 (0x0200 - 0x0200)
+	// 0x0000 (0x0240 - 0x0240)
 	class UAutomatedLevelSequenceCapture : public UMovieSceneCapture
 	{
 	public:
@@ -87,14 +87,13 @@ namespace Classes
 
 
 	// Class MovieSceneCapture.LevelCapture
-	// 0x0020 (0x0220 - 0x0200)
+	// 0x0020 (0x0260 - 0x0240)
 	class ULevelCapture : public UMovieSceneCapture
 	{
 	public:
-		bool                                               bAutoStartCapture;                                        // 0x0200(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData00[0xB];                                       // 0x0201(0x000B) MISSED OFFSET
-		struct FGuid                                       PrerequisiteActorId;                                      // 0x020C(0x0010) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData01[0x4];                                       // 0x021C(0x0004) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x4];                                       // 0x0240(0x0004) MISSED OFFSET
+		struct FGuid                                       PrerequisiteActorId;                                      // 0x0244(0x0010) (CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0xC];                                       // 0x0254(0x000C) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -187,7 +186,7 @@ namespace Classes
 		int                                                HDRCompressionQuality;                                    // 0x003C(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_Config, CPF_IsPlainOldData)
 		TEnumAsByte<EHDRCaptureGamut>                      CaptureGamut;                                             // 0x0040(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_Config, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
-		struct FStringAssetReference                       PostProcessingMaterial;                                   // 0x0048(0x0010) (CPF_Edit, CPF_ZeroConstructor, CPF_Config)
+		struct FStringAssetReference                       PostProcessingMaterial;                                   // 0x0048(0x0010) (CPF_Edit, CPF_Config)
 
 		static UClass* StaticClass()
 		{

@@ -135,6 +135,11 @@ namespace Classes
 		bool                                               ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
+	// Function InventoryListBaseWidget.InventoryListBaseWidget_C.HandleOnDoSlotAction
+	struct UInventoryListBaseWidget_C_HandleOnDoSlotAction_Params
+	{
+	};
+
 	// Function InventoryListBaseWidget.InventoryListBaseWidget_C.GetScrollAccelation
 	struct UInventoryListBaseWidget_C_GetScrollAccelation_Params
 	{
@@ -324,6 +329,17 @@ namespace Classes
 	struct UInventoryListBaseWidget_C_ExecuteUbergraph_InventoryListBaseWidget_Params
 	{
 		int                                                EntryPoint;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnDoSlotAction__DelegateSignature
+	struct UInventoryListBaseWidget_C_OnDoSlotAction__DelegateSignature_Params
+	{
+	};
+
+	// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnInventoryDrop__DelegateSignature
+	struct UInventoryListBaseWidget_C_OnInventoryDrop__DelegateSignature_Params
+	{
+		class UDragDropOperation*                          Operation;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function InventoryListBaseWidget.InventoryListBaseWidget_C.RefreshFocus__DelegateSignature

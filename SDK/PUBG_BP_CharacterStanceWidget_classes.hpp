@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass BP_CharacterStanceWidget.BP_CharacterStanceWidget_C
-	// 0x0000 (0x02A8 - 0x02A8)
+	// 0x0000 (0x02F8 - 0x02F8)
 	class UBP_CharacterStanceWidget_C : public UCharacterStanceBaseWidget
 	{
 	public:

@@ -15,11 +15,11 @@ namespace Classes
 // Function KickPopupWidget.KickPopupWidget_C.SetPopup
 // (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupStyle>       PopupStyle                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupStyle                    PopupStyle                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FText                   Message                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 // struct FScriptDelegate         PressedDelegate                (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
 
-void UKickPopupWidget_C::SetPopup(TEnumAsByte<EPopupStyle> PopupStyle, const struct FText& Message, const struct FScriptDelegate& PressedDelegate)
+void UKickPopupWidget_C::SetPopup(EPopupStyle PopupStyle, const struct FText& Message, const struct FScriptDelegate& PressedDelegate)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xaad19051);
@@ -169,9 +169,9 @@ void UKickPopupWidget_C::ExecuteUbergraph_KickPopupWidget(int EntryPoint)
 // Function KickPopupWidget.KickPopupWidget_C.ButttonClick__DelegateSignature
 // (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    NewParam                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 NewParam                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UKickPopupWidget_C::ButttonClick__DelegateSignature(TEnumAsByte<EPopupButtonID> NewParam)
+void UKickPopupWidget_C::ButttonClick__DelegateSignature(EPopupButtonID NewParam)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x160192c0);

@@ -33,9 +33,9 @@ void UMainOptionWidget_C::ClearOptionButtonsColors()
 // Function MainOptionWidget.MainOptionWidget_C.PopupButtonClicked
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UMainOptionWidget_C::PopupButtonClicked(TEnumAsByte<EPopupButtonID> ButtonID)
+void UMainOptionWidget_C::PopupButtonClicked(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x143f8ae);

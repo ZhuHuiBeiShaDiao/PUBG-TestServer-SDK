@@ -26,6 +26,7 @@ namespace Classes
 		}
 
 
+		void STATIC_IsSelfputMode_Gamepad(class UUserWidget* Widget, class UObject* __WorldContext, bool* bIsSelfPut);
 		void STATIC_GetSelfPutAttachment(class UUserWidget* Widget, class UObject* __WorldContext, class UAttachableItem** GamepadadSelectedAttachableItem);
 		void STATIC_CancelSelfAttachmentPutMode(class UUserWidget* Widget, class UObject* __WorldContext);
 		void STATIC_IsSelfAttachmentPutMode(class UUserWidget* Widget, class UObject* __WorldContext, bool* bResult);

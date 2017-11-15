@@ -36,9 +36,9 @@ void UInGameReplayMenu_C::SetHUD(class ATslHUD* inHUD)
 // Function InGameReplayMenu.InGameReplayMenu_C.GotoReplayList
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UInGameReplayMenu_C::GotoReplayList(TEnumAsByte<EPopupButtonID> ButtonID)
+void UInGameReplayMenu_C::GotoReplayList(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x81b24a21);
@@ -57,9 +57,9 @@ void UInGameReplayMenu_C::GotoReplayList(TEnumAsByte<EPopupButtonID> ButtonID)
 // Function InGameReplayMenu.InGameReplayMenu_C.QuitReplay
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UInGameReplayMenu_C::QuitReplay(TEnumAsByte<EPopupButtonID> ButtonID)
+void UInGameReplayMenu_C::QuitReplay(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xcebe6335);

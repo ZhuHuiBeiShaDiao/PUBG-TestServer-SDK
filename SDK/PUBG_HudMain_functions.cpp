@@ -701,9 +701,9 @@ void UHudMain_C::OnNitifyHit(float DamagePercent, TEnumAsByte<EDamageTypeCategor
 // Function HudMain.HudMain_C.Get_ParachuteText_Visibility_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UHudMain_C::Get_ParachuteText_Visibility_1()
+ESlateVisibility UHudMain_C::Get_ParachuteText_Visibility_1()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xb215241f);
@@ -723,9 +723,9 @@ TEnumAsByte<ESlateVisibility> UHudMain_C::Get_ParachuteText_Visibility_1()
 // Function HudMain.HudMain_C.Get_VisibilityOnMatchState
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UHudMain_C::Get_VisibilityOnMatchState()
+ESlateVisibility UHudMain_C::Get_VisibilityOnMatchState()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x27582c45);
@@ -745,10 +745,10 @@ TEnumAsByte<ESlateVisibility> UHudMain_C::Get_VisibilityOnMatchState()
 // Function HudMain.HudMain_C.OnDisplaySystemMessage
 // (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<ESystemMessageType> MessageType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// ESystemMessageType             MessageType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FText                   Message                        (CPF_Parm)
 
-void UHudMain_C::OnDisplaySystemMessage(TEnumAsByte<ESystemMessageType> MessageType, const struct FText& Message)
+void UHudMain_C::OnDisplaySystemMessage(ESystemMessageType MessageType, const struct FText& Message)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xfed2757e);
@@ -810,7 +810,7 @@ void UHudMain_C::OnButtonClick(const struct FString& ButotnName)
 // Function HudMain.HudMain_C.Get_HealthBar_FillColorAndOpacity_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UHudMain_C::Get_HealthBar_FillColorAndOpacity_1()
 {
@@ -872,7 +872,7 @@ float UHudMain_C::Get_Vehicle_Health_Ratio()
 // Function HudMain.HudMain_C.GetFillColorAndOpacity_1
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UHudMain_C::GetFillColorAndOpacity_1()
 {

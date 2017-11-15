@@ -13,7 +13,7 @@ namespace Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass MaleCharacterProxy.MaleCharacterProxy_C
-	// 0x0000 (0x0820 - 0x0820)
+	// 0x0000 (0x0840 - 0x0840)
 	class AMaleCharacterProxy_C : public ACharacterProxyBase_C
 	{
 	public:

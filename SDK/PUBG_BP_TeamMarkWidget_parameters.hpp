@@ -34,7 +34,7 @@ namespace Classes
 	// Function BP_TeamMarkWidget.BP_TeamMarkWidget_C.GetPlayerNameTextAddLocation
 	struct UBP_TeamMarkWidget_C_GetPlayerNameTextAddLocation_Params
 	{
-		struct FVector2D                                   AddLocation;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector2D                                   AddLocation;                                              // (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 	};
 
 	// Function BP_TeamMarkWidget.BP_TeamMarkWidget_C.OnPrepass_1

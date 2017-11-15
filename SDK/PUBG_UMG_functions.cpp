@@ -15,9 +15,9 @@ namespace Classes
 // Function UMG.Widget.SetVisibility
 // (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  InVisibility                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// ESlateVisibility               InVisibility                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UWidget::SetVisibility(TEnumAsByte<ESlateVisibility> InVisibility)
+void UWidget::SetVisibility(ESlateVisibility InVisibility)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xc0b6ba42);
@@ -81,7 +81,7 @@ void UWidget::SetToolTipText(const struct FText& InToolTipText)
 // Function UMG.Widget.SetToolTip
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UWidget::SetToolTip(class UWidget* Widget)
 {
@@ -103,7 +103,7 @@ void UWidget::SetToolTip(class UWidget* Widget)
 // Function UMG.Widget.SetRenderTranslation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Translation                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Translation                    (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidget::SetRenderTranslation(const struct FVector2D& Translation)
 {
@@ -125,7 +125,7 @@ void UWidget::SetRenderTranslation(const struct FVector2D& Translation)
 // Function UMG.Widget.SetRenderTransformPivot
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Pivot                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Pivot                          (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidget::SetRenderTransformPivot(const struct FVector2D& Pivot)
 {
@@ -169,7 +169,7 @@ void UWidget::SetRenderTransform(const struct FWidgetTransform& InTransform)
 // Function UMG.Widget.SetRenderShear
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Shear                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Shear                          (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidget::SetRenderShear(const struct FVector2D& Shear)
 {
@@ -191,7 +191,7 @@ void UWidget::SetRenderShear(const struct FVector2D& Shear)
 // Function UMG.Widget.SetRenderScale
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Scale                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Scale                          (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidget::SetRenderScale(const struct FVector2D& Scale)
 {
@@ -222,6 +222,32 @@ void UWidget::SetRenderAngle(float Angle)
 
 	UWidget_SetRenderAngle_Params params;
 	params.Angle = Angle;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.Widget.SetNavigationRule
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// EUINavigation                  Direction                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EUINavigationRule              Rule                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FName                   WidgetToFocus                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWidget::SetNavigationRule(EUINavigation Direction, EUINavigationRule Rule, const struct FName& WidgetToFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x27be70b6);
+
+	UWidget_SetNavigationRule_Params params;
+	params.Direction = Direction;
+	params.Rule = Rule;
+	params.WidgetToFocus = WidgetToFocus;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -285,6 +311,30 @@ void UWidget::SetCursor(TEnumAsByte<EMouseCursor> InCursor)
 
 	UWidget_SetCursor_Params params;
 	params.InCursor = InCursor;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.Widget.SetAllNavigationRules
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// EUINavigationRule              Rule                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FName                   WidgetToFocus                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWidget::SetAllNavigationRules(EUINavigationRule Rule, const struct FName& WidgetToFocus)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x98428c7e);
+
+	UWidget_SetAllNavigationRules_Params params;
+	params.Rule = Rule;
+	params.WidgetToFocus = WidgetToFocus;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -591,7 +641,7 @@ bool UWidget::HasAnyUserFocus()
 // DelegateFunction UMG.Widget.GetWidget__DelegateSignature
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWidget* UWidget::GetWidget__DelegateSignature()
 {
@@ -613,9 +663,9 @@ class UWidget* UWidget::GetWidget__DelegateSignature()
 // Function UMG.Widget.GetVisibility
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UWidget::GetVisibility()
+ESlateVisibility UWidget::GetVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xe8165416);
@@ -658,9 +708,9 @@ struct FText UWidget::GetText__DelegateSignature()
 // DelegateFunction UMG.Widget.GetSlateVisibility__DelegateSignature
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UWidget::GetSlateVisibility__DelegateSignature()
+ESlateVisibility UWidget::GetSlateVisibility__DelegateSignature()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xf24924f7);
@@ -724,7 +774,7 @@ struct FSlateBrush UWidget::GetSlateBrush__DelegateSignature()
 // Function UMG.Widget.GetParent
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// class UPanelWidget*            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UPanelWidget*            ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UPanelWidget* UWidget::GetParent()
 {
@@ -792,7 +842,7 @@ TEnumAsByte<EMouseCursor> UWidget::GetMouseCursor__DelegateSignature()
 // DelegateFunction UMG.Widget.GetLinearColor__DelegateSignature
 // (FUNC_Public, FUNC_Delegate, FUNC_HasDefaults)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UWidget::GetLinearColor__DelegateSignature()
 {
@@ -881,7 +931,7 @@ float UWidget::GetFloat__DelegateSignature()
 // Function UMG.Widget.GetDesiredSize
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UWidget::GetDesiredSize()
 {
@@ -904,9 +954,9 @@ struct FVector2D UWidget::GetDesiredSize()
 // DelegateFunction UMG.Widget.GetCheckBoxState__DelegateSignature
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
-// TEnumAsByte<ECheckBoxState>    ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ECheckBoxState                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ECheckBoxState> UWidget::GetCheckBoxState__DelegateSignature()
+ECheckBoxState UWidget::GetCheckBoxState__DelegateSignature()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x62c20544);
@@ -914,6 +964,29 @@ TEnumAsByte<ECheckBoxState> UWidget::GetCheckBoxState__DelegateSignature()
 	UWidget_GetCheckBoxState__DelegateSignature_Params params;
 
 	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.Widget.GetCachedGeometry
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// struct FGeometry               ReturnValue                    (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_ReferenceParm, CPF_IsPlainOldData)
+
+struct FGeometry UWidget::GetCachedGeometry()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9a686ec);
+
+	UWidget_GetCachedGeometry_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -949,7 +1022,7 @@ bool UWidget::GetBool__DelegateSignature()
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
 // struct FString                 Item                           (CPF_Parm, CPF_ZeroConstructor)
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWidget* UWidget::GenerateWidgetForString__DelegateSignature(const struct FString& Item)
 {
@@ -973,7 +1046,7 @@ class UWidget* UWidget::GenerateWidgetForString__DelegateSignature(const struct 
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
 // class UObject*                 Item                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWidget* UWidget::GenerateWidgetForObject__DelegateSignature(class UObject* Item)
 {
@@ -1037,7 +1110,7 @@ void UWidget::ForceLayoutPrepass()
 // DelegateFunction UMG.Widget.EventForWidget__DelegateSignature
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
-// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UWidget::EventForWidget__DelegateSignature(class UWidget* BoundWidget)
 {
@@ -1143,7 +1216,7 @@ void UUserWidget::StopListeningForAllInputActions()
 // Function UMG.UserWidget.StopAnimation
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UUserWidget::StopAnimation(class UWidgetAnimation* InAnimation)
 {
@@ -1165,7 +1238,7 @@ void UUserWidget::StopAnimation(class UWidgetAnimation* InAnimation)
 // Function UMG.UserWidget.SetPositionInViewport
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
 // bool                           bRemoveDPIScale                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UUserWidget::SetPositionInViewport(const struct FVector2D& Position, bool bRemoveDPIScale)
@@ -1189,7 +1262,7 @@ void UUserWidget::SetPositionInViewport(const struct FVector2D& Position, bool b
 // Function UMG.UserWidget.SetPlaybackSpeed
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // float                          PlaybackSpeed                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UUserWidget::SetPlaybackSpeed(class UWidgetAnimation* InAnimation, float PlaybackSpeed)
@@ -1232,6 +1305,28 @@ void UUserWidget::SetPadding(const struct FMargin& InPadding)
 }
 
 
+// Function UMG.UserWidget.SetOwningPlayer
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class APlayerController*       LocalPlayerController          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UUserWidget::SetOwningPlayer(class APlayerController* LocalPlayerController)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8a7f5cfc);
+
+	UUserWidget_SetOwningPlayer_Params params;
+	params.LocalPlayerController = LocalPlayerController;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UMG.UserWidget.SetOwningLocalPlayer
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -1257,7 +1352,7 @@ void UUserWidget::SetOwningLocalPlayer(class ULocalPlayer* LocalPlayer)
 // Function UMG.UserWidget.SetNumLoopsToPlay
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // int                            NumLoopsToPlay                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UUserWidget::SetNumLoopsToPlay(class UWidgetAnimation* InAnimation, int NumLoopsToPlay)
@@ -1347,7 +1442,7 @@ void UUserWidget::SetForegroundColor(const struct FSlateColor& InForegroundColor
 // Function UMG.UserWidget.SetDesiredSizeInViewport
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Size                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Size                           (CPF_Parm, CPF_IsPlainOldData)
 
 void UUserWidget::SetDesiredSizeInViewport(const struct FVector2D& Size)
 {
@@ -1369,7 +1464,7 @@ void UUserWidget::SetDesiredSizeInViewport(const struct FVector2D& Size)
 // Function UMG.UserWidget.SetColorAndOpacity
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InColorAndOpacity              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InColorAndOpacity              (CPF_Parm, CPF_IsPlainOldData)
 
 void UUserWidget::SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity)
 {
@@ -1413,7 +1508,7 @@ void UUserWidget::SetAnchorsInViewport(const struct FAnchors& Anchors)
 // Function UMG.UserWidget.SetAlignmentInViewport
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Alignment                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Alignment                      (CPF_Parm, CPF_IsPlainOldData)
 
 void UUserWidget::SetAlignmentInViewport(const struct FVector2D& Alignment)
 {
@@ -1435,7 +1530,7 @@ void UUserWidget::SetAlignmentInViewport(const struct FVector2D& Alignment)
 // Function UMG.UserWidget.ReverseAnimation
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UUserWidget::ReverseAnimation(class UWidgetAnimation* InAnimation)
 {
@@ -1492,6 +1587,27 @@ void UUserWidget::RegisterInputComponent()
 }
 
 
+// Function UMG.UserWidget.PreConstruct
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// Parameters:
+// bool                           IsDesignTime                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UUserWidget::PreConstruct(bool IsDesignTime)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8899f147);
+
+	UUserWidget_PreConstruct_Params params;
+	params.IsDesignTime = IsDesignTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UMG.UserWidget.PlaySound
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -1517,7 +1633,7 @@ void UUserWidget::PlaySound(class USoundBase* SoundToPlay)
 // Function UMG.UserWidget.PlayAnimationTo
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // float                          StartAtTime                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // float                          EndAtTime                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            NumLoopsToPlay                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -1549,7 +1665,7 @@ void UUserWidget::PlayAnimationTo(class UWidgetAnimation* InAnimation, float Sta
 // Function UMG.UserWidget.PlayAnimation
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // float                          StartAtTime                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            NumLoopsToPlay                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // TEnumAsByte<EUMGSequencePlayMode> PlayMode                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -1579,7 +1695,7 @@ void UUserWidget::PlayAnimation(class UWidgetAnimation* InAnimation, float Start
 // Function UMG.UserWidget.PauseAnimation
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 float UUserWidget::PauseAnimation(class UWidgetAnimation* InAnimation)
@@ -2340,7 +2456,7 @@ struct FEventReply UUserWidget::OnControllerAnalogValueChanged(const struct FGeo
 // Function UMG.UserWidget.OnAnimationStarted
 // (FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UUserWidget::OnAnimationStarted(class UWidgetAnimation* Animation)
 {
@@ -2362,7 +2478,7 @@ void UUserWidget::OnAnimationStarted(class UWidgetAnimation* Animation)
 // Function UMG.UserWidget.OnAnimationFinished
 // (FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*        Animation                      (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        Animation                      (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UUserWidget::OnAnimationFinished(class UWidgetAnimation* Animation)
 {
@@ -2554,7 +2670,7 @@ bool UUserWidget::IsAnyAnimationPlaying()
 // Function UMG.UserWidget.IsAnimationPlaying
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UUserWidget::IsAnimationPlaying(class UWidgetAnimation* InAnimation)
@@ -2671,7 +2787,7 @@ bool UUserWidget::GetIsVisible()
 // Function UMG.UserWidget.GetAnimationCurrentTime
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidgetAnimation*        InAnimation                    (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // float                          ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 float UUserWidget::GetAnimationCurrentTime(class UWidgetAnimation* InAnimation)
@@ -2681,6 +2797,52 @@ float UUserWidget::GetAnimationCurrentTime(class UWidgetAnimation* InAnimation)
 
 	UUserWidget_GetAnimationCurrentTime_Params params;
 	params.InAnimation = InAnimation;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.UserWidget.GetAnchorsInViewport
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// struct FAnchors                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
+
+struct FAnchors UUserWidget::GetAnchorsInViewport()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd9b970bc);
+
+	UUserWidget_GetAnchorsInViewport_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.UserWidget.GetAlignmentInViewport
+// (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
+
+struct FVector2D UUserWidget::GetAlignmentInViewport()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x75d1c4e1);
+
+	UUserWidget_GetAlignmentInViewport_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -2916,9 +3078,9 @@ struct FSlateBrush UBrushBinding::GetValue()
 // Function UMG.CheckedStateBinding.GetValue
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_Const)
 // Parameters:
-// TEnumAsByte<ECheckBoxState>    ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ECheckBoxState                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ECheckBoxState> UCheckedStateBinding::GetValue()
+ECheckBoxState UCheckedStateBinding::GetValue()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x9d2f2b36);
@@ -2962,7 +3124,7 @@ struct FSlateColor UColorBinding::GetSlateValue()
 // Function UMG.ColorBinding.GetLinearValue
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_Const)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UColorBinding::GetLinearValue()
 {
@@ -3100,9 +3262,9 @@ struct FString UTextBinding::GetStringValue()
 // Function UMG.VisibilityBinding.GetValue
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_Const)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UVisibilityBinding::GetValue()
+ESlateVisibility UVisibilityBinding::GetValue()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x3c28ff58);
@@ -3123,7 +3285,7 @@ TEnumAsByte<ESlateVisibility> UVisibilityBinding::GetValue()
 // Function UMG.WidgetBinding.GetValue
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_Const)
 // Parameters:
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWidget* UWidgetBinding::GetValue()
 {
@@ -3148,8 +3310,8 @@ class UWidget* UWidgetBinding::GetValue()
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FGeometry               Geometry                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               LocalCoordinate                (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               LocalCoordinate                (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void USlateBlueprintLibrary::STATIC_ScreenToWidgetLocal(class UObject* WorldContextObject, const struct FGeometry& Geometry, const struct FVector2D& ScreenPosition, struct FVector2D* LocalCoordinate)
 {
@@ -3177,8 +3339,8 @@ void USlateBlueprintLibrary::STATIC_ScreenToWidgetLocal(class UObject* WorldCont
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               AbsoluteCoordinate             (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               AbsoluteCoordinate             (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void USlateBlueprintLibrary::STATIC_ScreenToWidgetAbsolute(class UObject* WorldContextObject, const struct FVector2D& ScreenPosition, struct FVector2D* AbsoluteCoordinate)
 {
@@ -3201,14 +3363,42 @@ void USlateBlueprintLibrary::STATIC_ScreenToWidgetAbsolute(class UObject* WorldC
 }
 
 
+// Function UMG.SlateBlueprintLibrary.ScreenToViewport
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults)
+// Parameters:
+// class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               ViewportPosition               (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+
+void USlateBlueprintLibrary::STATIC_ScreenToViewport(class UObject* WorldContextObject, const struct FVector2D& ScreenPosition, struct FVector2D* ViewportPosition)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5ea532a8);
+
+	USlateBlueprintLibrary_ScreenToViewport_Params params;
+	params.WorldContextObject = WorldContextObject;
+	params.ScreenPosition = ScreenPosition;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ViewportPosition != nullptr)
+		*ViewportPosition = params.ViewportPosition;
+}
+
+
 // Function UMG.SlateBlueprintLibrary.LocalToViewport
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FGeometry               Geometry                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector2D               LocalCoordinate                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               PixelPosition                  (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ViewportPosition               (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               LocalCoordinate                (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               PixelPosition                  (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector2D               ViewportPosition               (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void USlateBlueprintLibrary::STATIC_LocalToViewport(class UObject* WorldContextObject, const struct FGeometry& Geometry, const struct FVector2D& LocalCoordinate, struct FVector2D* PixelPosition, struct FVector2D* ViewportPosition)
 {
@@ -3238,8 +3428,8 @@ void USlateBlueprintLibrary::STATIC_LocalToViewport(class UObject* WorldContextO
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FGeometry               Geometry                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector2D               LocalCoordinate                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               LocalCoordinate                (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D USlateBlueprintLibrary::STATIC_LocalToAbsolute(const struct FGeometry& Geometry, const struct FVector2D& LocalCoordinate)
 {
@@ -3265,7 +3455,7 @@ struct FVector2D USlateBlueprintLibrary::STATIC_LocalToAbsolute(const struct FGe
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FGeometry               Geometry                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector2D               AbsoluteCoordinate             (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm, CPF_IsPlainOldData)
+// struct FVector2D               AbsoluteCoordinate             (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool USlateBlueprintLibrary::STATIC_IsUnderLocation(const struct FGeometry& Geometry, const struct FVector2D& AbsoluteCoordinate)
@@ -3292,7 +3482,7 @@ bool USlateBlueprintLibrary::STATIC_IsUnderLocation(const struct FGeometry& Geom
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FGeometry               Geometry                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D USlateBlueprintLibrary::STATIC_GetLocalSize(const struct FGeometry& Geometry)
 {
@@ -3313,13 +3503,40 @@ struct FVector2D USlateBlueprintLibrary::STATIC_GetLocalSize(const struct FGeome
 }
 
 
+// Function UMG.SlateBlueprintLibrary.EqualEqual_SlateBrush
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintPure)
+// Parameters:
+// struct FSlateBrush             A                              (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
+// struct FSlateBrush             B                              (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool USlateBlueprintLibrary::STATIC_EqualEqual_SlateBrush(const struct FSlateBrush& A, const struct FSlateBrush& B)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf4c2b6d1);
+
+	USlateBlueprintLibrary_EqualEqual_SlateBrush_Params params;
+	params.A = A;
+	params.B = B;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function UMG.SlateBlueprintLibrary.AbsoluteToViewport
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               AbsoluteDesktopCoordinate      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               PixelPosition                  (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ViewportPosition               (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               AbsoluteDesktopCoordinate      (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               PixelPosition                  (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector2D               ViewportPosition               (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void USlateBlueprintLibrary::STATIC_AbsoluteToViewport(class UObject* WorldContextObject, const struct FVector2D& AbsoluteDesktopCoordinate, struct FVector2D* PixelPosition, struct FVector2D* ViewportPosition)
 {
@@ -3348,8 +3565,8 @@ void USlateBlueprintLibrary::STATIC_AbsoluteToViewport(class UObject* WorldConte
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FGeometry               Geometry                       (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_IsPlainOldData)
-// struct FVector2D               AbsoluteCoordinate             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               AbsoluteCoordinate             (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D USlateBlueprintLibrary::STATIC_AbsoluteToLocal(const struct FGeometry& Geometry, const struct FVector2D& AbsoluteCoordinate)
 {
@@ -3368,6 +3585,72 @@ struct FVector2D USlateBlueprintLibrary::STATIC_AbsoluteToLocal(const struct FGe
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function UMG.BackgroundBlurSlot.SetVerticalAlignment
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<EVerticalAlignment> InVerticalAlignment            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBackgroundBlurSlot::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd8888582);
+
+	UBackgroundBlurSlot_SetVerticalAlignment_Params params;
+	params.InVerticalAlignment = InVerticalAlignment;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.BackgroundBlurSlot.SetPadding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FMargin                 InPadding                      (CPF_Parm)
+
+void UBackgroundBlurSlot::SetPadding(const struct FMargin& InPadding)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb5838760);
+
+	UBackgroundBlurSlot_SetPadding_Params params;
+	params.InPadding = InPadding;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.BackgroundBlurSlot.SetHorizontalAlignment
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBackgroundBlurSlot::SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x74151744);
+
+	UBackgroundBlurSlot_SetHorizontalAlignment_Params params;
+	params.InHorizontalAlignment = InHorizontalAlignment;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -3528,7 +3811,7 @@ void UCanvasPanelSlot::SetZOrder(int InZOrder)
 // Function UMG.CanvasPanelSlot.SetSize
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InSize                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InSize                         (CPF_Parm, CPF_IsPlainOldData)
 
 void UCanvasPanelSlot::SetSize(const struct FVector2D& InSize)
 {
@@ -3550,7 +3833,7 @@ void UCanvasPanelSlot::SetSize(const struct FVector2D& InSize)
 // Function UMG.CanvasPanelSlot.SetPosition
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InPosition                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InPosition                     (CPF_Parm, CPF_IsPlainOldData)
 
 void UCanvasPanelSlot::SetPosition(const struct FVector2D& InPosition)
 {
@@ -3594,7 +3877,7 @@ void UCanvasPanelSlot::SetOffsets(const struct FMargin& InOffset)
 // Function UMG.CanvasPanelSlot.SetMinimum
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults)
 // Parameters:
-// struct FVector2D               InMinimumAnchors               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InMinimumAnchors               (CPF_Parm, CPF_IsPlainOldData)
 
 void UCanvasPanelSlot::SetMinimum(const struct FVector2D& InMinimumAnchors)
 {
@@ -3616,7 +3899,7 @@ void UCanvasPanelSlot::SetMinimum(const struct FVector2D& InMinimumAnchors)
 // Function UMG.CanvasPanelSlot.SetMaximum
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults)
 // Parameters:
-// struct FVector2D               InMaximumAnchors               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InMaximumAnchors               (CPF_Parm, CPF_IsPlainOldData)
 
 void UCanvasPanelSlot::SetMaximum(const struct FVector2D& InMaximumAnchors)
 {
@@ -3704,7 +3987,7 @@ void UCanvasPanelSlot::SetAnchors(const struct FAnchors& InAnchors)
 // Function UMG.CanvasPanelSlot.SetAlignment
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InAlignment                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InAlignment                    (CPF_Parm, CPF_IsPlainOldData)
 
 void UCanvasPanelSlot::SetAlignment(const struct FVector2D& InAlignment)
 {
@@ -3749,7 +4032,7 @@ int UCanvasPanelSlot::GetZOrder()
 // Function UMG.CanvasPanelSlot.GetSize
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UCanvasPanelSlot::GetSize()
 {
@@ -3772,7 +4055,7 @@ struct FVector2D UCanvasPanelSlot::GetSize()
 // Function UMG.CanvasPanelSlot.GetPosition
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UCanvasPanelSlot::GetPosition()
 {
@@ -3887,7 +4170,7 @@ struct FAnchors UCanvasPanelSlot::GetAnchors()
 // Function UMG.CanvasPanelSlot.GetAlignment
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UCanvasPanelSlot::GetAlignment()
 {
@@ -4655,6 +4938,358 @@ void UWidgetSwitcherSlot::SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignmen
 }
 
 
+// Function UMG.PanelWidget.RemoveChildAt
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UPanelWidget::RemoveChildAt(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x45181f9d);
+
+	UPanelWidget_RemoveChildAt_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.RemoveChild
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UPanelWidget::RemoveChild(class UWidget* Content)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8b2f308e);
+
+	UPanelWidget_RemoveChild_Params params;
+	params.Content = Content;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.HasChild
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UPanelWidget::HasChild(class UWidget* Content)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7e66b8be);
+
+	UPanelWidget_HasChild_Params params;
+	params.Content = Content;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.HasAnyChildren
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UPanelWidget::HasAnyChildren()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5db3cf33);
+
+	UPanelWidget_HasAnyChildren_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.GetChildrenCount
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UPanelWidget::GetChildrenCount()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x612bcd5a);
+
+	UPanelWidget_GetChildrenCount_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.GetChildIndex
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+int UPanelWidget::GetChildIndex(class UWidget* Content)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x1ff66d06);
+
+	UPanelWidget_GetChildIndex_Params params;
+	params.Content = Content;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.GetChildAt
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
+
+class UWidget* UPanelWidget::GetChildAt(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf3abdd21);
+
+	UPanelWidget_GetChildAt_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.PanelWidget.ClearChildren
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+
+void UPanelWidget::ClearChildren()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x638772ba);
+
+	UPanelWidget_ClearChildren_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.PanelWidget.AddChild
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UPanelSlot*              ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
+
+class UPanelSlot* UPanelWidget::AddChild(class UWidget* Content)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x91145a55);
+
+	UPanelWidget_AddChild_Params params;
+	params.Content = Content;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.ContentWidget.SetContent
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UPanelSlot*              ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
+
+class UPanelSlot* UContentWidget::SetContent(class UWidget* Content)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe7e1c7b8);
+
+	UContentWidget_SetContent_Params params;
+	params.Content = Content;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.ContentWidget.GetContentSlot
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// class UPanelSlot*              ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
+
+class UPanelSlot* UContentWidget::GetContentSlot()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x375a0cc0);
+
+	UContentWidget_GetContentSlot_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.ContentWidget.GetContent
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
+
+class UWidget* UContentWidget::GetContent()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x656594c4);
+
+	UContentWidget_GetContent_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function UMG.WindowTitleBarArea.SetVerticalAlignment
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<EVerticalAlignment> InVerticalAlignment            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWindowTitleBarArea::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe1a42d2d);
+
+	UWindowTitleBarArea_SetVerticalAlignment_Params params;
+	params.InVerticalAlignment = InVerticalAlignment;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.WindowTitleBarArea.SetPadding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FMargin                 InPadding                      (CPF_Parm)
+
+void UWindowTitleBarArea::SetPadding(const struct FMargin& InPadding)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x84e55d1f);
+
+	UWindowTitleBarArea_SetPadding_Params params;
+	params.InPadding = InPadding;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.WindowTitleBarArea.SetHorizontalAlignment
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UWindowTitleBarArea::SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8ae61c6f);
+
+	UWindowTitleBarArea_SetHorizontalAlignment_Params params;
+	params.InHorizontalAlignment = InHorizontalAlignment;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UMG.WindowTitleBarAreaSlot.SetVerticalAlignment
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -5337,6 +5972,50 @@ void UEditableTextBox::SetText(const struct FText& InText)
 }
 
 
+// Function UMG.EditableTextBox.SetIsReadOnly
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bReadOnly                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UEditableTextBox::SetIsReadOnly(bool bReadOnly)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf21bd9ec);
+
+	UEditableTextBox_SetIsReadOnly_Params params;
+	params.bReadOnly = bReadOnly;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.EditableTextBox.SetHintText
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// struct FText                   InText                         (CPF_Parm)
+
+void UEditableTextBox::SetHintText(const struct FText& InText)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9b108d8c);
+
+	UEditableTextBox_SetHintText_Params params;
+	params.InText = InText;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UMG.EditableTextBox.SetError
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -5468,6 +6147,28 @@ void UEditableTextBox::ClearError()
 }
 
 
+// Function UMG.ExpandableArea.SetIsExpanded_Animated
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           IsExpanded                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UExpandableArea::SetIsExpanded_Animated(bool IsExpanded)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb1e1193a);
+
+	UExpandableArea_SetIsExpanded_Animated_Params params;
+	params.IsExpanded = IsExpanded;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function UMG.ExpandableArea.SetIsExpanded
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
@@ -5538,7 +6239,7 @@ void UImage::SetOpacity(float InOpacity)
 // Function UMG.Image.SetColorAndOpacity
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InColorAndOpacity              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InColorAndOpacity              (CPF_Parm, CPF_IsPlainOldData)
 
 void UImage::SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity)
 {
@@ -5547,6 +6248,30 @@ void UImage::SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity)
 
 	UImage_SetColorAndOpacity_Params params;
 	params.InColorAndOpacity = InColorAndOpacity;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.Image.SetBrushFromTextureDynamic
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// class UTexture2DDynamic*       Texture                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           bMatchSize                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UImage::SetBrushFromTextureDynamic(class UTexture2DDynamic* Texture, bool bMatchSize)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xcbcb9df);
+
+	UImage_SetBrushFromTextureDynamic_Params params;
+	params.Texture = Texture;
+	params.bMatchSize = bMatchSize;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5798,226 +6523,11 @@ bool UInputKeySelector::GetIsSelectingKey()
 }
 
 
-// Function UMG.PanelWidget.RemoveChildAt
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UPanelWidget::RemoveChildAt(int Index)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x45181f9d);
-
-	UPanelWidget_RemoveChildAt_Params params;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.RemoveChild
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UPanelWidget::RemoveChild(class UWidget* Content)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x8b2f308e);
-
-	UPanelWidget_RemoveChild_Params params;
-	params.Content = Content;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.HasChild
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UPanelWidget::HasChild(class UWidget* Content)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x7e66b8be);
-
-	UPanelWidget_HasChild_Params params;
-	params.Content = Content;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.HasAnyChildren
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UPanelWidget::HasAnyChildren()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x5db3cf33);
-
-	UPanelWidget_HasAnyChildren_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.GetChildrenCount
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-int UPanelWidget::GetChildrenCount()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x612bcd5a);
-
-	UPanelWidget_GetChildrenCount_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.GetChildIndex
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// int                            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-int UPanelWidget::GetChildIndex(class UWidget* Content)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x1ff66d06);
-
-	UPanelWidget_GetChildIndex_Params params;
-	params.Content = Content;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.GetChildAt
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
-// Parameters:
-// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-class UWidget* UPanelWidget::GetChildAt(int Index)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xf3abdd21);
-
-	UPanelWidget_GetChildAt_Params params;
-	params.Index = Index;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function UMG.PanelWidget.ClearChildren
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-
-void UPanelWidget::ClearChildren()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x638772ba);
-
-	UPanelWidget_ClearChildren_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function UMG.PanelWidget.AddChild
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UPanelSlot*              ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-class UPanelSlot* UPanelWidget::AddChild(class UWidget* Content)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x91145a55);
-
-	UPanelWidget_AddChild_Params params;
-	params.Content = Content;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function UMG.CanvasPanel.AddChildToCanvas
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UCanvasPanelSlot*        ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UCanvasPanelSlot*        ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UCanvasPanelSlot* UCanvasPanel::AddChildToCanvas(class UWidget* Content)
 {
@@ -6038,19 +6548,18 @@ class UCanvasPanelSlot* UCanvasPanel::AddChildToCanvas(class UWidget* Content)
 }
 
 
-// Function UMG.ContentWidget.SetContent
+// Function UMG.BackgroundBlur.SetVerticalAlignment
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UPanelSlot*              ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// TEnumAsByte<EVerticalAlignment> InVerticalAlignment            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-class UPanelSlot* UContentWidget::SetContent(class UWidget* Content)
+void UBackgroundBlur::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment)
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xe7e1c7b8);
+	if (!fn) fn = UObject::FindObject<UFunction>(0x196ef446);
 
-	UContentWidget_SetContent_Params params;
-	params.Content = Content;
+	UBackgroundBlur_SetVerticalAlignment_Params params;
+	params.InVerticalAlignment = InVerticalAlignment;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -6058,22 +6567,21 @@ class UPanelSlot* UContentWidget::SetContent(class UWidget* Content)
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 
-// Function UMG.ContentWidget.GetContentSlot
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
+// Function UMG.BackgroundBlur.SetPadding
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UPanelSlot*              ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FMargin                 InPadding                      (CPF_Parm)
 
-class UPanelSlot* UContentWidget::GetContentSlot()
+void UBackgroundBlur::SetPadding(const struct FMargin& InPadding)
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x375a0cc0);
+	if (!fn) fn = UObject::FindObject<UFunction>(0x3477b9ac);
 
-	UContentWidget_GetContentSlot_Params params;
+	UBackgroundBlur_SetPadding_Params params;
+	params.InPadding = InPadding;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -6081,8 +6589,116 @@ class UPanelSlot* UContentWidget::GetContentSlot()
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
 
-	return params.ReturnValue;
+
+// Function UMG.BackgroundBlur.SetLowQualityFallbackBrush
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
+// Parameters:
+// struct FSlateBrush             InBrush                        (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
+
+void UBackgroundBlur::SetLowQualityFallbackBrush(const struct FSlateBrush& InBrush)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9b94464e);
+
+	UBackgroundBlur_SetLowQualityFallbackBrush_Params params;
+	params.InBrush = InBrush;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.BackgroundBlur.SetHorizontalAlignment
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBackgroundBlur::SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x95af32c0);
+
+	UBackgroundBlur_SetHorizontalAlignment_Params params;
+	params.InHorizontalAlignment = InHorizontalAlignment;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.BackgroundBlur.SetBlurStrength
+// (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// float                          InStrength                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBackgroundBlur::SetBlurStrength(float InStrength)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xcb442f9);
+
+	UBackgroundBlur_SetBlurStrength_Params params;
+	params.InStrength = InStrength;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.BackgroundBlur.SetBlurRadius
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// int                            InBlurRadius                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBackgroundBlur::SetBlurRadius(int InBlurRadius)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x97530330);
+
+	UBackgroundBlur_SetBlurRadius_Params params;
+	params.InBlurRadius = InBlurRadius;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.BackgroundBlur.SetApplyAlphaToBlur
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bInApplyAlphaToBlur            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBackgroundBlur::SetApplyAlphaToBlur(bool bInApplyAlphaToBlur)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8c9fec1);
+
+	UBackgroundBlur_SetApplyAlphaToBlur_Params params;
+	params.bInApplyAlphaToBlur = bInApplyAlphaToBlur;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -6155,7 +6771,7 @@ void UBorder::SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizon
 // Function UMG.Border.SetDesiredSizeScale
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InScale                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InScale                        (CPF_Parm, CPF_IsPlainOldData)
 
 void UBorder::SetDesiredSizeScale(const struct FVector2D& InScale)
 {
@@ -6177,7 +6793,7 @@ void UBorder::SetDesiredSizeScale(const struct FVector2D& InScale)
 // Function UMG.Border.SetContentColorAndOpacity
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InContentColorAndOpacity       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InContentColorAndOpacity       (CPF_Parm, CPF_IsPlainOldData)
 
 void UBorder::SetContentColorAndOpacity(const struct FLinearColor& InContentColorAndOpacity)
 {
@@ -6265,7 +6881,7 @@ void UBorder::SetBrushFromAsset(class USlateBrushAsset* Asset)
 // Function UMG.Border.SetBrushColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InBrushColor                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InBrushColor                   (CPF_Parm, CPF_IsPlainOldData)
 
 void UBorder::SetBrushColor(const struct FLinearColor& InBrushColor)
 {
@@ -6354,7 +6970,7 @@ void UButton::SetStyle(const struct FButtonStyle& InStyle)
 // Function UMG.Button.SetColorAndOpacity
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InColorAndOpacity              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InColorAndOpacity              (CPF_Parm, CPF_IsPlainOldData)
 
 void UButton::SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity)
 {
@@ -6376,7 +6992,7 @@ void UButton::SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity)
 // Function UMG.Button.SetBackgroundColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InBackgroundColor              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InBackgroundColor              (CPF_Parm, CPF_IsPlainOldData)
 
 void UButton::SetBackgroundColor(const struct FLinearColor& InBackgroundColor)
 {
@@ -6443,9 +7059,9 @@ void UCheckBox::SetIsChecked(bool InIsChecked)
 // Function UMG.CheckBox.SetCheckedState
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// TEnumAsByte<ECheckBoxState>    InCheckedState                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// ECheckBoxState                 InCheckedState                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UCheckBox::SetCheckedState(TEnumAsByte<ECheckBoxState> InCheckedState)
+void UCheckBox::SetCheckedState(ECheckBoxState InCheckedState)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x87498d53);
@@ -6511,9 +7127,9 @@ bool UCheckBox::IsChecked()
 // Function UMG.CheckBox.GetCheckedState
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// TEnumAsByte<ECheckBoxState>    ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ECheckBoxState                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ECheckBoxState> UCheckBox::GetCheckedState()
+ECheckBoxState UCheckBox::GetCheckedState()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xd1ac45af);
@@ -6711,7 +7327,7 @@ bool UMenuAnchor::HasOpenSubMenus()
 // Function UMG.MenuAnchor.GetMenuPosition
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UMenuAnchor::GetMenuPosition()
 {
@@ -7220,7 +7836,7 @@ class AActor* UViewport::Spawn(class UClass* ActorClass)
 // Function UMG.Viewport.SetViewRotation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FRotator                Rotation                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FRotator                Rotation                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UViewport::SetViewRotation(const struct FRotator& Rotation)
 {
@@ -7242,7 +7858,7 @@ void UViewport::SetViewRotation(const struct FRotator& Rotation)
 // Function UMG.Viewport.SetViewLocation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector                 Location                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Location                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UViewport::SetViewLocation(const struct FVector& Location)
 {
@@ -7264,7 +7880,7 @@ void UViewport::SetViewLocation(const struct FVector& Location)
 // Function UMG.Viewport.GetViewRotation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FRotator                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FRotator                ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FRotator UViewport::GetViewRotation()
 {
@@ -7310,7 +7926,7 @@ class UWorld* UViewport::GetViewportWorld()
 // Function UMG.Viewport.GetViewLocation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UViewport::GetViewLocation()
 {
@@ -7330,77 +7946,11 @@ struct FVector UViewport::GetViewLocation()
 }
 
 
-// Function UMG.WindowTitleBarArea.SetVerticalAlignment
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// TEnumAsByte<EVerticalAlignment> InVerticalAlignment            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UWindowTitleBarArea::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xe1a42d2d);
-
-	UWindowTitleBarArea_SetVerticalAlignment_Params params;
-	params.InVerticalAlignment = InVerticalAlignment;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function UMG.WindowTitleBarArea.SetPadding
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// struct FMargin                 InPadding                      (CPF_Parm)
-
-void UWindowTitleBarArea::SetPadding(const struct FMargin& InPadding)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x84e55d1f);
-
-	UWindowTitleBarArea_SetPadding_Params params;
-	params.InPadding = InPadding;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function UMG.WindowTitleBarArea.SetHorizontalAlignment
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
-// Parameters:
-// TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UWindowTitleBarArea::SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x8ae61c6f);
-
-	UWindowTitleBarArea_SetHorizontalAlignment_Params params;
-	params.InHorizontalAlignment = InHorizontalAlignment;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function UMG.GridPanel.AddChildToGrid
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UGridSlot*               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UGridSlot*               ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UGridSlot* UGridPanel::AddChildToGrid(class UWidget* Content)
 {
@@ -7424,8 +7974,8 @@ class UGridSlot* UGridPanel::AddChildToGrid(class UWidget* Content)
 // Function UMG.HorizontalBox.AddChildToHorizontalBox
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UHorizontalBoxSlot*      ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UHorizontalBoxSlot*      ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UHorizontalBoxSlot* UHorizontalBox::AddChildToHorizontalBox(class UWidget* Content)
 {
@@ -7449,8 +7999,8 @@ class UHorizontalBoxSlot* UHorizontalBox::AddChildToHorizontalBox(class UWidget*
 // Function UMG.Overlay.AddChildToOverlay
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UOverlaySlot*            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UOverlaySlot*            ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UOverlaySlot* UOverlay::AddChildToOverlay(class UWidget* Content)
 {
@@ -7496,7 +8046,7 @@ void UScrollBox::SetScrollOffset(float NewScrollOffset)
 // Function UMG.ScrollBox.ScrollWidgetIntoView
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 WidgetToFind                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 WidgetToFind                   (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           AnimateScroll                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UScrollBox::ScrollWidgetIntoView(class UWidget* WidgetToFind, bool AnimateScroll)
@@ -7647,8 +8197,8 @@ void UUniformGridPanel::SetMinDesiredSlotHeight(float InMinDesiredSlotHeight)
 // Function UMG.UniformGridPanel.AddChildToUniformGrid
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UUniformGridSlot*        ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UUniformGridSlot*        ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UUniformGridSlot* UUniformGridPanel::AddChildToUniformGrid(class UWidget* Content)
 {
@@ -7672,8 +8222,8 @@ class UUniformGridSlot* UUniformGridPanel::AddChildToUniformGrid(class UWidget* 
 // Function UMG.VerticalBox.AddChildToVerticalBox
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UVerticalBoxSlot*        ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UVerticalBoxSlot*        ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UVerticalBoxSlot* UVerticalBox::AddChildToVerticalBox(class UWidget* Content)
 {
@@ -7719,7 +8269,7 @@ void UWidgetSwitcher::SetActiveWidgetIndex(int Index)
 // Function UMG.WidgetSwitcher.SetActiveWidget
 // (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UWidgetSwitcher::SetActiveWidget(class UWidget* Widget)
 {
@@ -7742,7 +8292,7 @@ void UWidgetSwitcher::SetActiveWidget(class UWidget* Widget)
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWidget* UWidgetSwitcher::GetWidgetAtIndex(int Index)
 {
@@ -7812,7 +8362,7 @@ int UWidgetSwitcher::GetActiveWidgetIndex()
 // Function UMG.WrapBox.SetInnerSlotPadding
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InPadding                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InPadding                      (CPF_Parm, CPF_IsPlainOldData)
 
 void UWrapBox::SetInnerSlotPadding(const struct FVector2D& InPadding)
 {
@@ -7834,8 +8384,8 @@ void UWrapBox::SetInnerSlotPadding(const struct FVector2D& InPadding)
 // Function UMG.WrapBox.AddChildWrapBox
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWrapBoxSlot*            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Content                        (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UWrapBoxSlot*            ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWrapBoxSlot* UWrapBox::AddChildWrapBox(class UWidget* Content)
 {
@@ -7903,7 +8453,7 @@ void UProgressBar::SetIsMarquee(bool InbIsMarquee)
 // Function UMG.ProgressBar.SetFillColorAndOpacity
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InColor                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InColor                        (CPF_Parm, CPF_IsPlainOldData)
 
 void UProgressBar::SetFillColorAndOpacity(const struct FLinearColor& InColor)
 {
@@ -7993,7 +8543,7 @@ void USlider::SetStepSize(float InValue)
 // Function UMG.Slider.SetSliderHandleColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InValue                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InValue                        (CPF_Parm, CPF_IsPlainOldData)
 
 void USlider::SetSliderHandleColor(const struct FLinearColor& InValue)
 {
@@ -8015,7 +8565,7 @@ void USlider::SetSliderHandleColor(const struct FLinearColor& InValue)
 // Function UMG.Slider.SetSliderBarColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InValue                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InValue                        (CPF_Parm, CPF_IsPlainOldData)
 
 void USlider::SetSliderBarColor(const struct FLinearColor& InValue)
 {
@@ -8104,7 +8654,7 @@ float USlider::GetValue()
 // Function UMG.Spacer.SetSize
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InSize                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InSize                         (CPF_Parm, CPF_IsPlainOldData)
 
 void USpacer::SetSize(const struct FVector2D& InSize)
 {
@@ -8512,7 +9062,7 @@ void USpinBox::ClearMaxSliderValue()
 // (FUNC_Public, FUNC_Delegate)
 // Parameters:
 // class UObject*                 Item                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UWidget* UTableViewBase::OnGenerateRowUObject__DelegateSignature(class UObject* Item)
 {
@@ -8617,6 +9167,28 @@ void UMultiLineEditableText::SetText(const struct FText& InText)
 }
 
 
+// Function UMG.MultiLineEditableText.SetIsReadOnly
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bReadOnly                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UMultiLineEditableText::SetIsReadOnly(bool bReadOnly)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x52477e78);
+
+	UMultiLineEditableText_SetIsReadOnly_Params params;
+	params.bReadOnly = bReadOnly;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // DelegateFunction UMG.MultiLineEditableText.OnMultiLineEditableTextCommittedEvent__DelegateSignature
 // (FUNC_MulticastDelegate, FUNC_Public, FUNC_Delegate, FUNC_HasOutParms)
 // Parameters:
@@ -8696,6 +9268,28 @@ void UMultiLineEditableTextBox::SetText(const struct FText& InText)
 
 	UMultiLineEditableTextBox_SetText_Params params;
 	params.InText = InText;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.MultiLineEditableTextBox.SetIsReadOnly
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// bool                           bReadOnly                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UMultiLineEditableTextBox::SetIsReadOnly(bool bReadOnly)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x8af05b77);
+
+	UMultiLineEditableTextBox_SetIsReadOnly_Params params;
+	params.bReadOnly = bReadOnly;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -8796,7 +9390,7 @@ struct FText UMultiLineEditableTextBox::GetText()
 
 
 // Function UMG.TextBlock.SetText
-// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // struct FText                   InText                         (CPF_Parm)
 
@@ -8820,7 +9414,7 @@ void UTextBlock::SetText(const struct FText& InText)
 // Function UMG.TextBlock.SetShadowOffset
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               InShadowOffset                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               InShadowOffset                 (CPF_Parm, CPF_IsPlainOldData)
 
 void UTextBlock::SetShadowOffset(const struct FVector2D& InShadowOffset)
 {
@@ -8842,7 +9436,7 @@ void UTextBlock::SetShadowOffset(const struct FVector2D& InShadowOffset)
 // Function UMG.TextBlock.SetShadowColorAndOpacity
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            InShadowColorAndOpacity        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InShadowColorAndOpacity        (CPF_Parm, CPF_IsPlainOldData)
 
 void UTextBlock::SetShadowColorAndOpacity(const struct FLinearColor& InShadowColorAndOpacity)
 {
@@ -8873,6 +9467,28 @@ void UTextBlock::SetOpacity(float InOpacity)
 
 	UTextBlock_SetOpacity_Params params;
 	params.InOpacity = InOpacity;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.TextBlock.SetMinDesiredWidth
+// (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
+// Parameters:
+// float                          InMinDesiredWidth              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UTextBlock::SetMinDesiredWidth(float InMinDesiredWidth)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x12647da0);
+
+	UTextBlock_SetMinDesiredWidth_Params params;
+	params.InMinDesiredWidth = InMinDesiredWidth;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -9160,7 +9776,7 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_Unhandled()
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FEventReply             Reply                          (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// class UWidget*                 FocusWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 FocusWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           bInAllUsers                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
@@ -9191,7 +9807,7 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_SetUserFocus(class UWidget* F
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FEventReply             Reply                          (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FVector2D               NewMousePosition               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               NewMousePosition               (CPF_Parm, CPF_IsPlainOldData)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
 struct FEventReply UWidgetBlueprintLibrary::STATIC_SetMousePosition(const struct FVector2D& NewMousePosition, struct FEventReply* Reply)
@@ -9220,10 +9836,10 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_SetMousePosition(const struct
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class APlayerController*       Target                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// TEnumAsByte<EMouseLockMode>    InMouseLockMode                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// EMouseLockMode                 InMouseLockMode                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UWidgetBlueprintLibrary::STATIC_SetInputMode_UIOnlyEx(class APlayerController* Target, class UWidget* InWidgetToFocus, TEnumAsByte<EMouseLockMode> InMouseLockMode)
+void UWidgetBlueprintLibrary::STATIC_SetInputMode_UIOnlyEx(class APlayerController* Target, class UWidget* InWidgetToFocus, EMouseLockMode InMouseLockMode)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xc6f94c67);
@@ -9246,7 +9862,7 @@ void UWidgetBlueprintLibrary::STATIC_SetInputMode_UIOnlyEx(class APlayerControll
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class APlayerController*       Target                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           bLockMouseToViewport           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_SetInputMode_UIOnly(class APlayerController* Target, class UWidget* InWidgetToFocus, bool bLockMouseToViewport)
@@ -9294,11 +9910,11 @@ void UWidgetBlueprintLibrary::STATIC_SetInputMode_GameOnly(class APlayerControll
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class APlayerController*       Target                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// TEnumAsByte<EMouseLockMode>    InMouseLockMode                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// EMouseLockMode                 InMouseLockMode                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bHideCursorDuringCapture       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UWidgetBlueprintLibrary::STATIC_SetInputMode_GameAndUIEx(class APlayerController* Target, class UWidget* InWidgetToFocus, TEnumAsByte<EMouseLockMode> InMouseLockMode, bool bHideCursorDuringCapture)
+void UWidgetBlueprintLibrary::STATIC_SetInputMode_GameAndUIEx(class APlayerController* Target, class UWidget* InWidgetToFocus, EMouseLockMode InMouseLockMode, bool bHideCursorDuringCapture)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xb274b890);
@@ -9322,7 +9938,7 @@ void UWidgetBlueprintLibrary::STATIC_SetInputMode_GameAndUIEx(class APlayerContr
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class APlayerController*       Target                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 InWidgetToFocus                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           bLockMouseToViewport           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // bool                           bHideCursorDuringCapture       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -9343,6 +9959,37 @@ void UWidgetBlueprintLibrary::STATIC_SetInputMode_GameAndUI(class APlayerControl
 	UObject::ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
+}
+
+
+// Function UMG.WidgetBlueprintLibrary.SetHardwareCursor
+// (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
+// Parameters:
+// class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TEnumAsByte<EMouseCursor>      CursorShape                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FName                   CursorName                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               HotSpot                        (CPF_Parm, CPF_IsPlainOldData)
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UWidgetBlueprintLibrary::STATIC_SetHardwareCursor(class UObject* WorldContextObject, TEnumAsByte<EMouseCursor> CursorShape, const struct FName& CursorName, const struct FVector2D& HotSpot)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf417541a);
+
+	UWidgetBlueprintLibrary_SetHardwareCursor_Params params;
+	params.WorldContextObject = WorldContextObject;
+	params.CursorShape = CursorShape;
+	params.CursorName = CursorName;
+	params.HotSpot = HotSpot;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
 }
 
 
@@ -9583,7 +10230,7 @@ struct FSlateBrush UWidgetBlueprintLibrary::STATIC_MakeBrushFromAsset(class USla
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FEventReply             Reply                          (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// class UWidget*                 CapturingWidget                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 CapturingWidget                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
 struct FEventReply UWidgetBlueprintLibrary::STATIC_LockMouse(class UWidget* CapturingWidget, struct FEventReply* Reply)
@@ -9658,9 +10305,9 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_Handled()
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               SafePadding                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               SafePaddingScale               (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               SpillOverPadding               (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               SafePadding                    (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector2D               SafePaddingScale               (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector2D               SpillOverPadding               (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_GetSafeZonePadding(class UObject* WorldContextObject, struct FVector2D* SafePadding, struct FVector2D* SafePaddingScale, struct FVector2D* SpillOverPadding)
 {
@@ -10059,11 +10706,11 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_EndDragDrop(struct FEventRepl
 // Parameters:
 // struct FPaintContext           Context                        (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 // struct FText                   Text                           (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
 // class UFont*                   Font                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            FontSize                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FName                   FontTypeFace                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Tint                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Tint                           (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_DrawTextFormatted(const struct FText& Text, const struct FVector2D& Position, class UFont* Font, int FontSize, const struct FName& FontTypeFace, const struct FLinearColor& Tint, struct FPaintContext* Context)
 {
@@ -10095,8 +10742,8 @@ void UWidgetBlueprintLibrary::STATIC_DrawTextFormatted(const struct FText& Text,
 // Parameters:
 // struct FPaintContext           Context                        (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 // struct FString                 inString                       (CPF_Parm, CPF_ZeroConstructor)
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Tint                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FLinearColor            Tint                           (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_DrawText(const struct FString& inString, const struct FVector2D& Position, const struct FLinearColor& Tint, struct FPaintContext* Context)
 {
@@ -10125,7 +10772,7 @@ void UWidgetBlueprintLibrary::STATIC_DrawText(const struct FString& inString, co
 // Parameters:
 // struct FPaintContext           Context                        (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 // TArray<struct FVector2D>       Points                         (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReferenceParm)
-// struct FLinearColor            Tint                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Tint                           (CPF_Parm, CPF_IsPlainOldData)
 // bool                           bAntiAlias                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_DrawLines(TArray<struct FVector2D> Points, const struct FLinearColor& Tint, bool bAntiAlias, struct FPaintContext* Context)
@@ -10154,9 +10801,9 @@ void UWidgetBlueprintLibrary::STATIC_DrawLines(TArray<struct FVector2D> Points, 
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // struct FPaintContext           Context                        (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FVector2D               PositionA                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               PositionB                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Tint                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               PositionA                      (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               PositionB                      (CPF_Parm, CPF_IsPlainOldData)
+// struct FLinearColor            Tint                           (CPF_Parm, CPF_IsPlainOldData)
 // bool                           bAntiAlias                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_DrawLine(const struct FVector2D& PositionA, const struct FVector2D& PositionB, const struct FLinearColor& Tint, bool bAntiAlias, struct FPaintContext* Context)
@@ -10186,10 +10833,10 @@ void UWidgetBlueprintLibrary::STATIC_DrawLine(const struct FVector2D& PositionA,
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // struct FPaintContext           Context                        (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               Size                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               Size                           (CPF_Parm, CPF_IsPlainOldData)
 // class USlateBrushAsset*        Brush                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FLinearColor            Tint                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            Tint                           (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidgetBlueprintLibrary::STATIC_DrawBox(const struct FVector2D& Position, const struct FVector2D& Size, class USlateBrushAsset* Brush, const struct FLinearColor& Tint, struct FPaintContext* Context)
 {
@@ -10237,7 +10884,7 @@ void UWidgetBlueprintLibrary::STATIC_DismissAllMenus()
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
 // Parameters:
 // struct FPointerEvent           PointerEvent                   (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// class UWidget*                 WidgetDetectingDrag            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 WidgetDetectingDrag            (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // struct FKey                    DragKey                        (CPF_Parm)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
@@ -10266,7 +10913,7 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_DetectDragIfPressed(const str
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FEventReply             Reply                          (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// class UWidget*                 WidgetDetectingDrag            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 WidgetDetectingDrag            (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // struct FKey                    DragKey                        (CPF_Parm)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
@@ -10324,7 +10971,7 @@ class UDragDropOperation* UWidgetBlueprintLibrary::STATIC_CreateDragDropOperatio
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UClass*                  WidgetType                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class APlayerController*       OwningPlayer                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UUserWidget*             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UUserWidget*             ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UUserWidget* UWidgetBlueprintLibrary::STATIC_Create(class UObject* WorldContextObject, class UClass* WidgetType, class APlayerController* OwningPlayer)
 {
@@ -10380,7 +11027,7 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_ClearUserFocus(bool bInAllUse
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FEventReply             Reply                          (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// class UWidget*                 CapturingWidget                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 CapturingWidget                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
 struct FEventReply UWidgetBlueprintLibrary::STATIC_CaptureMouse(class UWidget* CapturingWidget, struct FEventReply* Reply)
@@ -10409,7 +11056,7 @@ struct FEventReply UWidgetBlueprintLibrary::STATIC_CaptureMouse(class UWidget* C
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // struct FEventReply             Reply                          (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-// class UWidget*                 CapturingWidget                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UWidget*                 CapturingWidget                (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           bInAllJoysticks                (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
 
@@ -10458,7 +11105,7 @@ void UWidgetBlueprintLibrary::STATIC_CancelDragDrop()
 // Function UMG.WidgetComponent.SetWidget
 // (FUNC_Native, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
-// class UUserWidget*             Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UUserWidget*             Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 
 void UWidgetComponent::SetWidget(class UUserWidget* Widget)
 {
@@ -10502,7 +11149,7 @@ void UWidgetComponent::SetOwnerPlayer(class ULocalPlayer* LocalPlayer)
 // Function UMG.WidgetComponent.SetDrawSize
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector2D               Size                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Size                           (CPF_Parm, CPF_IsPlainOldData)
 
 void UWidgetComponent::SetDrawSize(const struct FVector2D& Size)
 {
@@ -10524,7 +11171,7 @@ void UWidgetComponent::SetDrawSize(const struct FVector2D& Size)
 // Function UMG.WidgetComponent.SetBackgroundColor
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FLinearColor            NewBackgroundColor             (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            NewBackgroundColor             (CPF_ConstParm, CPF_Parm, CPF_IsPlainOldData)
 
 void UWidgetComponent::SetBackgroundColor(const struct FLinearColor& NewBackgroundColor)
 {
@@ -10565,7 +11212,7 @@ void UWidgetComponent::RequestRedraw()
 // Function UMG.WidgetComponent.GetUserWidgetObject
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// class UUserWidget*             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UUserWidget*             ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UUserWidget* UWidgetComponent::GetUserWidgetObject()
 {
@@ -10657,7 +11304,7 @@ class UMaterialInstanceDynamic* UWidgetComponent::GetMaterialInstance()
 // Function UMG.WidgetComponent.GetDrawSize
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UWidgetComponent::GetDrawSize()
 {
@@ -10987,7 +11634,7 @@ class UWidgetComponent* UWidgetInteractionComponent::GetHoveredWidgetComponent()
 // Function UMG.WidgetInteractionComponent.Get2DHitLocation
 // (FUNC_Final, FUNC_Native, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UWidgetInteractionComponent::Get2DHitLocation()
 {
@@ -11010,8 +11657,8 @@ struct FVector2D UWidgetInteractionComponent::Get2DHitLocation()
 // Function UMG.WidgetLayoutLibrary.SlotAsVerticalBoxSlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UVerticalBoxSlot*        ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UVerticalBoxSlot*        ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UVerticalBoxSlot* UWidgetLayoutLibrary::STATIC_SlotAsVerticalBoxSlot(class UWidget* Widget)
 {
@@ -11035,8 +11682,8 @@ class UVerticalBoxSlot* UWidgetLayoutLibrary::STATIC_SlotAsVerticalBoxSlot(class
 // Function UMG.WidgetLayoutLibrary.SlotAsUniformGridSlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UUniformGridSlot*        ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UUniformGridSlot*        ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UUniformGridSlot* UWidgetLayoutLibrary::STATIC_SlotAsUniformGridSlot(class UWidget* Widget)
 {
@@ -11060,8 +11707,8 @@ class UUniformGridSlot* UWidgetLayoutLibrary::STATIC_SlotAsUniformGridSlot(class
 // Function UMG.WidgetLayoutLibrary.SlotAsOverlaySlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UOverlaySlot*            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UOverlaySlot*            ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UOverlaySlot* UWidgetLayoutLibrary::STATIC_SlotAsOverlaySlot(class UWidget* Widget)
 {
@@ -11085,8 +11732,8 @@ class UOverlaySlot* UWidgetLayoutLibrary::STATIC_SlotAsOverlaySlot(class UWidget
 // Function UMG.WidgetLayoutLibrary.SlotAsHorizontalBoxSlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UHorizontalBoxSlot*      ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UHorizontalBoxSlot*      ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UHorizontalBoxSlot* UWidgetLayoutLibrary::STATIC_SlotAsHorizontalBoxSlot(class UWidget* Widget)
 {
@@ -11110,8 +11757,8 @@ class UHorizontalBoxSlot* UWidgetLayoutLibrary::STATIC_SlotAsHorizontalBoxSlot(c
 // Function UMG.WidgetLayoutLibrary.SlotAsGridSlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UGridSlot*               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UGridSlot*               ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UGridSlot* UWidgetLayoutLibrary::STATIC_SlotAsGridSlot(class UWidget* Widget)
 {
@@ -11135,8 +11782,8 @@ class UGridSlot* UWidgetLayoutLibrary::STATIC_SlotAsGridSlot(class UWidget* Widg
 // Function UMG.WidgetLayoutLibrary.SlotAsCanvasSlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UCanvasPanelSlot*        ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UCanvasPanelSlot*        ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UCanvasPanelSlot* UWidgetLayoutLibrary::STATIC_SlotAsCanvasSlot(class UWidget* Widget)
 {
@@ -11160,8 +11807,8 @@ class UCanvasPanelSlot* UWidgetLayoutLibrary::STATIC_SlotAsCanvasSlot(class UWid
 // Function UMG.WidgetLayoutLibrary.SlotAsBorderSlot
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
-// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class UBorderSlot*             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// class UWidget*                 Widget                         (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+// class UBorderSlot*             ReturnValue                    (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 
 class UBorderSlot* UWidgetLayoutLibrary::STATIC_SlotAsBorderSlot(class UWidget* Widget)
 {
@@ -11208,8 +11855,8 @@ void UWidgetLayoutLibrary::STATIC_RemoveAllWidgets(class UObject* WorldContextOb
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // class APlayerController*       PlayerController               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 WorldLocation                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 WorldLocation                  (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               ScreenPosition                 (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 // bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
 bool UWidgetLayoutLibrary::STATIC_ProjectWorldLocationToWidgetPosition(class APlayerController* PlayerController, const struct FVector& WorldLocation, struct FVector2D* ScreenPosition)
@@ -11239,7 +11886,7 @@ bool UWidgetLayoutLibrary::STATIC_ProjectWorldLocationToWidgetPosition(class APl
 // (FUNC_Final, FUNC_BlueprintCosmetic, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintPure)
 // Parameters:
 // class UObject*                 WorldContextObject             (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UWidgetLayoutLibrary::STATIC_GetViewportSize(class UObject* WorldContextObject)
 {

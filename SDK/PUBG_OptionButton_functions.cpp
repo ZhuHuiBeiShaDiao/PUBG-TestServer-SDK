@@ -15,7 +15,7 @@ namespace Classes
 // Function OptionButton.OptionButton_C.SetButtonBgColor
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// struct FLinearColor            InBackgroundColor              (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FLinearColor            InBackgroundColor              (CPF_Parm, CPF_IsPlainOldData)
 
 void UOptionButton_C::SetButtonBgColor(const struct FLinearColor& InBackgroundColor)
 {

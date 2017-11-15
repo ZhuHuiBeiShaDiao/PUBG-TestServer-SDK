@@ -100,7 +100,7 @@ namespace Classes
 	// Function PlayerHeadWidget.PlayerHeadWidget_C.GetTslWeaponColor
 	struct UPlayerHeadWidget_C_GetTslWeaponColor_Params
 	{
-		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function PlayerHeadWidget.PlayerHeadWidget_C.UpdateIcon
@@ -123,7 +123,7 @@ namespace Classes
 	// Function PlayerHeadWidget.PlayerHeadWidget_C.GetTslWeaponVisibility
 	struct UPlayerHeadWidget_C_GetTslWeaponVisibility_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      Visible;                                                  // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		ESlateVisibility                                   Visible;                                                  // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function PlayerHeadWidget.PlayerHeadWidget_C.GetBoostGauge
@@ -186,7 +186,7 @@ namespace Classes
 	// Function PlayerHeadWidget.PlayerHeadWidget_C.SetCharacterIconPosition_UC
 	struct UPlayerHeadWidget_C_SetCharacterIconPosition_UC_Params
 	{
-		struct FVector2D*                                  Pos_UC;                                                   // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector2D*                                  Pos_UC;                                                   // (CPF_Parm, CPF_IsPlainOldData)
 		bool*                                              IsHidden;                                                 // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 

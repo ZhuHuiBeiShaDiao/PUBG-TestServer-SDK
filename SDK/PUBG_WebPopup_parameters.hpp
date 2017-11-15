@@ -20,7 +20,7 @@ namespace Classes
 		struct FString                                     PopupId;                                                  // (CPF_Parm, CPF_ZeroConstructor)
 		struct FString                                     Uri;                                                      // (CPF_Parm, CPF_ZeroConstructor)
 		bool                                               UseBackgroundColor;                                       // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FLinearColor                                BackgroundColor;                                          // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FLinearColor                                BackgroundColor;                                          // (CPF_Parm, CPF_IsPlainOldData)
 	};
 
 	// Function WebPopup.WebPopup_C.Tick

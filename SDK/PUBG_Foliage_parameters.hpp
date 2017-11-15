@@ -19,7 +19,7 @@ namespace Classes
 	{
 		class UObject*                                     WorldContextObject;                                       // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UStaticMesh*                                 StaticMesh;                                               // (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     CenterPosition;                                           // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     CenterPosition;                                           // (CPF_Parm, CPF_IsPlainOldData)
 		float                                              Radius;                                                   // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		int                                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
@@ -29,7 +29,7 @@ namespace Classes
 	{
 		class UObject*                                     WorldContextObject;                                       // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UStaticMesh*                                 StaticMesh;                                               // (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FBox                                        Box;                                                      // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FBox                                        Box;                                                      // (CPF_Parm, CPF_IsPlainOldData)
 		int                                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 

@@ -12,10 +12,51 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
-// Function NewWorldMapWidget.NewWorldMapWidget_C.GetMoveMapGridViewCenterToMyIconCenterDir
+// Function NewWorldMapWidget.NewWorldMapWidget_C.OnInteract
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UNewWorldMapWidget_C::OnInteract()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x228e68c6);
+
+	UNewWorldMapWidget_C_OnInteract_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function NewWorldMapWidget.NewWorldMapWidget_C.GetZoomMultiplier
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// float                          Multiplier                     (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UNewWorldMapWidget_C::GetZoomMultiplier(float* Multiplier)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xede44469);
+
+	UNewWorldMapWidget_C_GetZoomMultiplier_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Multiplier != nullptr)
+		*Multiplier = params.Multiplier;
+}
+
+
+// Function NewWorldMapWidget.NewWorldMapWidget_C.GetMoveMapGridViewCenterToMyIconCenterDir
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// Parameters:
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UNewWorldMapWidget_C::GetMoveMapGridViewCenterToMyIconCenterDir()
 {
@@ -35,7 +76,7 @@ struct FVector2D UNewWorldMapWidget_C::GetMoveMapGridViewCenterToMyIconCenterDir
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.OnMoveMapGridViewCenterToMyIconCenter
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UNewWorldMapWidget_C::OnMoveMapGridViewCenterToMyIconCenter()
 {
@@ -53,9 +94,9 @@ void UNewWorldMapWidget_C::OnMoveMapGridViewCenterToMyIconCenter()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.SetMapGridPositoin
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::SetMapGridPositoin(const struct FVector2D& Position)
 {
@@ -110,7 +151,7 @@ void UNewWorldMapWidget_C::CheckReplayStatus()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.PadGuideMoveRight
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Add                            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -131,7 +172,7 @@ void UNewWorldMapWidget_C::PadGuideMoveRight(float Add)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.PadGuideMoveUp
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Add                            (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -188,7 +229,7 @@ void UNewWorldMapWidget_C::OnPadGuideMoveingReayPressed()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.IsInPadGuideInMap
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // bool                           bIsIn                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -232,7 +273,7 @@ void UNewWorldMapWidget_C::MapZoomPad(float AdditaionalZoom)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.OnPutMarkerPad
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UNewWorldMapWidget_C::OnPutMarkerPad()
 {
@@ -250,9 +291,9 @@ void UNewWorldMapWidget_C::OnPutMarkerPad()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.GetPadGuidePos_MC
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UNewWorldMapWidget_C::GetPadGuidePos_MC()
 {
@@ -272,9 +313,9 @@ struct FVector2D UNewWorldMapWidget_C::GetPadGuidePos_MC()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.GetPadGuidePos_UC
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector2D               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector2D UNewWorldMapWidget_C::GetPadGuidePos_UC()
 {
@@ -333,7 +374,7 @@ void UNewWorldMapWidget_C::OnPrepass_1(class UWidget* BoundWidget)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.MapMoveGamepadY
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -354,7 +395,7 @@ void UNewWorldMapWidget_C::MapMoveGamepadY(float Value)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.MapMoveGamepadX
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -375,10 +416,10 @@ void UNewWorldMapWidget_C::MapMoveGamepadX(float Value)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.ComputeServerToLocalPosition
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 Server                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FVector                 Server                         (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector                 ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FVector UNewWorldMapWidget_C::ComputeServerToLocalPosition(const struct FVector& Server)
 {
@@ -420,7 +461,7 @@ void UNewWorldMapWidget_C::MapZoom(float AdditaionalZoom)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.MapMoveY
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -441,7 +482,7 @@ void UNewWorldMapWidget_C::MapMoveY(float Value)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.MapMoveX
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Value                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -480,7 +521,7 @@ void UNewWorldMapWidget_C::OffMapMove()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.OnMapMove
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UNewWorldMapWidget_C::OnMapMove()
 {
@@ -498,9 +539,9 @@ void UNewWorldMapWidget_C::OnMapMove()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.MoveMapGrid
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// struct FVector2D               AdditionalPos                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               AdditionalPos                  (CPF_Parm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::MoveMapGrid(const struct FVector2D& AdditionalPos)
 {
@@ -573,11 +614,11 @@ void UNewWorldMapWidget_C::InitNewWorldMapWidget()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.GetMapWidgetScreenLocation
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               LeftTop                        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               RightBottom                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               LeftTop                        (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector2D               RightBottom                    (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::GetMapWidgetScreenLocation(const struct FVector2D& Position, struct FVector2D* LeftTop, struct FVector2D* RightBottom)
 {
@@ -601,9 +642,9 @@ void UNewWorldMapWidget_C::GetMapWidgetScreenLocation(const struct FVector2D& Po
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.GetWheelUpAlignment
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector2D               Alignment                      (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Alignment                      (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::GetWheelUpAlignment(struct FVector2D* Alignment)
 {
@@ -642,10 +683,10 @@ void UNewWorldMapWidget_C::TestClear()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.UpdateMapAlignment
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// struct FVector2D               Aligment                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               Size                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Aligment                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               Size                           (CPF_Parm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::UpdateMapAlignment(const struct FVector2D& Aligment, const struct FVector2D& Size)
 {
@@ -686,7 +727,7 @@ void UNewWorldMapWidget_C::PlayFadeInAnim(float Playback_Speed)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.TickMapPositionMove
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          DeltaTime                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -709,7 +750,7 @@ void UNewWorldMapWidget_C::TickMapPositionMove(float DeltaTime)
 // Function NewWorldMapWidget.NewWorldMapWidget_C.IsInMapWidget
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
 // bool                           IsIn                           (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::IsInMapWidget(const struct FVector2D& Position, bool* IsIn)
@@ -732,10 +773,10 @@ void UNewWorldMapWidget_C::IsInMapWidget(const struct FVector2D& Position, bool*
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.ClampPosition
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector2D               Position                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               ConvertedPosition              (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               Position                       (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector2D               ConvertedPosition              (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::ClampPosition(const struct FVector2D& Position, struct FVector2D* ConvertedPosition)
 {
@@ -757,7 +798,7 @@ void UNewWorldMapWidget_C::ClampPosition(const struct FVector2D& Position, struc
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.TickChangeMapSize
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          DeltaTime                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -882,7 +923,7 @@ struct FEventReply UNewWorldMapWidget_C::OnMouseButtonDown(struct FGeometry* MyG
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.InitializeWorldMap
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UNewWorldMapWidget_C::InitializeWorldMap()
 {
@@ -900,9 +941,9 @@ void UNewWorldMapWidget_C::InitializeWorldMap()
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.UpdateMap
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// struct FVector2D               MapSize                        (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               MapSize                        (CPF_Parm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::UpdateMap(const struct FVector2D& MapSize)
 {
@@ -921,10 +962,10 @@ void UNewWorldMapWidget_C::UpdateMap(const struct FVector2D& MapSize)
 
 
 // Function NewWorldMapWidget.NewWorldMapWidget_C.GetMapSize
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // float                          Zoom                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector2D               MapSize                        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector2D               MapSize                        (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UNewWorldMapWidget_C::GetMapSize(float Zoom, struct FVector2D* MapSize)
 {

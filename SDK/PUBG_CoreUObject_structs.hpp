@@ -37,6 +37,16 @@ namespace Classes
 	};
 
 
+	// Enum CoreUObject.EAutomationEventType
+	enum class EAutomationEventType : uint8_t
+	{
+		EAutomationEventType__Info = 0,
+		EAutomationEventType__Warning = 1,
+		EAutomationEventType__Error = 2,
+		EAutomationEventType__EAutomationEventType_MAX = 3
+	};
+
+
 	// Enum CoreUObject.EUnit
 	enum class EUnit : uint8_t
 	{
@@ -174,7 +184,8 @@ namespace Classes
 		PF_ASTC_12x12 = 54,
 		PF_BC6H = 55,
 		PF_BC7 = 56,
-		PF_R8_UINT = 57
+		PF_R8_UINT = 57,
+		PF_L8 = 58
 	};
 
 
@@ -233,7 +244,8 @@ namespace Classes
 		COND_ReplayOnly = 10,
 		COND_SimulatedOnlyNoReplay = 11,
 		COND_SimulatedOrPhysicsNoReplay = 12,
-		COND_Max = 13
+		COND_SkipReplay = 13,
+		COND_Max = 14
 	};
 
 
@@ -420,7 +432,8 @@ namespace Classes
 
 	// ScriptStruct CoreUObject.Vector4
 	// 0x0010
-	struct alignas(16) FVector4 {
+	struct alignas(16) FVector4
+	{
 		float                                              X;                                                        // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
 		float                                              Y;                                                        // 0x0004(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
 		float                                              Z;                                                        // 0x0008(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
@@ -558,14 +571,16 @@ namespace Classes
 
 	// ScriptStruct CoreUObject.TwoVectors
 	// 0x0018
-	struct FTwoVectors {
-		struct FVector                                     v1;                                                       // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     v2;                                                       // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+	struct FTwoVectors
+	{
+		struct FVector                                     v1;                                                       // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     v2;                                                       // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct CoreUObject.Plane
 	// 0x0004 (0x0010 - 0x000C)
-	struct alignas(16) FPlane : public FVector {
+	struct alignas(16) FPlane : public FVector
+	{
 		float                                              W;                                                        // 0x000C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
 	};
 
@@ -815,8 +830,8 @@ namespace Classes
 	// 0x001C
 	struct FBox
 	{
-		struct FVector                                     Min;                                                      // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     Max;                                                      // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     Min;                                                      // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     Max;                                                      // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 		unsigned char                                      IsValid;                                                  // 0x0018(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
 	};
@@ -825,9 +840,9 @@ namespace Classes
 	// 0x0014
 	struct FBox2D
 	{
-		struct FVector2D                                   Min;                                                      // 0x0000(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector2D                                   Max;                                                      // 0x0008(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		unsigned char                                      IsValid;                                                  // 0x0010(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector2D                                   Min;                                                      // 0x0000(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector2D                                   Max;                                                      // 0x0008(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		unsigned char                                      bIsValid;                                                 // 0x0010(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0011(0x0003) MISSED OFFSET
 	};
 
@@ -835,8 +850,8 @@ namespace Classes
 	// 0x001C
 	struct FBoxSphereBounds
 	{
-		struct FVector                                     Origin;                                                   // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     BoxExtent;                                                // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     Origin;                                                   // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     BoxExtent;                                                // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 		float                                              SphereRadius;                                             // 0x0018(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
 	};
 
@@ -844,10 +859,10 @@ namespace Classes
 	// 0x003C
 	struct FOrientedBox
 	{
-		struct FVector                                     Center;                                                   // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     AxisX;                                                    // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     AxisY;                                                    // 0x0018(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     AxisZ;                                                    // 0x0024(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     Center;                                                   // 0x0000(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     AxisX;                                                    // 0x000C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     AxisY;                                                    // 0x0018(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     AxisZ;                                                    // 0x0024(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 		float                                              ExtentX;                                                  // 0x0030(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
 		float                                              ExtentY;                                                  // 0x0034(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
 		float                                              ExtentZ;                                                  // 0x0038(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
@@ -857,10 +872,10 @@ namespace Classes
 	// 0x0040
 	struct FMatrix
 	{
-		struct FPlane                                      XPlane;                                                   // 0x0000(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FPlane                                      YPlane;                                                   // 0x0010(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FPlane                                      ZPlane;                                                   // 0x0020(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FPlane                                      WPlane;                                                   // 0x0030(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FPlane                                      XPlane;                                                   // 0x0000(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FPlane                                      YPlane;                                                   // 0x0010(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FPlane                                      ZPlane;                                                   // 0x0020(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FPlane                                      WPlane;                                                   // 0x0030(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct CoreUObject.InterpCurvePointFloat
@@ -890,9 +905,9 @@ namespace Classes
 	struct FInterpCurvePointVector2D
 	{
 		float                                              InVal;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector2D                                   OutVal;                                                   // 0x0004(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector2D                                   ArriveTangent;                                            // 0x000C(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector2D                                   LeaveTangent;                                             // 0x0014(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector2D                                   OutVal;                                                   // 0x0004(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FVector2D                                   ArriveTangent;                                            // 0x000C(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FVector2D                                   LeaveTangent;                                             // 0x0014(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
 		TEnumAsByte<EInterpCurveMode>                      InterpMode;                                               // 0x001C(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x001D(0x0003) MISSED OFFSET
 	};
@@ -912,9 +927,9 @@ namespace Classes
 	struct FInterpCurvePointVector
 	{
 		float                                              InVal;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     OutVal;                                                   // 0x0004(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     ArriveTangent;                                            // 0x0010(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FVector                                     LeaveTangent;                                             // 0x001C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FVector                                     OutVal;                                                   // 0x0004(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FVector                                     ArriveTangent;                                            // 0x0010(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FVector                                     LeaveTangent;                                             // 0x001C(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
 		TEnumAsByte<EInterpCurveMode>                      InterpMode;                                               // 0x0028(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0029(0x0003) MISSED OFFSET
 	};
@@ -957,9 +972,9 @@ namespace Classes
 	struct FInterpCurvePointTwoVectors
 	{
 		float                                              InVal;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FTwoVectors                                 OutVal;                                                   // 0x0004(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FTwoVectors                                 ArriveTangent;                                            // 0x001C(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FTwoVectors                                 LeaveTangent;                                             // 0x0034(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FTwoVectors                                 OutVal;                                                   // 0x0004(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FTwoVectors                                 ArriveTangent;                                            // 0x001C(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FTwoVectors                                 LeaveTangent;                                             // 0x0034(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
 		TEnumAsByte<EInterpCurveMode>                      InterpMode;                                               // 0x004C(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
 	};
@@ -979,9 +994,9 @@ namespace Classes
 	struct FInterpCurvePointLinearColor
 	{
 		float                                              InVal;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FLinearColor                                OutVal;                                                   // 0x0004(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FLinearColor                                ArriveTangent;                                            // 0x0014(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FLinearColor                                LeaveTangent;                                             // 0x0024(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FLinearColor                                OutVal;                                                   // 0x0004(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FLinearColor                                ArriveTangent;                                            // 0x0014(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
+		struct FLinearColor                                LeaveTangent;                                             // 0x0024(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
 		TEnumAsByte<EInterpCurveMode>                      InterpMode;                                               // 0x0034(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0035(0x0003) MISSED OFFSET
 	};
@@ -1001,9 +1016,9 @@ namespace Classes
 	struct alignas(16) FTransform
 	{
 		struct FQuat                                       Rotation;                                                 // 0x0000(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
-		struct FVector                                     Translation;                                              // 0x0010(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     Translation;                                              // 0x0010(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x001C(0x0004) MISSED OFFSET
-		struct FVector                                     Scale3D;                                                  // 0x0020(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_SaveGame, CPF_IsPlainOldData)
+		struct FVector                                     Scale3D;                                                  // 0x0020(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_SaveGame, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 	};
 
@@ -1043,6 +1058,21 @@ namespace Classes
 
 	};
 
+	// ScriptStruct CoreUObject.PrimaryAssetType
+	// 0x0008
+	struct FPrimaryAssetType
+	{
+		struct FName                                       Name;                                                     // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// ScriptStruct CoreUObject.PrimaryAssetId
+	// 0x0010
+	struct FPrimaryAssetId
+	{
+		struct FPrimaryAssetType                           PrimaryAssetType;                                         // 0x0000(0x0008) (CPF_Edit, CPF_BlueprintVisible)
+		struct FName                                       PrimaryAssetName;                                         // 0x0008(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
 	// ScriptStruct CoreUObject.FallbackStruct
 	// 0x0001
 	struct FFallbackStruct
@@ -1063,8 +1093,8 @@ namespace Classes
 	// 0x0010
 	struct FFloatRange
 	{
-		struct FFloatRangeBound                            LowerBound;                                               // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FFloatRangeBound                            UpperBound;                                               // 0x0008(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FFloatRangeBound                            LowerBound;                                               // 0x0000(0x0008) (CPF_Edit)
+		struct FFloatRangeBound                            UpperBound;                                               // 0x0008(0x0008) (CPF_Edit)
 	};
 
 	// ScriptStruct CoreUObject.Int32RangeBound
@@ -1080,8 +1110,8 @@ namespace Classes
 	// 0x0010
 	struct FInt32Range
 	{
-		struct FInt32RangeBound                            LowerBound;                                               // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		struct FInt32RangeBound                            UpperBound;                                               // 0x0008(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		struct FInt32RangeBound                            LowerBound;                                               // 0x0000(0x0008) (CPF_Edit)
+		struct FInt32RangeBound                            UpperBound;                                               // 0x0008(0x0008) (CPF_Edit)
 	};
 
 	// ScriptStruct CoreUObject.FloatInterval
@@ -1098,6 +1128,20 @@ namespace Classes
 	{
 		int                                                Min;                                                      // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		int                                                Max;                                                      // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
+	};
+
+	// ScriptStruct CoreUObject.AutomationEvent
+	// 0x0048
+	struct FAutomationEvent
+	{
+		EAutomationEventType                               Type;                                                     // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
+		struct FString                                     Message;                                                  // 0x0008(0x0010) (CPF_ZeroConstructor)
+		struct FString                                     Context;                                                  // 0x0018(0x0010) (CPF_ZeroConstructor)
+		struct FString                                     Filename;                                                 // 0x0028(0x0010) (CPF_ZeroConstructor)
+		int                                                LineNumber;                                               // 0x0038(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
+		struct FDateTime                                   Timestamp;                                                // 0x0040(0x0008)
 	};
 
 }

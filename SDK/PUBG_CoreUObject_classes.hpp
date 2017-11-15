@@ -76,7 +76,7 @@ namespace Classes
 
 		inline void ProcessEvent(class UFunction* function, void* parms)
 		{
-			return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 57)(this, function, parms);
+			return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 62)(this, function, parms);
 		}
 
 
@@ -207,11 +207,11 @@ namespace Classes
 
 
 	// Class CoreUObject.Class
-	// 0x01A0 (0x0228 - 0x0088)
+	// 0x01D0 (0x0258 - 0x0088)
 	class UClass : public UStruct
 	{
 	public:
-		unsigned char                                      UnknownData00[0x1A0];                                     // 0x0088(0x01A0) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x1D0];                                     // 0x0088(0x01D0) MISSED OFFSET
 
 		template<typename T>
 		inline T* CreateDefaultObject()
@@ -228,7 +228,7 @@ namespace Classes
 
 		inline UObject* CreateDefaultObject()
 		{
-			return GetVFunction<UObject*(*)(UClass*)>(this, 94)(this);
+			return GetVFunction<UObject*(*)(UClass*)>(this, 99)(this);
 		}
 
 	};
@@ -278,11 +278,11 @@ namespace Classes
 
 
 	// Class CoreUObject.DynamicClass
-	// 0x0068 (0x0290 - 0x0228)
+	// 0x0068 (0x02C0 - 0x0258)
 	class UDynamicClass : public UClass
 	{
 	public:
-		unsigned char                                      UnknownData00[0x68];                                      // 0x0228(0x0068) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x68];                                      // 0x0258(0x0068) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -312,11 +312,11 @@ namespace Classes
 
 
 	// Class CoreUObject.Enum
-	// 0x0028 (0x0058 - 0x0030)
+	// 0x0030 (0x0060 - 0x0030)
 	class UEnum : public UField
 	{
 	public:
-		unsigned char                                      UnknownData00[0x28];                                      // 0x0030(0x0028) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x30];                                      // 0x0030(0x0030) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -328,12 +328,46 @@ namespace Classes
 	};
 
 
+	// Class CoreUObject.Property
+	// 0x0048 (0x0078 - 0x0030)
+	class UProperty : public UField
+	{
+	public:
+		unsigned char                                      UnknownData00[0x48];                                      // 0x0030(0x0048) MISSED OFFSET
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0xc1afe03);
+			return ptr;
+		}
+
+	};
+
+
+	// Class CoreUObject.EnumProperty
+	// 0x0010 (0x0088 - 0x0078)
+	class UEnumProperty : public UProperty
+	{
+	public:
+		unsigned char                                      UnknownData00[0x10];                                      // 0x0078(0x0010) MISSED OFFSET
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0xf557e098);
+			return ptr;
+		}
+
+	};
+
+
 	// Class CoreUObject.LinkerPlaceholderClass
-	// 0x0150 (0x0378 - 0x0228)
+	// 0x01A0 (0x03F8 - 0x0258)
 	class ULinkerPlaceholderClass : public UClass
 	{
 	public:
-		unsigned char                                      UnknownData00[0x150];                                     // 0x0228(0x0150) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x1A0];                                     // 0x0258(0x01A0) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -346,11 +380,11 @@ namespace Classes
 
 
 	// Class CoreUObject.LinkerPlaceholderExportObject
-	// 0x0060 (0x0088 - 0x0028)
+	// 0x00B0 (0x00D8 - 0x0028)
 	class ULinkerPlaceholderExportObject : public UObject
 	{
 	public:
-		unsigned char                                      UnknownData00[0x60];                                      // 0x0028(0x0060) MISSED OFFSET
+		unsigned char                                      UnknownData00[0xB0];                                      // 0x0028(0x00B0) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -363,11 +397,11 @@ namespace Classes
 
 
 	// Class CoreUObject.LinkerPlaceholderFunction
-	// 0x0150 (0x0208 - 0x00B8)
+	// 0x01A0 (0x0258 - 0x00B8)
 	class ULinkerPlaceholderFunction : public UFunction
 	{
 	public:
-		unsigned char                                      UnknownData00[0x150];                                     // 0x00B8(0x0150) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x1A0];                                     // 0x00B8(0x01A0) MISSED OFFSET
 
 		static UClass* StaticClass()
 		{
@@ -407,23 +441,6 @@ namespace Classes
 		{
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xe259cda2);
-			return ptr;
-		}
-
-	};
-
-
-	// Class CoreUObject.Property
-	// 0x0048 (0x0078 - 0x0030)
-	class UProperty : public UField
-	{
-	public:
-		unsigned char                                      UnknownData00[0x48];                                      // 0x0030(0x0048) MISSED OFFSET
-
-		static UClass* StaticClass()
-		{
-			static UClass* ptr = nullptr;
-			if (!ptr) ptr = UObject::FindClass(0xc1afe03);
 			return ptr;
 		}
 

@@ -35,7 +35,7 @@ namespace Classes
 	// Function CountDownWidget.CountDownWidget_C.Get_CountDownText_Visibility_1
 	struct UCountDownWidget_C_Get_CountDownText_Visibility_1_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function CountDownWidget.CountDownWidget_C.Get_CountDownText_Text_1

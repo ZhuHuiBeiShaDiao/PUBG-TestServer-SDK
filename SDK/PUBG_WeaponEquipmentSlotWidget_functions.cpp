@@ -966,9 +966,9 @@ bool UWeaponEquipmentSlotWidget_C::OnDrop(struct FGeometry* MyGeometry, struct F
 // Function WeaponEquipmentSlotWidget.WeaponEquipmentSlotWidget_C.GetWeaponSlotEquipId
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<EEquipSlotID>      EquipSlotID                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EEquipSlotID                   EquipSlotID                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UWeaponEquipmentSlotWidget_C::GetWeaponSlotEquipId(TEnumAsByte<EEquipSlotID>* EquipSlotID)
+void UWeaponEquipmentSlotWidget_C::GetWeaponSlotEquipId(EEquipSlotID* EquipSlotID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xc457ee88);
@@ -1125,9 +1125,9 @@ struct FEventReply UWeaponEquipmentSlotWidget_C::OnMouseButtonDown(struct FGeome
 // Function WeaponEquipmentSlotWidget.WeaponEquipmentSlotWidget_C.GetSlotVisibility
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// TEnumAsByte<ESlateVisibility>  ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
-TEnumAsByte<ESlateVisibility> UWeaponEquipmentSlotWidget_C::GetSlotVisibility()
+ESlateVisibility UWeaponEquipmentSlotWidget_C::GetSlotVisibility()
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xcdb54cbd);

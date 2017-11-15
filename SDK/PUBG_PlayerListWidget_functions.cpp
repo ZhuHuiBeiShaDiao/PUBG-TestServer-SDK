@@ -103,7 +103,7 @@ void UPlayerListWidget_C::IsIncludeDyingPlayer(bool* NewParam)
 
 
 // Function PlayerListWidget.PlayerListWidget_C.UpdatePlayerList
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          InputPin                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -124,7 +124,7 @@ void UPlayerListWidget_C::UpdatePlayerList(float InputPin)
 
 
 // Function PlayerListWidget.PlayerListWidget_C.GetPlayersInDistance
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // TArray<class ATslCharacter*>   PlayerList                     (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 

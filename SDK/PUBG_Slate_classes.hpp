@@ -165,6 +165,26 @@ namespace Classes
 	};
 
 
+	// Class Slate.SlateSettings
+	// 0x0008 (0x0030 - 0x0028)
+	class USlateSettings : public UObject
+	{
+	public:
+		bool                                               bVirtualKeyboardSendsTextChanged;                         // 0x0028(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_Config, CPF_IsPlainOldData)
+		bool                                               bVirtualKeyboardDisplayOnFocus;                           // 0x0029(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_Config, CPF_IsPlainOldData)
+		bool                                               bExplicitCanvasChildZOrder;                               // 0x002A(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_Config, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData00[0x5];                                       // 0x002B(0x0005) MISSED OFFSET
+
+		static UClass* StaticClass()
+		{
+			static UClass* ptr = nullptr;
+			if (!ptr) ptr = UObject::FindClass(0x307d9558);
+			return ptr;
+		}
+
+	};
+
+
 	// Class Slate.SpinBoxWidgetStyle
 	// 0x0310 (0x0340 - 0x0030)
 	class USpinBoxWidgetStyle : public USlateWidgetStyleContainerBase

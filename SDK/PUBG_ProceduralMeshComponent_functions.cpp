@@ -306,14 +306,14 @@ void UProceduralMeshComponent::AddCollisionConvexMesh(TArray<struct FVector> Con
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
 // class UProceduralMeshComponent* InProcMesh                     (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-// struct FVector                 PlanePosition                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 PlaneNormal                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 PlanePosition                  (CPF_Parm, CPF_IsPlainOldData)
+// struct FVector                 PlaneNormal                    (CPF_Parm, CPF_IsPlainOldData)
 // bool                           bCreateOtherHalf               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UProceduralMeshComponent* OutOtherHalfProcMesh           (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-// TEnumAsByte<EProcMeshSliceCapOption> CapOption                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EProcMeshSliceCapOption        CapOption                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UMaterialInterface*      CapMaterial                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UKismetProceduralMeshLibrary::STATIC_SliceProceduralMesh(class UProceduralMeshComponent* InProcMesh, const struct FVector& PlanePosition, const struct FVector& PlaneNormal, bool bCreateOtherHalf, TEnumAsByte<EProcMeshSliceCapOption> CapOption, class UMaterialInterface* CapMaterial, class UProceduralMeshComponent** OutOtherHalfProcMesh)
+void UKismetProceduralMeshLibrary::STATIC_SliceProceduralMesh(class UProceduralMeshComponent* InProcMesh, const struct FVector& PlanePosition, const struct FVector& PlaneNormal, bool bCreateOtherHalf, EProcMeshSliceCapOption CapOption, class UMaterialInterface* CapMaterial, class UProceduralMeshComponent** OutOtherHalfProcMesh)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x5ba3012a);
@@ -342,7 +342,7 @@ void UKismetProceduralMeshLibrary::STATIC_SliceProceduralMesh(class UProceduralM
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable)
 // Parameters:
 // class UStaticMesh*             InMesh                         (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// int                            LODIndex                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            LodIndex                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            SectionIndex                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // TArray<struct FVector>         Vertices                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 // TArray<int>                    Triangles                      (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
@@ -350,14 +350,14 @@ void UKismetProceduralMeshLibrary::STATIC_SliceProceduralMesh(class UProceduralM
 // TArray<struct FVector2D>       UVs                            (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 // TArray<struct FProcMeshTangent> Tangents                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 
-void UKismetProceduralMeshLibrary::STATIC_GetSectionFromStaticMesh(class UStaticMesh* InMesh, int LODIndex, int SectionIndex, TArray<struct FVector>* Vertices, TArray<int>* Triangles, TArray<struct FVector>* Normals, TArray<struct FVector2D>* UVs, TArray<struct FProcMeshTangent>* Tangents)
+void UKismetProceduralMeshLibrary::STATIC_GetSectionFromStaticMesh(class UStaticMesh* InMesh, int LodIndex, int SectionIndex, TArray<struct FVector>* Vertices, TArray<int>* Triangles, TArray<struct FVector>* Normals, TArray<struct FVector2D>* UVs, TArray<struct FProcMeshTangent>* Tangents)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x122a7ea2);
 
 	UKismetProceduralMeshLibrary_GetSectionFromStaticMesh_Params params;
 	params.InMesh = InMesh;
-	params.LODIndex = LODIndex;
+	params.LodIndex = LodIndex;
 	params.SectionIndex = SectionIndex;
 
 	auto flags = fn->FunctionFlags;
@@ -383,7 +383,7 @@ void UKismetProceduralMeshLibrary::STATIC_GetSectionFromStaticMesh(class UStatic
 // Function ProceduralMeshComponent.KismetProceduralMeshLibrary.GenerateBoxMesh
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable)
 // Parameters:
-// struct FVector                 BoxRadius                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 BoxRadius                      (CPF_Parm, CPF_IsPlainOldData)
 // TArray<struct FVector>         Vertices                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 // TArray<int>                    Triangles                      (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
 // TArray<struct FVector>         Normals                        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor)
@@ -452,18 +452,18 @@ void UKismetProceduralMeshLibrary::STATIC_CreateGridMeshTriangles(int NumX, int 
 // (FUNC_Final, FUNC_Native, FUNC_Static, FUNC_Public, FUNC_BlueprintCallable)
 // Parameters:
 // class UStaticMeshComponent*    StaticMeshComponent            (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-// int                            LODIndex                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// int                            LodIndex                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UProceduralMeshComponent* ProcMeshComponent              (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 // bool                           bCreateCollision               (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UKismetProceduralMeshLibrary::STATIC_CopyProceduralMeshFromStaticMeshComponent(class UStaticMeshComponent* StaticMeshComponent, int LODIndex, class UProceduralMeshComponent* ProcMeshComponent, bool bCreateCollision)
+void UKismetProceduralMeshLibrary::STATIC_CopyProceduralMeshFromStaticMeshComponent(class UStaticMeshComponent* StaticMeshComponent, int LodIndex, class UProceduralMeshComponent* ProcMeshComponent, bool bCreateCollision)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xc26028c7);
 
 	UKismetProceduralMeshLibrary_CopyProceduralMeshFromStaticMeshComponent_Params params;
 	params.StaticMeshComponent = StaticMeshComponent;
-	params.LODIndex = LODIndex;
+	params.LodIndex = LodIndex;
 	params.ProcMeshComponent = ProcMeshComponent;
 	params.bCreateCollision = bCreateCollision;
 

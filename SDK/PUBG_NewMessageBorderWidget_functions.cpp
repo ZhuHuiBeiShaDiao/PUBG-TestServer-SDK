@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function NewMessageBorderWidget.NewMessageBorderWidget_C.TickMove
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // float                          Time                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -34,7 +34,7 @@ void UNewMessageBorderWidget_C::TickMove(float Time)
 
 
 // Function NewMessageBorderWidget.NewMessageBorderWidget_C.UpdatePositionInfo
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UNewMessageBorderWidget_C::UpdatePositionInfo()
 {

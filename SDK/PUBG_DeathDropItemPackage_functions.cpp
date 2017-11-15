@@ -54,7 +54,7 @@ void ADeathDropItemPackage_C::UserConstructionScript()
 
 
 // Function DeathDropItemPackage.DeathDropItemPackage_C.ReceiveBeginPlay
-// (FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// (FUNC_Event, FUNC_Protected, FUNC_BlueprintEvent)
 
 void ADeathDropItemPackage_C::ReceiveBeginPlay()
 {

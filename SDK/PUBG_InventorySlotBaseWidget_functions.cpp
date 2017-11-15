@@ -145,7 +145,7 @@ class UUserWidget* UInventorySlotBaseWidget_C::GetRightWidget()
 
 
 // Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.GetUpWidget
-// (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // class UUserWidget*             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 
@@ -451,6 +451,42 @@ bool UInventorySlotBaseWidget_C::Up()
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.RaiseEnterEvent
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInventorySlotBaseWidget_C::RaiseEnterEvent()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe65572ff);
+
+	UInventorySlotBaseWidget_C_RaiseEnterEvent_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.RaiseLeaveEvent
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInventorySlotBaseWidget_C::RaiseLeaveEvent()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x53bb9306);
+
+	UInventorySlotBaseWidget_C_RaiseLeaveEvent_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 
@@ -831,158 +867,6 @@ void UInventorySlotBaseWidget_C::GetBackgroundTexture_Bp(class UTexture** Backgr
 }
 
 
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.UpdateDragDroppingItem
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// class UItem*                   DroppingItem                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UInventorySlotBaseWidget_C::UpdateDragDroppingItem(class UItem* DroppingItem)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x7afe2668);
-
-	UInventorySlotBaseWidget_C_UpdateDragDroppingItem_Params params;
-	params.DroppingItem = DroppingItem;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnMouseEnter
-// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
-// struct FPointerEvent*          MouseEvent                     (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-
-void UInventorySlotBaseWidget_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x9f5f2cdd);
-
-	UInventorySlotBaseWidget_C_OnMouseEnter_Params params;
-	params.MyGeometry = MyGeometry;
-	params.MouseEvent = MouseEvent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnMouseLeave
-// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintEvent)
-// Parameters:
-// struct FPointerEvent*          MouseEvent                     (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
-
-void UInventorySlotBaseWidget_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x899400fa);
-
-	UInventorySlotBaseWidget_C_OnMouseLeave_Params params;
-	params.MouseEvent = MouseEvent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnDragEnter
-// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
-// struct FPointerEvent*          PointerEvent                   (CPF_Parm)
-// class UDragDropOperation**     Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UInventorySlotBaseWidget_C::OnDragEnter(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x5eadd6cc);
-
-	UInventorySlotBaseWidget_C_OnDragEnter_Params params;
-	params.MyGeometry = MyGeometry;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnDragLeave
-// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
-// Parameters:
-// struct FPointerEvent*          PointerEvent                   (CPF_Parm)
-// class UDragDropOperation**     Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UInventorySlotBaseWidget_C::OnDragLeave(struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x7efa156b);
-
-	UInventorySlotBaseWidget_C_OnDragLeave_Params params;
-	params.PointerEvent = PointerEvent;
-	params.Operation = Operation;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnUpdateItem
-// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// class UItem*                   Item                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UInventorySlotBaseWidget_C::OnUpdateItem(class UItem* Item)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xbeb0934e);
-
-	UInventorySlotBaseWidget_C_OnUpdateItem_Params params;
-	params.Item = Item;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.Destruct
-// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
-
-void UInventorySlotBaseWidget_C::Destruct()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xf6960495);
-
-	UInventorySlotBaseWidget_C_Destruct_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.ShowToolTip
 // (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
@@ -1115,6 +999,158 @@ void UInventorySlotBaseWidget_C::OnInputWidgetInputB()
 }
 
 
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.Destruct
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+
+void UInventorySlotBaseWidget_C::Destruct()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf6960495);
+
+	UInventorySlotBaseWidget_C_Destruct_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnUpdateItem
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UItem*                   Item                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::OnUpdateItem(class UItem* Item)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbeb0934e);
+
+	UInventorySlotBaseWidget_C_OnUpdateItem_Params params;
+	params.Item = Item;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnDragLeave
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// Parameters:
+// struct FPointerEvent*          PointerEvent                   (CPF_Parm)
+// class UDragDropOperation**     Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::OnDragLeave(struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7efa156b);
+
+	UInventorySlotBaseWidget_C_OnDragLeave_Params params;
+	params.PointerEvent = PointerEvent;
+	params.Operation = Operation;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnDragEnter
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
+// struct FPointerEvent*          PointerEvent                   (CPF_Parm)
+// class UDragDropOperation**     Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::OnDragEnter(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x5eadd6cc);
+
+	UInventorySlotBaseWidget_C_OnDragEnter_Params params;
+	params.MyGeometry = MyGeometry;
+	params.PointerEvent = PointerEvent;
+	params.Operation = Operation;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnMouseLeave
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintEvent)
+// Parameters:
+// struct FPointerEvent*          MouseEvent                     (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
+
+void UInventorySlotBaseWidget_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x899400fa);
+
+	UInventorySlotBaseWidget_C_OnMouseLeave_Params params;
+	params.MouseEvent = MouseEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnMouseEnter
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
+// struct FPointerEvent*          MouseEvent                     (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
+
+void UInventorySlotBaseWidget_C::OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9f5f2cdd);
+
+	UInventorySlotBaseWidget_C_OnMouseEnter_Params params;
+	params.MyGeometry = MyGeometry;
+	params.MouseEvent = MouseEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.UpdateDragDroppingItem
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UItem*                   DroppingItem                   (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::UpdateDragDroppingItem(class UItem* DroppingItem)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7afe2668);
+
+	UInventorySlotBaseWidget_C_UpdateDragDroppingItem_Params params;
+	params.DroppingItem = DroppingItem;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.ExecuteUbergraph_InventorySlotBaseWidget
 // (FUNC_HasDefaults)
 // Parameters:
@@ -1127,6 +1163,91 @@ void UInventorySlotBaseWidget_C::ExecuteUbergraph_InventorySlotBaseWidget(int En
 
 	UInventorySlotBaseWidget_C_ExecuteUbergraph_InventorySlotBaseWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnDoSlotAction__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInventorySlotBaseWidget_C::OnDoSlotAction__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x19036790);
+
+	UInventorySlotBaseWidget_C_OnDoSlotAction__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnLeaveSlot__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xdbf6b3fc);
+
+	UInventorySlotBaseWidget_C_OnLeaveSlot__DelegateSignature_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnEnterSlot__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x4ea09389);
+
+	UInventorySlotBaseWidget_C_OnEnterSlot__DelegateSignature_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventorySlotBaseWidget.InventorySlotBaseWidget_C.OnChildFocusSlotID__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// EEquipSlotID                   FocusSlotID                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventorySlotBaseWidget_C::OnChildFocusSlotID__DelegateSignature(EEquipSlotID FocusSlotID)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x3ed4deec);
+
+	UInventorySlotBaseWidget_C_OnChildFocusSlotID__DelegateSignature_Params params;
+	params.FocusSlotID = FocusSlotID;
 
 	auto flags = fn->FunctionFlags;
 

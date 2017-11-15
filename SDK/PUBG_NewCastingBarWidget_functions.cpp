@@ -176,6 +176,42 @@ void UNewCastingBarWidget_C::OnInteract()
 }
 
 
+// Function NewCastingBarWidget.NewCastingBarWidget_C.Custom Event_1
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UNewCastingBarWidget_C::Custom_Event_1()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xab8816aa);
+
+	UNewCastingBarWidget_C_Custom_Event_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function NewCastingBarWidget.NewCastingBarWidget_C.Custom Event_2
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UNewCastingBarWidget_C::Custom_Event_2()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x85859c41);
+
+	UNewCastingBarWidget_C_Custom_Event_2_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function NewCastingBarWidget.NewCastingBarWidget_C.ExecuteUbergraph_NewCastingBarWidget
 // (FUNC_HasDefaults)
 // Parameters:

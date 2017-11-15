@@ -12,13 +12,76 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function MainLobbyHUD.MainLobbyHUD_C.On_NameTag_Prepass_1
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UMainLobbyHUD_C::On_NameTag_Prepass_1(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x1175278f);
+
+	UMainLobbyHUD_C_On_NameTag_Prepass_1_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainLobbyHUD.MainLobbyHUD_C.CleanUpNameTagWidget
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UMainLobbyHUD_C::CleanUpNameTagWidget(int SlotIndex)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x66790234);
+
+	UMainLobbyHUD_C_CleanUpNameTagWidget_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function MainLobbyHUD.MainLobbyHUD_C.SetupNameTagWidget
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// int                            SlotIndex                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UMainLobbyHUD_C::SetupNameTagWidget(int SlotIndex)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf73d6ac1);
+
+	UMainLobbyHUD_C_SetupNameTagWidget_Params params;
+	params.SlotIndex = SlotIndex;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function MainLobbyHUD.MainLobbyHUD_C.GetNameTagWidget
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // int                            SlotIndex                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// class ULobbyVoiceChat_C*       Widget                         (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class UTslLobbyNameTagWidget*  Widget                         (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UMainLobbyHUD_C::GetNameTagWidget(int SlotIndex, class ULobbyVoiceChat_C** Widget)
+void UMainLobbyHUD_C::GetNameTagWidget(int SlotIndex, class UTslLobbyNameTagWidget** Widget)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x2606f4e8);
@@ -59,7 +122,7 @@ void UMainLobbyHUD_C::OnDestroyCharacter(int SlotIndex)
 
 
 // Function MainLobbyHUD.MainLobbyHUD_C.OnCreateCharacter
-// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // int                            SlotIndex                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -70,27 +133,6 @@ void UMainLobbyHUD_C::OnCreateCharacter(int SlotIndex)
 
 	UMainLobbyHUD_C_OnCreateCharacter_Params params;
 	params.SlotIndex = SlotIndex;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function MainLobbyHUD.MainLobbyHUD_C.On_NameTag_Prepass_1
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UMainLobbyHUD_C::On_NameTag_Prepass_1(class UWidget* BoundWidget)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x1175278f);
-
-	UMainLobbyHUD_C_On_NameTag_Prepass_1_Params params;
-	params.BoundWidget = BoundWidget;
 
 	auto flags = fn->FunctionFlags;
 
@@ -231,7 +273,7 @@ void UMainLobbyHUD_C::On_HorizontalBox_90_Prepass_1(class UWidget* BoundWidget)
 
 
 // Function MainLobbyHUD.MainLobbyHUD_C.OnReload
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UMainLobbyHUD_C::OnReload()
 {

@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function PlayerInfoWidget.PlayerInfoWidget_C.SetCameraMode_Free
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UPlayerInfoWidget_C::SetCameraMode_Free()
 {
@@ -431,9 +431,9 @@ void UPlayerInfoWidget_C::OnMouseLeave(struct FPointerEvent* MouseEvent)
 // Function PlayerInfoWidget.PlayerInfoWidget_C.CustomEvent_1
 // (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UPlayerInfoWidget_C::CustomEvent_1(TEnumAsByte<EPopupButtonID> ButtonID)
+void UPlayerInfoWidget_C::CustomEvent_1(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0xa84200bc);

@@ -454,6 +454,24 @@ bool UInventoryListBaseWidget_C::Up()
 }
 
 
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.HandleOnDoSlotAction
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInventoryListBaseWidget_C::HandleOnDoSlotAction()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x83b3073f);
+
+	UInventoryListBaseWidget_C_HandleOnDoSlotAction_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function InventoryListBaseWidget.InventoryListBaseWidget_C.GetScrollAccelation
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
@@ -1116,6 +1134,45 @@ void UInventoryListBaseWidget_C::ExecuteUbergraph_InventoryListBaseWidget(int En
 
 	UInventoryListBaseWidget_C_ExecuteUbergraph_InventoryListBaseWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnDoSlotAction__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInventoryListBaseWidget_C::OnDoSlotAction__DelegateSignature()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x49b5d950);
+
+	UInventoryListBaseWidget_C_OnDoSlotAction__DelegateSignature_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnInventoryDrop__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UDragDropOperation*      Operation                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventoryListBaseWidget_C::OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xfdaf0ca6);
+
+	UInventoryListBaseWidget_C_OnInventoryDrop__DelegateSignature_Params params;
+	params.Operation = Operation;
 
 	auto flags = fn->FunctionFlags;
 

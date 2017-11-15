@@ -17,7 +17,7 @@ namespace Classes
 	class AWeaponStudio_C : public AItemStudio
 	{
 	public:
-		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0400(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_DuplicateTransient)
+		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0400(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UAsyncStaticMeshComponent*                   Attachment_6;                                             // 0x0408(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UAsyncStaticMeshComponent*                   Attachment_5;                                             // 0x0410(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UAsyncStaticMeshComponent*                   Attachment_4;                                             // 0x0418(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)

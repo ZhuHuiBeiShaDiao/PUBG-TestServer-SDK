@@ -51,7 +51,7 @@ namespace Classes
 	// Function KillMessageWidget.KillMessageWidget_C.GetBrushColor_1
 	struct UKillMessageWidget_C_GetBrushColor_1_Params
 	{
-		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		struct FLinearColor                                ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function KillMessageWidget.KillMessageWidget_C.GetTeamAlive
@@ -81,19 +81,19 @@ namespace Classes
 	// Function KillMessageWidget.KillMessageWidget_C.Get_Killer_Visibility_1
 	struct UKillMessageWidget_C_Get_Killer_Visibility_1_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function KillMessageWidget.KillMessageWidget_C.Get_Insert2_Visibility_1
 	struct UKillMessageWidget_C_Get_Insert2_Visibility_1_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function KillMessageWidget.KillMessageWidget_C.Get_Insert_Visibility_1
 	struct UKillMessageWidget_C_Get_Insert_Visibility_1_Params
 	{
-		TEnumAsByte<ESlateVisibility>                      ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+		ESlateVisibility                                   ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function KillMessageWidget.KillMessageWidget_C.GetFadeInAnimation

@@ -37,9 +37,9 @@ struct FText UInGameMenuWidget_C::GetVersionText_1()
 // Function InGameMenuWidget.InGameMenuWidget_C.QuitGame
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UInGameMenuWidget_C::QuitGame(TEnumAsByte<EPopupButtonID> ButtonID)
+void UInGameMenuWidget_C::QuitGame(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x24690e2c);
@@ -58,9 +58,9 @@ void UInGameMenuWidget_C::QuitGame(TEnumAsByte<EPopupButtonID> ButtonID)
 // Function InGameMenuWidget.InGameMenuWidget_C.GoToLobby
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EPopupButtonID>    ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EPopupButtonID                 ButtonID                       (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UInGameMenuWidget_C::GoToLobby(TEnumAsByte<EPopupButtonID> ButtonID)
+void UInGameMenuWidget_C::GoToLobby(EPopupButtonID ButtonID)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x173309a2);
@@ -234,6 +234,24 @@ void UInGameMenuWidget_C::Tick(struct FGeometry* MyGeometry, float* InDeltaTime)
 	UInGameMenuWidget_C_Tick_Params params;
 	params.MyGeometry = MyGeometry;
 	params.InDeltaTime = InDeltaTime;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InGameMenuWidget.InGameMenuWidget_C.OpenGamepadOption
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInGameMenuWidget_C::OpenGamepadOption()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbd4b717f);
+
+	UInGameMenuWidget_C_OpenGamepadOption_Params params;
 
 	auto flags = fn->FunctionFlags;
 

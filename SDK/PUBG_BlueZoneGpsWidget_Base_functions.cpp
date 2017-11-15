@@ -13,7 +13,7 @@ namespace Classes
 //---------------------------------------------------------------------------
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.IsWarningBp
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
 // bool                           bIsWarning                     (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -236,7 +236,7 @@ void UBlueZoneGpsWidget_Base_C::GetCurrentPlayZoneRadius(float* CurrentPlayzoneR
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetCurrentPlayZonePosition
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 CurrentPlayzonePosition        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 CurrentPlayzonePosition        (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetCurrentPlayZonePosition(struct FVector* CurrentPlayzonePosition)
 {
@@ -305,7 +305,7 @@ void UBlueZoneGpsWidget_Base_C::GetNextplayzoneRadiusBp(float* NextPlayzoneRadiu
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetNextPlayzonePositionBp
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// struct FVector                 NextPlayzonePosition           (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 NextPlayzonePosition           (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetNextPlayzonePositionBp(struct FVector* NextPlayzonePosition)
 {
@@ -412,7 +412,7 @@ void UBlueZoneGpsWidget_Base_C::UpdateGauge()
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.BluezoneGpsMainPrepass
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -456,9 +456,9 @@ void UBlueZoneGpsWidget_Base_C::GetTslCharacter(class ACharacter** Character)
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetIsInNextPlayzone
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+// struct FLinearColor            ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm, CPF_IsPlainOldData)
 
 struct FLinearColor UBlueZoneGpsWidget_Base_C::GetIsInNextPlayzone()
 {
@@ -478,7 +478,7 @@ struct FLinearColor UBlueZoneGpsWidget_Base_C::GetIsInNextPlayzone()
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.IsInNextPlayzoneBp
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // bool                           bIsIn                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -501,7 +501,7 @@ void UBlueZoneGpsWidget_Base_C::IsInNextPlayzoneBp(bool* bIsIn)
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetNextPlayerzoneToCurrentBlueZoneLength
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // float                          Length                         (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -524,7 +524,7 @@ void UBlueZoneGpsWidget_Base_C::GetNextPlayerzoneToCurrentBlueZoneLength(float* 
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetPlayerLength
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // float                          PlayerLength                   (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
@@ -547,10 +547,10 @@ void UBlueZoneGpsWidget_Base_C::GetPlayerLength(float* PlayerLength)
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetNextPlayerzoneToCharacterDirection
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // float                          Scale                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 Direction                      (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 Direction                      (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetNextPlayerzoneToCharacterDirection(float Scale, struct FVector* Direction)
 {
@@ -572,11 +572,11 @@ void UBlueZoneGpsWidget_Base_C::GetNextPlayerzoneToCharacterDirection(float Scal
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetSafeLength
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // float                          SafeLength                     (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 A                              (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 B                              (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 A                              (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector                 B                              (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetSafeLength(float* SafeLength, struct FVector* A, struct FVector* B)
 {
@@ -601,9 +601,9 @@ void UBlueZoneGpsWidget_Base_C::GetSafeLength(float* SafeLength, struct FVector*
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetBluezonePositionAndRadius
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector                 BluezonePosition               (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 BluezonePosition               (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 // float                          BluezoneRadius                 (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetBluezonePositionAndRadius(struct FVector* BluezonePosition, float* BluezoneRadius)
@@ -627,9 +627,9 @@ void UBlueZoneGpsWidget_Base_C::GetBluezonePositionAndRadius(struct FVector* Blu
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetCurrentPlayzonePositionAndRadius
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector                 CurrentPlayzonePosition        (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 CurrentPlayzonePosition        (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 // float                          CurrentPlayzoneRadius          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetCurrentPlayzonePositionAndRadius(struct FVector* CurrentPlayzonePosition, float* CurrentPlayzoneRadius)
@@ -653,9 +653,9 @@ void UBlueZoneGpsWidget_Base_C::GetCurrentPlayzonePositionAndRadius(struct FVect
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetNextPlayzonePositionAndRadius
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
-// struct FVector                 NextPlayzonePosition           (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 NextPlayzonePosition           (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 // float                          Radius                         (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetNextPlayzonePositionAndRadius(struct FVector* NextPlayzonePosition, float* Radius)
@@ -679,11 +679,11 @@ void UBlueZoneGpsWidget_Base_C::GetNextPlayzonePositionAndRadius(struct FVector*
 
 
 // Function BlueZoneGpsWidget_Base.BlueZoneGpsWidget_Base_C.GetDangerLength
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
 // Parameters:
 // float                          DangerLength                   (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 A                              (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-// struct FVector                 B                              (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// struct FVector                 A                              (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
+// struct FVector                 B                              (CPF_Parm, CPF_OutParm, CPF_IsPlainOldData)
 
 void UBlueZoneGpsWidget_Base_C::GetDangerLength(float* DangerLength, struct FVector* A, struct FVector* B)
 {

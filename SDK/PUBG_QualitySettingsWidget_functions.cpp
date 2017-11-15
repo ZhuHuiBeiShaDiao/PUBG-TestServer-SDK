@@ -55,9 +55,9 @@ void UQualitySettingsWidget_C::SettingDefautl()
 // Function QualitySettingsWidget.QualitySettingsWidget_C.UpdateOtionStringByUserStting
 // (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EQualityType>      Selection                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EQualityType                   Selection                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UQualitySettingsWidget_C::UpdateOtionStringByUserStting(TEnumAsByte<EQualityType> Selection)
+void UQualitySettingsWidget_C::UpdateOtionStringByUserStting(EQualityType Selection)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x6c964559);
@@ -94,10 +94,10 @@ void UQualitySettingsWidget_C::UpdateMainOptionStringByComboBox()
 // Function QualitySettingsWidget.QualitySettingsWidget_C.GetComboBox
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// TEnumAsByte<EQualityType>      Selection                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EQualityType                   Selection                      (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // class UQualityComboBox_C*      ComboBox                       (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UQualitySettingsWidget_C::GetComboBox(TEnumAsByte<EQualityType> Selection, class UQualityComboBox_C** ComboBox)
+void UQualitySettingsWidget_C::GetComboBox(EQualityType Selection, class UQualityComboBox_C** ComboBox)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x7658ad68);
@@ -119,9 +119,9 @@ void UQualitySettingsWidget_C::GetComboBox(TEnumAsByte<EQualityType> Selection, 
 // Function QualitySettingsWidget.QualitySettingsWidget_C.SetQualityLevelByComboBox
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
-// TEnumAsByte<EQualityType>      QualityType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EQualityType                   QualityType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UQualitySettingsWidget_C::SetQualityLevelByComboBox(TEnumAsByte<EQualityType> QualityType)
+void UQualitySettingsWidget_C::SetQualityLevelByComboBox(EQualityType QualityType)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x732c0898);
@@ -140,10 +140,10 @@ void UQualitySettingsWidget_C::SetQualityLevelByComboBox(TEnumAsByte<EQualityTyp
 // Function QualitySettingsWidget.QualitySettingsWidget_C.GetQualityLevelByComboBox
 // (FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:
-// TEnumAsByte<EQualityType>      QualityType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// EQualityType                   QualityType                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 // int                            QualityLevel                   (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-void UQualitySettingsWidget_C::GetQualityLevelByComboBox(TEnumAsByte<EQualityType> QualityType, int* QualityLevel)
+void UQualitySettingsWidget_C::GetQualityLevelByComboBox(EQualityType QualityType, int* QualityLevel)
 {
 	static UFunction* fn = nullptr;
 	if (!fn) fn = UObject::FindObject<UFunction>(0x83d0a6e4);
