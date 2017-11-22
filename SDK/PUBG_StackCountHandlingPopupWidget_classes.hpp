@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C
 	// 0x00F8 (0x0388 - 0x0290)
-	class UStackCountHandlingPopupWidget_C : public UInputHookingWidget_C
-	{
+	class UStackCountHandlingPopupWidget_C : public UInputHookingWidget_C {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0290(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UButton*                                     CancelButton;                                             // 0x0298(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -43,8 +41,7 @@ namespace Classes
 		struct FText                                       OkText;                                                   // 0x0360(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance)
 		struct FScriptMulticastDelegate                    OnStackCountUpdated;                                      // 0x0378(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x230af985);
 			return ptr;
@@ -77,11 +74,12 @@ namespace Classes
 		void Custom_Event_1();
 		void XBoxOneOk();
 		void Tick(struct FGeometry* MyGeometry, float* InDeltaTime);
-		void OnWidgetInputB();
+		void ONWidgetInputB();
 		void OnWidgetMoveLeft();
 		void CustomEvent_3();
 		void CustomEvent_4();
 		void CustomEvent_5();
+		void BndEvt__InputAmountText_K2Node_ComponentBoundEvent_0_OnEditableTextChangedEvent__DelegateSignature(const struct FText& Text);
 		void ExecuteUbergraph_StackCountHandlingPopupWidget(int EntryPoint);
 		void OnStackCountUpdated__DelegateSignature(const TScriptInterface<class USlotInterface>& SlotInterface, const TScriptInterface<class USlotContainerInterface>& SlotContainer, int StackCount);
 	};

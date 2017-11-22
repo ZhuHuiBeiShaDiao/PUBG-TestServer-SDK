@@ -12,8 +12,26 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
-// Function CarePackgeItemListWidget.CarePackgeItemListWidget_C.SetCarePackgeItemList
+// Function CarePackgeItemListWidget.CarePackgeItemListWidget_C.HideTextCarePackageEmpty
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UCarePackgeItemListWidget_C::HideTextCarePackageEmpty()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x102af1e8);
+
+	UCarePackgeItemListWidget_C_HideTextCarePackageEmpty_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function CarePackgeItemListWidget.CarePackgeItemListWidget_C.SetCarePackgeItemList
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
 void UCarePackgeItemListWidget_C::SetCarePackgeItemList()
 {

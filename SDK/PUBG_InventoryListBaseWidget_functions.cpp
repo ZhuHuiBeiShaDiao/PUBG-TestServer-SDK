@@ -454,6 +454,73 @@ bool UInventoryListBaseWidget_C::Up()
 }
 
 
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.HandleOnLeaveSlot
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventoryListBaseWidget_C::HandleOnLeaveSlot(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9f5bb8eb);
+
+	UInventoryListBaseWidget_C_HandleOnLeaveSlot_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.HandleOnEnterSlot
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventoryListBaseWidget_C::HandleOnEnterSlot(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xf2a577bc);
+
+	UInventoryListBaseWidget_C_HandleOnEnterSlot_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnItemSlotWidgetCreated
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UItemSlotWidget_C*       ItemSlotWidget                 (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventoryListBaseWidget_C::OnItemSlotWidgetCreated(class UItemSlotWidget_C* ItemSlotWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7935a96f);
+
+	UInventoryListBaseWidget_C_OnItemSlotWidgetCreated_Params params;
+	params.ItemSlotWidget = ItemSlotWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function InventoryListBaseWidget.InventoryListBaseWidget_C.HandleOnDoSlotAction
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
@@ -1134,6 +1201,52 @@ void UInventoryListBaseWidget_C::ExecuteUbergraph_InventoryListBaseWidget(int En
 
 	UInventoryListBaseWidget_C_ExecuteUbergraph_InventoryListBaseWidget_Params params;
 	params.EntryPoint = EntryPoint;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnLeaveSlot__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventoryListBaseWidget_C::OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x27268bc);
+
+	UInventoryListBaseWidget_C_OnLeaveSlot__DelegateSignature_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function InventoryListBaseWidget.InventoryListBaseWidget_C.OnEnterSlot__DelegateSignature
+// (FUNC_Public, FUNC_Delegate, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// TScriptInterface<class USlotInterface> Slot                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// TScriptInterface<class USlotContainerInterface> SlotContainer                  (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UInventoryListBaseWidget_C::OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd244d749);
+
+	UInventoryListBaseWidget_C_OnEnterSlot__DelegateSignature_Params params;
+	params.Slot = Slot;
+	params.SlotContainer = SlotContainer;
 
 	auto flags = fn->FunctionFlags;
 

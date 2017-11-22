@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass WeaponEquipmentSlotWidget_Gamepad.WeaponEquipmentSlotWidget_Gamepad_C
 	// 0x01D4 (0x051C - 0x0348)
-	class UWeaponEquipmentSlotWidget_Gamepad_C : public UInventorySlotBaseWidget_C
-	{
+	class UWeaponEquipmentSlotWidget_Gamepad_C : public UInventorySlotBaseWidget_C {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0348(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UImage*                                      AmmoIcon;                                                 // 0x0350(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -78,8 +76,7 @@ namespace Classes
 		float                                              DropHoldStart;                                            // 0x0514(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		float                                              SwapHOldStart;                                            // 0x0518(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x50f48e3d);
 			return ptr;
@@ -88,6 +85,7 @@ namespace Classes
 
 		void GetSlotItem(TScriptInterface<class USlotInterface>* SlotItem);
 		void GetSlotContainer(TScriptInterface<class USlotContainerInterface>* SlotContainer);
+		void OnSwap();
 		void ProcessSwap();
 		void OnReleasedSwap();
 		void OnPressedSwap();

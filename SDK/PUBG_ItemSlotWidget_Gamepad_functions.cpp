@@ -500,6 +500,24 @@ void UItemSlotWidget_Gamepad_C::GetSlotContainer(TScriptInterface<class USlotCon
 }
 
 
+// Function ItemSlotWidget_Gamepad.ItemSlotWidget_Gamepad_C.OnEquipOrUse
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UItemSlotWidget_Gamepad_C::OnEquipOrUse()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xcfd4f23e);
+
+	UItemSlotWidget_Gamepad_C_OnEquipOrUse_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function ItemSlotWidget_Gamepad.ItemSlotWidget_Gamepad_C.OnEquipOrUseReleased
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 

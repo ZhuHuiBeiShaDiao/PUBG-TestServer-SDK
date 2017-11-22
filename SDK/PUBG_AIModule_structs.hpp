@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum AIModule.EPathFollowingResult
-	enum class EPathFollowingResult : uint8_t
-	{
+	enum class EPathFollowingResult : uint8_t {
 		EPathFollowingResult__Success = 0,
 		EPathFollowingResult__Blocked = 1,
 		EPathFollowingResult__OffPath = 2,
@@ -26,8 +24,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvQueryStatus
-	enum class EEnvQueryStatus : uint8_t
-	{
+	enum class EEnvQueryStatus : uint8_t {
 		EEnvQueryStatus__Processing = 0,
 		EEnvQueryStatus__Success = 1,
 		EEnvQueryStatus__Failed = 2,
@@ -39,8 +36,7 @@ namespace Classes
 
 
 	// Enum AIModule.EAILockSource
-	enum class EAILockSource : uint8_t
-	{
+	enum class EAILockSource : uint8_t {
 		EAILockSource__Animation = 0,
 		EAILockSource__Logic = 1,
 		EAILockSource__Script = 2,
@@ -51,8 +47,7 @@ namespace Classes
 
 
 	// Enum AIModule.EAIRequestPriority
-	enum class EAIRequestPriority : uint8_t
-	{
+	enum class EAIRequestPriority : uint8_t {
 		EAIRequestPriority__SoftScript = 0,
 		EAIRequestPriority__Logic = 1,
 		EAIRequestPriority__HardScript = 2,
@@ -64,8 +59,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPawnActionEventType
-	enum class EPawnActionEventType : uint8_t
-	{
+	enum class EPawnActionEventType : uint8_t {
 		EPawnActionEventType__Invalid = 0,
 		EPawnActionEventType__FailedToStart = 1,
 		EPawnActionEventType__InstantAbort = 2,
@@ -77,8 +71,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPawnActionResult
-	enum class EPawnActionResult : uint8_t
-	{
+	enum class EPawnActionResult : uint8_t {
 		EPawnActionResult__NotStarted = 0,
 		EPawnActionResult__InProgress = 1,
 		EPawnActionResult__Success = 2,
@@ -89,8 +82,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPawnActionAbortState
-	enum class EPawnActionAbortState : uint8_t
-	{
+	enum class EPawnActionAbortState : uint8_t {
 		EPawnActionAbortState__NeverStarted = 0,
 		EPawnActionAbortState__NotBeingAborted = 1,
 		EPawnActionAbortState__MarkPendingAbort = 2,
@@ -102,8 +94,7 @@ namespace Classes
 
 
 	// Enum AIModule.FAIDistanceType
-	enum class EFAIDistanceType : uint8_t
-	{
+	enum class EFAIDistanceType : uint8_t {
 		FAIDistanceType__Distance3D = 0,
 		FAIDistanceType__Distance2D = 1,
 		FAIDistanceType__DistanceZ = 2,
@@ -113,8 +104,7 @@ namespace Classes
 
 
 	// Enum AIModule.EAIOptionFlag
-	enum class EAIOptionFlag : uint8_t
-	{
+	enum class EAIOptionFlag : uint8_t {
 		EAIOptionFlag__Default = 0,
 		EAIOptionFlag__Enable = 1,
 		EAIOptionFlag__Disable = 2,
@@ -124,8 +114,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPathFollowingRequestResult
-	enum class EPathFollowingRequestResult : uint8_t
-	{
+	enum class EPathFollowingRequestResult : uint8_t {
 		EPathFollowingRequestResult__Failed = 0,
 		EPathFollowingRequestResult__AlreadyAtGoal = 1,
 		EPathFollowingRequestResult__RequestSuccessful = 2,
@@ -134,8 +123,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPathFollowingAction
-	enum class EPathFollowingAction : uint8_t
-	{
+	enum class EPathFollowingAction : uint8_t {
 		EPathFollowingAction__Error = 0,
 		EPathFollowingAction__NoMove = 1,
 		EPathFollowingAction__DirectMove = 2,
@@ -146,8 +134,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPathFollowingStatus
-	enum class EPathFollowingStatus : uint8_t
-	{
+	enum class EPathFollowingStatus : uint8_t {
 		EPathFollowingStatus__Idle = 0,
 		EPathFollowingStatus__Waiting = 1,
 		EPathFollowingStatus__Paused = 2,
@@ -157,8 +144,7 @@ namespace Classes
 
 
 	// Enum AIModule.ETeamAttitude
-	enum class ETeamAttitude : uint8_t
-	{
+	enum class ETeamAttitude : uint8_t {
 		ETeamAttitude__Friendly = 0,
 		ETeamAttitude__Neutral = 1,
 		ETeamAttitude__Hostile = 2,
@@ -167,8 +153,7 @@ namespace Classes
 
 
 	// Enum AIModule.EAISenseNotifyType
-	enum class EAISenseNotifyType : uint8_t
-	{
+	enum class EAISenseNotifyType : uint8_t {
 		EAISenseNotifyType__OnEveryPerception = 0,
 		EAISenseNotifyType__OnPerceptionChange = 1,
 		EAISenseNotifyType__EAISenseNotifyType_MAX = 2
@@ -176,8 +161,7 @@ namespace Classes
 
 
 	// Enum AIModule.EAITaskPriority
-	enum class EAITaskPriority : uint8_t
-	{
+	enum class EAITaskPriority : uint8_t {
 		EAITaskPriority__Lowest = 0,
 		EAITaskPriority__Low = 1,
 		EAITaskPriority__AutonomousAI = 2,
@@ -188,8 +172,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBTFlowAbortMode
-	enum class EBTFlowAbortMode : uint8_t
-	{
+	enum class EBTFlowAbortMode : uint8_t {
 		EBTFlowAbortMode__None = 0,
 		EBTFlowAbortMode__LowerPriority = 1,
 		EBTFlowAbortMode__Self = 2,
@@ -199,8 +182,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBTNodeResult
-	enum class EBTNodeResult : uint8_t
-	{
+	enum class EBTNodeResult : uint8_t {
 		EBTNodeResult__Succeeded = 0,
 		EBTNodeResult__Failed = 1,
 		EBTNodeResult__Aborted = 2,
@@ -210,8 +192,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvQueryTestClamping
-	enum class EEnvQueryTestClamping : uint8_t
-	{
+	enum class EEnvQueryTestClamping : uint8_t {
 		EEnvQueryTestClamping__None = 0,
 		EEnvQueryTestClamping__SpecifiedValue = 1,
 		EEnvQueryTestClamping__FilterThreshold = 2,
@@ -220,8 +201,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvDirection
-	enum class EEnvDirection : uint8_t
-	{
+	enum class EEnvDirection : uint8_t {
 		EEnvDirection__TwoPoints = 0,
 		EEnvDirection__Rotation = 1,
 		EEnvDirection__EEnvDirection_MAX = 2
@@ -229,8 +209,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvOverlapShape
-	enum class EEnvOverlapShape : uint8_t
-	{
+	enum class EEnvOverlapShape : uint8_t {
 		EEnvOverlapShape__Box = 0,
 		EEnvOverlapShape__Sphere = 1,
 		EEnvOverlapShape__Capsule = 2,
@@ -239,8 +218,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTraceShape
-	enum class EEnvTraceShape : uint8_t
-	{
+	enum class EEnvTraceShape : uint8_t {
 		EEnvTraceShape__Line = 0,
 		EEnvTraceShape__Box = 1,
 		EEnvTraceShape__Sphere = 2,
@@ -250,8 +228,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvQueryTrace
-	enum class EEnvQueryTrace : uint8_t
-	{
+	enum class EEnvQueryTrace : uint8_t {
 		EEnvQueryTrace__None = 0,
 		EEnvQueryTrace__Navigation = 1,
 		EEnvQueryTrace__Geometry = 2,
@@ -261,8 +238,7 @@ namespace Classes
 
 
 	// Enum AIModule.EAIParamType
-	enum class EAIParamType : uint8_t
-	{
+	enum class EAIParamType : uint8_t {
 		EAIParamType__Float = 0,
 		EAIParamType__Int = 1,
 		EAIParamType__Bool = 2,
@@ -271,8 +247,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvQueryParam
-	enum class EEnvQueryParam : uint8_t
-	{
+	enum class EEnvQueryParam : uint8_t {
 		EEnvQueryParam__Float = 0,
 		EEnvQueryParam__Int = 1,
 		EEnvQueryParam__Bool = 2,
@@ -281,8 +256,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvQueryRunMode
-	enum class EEnvQueryRunMode : uint8_t
-	{
+	enum class EEnvQueryRunMode : uint8_t {
 		EEnvQueryRunMode__SingleResult = 0,
 		EEnvQueryRunMode__RandomBest5Pct = 1,
 		EEnvQueryRunMode__RandomBest25Pct = 2,
@@ -292,8 +266,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestScoreOperator
-	enum class EEnvTestScoreOperator : uint8_t
-	{
+	enum class EEnvTestScoreOperator : uint8_t {
 		EEnvTestScoreOperator__AverageScore = 0,
 		EEnvTestScoreOperator__MinScore = 1,
 		EEnvTestScoreOperator__MaxScore = 2,
@@ -302,8 +275,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestFilterOperator
-	enum class EEnvTestFilterOperator : uint8_t
-	{
+	enum class EEnvTestFilterOperator : uint8_t {
 		EEnvTestFilterOperator__AllPass = 0,
 		EEnvTestFilterOperator__AnyPass = 1,
 		EEnvTestFilterOperator__EEnvTestFilterOperator_MAX = 2
@@ -311,8 +283,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestCost
-	enum class EEnvTestCost : uint8_t
-	{
+	enum class EEnvTestCost : uint8_t {
 		EEnvTestCost__Low = 0,
 		EEnvTestCost__Medium = 1,
 		EEnvTestCost__High = 2,
@@ -321,8 +292,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestWeight
-	enum class EEnvTestWeight : uint8_t
-	{
+	enum class EEnvTestWeight : uint8_t {
 		EEnvTestWeight__None = 0,
 		EEnvTestWeight__Square = 1,
 		EEnvTestWeight__Inverse = 2,
@@ -334,8 +304,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestScoreEquation
-	enum class EEnvTestScoreEquation : uint8_t
-	{
+	enum class EEnvTestScoreEquation : uint8_t {
 		EEnvTestScoreEquation__Linear = 0,
 		EEnvTestScoreEquation__Square = 1,
 		EEnvTestScoreEquation__InverseLinear = 2,
@@ -346,8 +315,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestFilterType
-	enum class EEnvTestFilterType : uint8_t
-	{
+	enum class EEnvTestFilterType : uint8_t {
 		EEnvTestFilterType__Minimum = 0,
 		EEnvTestFilterType__Maximum = 1,
 		EEnvTestFilterType__Range = 2,
@@ -357,8 +325,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestPurpose
-	enum class EEnvTestPurpose : uint8_t
-	{
+	enum class EEnvTestPurpose : uint8_t {
 		EEnvTestPurpose__Filter = 0,
 		EEnvTestPurpose__Score = 1,
 		EEnvTestPurpose__FilterAndScore = 2,
@@ -367,8 +334,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBTDecoratorLogic
-	enum class EBTDecoratorLogic : uint8_t
-	{
+	enum class EBTDecoratorLogic : uint8_t {
 		EBTDecoratorLogic__Invalid = 0,
 		EBTDecoratorLogic__Test = 1,
 		EBTDecoratorLogic__And = 2,
@@ -379,8 +345,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBTChildIndex
-	enum class EBTChildIndex : uint8_t
-	{
+	enum class EBTChildIndex : uint8_t {
 		EBTChildIndex__FirstNode = 0,
 		EBTChildIndex__TaskNode = 1,
 		EBTChildIndex__EBTChildIndex_MAX = 2
@@ -388,8 +353,7 @@ namespace Classes
 
 
 	// Enum AIModule.ETextKeyOperation
-	enum class ETextKeyOperation : uint8_t
-	{
+	enum class ETextKeyOperation : uint8_t {
 		ETextKeyOperation__Equal = 0,
 		ETextKeyOperation__NotEqual = 1,
 		ETextKeyOperation__Contain = 2,
@@ -399,8 +363,7 @@ namespace Classes
 
 
 	// Enum AIModule.EArithmeticKeyOperation
-	enum class EArithmeticKeyOperation : uint8_t
-	{
+	enum class EArithmeticKeyOperation : uint8_t {
 		EArithmeticKeyOperation__Equal = 0,
 		EArithmeticKeyOperation__NotEqual = 1,
 		EArithmeticKeyOperation__Less = 2,
@@ -412,8 +375,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBasicKeyOperation
-	enum class EBasicKeyOperation : uint8_t
-	{
+	enum class EBasicKeyOperation : uint8_t {
 		EBasicKeyOperation__Set = 0,
 		EBasicKeyOperation__NotSet = 1,
 		EBasicKeyOperation__EBasicKeyOperation_MAX = 2
@@ -421,8 +383,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBTBlackboardRestart
-	enum class EBTBlackboardRestart : uint8_t
-	{
+	enum class EBTBlackboardRestart : uint8_t {
 		EBTBlackboardRestart__ValueChange = 0,
 		EBTBlackboardRestart__ResultChange = 1,
 		EBTBlackboardRestart__EBTBlackboardRestart_MAX = 2
@@ -430,8 +391,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBlackBoardEntryComparison
-	enum class EBlackBoardEntryComparison : uint8_t
-	{
+	enum class EBlackBoardEntryComparison : uint8_t {
 		EBlackBoardEntryComparison__Equal = 0,
 		EBlackBoardEntryComparison__NotEqual = 1,
 		EBlackBoardEntryComparison__EBlackBoardEntryComparison_MAX = 2
@@ -439,8 +399,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPathExistanceQueryType
-	enum class EPathExistanceQueryType : uint8_t
-	{
+	enum class EPathExistanceQueryType : uint8_t {
 		EPathExistanceQueryType__NavmeshRaycast2D = 0,
 		EPathExistanceQueryType__HierarchicalQuery = 1,
 		EPathExistanceQueryType__RegularPathFinding = 2,
@@ -449,8 +408,7 @@ namespace Classes
 
 
 	// Enum AIModule.EBTParallelMode
-	enum class EBTParallelMode : uint8_t
-	{
+	enum class EBTParallelMode : uint8_t {
 		EBTParallelMode__AbortBackground = 0,
 		EBTParallelMode__WaitForBackground = 1,
 		EBTParallelMode__EBTParallelMode_MAX = 2
@@ -458,8 +416,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPointOnCircleSpacingMethod
-	enum class EPointOnCircleSpacingMethod : uint8_t
-	{
+	enum class EPointOnCircleSpacingMethod : uint8_t {
 		EPointOnCircleSpacingMethod__BySpaceBetween = 0,
 		EPointOnCircleSpacingMethod__ByNumberOfPoints = 1,
 		EPointOnCircleSpacingMethod__EPointOnCircleSpacingMethod_MAX = 2
@@ -467,8 +424,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEQSNormalizationType
-	enum class EEQSNormalizationType : uint8_t
-	{
+	enum class EEQSNormalizationType : uint8_t {
 		EEQSNormalizationType__Absolute = 0,
 		EEQSNormalizationType__RelativeToScores = 1,
 		EEQSNormalizationType__EEQSNormalizationType_MAX = 2
@@ -476,8 +432,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestDistance
-	enum class EEnvTestDistance : uint8_t
-	{
+	enum class EEnvTestDistance : uint8_t {
 		EEnvTestDistance__Distance3D = 0,
 		EEnvTestDistance__Distance2D = 1,
 		EEnvTestDistance__DistanceZ = 2,
@@ -487,8 +442,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestDot
-	enum class EEnvTestDot : uint8_t
-	{
+	enum class EEnvTestDot : uint8_t {
 		EEnvTestDot__Dot3D = 0,
 		EEnvTestDot__Dot2D = 1,
 		EEnvTestDot__EEnvTestDot_MAX = 2
@@ -496,8 +450,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvTestPathfinding
-	enum class EEnvTestPathfinding : uint8_t
-	{
+	enum class EEnvTestPathfinding : uint8_t {
 		EEnvTestPathfinding__PathExist = 0,
 		EEnvTestPathfinding__PathCost = 1,
 		EEnvTestPathfinding__PathLength = 2,
@@ -506,8 +459,7 @@ namespace Classes
 
 
 	// Enum AIModule.EEnvQueryHightlightMode
-	enum class EEnvQueryHightlightMode : uint8_t
-	{
+	enum class EEnvQueryHightlightMode : uint8_t {
 		EEnvQueryHightlightMode__All = 0,
 		EEnvQueryHightlightMode__Best5Pct = 1,
 		EEnvQueryHightlightMode__Best25Pct = 2,
@@ -516,8 +468,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPawnActionFailHandling
-	enum class EPawnActionFailHandling : uint8_t
-	{
+	enum class EPawnActionFailHandling : uint8_t {
 		EPawnActionFailHandling__RequireSuccess = 0,
 		EPawnActionFailHandling__IgnoreFailure = 1,
 		EPawnActionFailHandling__EPawnActionFailHandling_MAX = 2
@@ -525,8 +476,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPawnSubActionTriggeringPolicy
-	enum class EPawnSubActionTriggeringPolicy : uint8_t
-	{
+	enum class EPawnSubActionTriggeringPolicy : uint8_t {
 		EPawnSubActionTriggeringPolicy__CopyBeforeTriggering = 0,
 		EPawnSubActionTriggeringPolicy__ReuseInstances = 1,
 		EPawnSubActionTriggeringPolicy__EPawnSubActionTriggeringPolicy_MAX = 2
@@ -534,8 +484,7 @@ namespace Classes
 
 
 	// Enum AIModule.EPawnActionMoveMode
-	enum class EPawnActionMoveMode : uint8_t
-	{
+	enum class EPawnActionMoveMode : uint8_t {
 		EPawnActionMoveMode__UsePathfinding = 0,
 		EPawnActionMoveMode__StraightLine = 1,
 		EPawnActionMoveMode__EPawnActionMoveMode_MAX = 2
@@ -549,8 +498,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.BlackboardKeySelector
 	// 0x0028
-	struct FBlackboardKeySelector
-	{
+	struct FBlackboardKeySelector {
 		TArray<class UBlackboardKeyType*>                  AllowedTypes;                                             // 0x0000(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_Transient)
 		struct FName                                       SelectedKeyName;                                          // 0x0010(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_IsPlainOldData)
 		class UClass*                                      SelectedKeyType;                                          // 0x0018(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_Transient, CPF_IsPlainOldData)
@@ -562,15 +510,13 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIRequestID
 	// 0x0004
-	struct FAIRequestID
-	{
+	struct FAIRequestID {
 		uint32_t                                           RequestID;                                                // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct AIModule.AIStimulus
 	// 0x0048
-	struct FAIStimulus
-	{
+	struct FAIStimulus {
 		float                                              Age;                                                      // 0x0000(0x0004) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              ExpirationAge;                                            // 0x0004(0x0004) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Strength;                                                 // 0x0008(0x0004) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -586,8 +532,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.ActorPerceptionBlueprintInfo
 	// 0x0020
-	struct FActorPerceptionBlueprintInfo
-	{
+	struct FActorPerceptionBlueprintInfo {
 		class AActor*                                      Target;                                                   // 0x0000(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<struct FAIStimulus>                         LastSensedStimuli;                                        // 0x0008(0x0010) (CPF_BlueprintVisible, CPF_ZeroConstructor)
 		unsigned char                                      bIsHostile : 1;                                           // 0x0018(0x0001) (CPF_BlueprintVisible)
@@ -596,8 +541,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIDamageEvent
 	// 0x0030
-	struct FAIDamageEvent
-	{
+	struct FAIDamageEvent {
 		float                                              Amount;                                                   // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     Location;                                                 // 0x0004(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
 		struct FVector                                     HitLocation;                                              // 0x0010(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
@@ -608,8 +552,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AINoiseEvent
 	// 0x0030
-	struct FAINoiseEvent
-	{
+	struct FAINoiseEvent {
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) MISSED OFFSET
 		struct FVector                                     NoiseLocation;                                            // 0x0004(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
 		float                                              Loudness;                                                 // 0x0010(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -621,8 +564,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIPredictionEvent
 	// 0x0018
-	struct FAIPredictionEvent
-	{
+	struct FAIPredictionEvent {
 		class AActor*                                      Requestor;                                                // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class AActor*                                      PredictedActor;                                           // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0010(0x0008) MISSED OFFSET
@@ -630,8 +572,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AITeamStimulusEvent
 	// 0x0038
-	struct FAITeamStimulusEvent
-	{
+	struct FAITeamStimulusEvent {
 		unsigned char                                      UnknownData00[0x28];                                      // 0x0000(0x0028) MISSED OFFSET
 		class AActor*                                      Broadcaster;                                              // 0x0028(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class AActor*                                      Enemy;                                                    // 0x0030(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -639,8 +580,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AITouchEvent
 	// 0x0020
-	struct FAITouchEvent
-	{
+	struct FAITouchEvent {
 		unsigned char                                      UnknownData00[0x10];                                      // 0x0000(0x0010) MISSED OFFSET
 		class AActor*                                      TouchReceiver;                                            // 0x0010(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class AActor*                                      OtherActor;                                               // 0x0018(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -648,8 +588,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AISenseAffiliationFilter
 	// 0x0004
-	struct FAISenseAffiliationFilter
-	{
+	struct FAISenseAffiliationFilter {
 		unsigned char                                      bDetectEnemies : 1;                                       // 0x0000(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly)
 		unsigned char                                      bDetectNeutrals : 1;                                      // 0x0000(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly)
 		unsigned char                                      bDetectFriendlies : 1;                                    // 0x0000(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly)
@@ -658,16 +597,14 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIMoveRequest
 	// 0x0040
-	struct FAIMoveRequest
-	{
+	struct FAIMoveRequest {
 		class AActor*                                      GoalActor;                                                // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x38];                                      // 0x0008(0x0038) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.BTDecoratorLogic
 	// 0x0004
-	struct FBTDecoratorLogic
-	{
+	struct FBTDecoratorLogic {
 		TEnumAsByte<EBTDecoratorLogic>                     Operation;                                                // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x1];                                       // 0x0001(0x0001) MISSED OFFSET
 		uint16_t                                           Number;                                                   // 0x0002(0x0002) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -675,8 +612,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.BTCompositeChild
 	// 0x0030
-	struct FBTCompositeChild
-	{
+	struct FBTCompositeChild {
 		class UBTCompositeNode*                            ChildComposite;                                           // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UBTTaskNode*                                 ChildTask;                                                // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<class UBTDecorator*>                        Decorators;                                               // 0x0010(0x0010) (CPF_ZeroConstructor)
@@ -685,8 +621,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.BehaviorTreeTemplateInfo
 	// 0x0018
-	struct FBehaviorTreeTemplateInfo
-	{
+	struct FBehaviorTreeTemplateInfo {
 		class UBehaviorTree*                               Asset;                                                    // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UBTCompositeNode*                            Template;                                                 // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0010(0x0008) MISSED OFFSET
@@ -694,8 +629,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.BlackboardEntry
 	// 0x0018
-	struct FBlackboardEntry
-	{
+	struct FBlackboardEntry {
 		struct FName                                       EntryName;                                                // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UBlackboardKeyType*                          KeyType;                                                  // 0x0008(0x0008) (CPF_Edit, CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 		unsigned char                                      bInstanceSynced : 1;                                      // 0x0010(0x0001) (CPF_Edit)
@@ -704,8 +638,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIDataProviderValue
 	// 0x0020
-	struct FAIDataProviderValue
-	{
+	struct FAIDataProviderValue {
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
 		class UProperty*                                   CachedProperty;                                           // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
 		class UAIDataProvider*                             DataBinding;                                              // 0x0010(0x0008) (CPF_Edit, CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
@@ -714,23 +647,20 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIDataProviderTypedValue
 	// 0x0008 (0x0028 - 0x0020)
-	struct FAIDataProviderTypedValue : public FAIDataProviderValue
-	{
+	struct FAIDataProviderTypedValue : public FAIDataProviderValue {
 		class UClass*                                      PropertyType;                                             // 0x0020(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct AIModule.AIDataProviderFloatValue
 	// 0x0008 (0x0030 - 0x0028)
-	struct FAIDataProviderFloatValue : public FAIDataProviderTypedValue
-	{
+	struct FAIDataProviderFloatValue : public FAIDataProviderTypedValue {
 		float                                              DefaultValue;                                             // 0x0028(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.AIDynamicParam
 	// 0x0038
-	struct FAIDynamicParam
-	{
+	struct FAIDynamicParam {
 		struct FName                                       ParamName;                                                // 0x0000(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_EditConst, CPF_IsPlainOldData)
 		EAIParamType                                       ParamType;                                                // 0x0008(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_EditConst, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
@@ -740,8 +670,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.EQSParametrizedQueryExecutionRequest
 	// 0x0048
-	struct FEQSParametrizedQueryExecutionRequest
-	{
+	struct FEQSParametrizedQueryExecutionRequest {
 		class UEnvQuery*                                   QueryTemplate;                                            // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<struct FAIDynamicParam>                     QueryConfig;                                              // 0x0008(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		struct FBlackboardKeySelector                      EQSQueryBlackboardKey;                                    // 0x0018(0x0028) (CPF_Edit)
@@ -753,8 +682,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.EnvNamedValue
 	// 0x0010
-	struct FEnvNamedValue
-	{
+	struct FEnvNamedValue {
 		struct FName                                       ParamName;                                                // 0x0000(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		EAIParamType                                       ParamType;                                                // 0x0008(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
@@ -763,8 +691,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.CrowdAvoidanceConfig
 	// 0x001C
-	struct FCrowdAvoidanceConfig
-	{
+	struct FCrowdAvoidanceConfig {
 		float                                              VelocityBias;                                             // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              DesiredVelocityWeight;                                    // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              CurrentVelocityWeight;                                    // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -779,32 +706,28 @@ namespace Classes
 
 	// ScriptStruct AIModule.CrowdAvoidanceSamplingPattern
 	// 0x0020
-	struct FCrowdAvoidanceSamplingPattern
-	{
+	struct FCrowdAvoidanceSamplingPattern {
 		TArray<float>                                      Angles;                                                   // 0x0000(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		TArray<float>                                      Radii;                                                    // 0x0010(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct AIModule.EnvQueryInstanceCache
 	// 0x01C0
-	struct FEnvQueryInstanceCache
-	{
+	struct FEnvQueryInstanceCache {
 		class UEnvQuery*                                   Template;                                                 // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x1B8];                                     // 0x0008(0x01B8) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.AIDataProviderBoolValue
 	// 0x0008 (0x0030 - 0x0028)
-	struct FAIDataProviderBoolValue : public FAIDataProviderTypedValue
-	{
+	struct FAIDataProviderBoolValue : public FAIDataProviderTypedValue {
 		bool                                               DefaultValue;                                             // 0x0028(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.EnvTraceData
 	// 0x0030
-	struct FEnvTraceData
-	{
+	struct FEnvTraceData {
 		int                                                VersionNum;                                               // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 		class UClass*                                      NavigationFilter;                                         // 0x0008(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
@@ -829,16 +752,14 @@ namespace Classes
 
 	// ScriptStruct AIModule.AIDataProviderIntValue
 	// 0x0008 (0x0030 - 0x0028)
-	struct FAIDataProviderIntValue : public FAIDataProviderTypedValue
-	{
+	struct FAIDataProviderIntValue : public FAIDataProviderTypedValue {
 		int                                                DefaultValue;                                             // 0x0028(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.EnvDirection
 	// 0x0020
-	struct FEnvDirection
-	{
+	struct FEnvDirection {
 		class UClass*                                      LineFrom;                                                 // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		class UClass*                                      LineTo;                                                   // 0x0008(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		class UClass*                                      Rotation;                                                 // 0x0010(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
@@ -848,8 +769,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.EnvOverlapData
 	// 0x0020
-	struct FEnvOverlapData
-	{
+	struct FEnvOverlapData {
 		float                                              ExtentX;                                                  // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		float                                              ExtentY;                                                  // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		float                                              ExtentZ;                                                  // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
@@ -864,37 +784,32 @@ namespace Classes
 
 	// ScriptStruct AIModule.PawnActionStack
 	// 0x0008
-	struct FPawnActionStack
-	{
+	struct FPawnActionStack {
 		class UPawnAction*                                 TopAction;                                                // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct AIModule.PawnActionEvent
 	// 0x0018
-	struct FPawnActionEvent
-	{
+	struct FPawnActionEvent {
 		class UPawnAction*                                 Action;                                                   // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x10];                                      // 0x0008(0x0010) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.GenericTeamId
 	// 0x0001
-	struct FGenericTeamId
-	{
+	struct FGenericTeamId {
 		unsigned char                                      TeamId;                                                   // 0x0000(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct AIModule.AIDataProviderStructValue
 	// 0x0010 (0x0030 - 0x0020)
-	struct FAIDataProviderStructValue : public FAIDataProviderValue
-	{
+	struct FAIDataProviderStructValue : public FAIDataProviderValue {
 		unsigned char                                      UnknownData00[0x10];                                      // 0x0020(0x0010) MISSED OFFSET
 	};
 
 	// ScriptStruct AIModule.AISightEvent
 	// 0x0018
-	struct FAISightEvent
-	{
+	struct FAISightEvent {
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
 		class AActor*                                      SeenActor;                                                // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class AActor*                                      Observer;                                                 // 0x0010(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -902,8 +817,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.EnvQueryResult
 	// 0x0040
-	struct FEnvQueryResult
-	{
+	struct FEnvQueryResult {
 		unsigned char                                      UnknownData00[0x10];                                      // 0x0000(0x0010) MISSED OFFSET
 		class UClass*                                      ItemType;                                                 // 0x0010(0x0008) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x14];                                      // 0x0018(0x0014) MISSED OFFSET
@@ -914,8 +828,7 @@ namespace Classes
 
 	// ScriptStruct AIModule.EnvQueryRequest
 	// 0x0068
-	struct FEnvQueryRequest
-	{
+	struct FEnvQueryRequest {
 		class UEnvQuery*                                   QueryTemplate;                                            // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UObject*                                     Owner;                                                    // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UWorld*                                      World;                                                    // 0x0010(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)

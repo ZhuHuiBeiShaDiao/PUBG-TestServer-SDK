@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass WeaponEquipmentWidget_Gamepad.WeaponEquipmentWidget_Gamepad_C
 	// 0x00B8 (0x0330 - 0x0278)
-	class UWeaponEquipmentWidget_Gamepad_C : public UInventoryBaseWidget_C
-	{
+	class UWeaponEquipmentWidget_Gamepad_C : public UInventoryBaseWidget_C {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0278(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UCanvasPanel*                                CanvasPanel_1;                                            // 0x0280(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -41,8 +39,7 @@ namespace Classes
 		struct FScriptMulticastDelegate                    OnAttachmentFocused;                                      // 0x0310(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 		struct FScriptMulticastDelegate                    OnWeaponEquipmentFocused;                                 // 0x0320(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x69dc5455);
 			return ptr;

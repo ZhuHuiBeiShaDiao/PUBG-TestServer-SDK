@@ -6,20 +6,17 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class ClothingSystemRuntime.ClothingAssetCustomData
 	// 0x0000 (0x0028 - 0x0028)
-	class UClothingAssetCustomData : public UObject
-	{
+	class UClothingAssetCustomData : public UObject {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xf8f85593);
 			return ptr;
@@ -30,8 +27,7 @@ namespace Classes
 
 	// Class ClothingSystemRuntime.ClothingAsset
 	// 0x0110 (0x0158 - 0x0048)
-	class UClothingAsset : public UClothingAssetBase
-	{
+	class UClothingAsset : public UClothingAssetBase {
 	public:
 		struct FClothConfig                                ClothConfig;                                              // 0x0048(0x00BC) (CPF_Edit)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0104(0x0004) MISSED OFFSET
@@ -43,8 +39,7 @@ namespace Classes
 		unsigned char                                      UnknownData01[0x4];                                       // 0x014C(0x0004) MISSED OFFSET
 		class UClothingAssetCustomData*                    CustomData;                                               // 0x0150(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xc7d8491e);
 			return ptr;
@@ -55,12 +50,10 @@ namespace Classes
 
 	// Class ClothingSystemRuntime.ClothingSimulationFactoryNv
 	// 0x0000 (0x0028 - 0x0028)
-	class UClothingSimulationFactoryNv : public UClothingSimulationFactory
-	{
+	class UClothingSimulationFactoryNv : public UClothingSimulationFactory {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xf2ad1adb);
 			return ptr;

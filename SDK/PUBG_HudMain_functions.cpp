@@ -12,6 +12,71 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function HudMain.HudMain_C.On_HideOnObserverSpectating_Prepass_1
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UHudMain_C::On_HideOnObserverSpectating_Prepass_1(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe7c82c67);
+
+	UHudMain_C_On_HideOnObserverSpectating_Prepass_1_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HudMain.HudMain_C.ShouldShowReplayMenu
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// bool                           bShow                          (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UHudMain_C::ShouldShowReplayMenu(bool* bShow)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x22895249);
+
+	UHudMain_C_ShouldShowReplayMenu_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (bShow != nullptr)
+		*bShow = params.bShow;
+}
+
+
+// Function HudMain.HudMain_C.OnPrepass_3
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UHudMain_C::OnPrepass_3(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xdb160ee);
+
+	UHudMain_C_OnPrepass_3_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function HudMain.HudMain_C.BindEventForShowReplayTimeline
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
@@ -505,27 +570,6 @@ void UHudMain_C::IsCharacterAlive(bool* IsAlive)
 }
 
 
-// Function HudMain.HudMain_C.OnToggleInventory
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// bool                           Bold                           (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UHudMain_C::OnToggleInventory(bool Bold)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xd75532cc);
-
-	UHudMain_C_OnToggleInventory_Params params;
-	params.Bold = Bold;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function HudMain.HudMain_C.On_InventoryShowHiddenCanvas_Prepass_1
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -922,24 +966,6 @@ void UHudMain_C::OnToggleMap()
 	if (!fn) fn = UObject::FindObject<UFunction>(0x1ab0f222);
 
 	UHudMain_C_OnToggleMap_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function HudMain.HudMain_C.OnKey_ToggleInventory
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-
-void UHudMain_C::OnKey_ToggleInventory()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x72dd4efc);
-
-	UHudMain_C_OnKey_ToggleInventory_Params params;
 
 	auto flags = fn->FunctionFlags;
 

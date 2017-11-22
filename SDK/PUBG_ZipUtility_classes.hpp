@@ -6,20 +6,17 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class ZipUtility.ZipUtilityInterface
 	// 0x0000 (0x0028 - 0x0028)
-	class UZipUtilityInterface : public UInterface
-	{
+	class UZipUtilityInterface : public UInterface {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x946e4d6a);
 			return ptr;
@@ -36,8 +33,7 @@ namespace Classes
 
 	// Class ZipUtility.ZipFileFunctionInternalCallback
 	// 0x0048 (0x0070 - 0x0028)
-	class UZipFileFunctionInternalCallback : public UObject
-	{
+	class UZipFileFunctionInternalCallback : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
 		TEnumAsByte<EZipUtilityCompressionFormat>          CompressionFormat;                                        // 0x0030(0x0001) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
@@ -52,8 +48,7 @@ namespace Classes
 		bool                                               bUnzipto;                                                 // 0x006A(0x0001) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData03[0x5];                                       // 0x006B(0x0005) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x510fb04f);
 			return ptr;
@@ -64,12 +59,10 @@ namespace Classes
 
 	// Class ZipUtility.ZipFileFunctionLibrary
 	// 0x0000 (0x0028 - 0x0028)
-	class UZipFileFunctionLibrary : public UBlueprintFunctionLibrary
-	{
+	class UZipFileFunctionLibrary : public UBlueprintFunctionLibrary {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xea53eeb2);
 			return ptr;
@@ -89,13 +82,11 @@ namespace Classes
 
 	// Class ZipUtility.ZULambdaDelegate
 	// 0x00A8 (0x00D0 - 0x0028)
-	class UZULambdaDelegate : public UObject
-	{
+	class UZULambdaDelegate : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0xA8];                                      // 0x0028(0x00A8) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x8fd7db89);
 			return ptr;

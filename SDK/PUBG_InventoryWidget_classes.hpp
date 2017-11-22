@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass InventoryWidget.InventoryWidget_C
 	// 0x0230 (0x04C0 - 0x0290)
-	class UInventoryWidget_C : public UInputHookingWidget_C
-	{
+	class UInventoryWidget_C : public UInputHookingWidget_C {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0290(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UWidgetAnimation*                            XBoxHelpTextBlinking;                                     // 0x0298(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -88,8 +86,7 @@ namespace Classes
 		float                                              DownTimeInterval;                                         // 0x04B4(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		class UAttachableItem*                             GamepadadSelectedAttachableItem;                          // 0x04B8(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x56dc0321);
 			return ptr;
@@ -134,11 +131,6 @@ namespace Classes
 		void UpdateDragDroppingObject(class UWidget* BoundWidget);
 		void FinalizeWidget(const struct FScriptDelegate& OnInventoryUpdated, const struct FScriptDelegate& OnEquipmentUpdated);
 		void InitializeWidget(const struct FScriptDelegate& OnInventoryUpdated, const struct FScriptDelegate& OnEquipmentUpdated, const struct FScriptDelegate& OnUpdateItemList, const struct FScriptDelegate& OnItemSlotFocus);
-		void OnInventoryUpdated();
-		void OnEquipmentUpdated();
-		void OnItemExplorerProxyUpdated();
-		void Destruct();
-		void Construct();
 		void Tick(struct FGeometry* MyGeometry, float* InDeltaTime);
 		void BndEvt__VicinityTitleOn_K2Node_ComponentBoundEvent_0_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature();
 		void BndEvt__VicinityTitleOff_K2Node_ComponentBoundEvent_1_OnWidgetAnimationPlaybackStatusChanged__DelegateSignature();
@@ -155,10 +147,12 @@ namespace Classes
 		void OnRight();
 		void OnUp();
 		void OnDown();
+		void Destruct();
 		void OnWidgetInputA();
-		void OnWidgetInputB();
+		void ONWidgetInputB();
 		void OnWidgetInputX();
 		void OnWidgetInputY();
+		void OnItemExplorerProxyUpdated();
 		void OnInputRB();
 		void OnInputRT();
 		void BndEvt__Character_K2Node_ComponentBoundEvent_88_RefreshFocus__DelegateSignature();
@@ -170,20 +164,27 @@ namespace Classes
 		void OnUpRelease();
 		void OnDownRelease();
 		void MoveTick(float DeltaTime);
+		void Construct();
 		void OnInteract();
 		void OnWidgetInputLT();
 		void OnWidgetInputRT();
+		void OnEquipmentUpdated();
 		void CustomEvent_1();
 		void BndEvt__Vicinity_K2Node_ComponentBoundEvent_36_OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation);
 		void BndEvt__Backpack_K2Node_ComponentBoundEvent_38_OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation);
 		void BndEvt__Weapon_K2Node_ComponentBoundEvent_56_OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation);
 		void BndEvt__Character_K2Node_ComponentBoundEvent_69_OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation);
+		void OnInventoryUpdated();
 		void BndEvt__Character_K2Node_ComponentBoundEvent_487_OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
 		void BndEvt__Character_K2Node_ComponentBoundEvent_491_OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
 		void OnInventoryDrop_Event(class UDragDropOperation* Operation);
 		void BndEvt__Vicinity_K2Node_ComponentBoundEvent_44_OnDoSlotAction__DelegateSignature();
 		void BndEvt__Backpack_K2Node_ComponentBoundEvent_45_OnDoSlotAction__DelegateSignature();
 		void BndEvt__Equipment_K2Node_ComponentBoundEvent_64_OnDoSlotAction__DelegateSignature();
+		void BndEvt__Vicinity_K2Node_ComponentBoundEvent_58_OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void BndEvt__Vicinity_K2Node_ComponentBoundEvent_62_OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void BndEvt__Backpack_K2Node_ComponentBoundEvent_86_OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void BndEvt__Backpack_K2Node_ComponentBoundEvent_113_OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
 		void ExecuteUbergraph_InventoryWidget(int EntryPoint);
 	};
 

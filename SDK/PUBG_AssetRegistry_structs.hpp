@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Script Structs
 	//---------------------------------------------------------------------------
 
 	// ScriptStruct AssetRegistry.AssetBundleEntry
 	// 0x0028
-	struct FAssetBundleEntry
-	{
+	struct FAssetBundleEntry {
 		struct FPrimaryAssetId                             BundleScope;                                              // 0x0000(0x0010)
 		struct FName                                       BundleName;                                               // 0x0010(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<struct FStringAssetReference>               BundleAssets;                                             // 0x0018(0x0010) (CPF_ZeroConstructor)
@@ -23,8 +21,7 @@ namespace Classes
 
 	// ScriptStruct AssetRegistry.AssetBundleData
 	// 0x0010
-	struct FAssetBundleData
-	{
+	struct FAssetBundleData {
 		TArray<struct FAssetBundleEntry>                   Bundles;                                                  // 0x0000(0x0010) (CPF_ZeroConstructor)
 	};
 

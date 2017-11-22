@@ -6,21 +6,18 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class MediaAssets.MediaOverlays
 	// 0x0088 (0x00B0 - 0x0028)
-	class UMediaOverlays : public UObject
-	{
+	class UMediaOverlays : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0x88];                                      // 0x0028(0x0088) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x791add5b);
 			return ptr;
@@ -35,8 +32,7 @@ namespace Classes
 
 	// Class MediaAssets.MediaPlayer
 	// 0x0138 (0x0160 - 0x0028)
-	class UMediaPlayer : public UObject
-	{
+	class UMediaPlayer : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0x18];                                      // 0x0028(0x0018) MISSED OFFSET
 		struct FScriptMulticastDelegate                    OnEndReached;                                             // 0x0040(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
@@ -58,8 +54,7 @@ namespace Classes
 		class UMediaTexture*                               VideoTexture;                                             // 0x00C8(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData04[0x90];                                      // 0x00D0(0x0090) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x2cffba0f);
 			return ptr;
@@ -114,13 +109,11 @@ namespace Classes
 
 	// Class MediaAssets.MediaPlaylist
 	// 0x0010 (0x0038 - 0x0028)
-	class UMediaPlaylist : public UObject
-	{
+	class UMediaPlaylist : public UObject {
 	public:
 		TArray<class UMediaSource*>                        Items;                                                    // 0x0028(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x4a6b213a);
 			return ptr;
@@ -141,8 +134,7 @@ namespace Classes
 
 	// Class MediaAssets.MediaSoundWave
 	// 0x00E0 (0x0360 - 0x0280)
-	class UMediaSoundWave : public USoundWave
-	{
+	class UMediaSoundWave : public USoundWave {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0280(0x0008) MISSED OFFSET
 		int                                                AudioTrackIndex;                                          // 0x0288(0x0004) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -150,8 +142,7 @@ namespace Classes
 		class UMediaPlayer*                                MediaPlayer;                                              // 0x0290(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData02[0xC8];                                      // 0x0298(0x00C8) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xdcc89e32);
 			return ptr;
@@ -162,13 +153,11 @@ namespace Classes
 
 	// Class MediaAssets.MediaSource
 	// 0x0008 (0x0030 - 0x0028)
-	class UMediaSource : public UObject
-	{
+	class UMediaSource : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xcd3c5ebf);
 			return ptr;
@@ -179,13 +168,11 @@ namespace Classes
 
 	// Class MediaAssets.BaseMediaSource
 	// 0x0008 (0x0038 - 0x0030)
-	class UBaseMediaSource : public UMediaSource
-	{
+	class UBaseMediaSource : public UMediaSource {
 	public:
 		struct FName                                       PlayerName;                                               // 0x0030(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x92e96ee6);
 			return ptr;
@@ -196,15 +183,13 @@ namespace Classes
 
 	// Class MediaAssets.FileMediaSource
 	// 0x0018 (0x0050 - 0x0038)
-	class UFileMediaSource : public UBaseMediaSource
-	{
+	class UFileMediaSource : public UBaseMediaSource {
 	public:
 		struct FString                                     FilePath;                                                 // 0x0038(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
 		bool                                               PrecacheFile;                                             // 0x0048(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x7];                                       // 0x0049(0x0007) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x2e2846d5);
 			return ptr;
@@ -217,13 +202,11 @@ namespace Classes
 
 	// Class MediaAssets.StreamMediaSource
 	// 0x0010 (0x0048 - 0x0038)
-	class UStreamMediaSource : public UBaseMediaSource
-	{
+	class UStreamMediaSource : public UBaseMediaSource {
 	public:
 		struct FString                                     StreamUrl;                                                // 0x0038(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x79f0a2b7);
 			return ptr;
@@ -234,13 +217,11 @@ namespace Classes
 
 	// Class MediaAssets.PlatformMediaSource
 	// 0x0008 (0x0038 - 0x0030)
-	class UPlatformMediaSource : public UMediaSource
-	{
+	class UPlatformMediaSource : public UMediaSource {
 	public:
 		class UMediaSource*                                MediaSource;                                              // 0x0030(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x8be57aa4);
 			return ptr;
@@ -251,8 +232,7 @@ namespace Classes
 
 	// Class MediaAssets.MediaTexture
 	// 0x00E8 (0x01B0 - 0x00C8)
-	class UMediaTexture : public UTexture
-	{
+	class UMediaTexture : public UTexture {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
 		TEnumAsByte<ETextureAddress>                       AddressX;                                                 // 0x00D0(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -264,8 +244,7 @@ namespace Classes
 		int                                                VideoTrackIndex;                                          // 0x00F0(0x0004) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData03[0xBC];                                      // 0x00F4(0x00BC) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xf2ae8c61);
 			return ptr;

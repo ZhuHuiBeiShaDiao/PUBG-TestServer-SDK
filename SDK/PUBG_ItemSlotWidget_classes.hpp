@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass ItemSlotWidget.ItemSlotWidget_C
-	// 0x01F0 (0x0440 - 0x0250)
-	class UItemSlotWidget_C : public USlotBaseWidget_C
-	{
+	// 0x0210 (0x0460 - 0x0250)
+	class UItemSlotWidget_C : public USlotBaseWidget_C {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0250(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UWidgetAnimation*                            CastingComplete;                                          // 0x0258(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -88,9 +86,10 @@ namespace Classes
 		bool                                               bIsSelfPutMode;                                           // 0x0429(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData08[0x6];                                       // 0x042A(0x0006) MISSED OFFSET
 		struct FScriptMulticastDelegate                    OnDoSlotAction;                                           // 0x0430(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
+		struct FScriptMulticastDelegate                    OnEnterSlot;                                              // 0x0440(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
+		struct FScriptMulticastDelegate                    OnLeaveSlot;                                              // 0x0450(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xc9b9cfb);
 			return ptr;
@@ -119,6 +118,8 @@ namespace Classes
 		bool Up();
 		void GetSlotItem(TScriptInterface<class USlotInterface>* SlotItem);
 		void GetSlotContainer(TScriptInterface<class USlotContainerInterface>* SlotContainer);
+		void RaiseLeaveEvent();
+		void RaiseEnterEvent();
 		void PutSeltItem();
 		void StopSelfPutMode();
 		void StartSelfPutMode(bool* bResult, int* StartWeaponIndex);
@@ -190,14 +191,17 @@ namespace Classes
 		ESlateVisibility GetUseButtonVisibility();
 		void GetIconTexture(class UTexture** Tex);
 		struct FText GetSlotName();
-		void OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent);
 		void Destruct();
 		void OnMouseLeave(struct FPointerEvent* MouseEvent);
 		void BndEvt__InnerItemSlotListWidget_K2Node_ComponentBoundEvent_0_OnChildSlotFocus__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot);
 		void ShowToolTip();
 		void Construct();
 		void Tick(struct FGeometry* MyGeometry, float* InDeltaTime);
+		void OnMouseEnter(struct FGeometry* MyGeometry, struct FPointerEvent* MouseEvent);
+		void OnDragEnter(struct FGeometry* MyGeometry, struct FPointerEvent* PointerEvent, class UDragDropOperation** Operation);
 		void ExecuteUbergraph_ItemSlotWidget(int EntryPoint);
+		void OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
 		void OnDoSlotAction__DelegateSignature();
 		void RefreshFocus__DelegateSignature();
 		void OnRefreshInnerList__DelegateSignature();

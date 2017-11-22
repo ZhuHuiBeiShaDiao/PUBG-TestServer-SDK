@@ -58,6 +58,24 @@ void UWeaponEquipmentSlotWidget_Gamepad_C::GetSlotContainer(TScriptInterface<cla
 }
 
 
+// Function WeaponEquipmentSlotWidget_Gamepad.WeaponEquipmentSlotWidget_Gamepad_C.OnSwap
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UWeaponEquipmentSlotWidget_Gamepad_C::OnSwap()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbf02e259);
+
+	UWeaponEquipmentSlotWidget_Gamepad_C_OnSwap_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function WeaponEquipmentSlotWidget_Gamepad.WeaponEquipmentSlotWidget_Gamepad_C.ProcessSwap
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 

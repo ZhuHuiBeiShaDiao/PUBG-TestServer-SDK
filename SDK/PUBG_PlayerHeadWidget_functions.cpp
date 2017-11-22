@@ -12,6 +12,87 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function PlayerHeadWidget.PlayerHeadWidget_C.On_IndicatorArrow_Prepass_1
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UPlayerHeadWidget_C::On_IndicatorArrow_Prepass_1(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x66281f9e);
+
+	UPlayerHeadWidget_C_On_IndicatorArrow_Prepass_1_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerHeadWidget.PlayerHeadWidget_C.UpdateHealthGaugeColor
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UPlayerHeadWidget_C::UpdateHealthGaugeColor()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xcecdc9a);
+
+	UPlayerHeadWidget_C_UpdateHealthGaugeColor_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerHeadWidget.PlayerHeadWidget_C.OnPrepass_3
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UPlayerHeadWidget_C::OnPrepass_3(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7b87bee0);
+
+	UPlayerHeadWidget_C_OnPrepass_3_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PlayerHeadWidget.PlayerHeadWidget_C.On_TeamNumber_Prepass_1
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UPlayerHeadWidget_C::On_TeamNumber_Prepass_1(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe5aa9ecc);
+
+	UPlayerHeadWidget_C_On_TeamNumber_Prepass_1_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PlayerHeadWidget.PlayerHeadWidget_C.AddAlphaWhenADS
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:

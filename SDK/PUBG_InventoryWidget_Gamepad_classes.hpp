@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass InventoryWidget_Gamepad.InventoryWidget_Gamepad_C
 	// 0x0248 (0x04D8 - 0x0290)
-	class UInventoryWidget_Gamepad_C : public UInputHookingWidget_C
-	{
+	class UInventoryWidget_Gamepad_C : public UInputHookingWidget_C {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0290(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UWidgetAnimation*                            XBoxHelpTextBlinking;                                     // 0x0298(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -90,8 +88,7 @@ namespace Classes
 		unsigned char                                      UnknownData03[0x6];                                       // 0x04CA(0x0006) MISSED OFFSET
 		class UBorder*                                     NewVar_1;                                                 // 0x04D0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x17fe22e1);
 			return ptr;
@@ -118,6 +115,7 @@ namespace Classes
 		bool Left();
 		bool Right();
 		bool Up();
+		void OnBPressed();
 		void OnBlockActionFunc();
 		void On_RBBorder_Prepass_1(class UWidget* BoundWidget);
 		void OnPrepass_1(class UWidget* BoundWidget);

@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass InventoryListBaseWidget.InventoryListBaseWidget_C
-	// 0x00F8 (0x0358 - 0x0260)
-	class UInventoryListBaseWidget_C : public UTslUserWidget
-	{
+	// 0x0118 (0x0378 - 0x0260)
+	class UInventoryListBaseWidget_C : public UTslUserWidget {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0260(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UListBaseGroupWidget_C*                      CarePackage_Group;                                        // 0x0268(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData, CPF_RepSkip, CPF_RepNotify, CPF_Interp, CPF_NonTransactional, CPF_EditorOnly, CPF_NoDestructor, CPF_AutoWeak, CPF_ContainsInstancedReference, CPF_AssetRegistrySearchable, CPF_SimpleDisplay, CPF_AdvancedDisplay, CPF_Protected, CPF_BlueprintCallable, CPF_BlueprintAuthorityOnly, CPF_TextExportTransient, CPF_NonPIEDuplicateTransient, CPF_ExposeOnSpawn, CPF_PersistentInstance, CPF_UObjectWrapper, CPF_HasGetValueTypeHash, CPF_NativeAccessSpecifierPublic, CPF_NativeAccessSpecifierProtected, CPF_NativeAccessSpecifierPrivate)
@@ -50,9 +48,10 @@ namespace Classes
 		unsigned char                                      UnknownData04[0x6];                                       // 0x0332(0x0006) MISSED OFFSET
 		struct FScriptMulticastDelegate                    OnInventoryDrop;                                          // 0x0338(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 		struct FScriptMulticastDelegate                    OnDoSlotAction;                                           // 0x0348(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
+		struct FScriptMulticastDelegate                    OnEnterSlot;                                              // 0x0358(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
+		struct FScriptMulticastDelegate                    OnLeaveSlot;                                              // 0x0368(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xec94e405);
 			return ptr;
@@ -79,6 +78,9 @@ namespace Classes
 		bool Right();
 		bool SetFocus(bool NewFocus);
 		bool Up();
+		void HandleOnLeaveSlot(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void HandleOnEnterSlot(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void OnItemSlotWidgetCreated(class UItemSlotWidget_C* ItemSlotWidget);
 		void HandleOnDoSlotAction();
 		float GetScrollAccelation();
 		float GetMaxScroll();
@@ -113,6 +115,8 @@ namespace Classes
 		void OnSlotMoveDownReleased();
 		void OnSlotScrollMoving();
 		void ExecuteUbergraph_InventoryListBaseWidget(int EntryPoint);
+		void OnLeaveSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
+		void OnEnterSlot__DelegateSignature(const TScriptInterface<class USlotInterface>& Slot, const TScriptInterface<class USlotContainerInterface>& SlotContainer);
 		void OnDoSlotAction__DelegateSignature();
 		void OnInventoryDrop__DelegateSignature(class UDragDropOperation* Operation);
 		void RefreshFocus__DelegateSignature();

@@ -6,24 +6,21 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class HeadMountedDisplay.MotionControllerComponent
 	// 0x0060 (0x0890 - 0x0830)
-	class UMotionControllerComponent : public UPrimitiveComponent
-	{
+	class UMotionControllerComponent : public UPrimitiveComponent {
 	public:
 		unsigned char                                      bDisableLowLatencyUpdate : 1;                             // 0x0830(0x0001) (CPF_Edit, CPF_BlueprintVisible)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0831(0x0003) MISSED OFFSET
 		ETrackingStatus                                    CurrentTrackingStatus;                                    // 0x0834(0x0001) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x5B];                                      // 0x0835(0x005B) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x74a101a6);
 			return ptr;
@@ -36,12 +33,10 @@ namespace Classes
 
 	// Class HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary
 	// 0x0000 (0x0028 - 0x0028)
-	class UMotionTrackedDeviceFunctionLibrary : public UBlueprintFunctionLibrary
-	{
+	class UMotionTrackedDeviceFunctionLibrary : public UBlueprintFunctionLibrary {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xd6b79c80);
 			return ptr;
@@ -65,8 +60,7 @@ namespace Classes
 
 	// Class HeadMountedDisplay.VRNotificationsComponent
 	// 0x0080 (0x0260 - 0x01E0)
-	class UVRNotificationsComponent : public UActorComponent
-	{
+	class UVRNotificationsComponent : public UActorComponent {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x01E0(0x0008) MISSED OFFSET
 		struct FScriptMulticastDelegate                    HMDTrackingInitializedDelegate;                           // 0x01E8(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
@@ -78,8 +72,7 @@ namespace Classes
 		struct FScriptMulticastDelegate                    HMDRemovedFromHeadDelegate;                               // 0x0248(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
 		unsigned char                                      UnknownData01[0x8];                                       // 0x0258(0x0008) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x7cd0586e);
 			return ptr;

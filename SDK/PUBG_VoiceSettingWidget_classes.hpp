@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass VoiceSettingWidget.VoiceSettingWidget_C
 	// 0x0094 (0x0380 - 0x02EC)
-	class UVoiceSettingWidget_C : public UBaseOptionWidget_C
-	{
+	class UVoiceSettingWidget_C : public UBaseOptionWidget_C {
 	public:
 		unsigned char                                      UnknownData00[0x4];                                       // 0x02EC(0x0004) MISSED OFFSET
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x02F0(0x0008) (CPF_Transient, CPF_DuplicateTransient)
@@ -31,8 +29,7 @@ namespace Classes
 		struct FString                                     VoiceChannelOnlyTeamOptionString;                         // 0x0360(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
 		struct FString                                     VoiceChannelNoneOptionString;                             // 0x0370(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x122e7031);
 			return ptr;

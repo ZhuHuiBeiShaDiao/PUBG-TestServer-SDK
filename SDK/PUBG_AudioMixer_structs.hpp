@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum AudioMixer.ESubmixEffectDynamicsPeakMode
-	enum class ESubmixEffectDynamicsPeakMode : uint8_t
-	{
+	enum class ESubmixEffectDynamicsPeakMode : uint8_t {
 		ESubmixEffectDynamicsPeakMode__MeanSquared = 0,
 		ESubmixEffectDynamicsPeakMode__RootMeanSquared = 1,
 		ESubmixEffectDynamicsPeakMode__Peak = 2,
@@ -24,8 +22,7 @@ namespace Classes
 
 
 	// Enum AudioMixer.ESubmixEffectDynamicsProcessorType
-	enum class ESubmixEffectDynamicsProcessorType : uint8_t
-	{
+	enum class ESubmixEffectDynamicsProcessorType : uint8_t {
 		ESubmixEffectDynamicsProcessorType__Compressor = 0,
 		ESubmixEffectDynamicsProcessorType__Limiter = 1,
 		ESubmixEffectDynamicsProcessorType__Expander = 2,
@@ -42,8 +39,7 @@ namespace Classes
 
 	// ScriptStruct AudioMixer.SubmixEffectDynamicsProcessorSettings
 	// 0x0028
-	struct FSubmixEffectDynamicsProcessorSettings
-	{
+	struct FSubmixEffectDynamicsProcessorSettings {
 		ESubmixEffectDynamicsProcessorType                 DynamicsProcessorType;                                    // 0x0000(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		ESubmixEffectDynamicsPeakMode                      PeakMode;                                                 // 0x0001(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x2];                                       // 0x0002(0x0002) MISSED OFFSET
@@ -62,8 +58,7 @@ namespace Classes
 
 	// ScriptStruct AudioMixer.SubmixEffectReverbSettings
 	// 0x0030
-	struct FSubmixEffectReverbSettings
-	{
+	struct FSubmixEffectReverbSettings {
 		float                                              Density;                                                  // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Diffusion;                                                // 0x0004(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Gain;                                                     // 0x0008(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -80,8 +75,7 @@ namespace Classes
 
 	// ScriptStruct AudioMixer.SubmixEffectEQBand
 	// 0x0010
-	struct FSubmixEffectEQBand
-	{
+	struct FSubmixEffectEQBand {
 		float                                              Frequency;                                                // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Bandwidth;                                                // 0x0004(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              GainDb;                                                   // 0x0008(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -91,8 +85,7 @@ namespace Classes
 
 	// ScriptStruct AudioMixer.SubmixEffectSubmixEQSettings
 	// 0x0010
-	struct FSubmixEffectSubmixEQSettings
-	{
+	struct FSubmixEffectSubmixEQSettings {
 		TArray<struct FSubmixEffectEQBand>                 EQBands;                                                  // 0x0000(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor)
 	};
 

@@ -8,15 +8,13 @@
 
 #include "../SDK.hpp"
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Parameters
 	//---------------------------------------------------------------------------
 
 	// Function RoadRuntime.CrossActor.UpdateSideMesh
-	struct ACrossActor_UpdateSideMesh_Params
-	{
+	struct ACrossActor_UpdateSideMesh_Params {
 		class UStaticMesh*                                 InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     MeshRelativeLocation;                                     // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    MeshRelativeRotation;                                     // (CPF_Parm, CPF_IsPlainOldData)
@@ -27,8 +25,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.CrossActor.UpdateSideActor
-	struct ACrossActor_UpdateSideActor_Params
-	{
+	struct ACrossActor_UpdateSideActor_Params {
 		class UClass*                                      InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     ActorRelativeLocation;                                    // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    ActorRelativeRotation;                                    // (CPF_Parm, CPF_IsPlainOldData)
@@ -39,8 +36,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.CrossActor.PushSideMesh
-	struct ACrossActor_PushSideMesh_Params
-	{
+	struct ACrossActor_PushSideMesh_Params {
 		class UStaticMesh*                                 InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     MeshRelativeLocation;                                     // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    MeshRelativeRotation;                                     // (CPF_Parm, CPF_IsPlainOldData)
@@ -51,8 +47,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.CrossActor.PushSideActor
-	struct ACrossActor_PushSideActor_Params
-	{
+	struct ACrossActor_PushSideActor_Params {
 		class UClass*                                      InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     ActorRelativeLocation;                                    // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    ActorRelativeRotation;                                    // (CPF_Parm, CPF_IsPlainOldData)
@@ -63,19 +58,16 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.CrossActor.DestroySideObjects
-	struct ACrossActor_DestroySideObjects_Params
-	{
+	struct ACrossActor_DestroySideObjects_Params {
 	};
 
 	// Function RoadRuntime.RoadActor.UpdateSplineMesh
-	struct ARoadActor_UpdateSplineMesh_Params
-	{
+	struct ARoadActor_UpdateSplineMesh_Params {
 		int                                                MeshIndex;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// Function RoadRuntime.RoadActor.UpdateSideMeshes
-	struct ARoadActor_UpdateSideMeshes_Params
-	{
+	struct ARoadActor_UpdateSideMeshes_Params {
 		class UStaticMesh*                                 InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     MeshRelativeLocation;                                     // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    MeshRelativeRotation;                                     // (CPF_Parm, CPF_IsPlainOldData)
@@ -88,8 +80,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.UpdateSideActor
-	struct ARoadActor_UpdateSideActor_Params
-	{
+	struct ARoadActor_UpdateSideActor_Params {
 		class UClass*                                      InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     ActorRelativeLocation;                                    // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    ActorRelativeRotation;                                    // (CPF_Parm, CPF_IsPlainOldData)
@@ -102,8 +93,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.UpdateSegment
-	struct ARoadActor_UpdateSegment_Params
-	{
+	struct ARoadActor_UpdateSegment_Params {
 		int                                                SegmentIndex;                                             // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class USplineComponent*                            SplineComponent;                                          // (CPF_Parm, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 		class UStaticMesh*                                 StaticMesh;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -111,8 +101,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.PushSideMesh
-	struct ARoadActor_PushSideMesh_Params
-	{
+	struct ARoadActor_PushSideMesh_Params {
 		class UStaticMesh*                                 InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     MeshRelativeLocation;                                     // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    MeshRelativeRotation;                                     // (CPF_Parm, CPF_IsPlainOldData)
@@ -125,8 +114,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.PushSideActor
-	struct ARoadActor_PushSideActor_Params
-	{
+	struct ARoadActor_PushSideActor_Params {
 		class UClass*                                      InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     ActorRelativeLocation;                                    // (CPF_Parm, CPF_IsPlainOldData)
 		struct FRotator                                    ActorRelativeRotation;                                    // (CPF_Parm, CPF_IsPlainOldData)
@@ -139,8 +127,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.PushCurbsMeshes
-	struct ARoadActor_PushCurbsMeshes_Params
-	{
+	struct ARoadActor_PushCurbsMeshes_Params {
 		class UStaticMesh*                                 InPrototype;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UStaticMesh*                                 InStartPrototype;                                         // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UStaticMesh*                                 InEndPrototype;                                           // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -153,23 +140,19 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.DestroySideObjects
-	struct ARoadActor_DestroySideObjects_Params
-	{
+	struct ARoadActor_DestroySideObjects_Params {
 	};
 
 	// Function RoadRuntime.RoadActor.DestroySideCurbs
-	struct ARoadActor_DestroySideCurbs_Params
-	{
+	struct ARoadActor_DestroySideCurbs_Params {
 	};
 
 	// Function RoadRuntime.RoadActor.ClearSplineMeshes
-	struct ARoadActor_ClearSplineMeshes_Params
-	{
+	struct ARoadActor_ClearSplineMeshes_Params {
 	};
 
 	// Function RoadRuntime.RoadActor.ApproxLength
-	struct ARoadActor_ApproxLength_Params
-	{
+	struct ARoadActor_ApproxLength_Params {
 		struct FInterpCurveVector                          SplineInfo;                                               // (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 		float                                              Start;                                                    // (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              End;                                                      // (CPF_ConstParm, CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -178,8 +161,7 @@ namespace Classes
 	};
 
 	// Function RoadRuntime.RoadActor.AddSplineMesh
-	struct ARoadActor_AddSplineMesh_Params
-	{
+	struct ARoadActor_AddSplineMesh_Params {
 		int                                                MeshIndex;                                                // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 

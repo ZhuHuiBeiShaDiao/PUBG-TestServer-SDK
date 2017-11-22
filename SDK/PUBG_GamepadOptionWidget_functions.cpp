@@ -12,6 +12,53 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function GamepadOptionWidget.GamepadOptionWidget_C.OnPrepass_LTorRTVisibility
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UGamepadOptionWidget_C::OnPrepass_LTorRTVisibility(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x136a945a);
+
+	UGamepadOptionWidget_C_OnPrepass_LTorRTVisibility_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function GamepadOptionWidget.GamepadOptionWidget_C.OnKeyDown
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
+// struct FKeyEvent*              InKeyEvent                     (CPF_Parm)
+// struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
+
+struct FEventReply UGamepadOptionWidget_C::OnKeyDown(struct FGeometry* MyGeometry, struct FKeyEvent* InKeyEvent)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x82e1a3c1);
+
+	UGamepadOptionWidget_C_OnKeyDown_Params params;
+	params.MyGeometry = MyGeometry;
+	params.InKeyEvent = InKeyEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function GamepadOptionWidget.GamepadOptionWidget_C.On_GuideLayer_Prepass_1
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -23,27 +70,6 @@ void UGamepadOptionWidget_C::On_GuideLayer_Prepass_1(class UWidget* BoundWidget)
 	if (!fn) fn = UObject::FindObject<UFunction>(0xcded2a85);
 
 	UGamepadOptionWidget_C_On_GuideLayer_Prepass_1_Params params;
-	params.BoundWidget = BoundWidget;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function GamepadOptionWidget.GamepadOptionWidget_C.On_AUDIO_Prepass_1
-// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
-
-void UGamepadOptionWidget_C::On_AUDIO_Prepass_1(class UWidget* BoundWidget)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xd774c12a);
-
-	UGamepadOptionWidget_C_On_AUDIO_Prepass_1_Params params;
 	params.BoundWidget = BoundWidget;
 
 	auto flags = fn->FunctionFlags;
@@ -97,32 +123,6 @@ void UGamepadOptionWidget_C::PrevOrNextPage(bool bNext, struct FEventReply* Repl
 
 	if (Reply != nullptr)
 		*Reply = params.Reply;
-}
-
-
-// Function GamepadOptionWidget.GamepadOptionWidget_C.OnPreviewKeyDown
-// (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
-// struct FKeyEvent*              InKeyEvent                     (CPF_Parm)
-// struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
-
-struct FEventReply UGamepadOptionWidget_C::OnPreviewKeyDown(struct FGeometry* MyGeometry, struct FKeyEvent* InKeyEvent)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xe09f259d);
-
-	UGamepadOptionWidget_C_OnPreviewKeyDown_Params params;
-	params.MyGeometry = MyGeometry;
-	params.InKeyEvent = InKeyEvent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 

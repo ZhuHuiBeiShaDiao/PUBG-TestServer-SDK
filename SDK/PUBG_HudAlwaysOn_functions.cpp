@@ -12,6 +12,45 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function HudAlwaysOn.HudAlwaysOn_C.OnPrepass_3
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UHudAlwaysOn_C::OnPrepass_3(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa4e74e62);
+
+	UHudAlwaysOn_C_OnPrepass_3_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function HudAlwaysOn.HudAlwaysOn_C.UpdatePlayerHealth
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UHudAlwaysOn_C::UpdatePlayerHealth()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x858c08a9);
+
+	UHudAlwaysOn_C_UpdatePlayerHealth_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function HudAlwaysOn.HudAlwaysOn_C.TeamInfoPrepass
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:

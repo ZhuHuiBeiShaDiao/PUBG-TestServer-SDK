@@ -145,6 +145,42 @@ void UPopupWidget_C::XBoxOneOk()
 }
 
 
+// Function PopupWidget.PopupWidget_C.Custom Event_2
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UPopupWidget_C::Custom_Event_2()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x22d06111);
+
+	UPopupWidget_C_Custom_Event_2_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function PopupWidget.PopupWidget_C.XBoxOneCancel
+// (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UPopupWidget_C::XBoxOneCancel()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xad61448a);
+
+	UPopupWidget_C_XBoxOneCancel_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function PopupWidget.PopupWidget_C.ExecuteUbergraph_PopupWidget
 // (FUNC_HasDefaults)
 // Parameters:

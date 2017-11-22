@@ -8,15 +8,13 @@
 
 #include "../SDK.hpp"
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Parameters
 	//---------------------------------------------------------------------------
 
 	// Function GamepadHelpInterface.GamepadHelpInterface_C.GetGamePadHelpWidgetClass
-	struct UGamepadHelpInterface_C_GetGamePadHelpWidgetClass_Params
-	{
+	struct UGamepadHelpInterface_C_GetGamePadHelpWidgetClass_Params {
 		class UClass*                                      GuideClass;                                               // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 

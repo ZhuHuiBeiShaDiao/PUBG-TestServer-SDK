@@ -12,6 +12,27 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function TeamCountWidget.TeamCountWidget_C.OnPrepass_1
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class UWidget*                 BoundWidget                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UTeamCountWidget_C::OnPrepass_1(class UWidget* BoundWidget)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x658697fc);
+
+	UTeamCountWidget_C_OnPrepass_1_Params params;
+	params.BoundWidget = BoundWidget;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function TeamCountWidget.TeamCountWidget_C.On_KillCount_Prepass_1
 // (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:

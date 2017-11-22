@@ -6,21 +6,18 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass DeathDropItemPackage.DeathDropItemPackage_C
-	// 0x0008 (0x0528 - 0x0520)
-	class ADeathDropItemPackage_C : public AFloorSnapItemPackage
-	{
+	// 0x0008 (0x0530 - 0x0528)
+	class ADeathDropItemPackage_C : public AFloorSnapItemPackage {
 	public:
-		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0520(0x0008) (CPF_Transient, CPF_DuplicateTransient)
+		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0528(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x70d2c535);
 			return ptr;

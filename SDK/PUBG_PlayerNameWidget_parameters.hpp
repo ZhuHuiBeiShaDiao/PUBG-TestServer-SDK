@@ -8,15 +8,13 @@
 
 #include "../SDK.hpp"
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Parameters
 	//---------------------------------------------------------------------------
 
 	// Function PlayerNameWidget.PlayerNameWidget_C.OnPrepass_1
-	struct UPlayerNameWidget_C_OnPrepass_1_Params
-	{
+	struct UPlayerNameWidget_C_OnPrepass_1_Params {
 		class UWidget*                                     BoundWidget;                                              // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 

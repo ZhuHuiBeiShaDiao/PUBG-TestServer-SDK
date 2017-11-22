@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum LocationServicesBPLibrary.ELocationAccuracy
-	enum class ELocationAccuracy : uint8_t
-	{
+	enum class ELocationAccuracy : uint8_t {
 		ELocationAccuracy__LA_ThreeKilometers = 0,
 		ELocationAccuracy__LA_OneKilometer = 1,
 		ELocationAccuracy__LA_HundredMeters = 2,
@@ -32,8 +30,7 @@ namespace Classes
 
 	// ScriptStruct LocationServicesBPLibrary.LocationServicesData
 	// 0x0018
-	struct FLocationServicesData
-	{
+	struct FLocationServicesData {
 		float                                              Timestamp;                                                // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Longitude;                                                // 0x0004(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Latitude;                                                 // 0x0008(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)

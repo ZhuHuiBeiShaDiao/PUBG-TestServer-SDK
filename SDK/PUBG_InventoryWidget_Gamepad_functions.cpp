@@ -454,6 +454,24 @@ bool UInventoryWidget_Gamepad_C::Up()
 }
 
 
+// Function InventoryWidget_Gamepad.InventoryWidget_Gamepad_C.OnBPressed
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UInventoryWidget_Gamepad_C::OnBPressed()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xa414e738);
+
+	UInventoryWidget_Gamepad_C_OnBPressed_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function InventoryWidget_Gamepad.InventoryWidget_Gamepad_C.OnBlockActionFunc
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 

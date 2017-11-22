@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum PhysXVehicles.EVehicleDifferential4W
-	enum class EVehicleDifferential4W : uint8_t
-	{
+	enum class EVehicleDifferential4W : uint8_t {
 		EVehicleDifferential4W__LimitedSlip_4W = 0,
 		EVehicleDifferential4W__LimitedSlip_FrontDrive = 1,
 		EVehicleDifferential4W__LimitedSlip_RearDrive = 2,
@@ -32,8 +30,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.WheelSetup
 	// 0x0028
-	struct FWheelSetup
-	{
+	struct FWheelSetup {
 		class UClass*                                      WheelClass;                                               // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UClass*                                      PuncturedWheelClass;                                      // 0x0008(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FName                                       BoneName;                                                 // 0x0010(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -43,8 +40,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.ReplicatedVehicleState
 	// 0x0014
-	struct FReplicatedVehicleState
-	{
+	struct FReplicatedVehicleState {
 		float                                              SteeringInput;                                            // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              ThrottleInput;                                            // 0x0004(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              BrakeInput;                                               // 0x0008(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -54,16 +50,14 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.VehicleInputRate
 	// 0x0008
-	struct FVehicleInputRate
-	{
+	struct FVehicleInputRate {
 		float                                              RiseRate;                                                 // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              FallRate;                                                 // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct PhysXVehicles.VehicleEngineData
 	// 0x0090
-	struct FVehicleEngineData
-	{
+	struct FVehicleEngineData {
 		struct FRuntimeFloatCurve                          TorqueCurve;                                              // 0x0000(0x0078) (CPF_Edit)
 		float                                              MaxRPM;                                                   // 0x0078(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              MOI;                                                      // 0x007C(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -75,8 +69,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.VehicleDifferential4WData
 	// 0x001C
-	struct FVehicleDifferential4WData
-	{
+	struct FVehicleDifferential4WData {
 		TEnumAsByte<EVehicleDifferential4W>                DifferentialType;                                         // 0x0000(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 		float                                              FrontRearSplit;                                           // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -89,8 +82,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.VehicleGearData
 	// 0x000C
-	struct FVehicleGearData
-	{
+	struct FVehicleGearData {
 		float                                              Ratio;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              DownRatio;                                                // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              UpRatio;                                                  // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -98,8 +90,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.VehicleTransmissionData
 	// 0x0030
-	struct FVehicleTransmissionData
-	{
+	struct FVehicleTransmissionData {
 		bool                                               bUseGearAutoBox;                                          // 0x0000(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 		float                                              GearSwitchTime;                                           // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -114,8 +105,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.TireConfigMaterialFriction
 	// 0x0010
-	struct FTireConfigMaterialFriction
-	{
+	struct FTireConfigMaterialFriction {
 		class UPhysicalMaterial*                           PhysicalMaterial;                                         // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              FrictionScale;                                            // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
@@ -123,15 +113,13 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.VehicleAnimInstanceProxy
 	// 0x0020 (0x04E0 - 0x04C0)
-	struct FVehicleAnimInstanceProxy : public FAnimInstanceProxy
-	{
+	struct FVehicleAnimInstanceProxy : public FAnimInstanceProxy {
 		unsigned char                                      UnknownData00[0x20];                                      // 0x04C0(0x0020) MISSED OFFSET
 	};
 
 	// ScriptStruct PhysXVehicles.PhysXWheelState
 	// 0x001C
-	struct FPhysXWheelState
-	{
+	struct FPhysXWheelState {
 		float                                              LongitudinalSlip;                                         // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              LateralSlip;                                              // 0x0004(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              SuspSpringForce;                                          // 0x0008(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -144,8 +132,7 @@ namespace Classes
 
 	// ScriptStruct PhysXVehicles.AnimNode_WheelHandler
 	// 0x0018 (0x0088 - 0x0070)
-	struct FAnimNode_WheelHandler : public FAnimNode_SkeletalControlBase
-	{
+	struct FAnimNode_WheelHandler : public FAnimNode_SkeletalControlBase {
 		unsigned char                                      UnknownData00[0x18];                                      // 0x0070(0x0018) MISSED OFFSET
 	};
 

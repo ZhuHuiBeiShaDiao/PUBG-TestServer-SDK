@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum Niagara.ENiagaraNumericOutputTypeSelectionMode
-	enum class ENiagaraNumericOutputTypeSelectionMode : uint8_t
-	{
+	enum class ENiagaraNumericOutputTypeSelectionMode : uint8_t {
 		ENiagaraNumericOutputTypeSelectionMode__None = 0,
 		ENiagaraNumericOutputTypeSelectionMode__Largest = 1,
 		ENiagaraNumericOutputTypeSelectionMode__Smallest = 2,
@@ -24,8 +22,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraScriptCompileStatus
-	enum class ENiagaraScriptCompileStatus : uint8_t
-	{
+	enum class ENiagaraScriptCompileStatus : uint8_t {
 		ENiagaraScriptCompileStatus__NCS_Unknown = 0,
 		ENiagaraScriptCompileStatus__NCS_Dirty = 1,
 		ENiagaraScriptCompileStatus__NCS_Error = 2,
@@ -37,8 +34,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraInputNodeUsage
-	enum class ENiagaraInputNodeUsage : uint8_t
-	{
+	enum class ENiagaraInputNodeUsage : uint8_t {
 		ENiagaraInputNodeUsage__Undefined = 0,
 		ENiagaraInputNodeUsage__Parameter = 1,
 		ENiagaraInputNodeUsage__Attribute = 2,
@@ -48,8 +44,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraDataSetType
-	enum class ENiagaraDataSetType : uint8_t
-	{
+	enum class ENiagaraDataSetType : uint8_t {
 		ENiagaraDataSetType__ParticleData = 0,
 		ENiagaraDataSetType__Shared = 1,
 		ENiagaraDataSetType__Event = 2,
@@ -58,8 +53,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraSpriteFacingMode
-	enum class ENiagaraSpriteFacingMode : uint8_t
-	{
+	enum class ENiagaraSpriteFacingMode : uint8_t {
 		ENiagaraSpriteFacingMode__FaceCamera = 0,
 		ENiagaraSpriteFacingMode__FaceCameraPlane = 1,
 		ENiagaraSpriteFacingMode__CustomFacingVector = 2,
@@ -68,8 +62,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraSpriteAlignment
-	enum class ENiagaraSpriteAlignment : uint8_t
-	{
+	enum class ENiagaraSpriteAlignment : uint8_t {
 		ENiagaraSpriteAlignment__Unaligned = 0,
 		ENiagaraSpriteAlignment__VelocityAligned = 1,
 		ENiagaraSpriteAlignment__CustomAlignment = 2,
@@ -78,8 +71,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraSortMode
-	enum class ENiagaraSortMode : uint8_t
-	{
+	enum class ENiagaraSortMode : uint8_t {
 		ENiagaraSortMode__SortNone = 0,
 		ENiagaraSortMode__SortViewDepth = 1,
 		ENiagaraSortMode__SortViewDistance = 2,
@@ -88,8 +80,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraScriptUsage
-	enum class ENiagaraScriptUsage : uint8_t
-	{
+	enum class ENiagaraScriptUsage : uint8_t {
 		ENiagaraScriptUsage__Function = 0,
 		ENiagaraScriptUsage__Module = 1,
 		ENiagaraScriptUsage__SpawnScript = 2,
@@ -101,8 +92,7 @@ namespace Classes
 
 
 	// Enum Niagara.EUnusedAttributeBehaviour
-	enum class EUnusedAttributeBehaviour : uint8_t
-	{
+	enum class EUnusedAttributeBehaviour : uint8_t {
 		EUnusedAttributeBehaviour__Copy = 0,
 		EUnusedAttributeBehaviour__Zero = 1,
 		EUnusedAttributeBehaviour__None = 2,
@@ -113,8 +103,7 @@ namespace Classes
 
 
 	// Enum Niagara.ENiagaraCollisionMode
-	enum class ENiagaraCollisionMode : uint8_t
-	{
+	enum class ENiagaraCollisionMode : uint8_t {
 		ENiagaraCollisionMode__None = 0,
 		ENiagaraCollisionMode__SceneGeometry = 1,
 		ENiagaraCollisionMode__DepthBuffer = 2,
@@ -124,8 +113,7 @@ namespace Classes
 
 
 	// Enum Niagara.EScriptCompileIndices
-	enum class EScriptCompileIndices : uint8_t
-	{
+	enum class EScriptCompileIndices : uint8_t {
 		EScriptCompileIndices__SpawnScript = 0,
 		EScriptCompileIndices__UpdateScript = 1,
 		EScriptCompileIndices__EventScript = 2,
@@ -134,8 +122,7 @@ namespace Classes
 
 
 	// Enum Niagara.EScriptExecutionMode
-	enum class EScriptExecutionMode : uint8_t
-	{
+	enum class EScriptExecutionMode : uint8_t {
 		EScriptExecutionMode__EveryParticle = 0,
 		EScriptExecutionMode__SpawnedParticles = 1,
 		EScriptExecutionMode__SingleParticle = 2,
@@ -150,15 +137,13 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraTypeDefinition
 	// 0x0008
-	struct FNiagaraTypeDefinition
-	{
+	struct FNiagaraTypeDefinition {
 		class UStruct*                                     Struct;                                                   // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.NiagaraVariable
 	// 0x0030
-	struct FNiagaraVariable
-	{
+	struct FNiagaraVariable {
 		struct FGuid                                       ID;                                                       // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FName                                       Name;                                                     // 0x0010(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FNiagaraTypeDefinition                      TypeDef;                                                  // 0x0018(0x0008) (CPF_Edit)
@@ -167,8 +152,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraScriptDataInterfaceInfo
 	// 0x0020
-	struct FNiagaraScriptDataInterfaceInfo
-	{
+	struct FNiagaraScriptDataInterfaceInfo {
 		class UNiagaraDataInterface*                       DataInterface;                                            // 0x0000(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 		struct FGuid                                       ID;                                                       // 0x0008(0x0010) (CPF_IsPlainOldData)
 		struct FName                                       Name;                                                     // 0x0018(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -176,16 +160,14 @@ namespace Classes
 
 	// ScriptStruct Niagara.NDIStaticMeshSectionFilter
 	// 0x0068
-	struct FNDIStaticMeshSectionFilter
-	{
+	struct FNDIStaticMeshSectionFilter {
 		TArray<int>                                        AllowedMaterialSlots;                                     // 0x0000(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		unsigned char                                      UnknownData00[0x58];                                      // 0x0010(0x0058) MISSED OFFSET
 	};
 
 	// ScriptStruct Niagara.NiagaraEmitterHandle
 	// 0x0030
-	struct FNiagaraEmitterHandle
-	{
+	struct FNiagaraEmitterHandle {
 		struct FGuid                                       ID;                                                       // 0x0000(0x0010) (CPF_Edit, CPF_EditConst, CPF_IsPlainOldData)
 		struct FName                                       IdName;                                                   // 0x0010(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_EditConst, CPF_IsPlainOldData)
 		bool                                               bIsEnabled;                                               // 0x0018(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -196,8 +178,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraParameterBinding
 	// 0x0030
-	struct FNiagaraParameterBinding
-	{
+	struct FNiagaraParameterBinding {
 		struct FGuid                                       SourceParameterId;                                        // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FGuid                                       DestinationEmitterId;                                     // 0x0010(0x0010) (CPF_IsPlainOldData)
 		struct FGuid                                       DestinationParameterId;                                   // 0x0020(0x0010) (CPF_IsPlainOldData)
@@ -205,8 +186,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraEmitterInternalVariableBinding
 	// 0x0030
-	struct FNiagaraEmitterInternalVariableBinding
-	{
+	struct FNiagaraEmitterInternalVariableBinding {
 		struct FGuid                                       SourceParameterId;                                        // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FGuid                                       DestinationEmitterId;                                     // 0x0010(0x0010) (CPF_IsPlainOldData)
 		struct FString                                     DestinationEmitterVariableName;                           // 0x0020(0x0010) (CPF_ZeroConstructor)
@@ -214,15 +194,13 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraParameters
 	// 0x0010
-	struct FNiagaraParameters
-	{
+	struct FNiagaraParameters {
 		TArray<struct FNiagaraVariable>                    Parameters;                                               // 0x0000(0x0010) (CPF_Edit, CPF_EditFixedSize, CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct Niagara.NiagaraDataSetID
 	// 0x0010
-	struct FNiagaraDataSetID
-	{
+	struct FNiagaraDataSetID {
 		struct FName                                       Name;                                                     // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		ENiagaraDataSetType                                Type;                                                     // 0x0008(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
@@ -230,23 +208,20 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraDataSetProperties
 	// 0x0020
-	struct FNiagaraDataSetProperties
-	{
+	struct FNiagaraDataSetProperties {
 		struct FNiagaraDataSetID                           ID;                                                       // 0x0000(0x0010) (CPF_Edit, CPF_EditConst)
 		TArray<struct FNiagaraVariable>                    Variables;                                                // 0x0010(0x0010) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct Niagara.NiagaraScriptDataUsageInfo
 	// 0x0001
-	struct FNiagaraScriptDataUsageInfo
-	{
+	struct FNiagaraScriptDataUsageInfo {
 		bool                                               bReadsAttriubteData;                                      // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.VMExternalFunctionBindingInfo
 	// 0x0030
-	struct FVMExternalFunctionBindingInfo
-	{
+	struct FVMExternalFunctionBindingInfo {
 		struct FName                                       Name;                                                     // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FGuid                                       OwnerId;                                                  // 0x0008(0x0010) (CPF_IsPlainOldData)
 		TArray<bool>                                       InputParamLocations;                                      // 0x0018(0x0010) (CPF_ZeroConstructor)
@@ -256,15 +231,13 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraStatScope
 	// 0x0020
-	struct FNiagaraStatScope
-	{
+	struct FNiagaraStatScope {
 		unsigned char                                      UnknownData00[0x20];                                      // 0x0000(0x0020) MISSED OFFSET
 	};
 
 	// ScriptStruct Niagara.NiagaraEventReceiverProperties
 	// 0x0028
-	struct FNiagaraEventReceiverProperties
-	{
+	struct FNiagaraEventReceiverProperties {
 		struct FName                                       Name;                                                     // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FName                                       SourceEventGenerator;                                     // 0x0008(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FName                                       SourceEmitter;                                            // 0x0010(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -273,8 +246,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraEventGeneratorProperties
 	// 0x0038
-	struct FNiagaraEventGeneratorProperties
-	{
+	struct FNiagaraEventGeneratorProperties {
 		int                                                MaxEventsPerFrame;                                        // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x14];                                      // 0x0004(0x0014) MISSED OFFSET
 		struct FNiagaraDataSetProperties                   SetProps;                                                 // 0x0018(0x0020)
@@ -282,8 +254,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraEmitterScriptProperties
 	// 0x0028
-	struct FNiagaraEmitterScriptProperties
-	{
+	struct FNiagaraEmitterScriptProperties {
 		class UNiagaraScript*                              Script;                                                   // 0x0000(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<struct FNiagaraEventReceiverProperties>     EventReceivers;                                           // 0x0008(0x0010) (CPF_Edit, CPF_EditFixedSize, CPF_ZeroConstructor)
 		TArray<struct FNiagaraEventGeneratorProperties>    EventGenerators;                                          // 0x0018(0x0010) (CPF_Edit, CPF_EditFixedSize, CPF_ZeroConstructor)
@@ -291,8 +262,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraEventScriptProperties
 	// 0x0028 (0x0050 - 0x0028)
-	struct FNiagaraEventScriptProperties : public FNiagaraEmitterScriptProperties
-	{
+	struct FNiagaraEventScriptProperties : public FNiagaraEmitterScriptProperties {
 		EScriptExecutionMode                               ExecutionMode;                                            // 0x0028(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0029(0x0003) MISSED OFFSET
 		uint32_t                                           SpawnNumber;                                              // 0x002C(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -304,8 +274,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraEmitterBurst
 	// 0x0010
-	struct FNiagaraEmitterBurst
-	{
+	struct FNiagaraEmitterBurst {
 		float                                              Time;                                                     // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              TimeRange;                                                // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		uint32_t                                           SpawnMinimum;                                             // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -314,8 +283,7 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraMatrix
 	// 0x0040
-	struct FNiagaraMatrix
-	{
+	struct FNiagaraMatrix {
 		struct FVector4                                    Row0;                                                     // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FVector4                                    Row1;                                                     // 0x0010(0x0010) (CPF_IsPlainOldData)
 		struct FVector4                                    Row2;                                                     // 0x0020(0x0010) (CPF_IsPlainOldData)
@@ -324,16 +292,14 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraTestStructInner
 	// 0x0018
-	struct FNiagaraTestStructInner
-	{
+	struct FNiagaraTestStructInner {
 		struct FVector                                     InnerVector1;                                             // 0x0000(0x000C) (CPF_IsPlainOldData)
 		struct FVector                                     InnerVector2;                                             // 0x000C(0x000C) (CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.NiagaraTestStruct
 	// 0x0048
-	struct FNiagaraTestStruct
-	{
+	struct FNiagaraTestStruct {
 		struct FVector                                     Vector1;                                                  // 0x0000(0x000C) (CPF_IsPlainOldData)
 		struct FVector                                     Vector2;                                                  // 0x000C(0x000C) (CPF_IsPlainOldData)
 		struct FNiagaraTestStructInner                     InnerStruct1;                                             // 0x0018(0x0018)
@@ -342,36 +308,31 @@ namespace Classes
 
 	// ScriptStruct Niagara.NiagaraNumeric
 	// 0x0001
-	struct FNiagaraNumeric
-	{
+	struct FNiagaraNumeric {
 		unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 	};
 
 	// ScriptStruct Niagara.NiagaraBool
 	// 0x0004
-	struct FNiagaraBool
-	{
+	struct FNiagaraBool {
 		int                                                Value;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.NiagaraInt32
 	// 0x0004
-	struct FNiagaraInt32
-	{
+	struct FNiagaraInt32 {
 		int                                                Value;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.NiagaraFloat
 	// 0x0004
-	struct FNiagaraFloat
-	{
+	struct FNiagaraFloat {
 		float                                              Value;                                                    // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.NiagaraFunctionSignature
 	// 0x0040
-	struct FNiagaraFunctionSignature
-	{
+	struct FNiagaraFunctionSignature {
 		struct FName                                       Name;                                                     // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<struct FNiagaraVariable>                    Inputs;                                                   // 0x0008(0x0010) (CPF_ZeroConstructor)
 		TArray<struct FNiagaraVariable>                    Outputs;                                                  // 0x0018(0x0010) (CPF_ZeroConstructor)
@@ -383,16 +344,14 @@ namespace Classes
 
 	// ScriptStruct Niagara.MeshTriCoordinate
 	// 0x0010
-	struct FMeshTriCoordinate
-	{
+	struct FMeshTriCoordinate {
 		int                                                Tri;                                                      // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     BaryCoord;                                                // 0x0004(0x000C) (CPF_Edit, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct Niagara.NiagaraCollisionEventPayload
 	// 0x002C
-	struct FNiagaraCollisionEventPayload
-	{
+	struct FNiagaraCollisionEventPayload {
 		struct FVector                                     CollisionPos;                                             // 0x0000(0x000C) (CPF_IsPlainOldData)
 		struct FVector                                     CollisionNormal;                                          // 0x000C(0x000C) (CPF_IsPlainOldData)
 		int                                                PhysicalMaterialIndex;                                    // 0x0018(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)

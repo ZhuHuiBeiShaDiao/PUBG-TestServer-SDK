@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass SelfPutHelperWidget.SelfPutHelperWidget_C
 	// 0x0049 (0x0289 - 0x0240)
-	class USelfPutHelperWidget_C : public UUserWidget
-	{
+	class USelfPutHelperWidget_C : public UUserWidget {
 	public:
 		TScriptInterface<class USlotInterface>             SlotInterface;                                            // 0x0240(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TScriptInterface<class USlotContainerInterface>    SlotContainer;                                            // 0x0250(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -26,8 +24,7 @@ namespace Classes
 		struct FScriptMulticastDelegate                    OnNotifySelfPut;                                          // 0x0278(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_BlueprintAssignable)
 		EWeaponAttachmentSlotID                            AttachmentSlotID;                                         // 0x0288(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x2307f121);
 			return ptr;

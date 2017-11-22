@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Script Structs
 	//---------------------------------------------------------------------------
 
 	// ScriptStruct ImmediatePhysics.AnimNode_RigidBody
 	// 0x01B0 (0x0220 - 0x0070)
-	struct FAnimNode_RigidBody : public FAnimNode_SkeletalControlBase
-	{
+	struct FAnimNode_RigidBody : public FAnimNode_SkeletalControlBase {
 		class UPhysicsAsset*                               OverridePhysicsAsset;                                     // 0x0070(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FVector                                     OverrideWorldGravity;                                     // 0x0078(0x000C) (CPF_Edit, CPF_IsPlainOldData)
 		TEnumAsByte<ECollisionChannel>                     OverlapChannel;                                           // 0x0084(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)

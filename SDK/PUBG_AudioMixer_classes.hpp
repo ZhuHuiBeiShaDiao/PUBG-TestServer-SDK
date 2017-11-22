@@ -6,22 +6,19 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class AudioMixer.SubmixEffectDynamicsProcessorPreset
 	// 0x0078 (0x00B8 - 0x0040)
-	class USubmixEffectDynamicsProcessorPreset : public USoundEffectSubmixPreset
-	{
+	class USubmixEffectDynamicsProcessorPreset : public USoundEffectSubmixPreset {
 	public:
 		unsigned char                                      UnknownData00[0x50];                                      // 0x0040(0x0050) MISSED OFFSET
 		struct FSubmixEffectDynamicsProcessorSettings      Settings;                                                 // 0x0090(0x0028) (CPF_Edit, CPF_BlueprintVisible)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x1c16d09e);
 			return ptr;
@@ -34,12 +31,10 @@ namespace Classes
 
 	// Class AudioMixer.AudioMixerBlueprintLibrary
 	// 0x0000 (0x0028 - 0x0028)
-	class UAudioMixerBlueprintLibrary : public UBlueprintFunctionLibrary
-	{
+	class UAudioMixerBlueprintLibrary : public UBlueprintFunctionLibrary {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x70296ff3);
 			return ptr;
@@ -58,14 +53,12 @@ namespace Classes
 
 	// Class AudioMixer.SubmixEffectReverbPreset
 	// 0x0088 (0x00C8 - 0x0040)
-	class USubmixEffectReverbPreset : public USoundEffectSubmixPreset
-	{
+	class USubmixEffectReverbPreset : public USoundEffectSubmixPreset {
 	public:
 		unsigned char                                      UnknownData00[0x58];                                      // 0x0040(0x0058) MISSED OFFSET
 		struct FSubmixEffectReverbSettings                 Settings;                                                 // 0x0098(0x0030) (CPF_Edit, CPF_BlueprintVisible)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xbbf2ceda);
 			return ptr;
@@ -79,14 +72,12 @@ namespace Classes
 
 	// Class AudioMixer.SubmixEffectSubmixEQPreset
 	// 0x0048 (0x0088 - 0x0040)
-	class USubmixEffectSubmixEQPreset : public USoundEffectSubmixPreset
-	{
+	class USubmixEffectSubmixEQPreset : public USoundEffectSubmixPreset {
 	public:
 		unsigned char                                      UnknownData00[0x38];                                      // 0x0040(0x0038) MISSED OFFSET
 		struct FSubmixEffectSubmixEQSettings               Settings;                                                 // 0x0078(0x0010) (CPF_Edit, CPF_BlueprintVisible)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x5b6b1460);
 			return ptr;
@@ -99,13 +90,11 @@ namespace Classes
 
 	// Class AudioMixer.SynthSound
 	// 0x0020 (0x0320 - 0x0300)
-	class USynthSound : public USoundWaveProcedural
-	{
+	class USynthSound : public USoundWaveProcedural {
 	public:
 		unsigned char                                      UnknownData00[0x20];                                      // 0x0300(0x0020) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x95c911f);
 			return ptr;
@@ -116,8 +105,7 @@ namespace Classes
 
 	// Class AudioMixer.SynthComponent
 	// 0x01D0 (0x05B0 - 0x03E0)
-	class USynthComponent : public USceneComponent
-	{
+	class USynthComponent : public USceneComponent {
 	public:
 		unsigned char                                      bAutoDestroy : 1;                                         // 0x03E0(0x0001)
 		unsigned char                                      bStopWhenOwnerDestroyed : 1;                              // 0x03E0(0x0001)
@@ -138,8 +126,7 @@ namespace Classes
 		class UAudioComponent*                             AudioComponent;                                           // 0x0568(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_Transient, CPF_InstancedReference, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData03[0x40];                                      // 0x0570(0x0040) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x58d21e5f);
 			return ptr;

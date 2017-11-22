@@ -6,34 +6,25 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass Item_Heal_MedKit.Item_Heal_MedKit_C
-	// 0x0011 (0x01E1 - 0x01D0)
-	class UItem_Heal_MedKit_C : public UCastableItem
-	{
+	// 0x0004 (0x0204 - 0x0200)
+	class UItem_Heal_MedKit_C : public UInstantHealItem {
 	public:
-		class ATslCharacter*                               Character;                                                // 0x01D0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              HealLimit;                                                // 0x01D8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		int                                                PrintTime;                                                // 0x01DC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		bool                                               isProcessing;                                             // 0x01E0(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		int                                                PrintTime;                                                // 0x0200(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x9f72c63f);
 			return ptr;
 		}
 
 
-		bool IsCastable(class ATslCharacter** Character);
 		void PrintCastingTime();
-		void Heal();
-		bool UseBy(class ATslCharacter** Character);
 	};
 
 

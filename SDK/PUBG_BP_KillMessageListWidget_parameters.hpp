@@ -8,26 +8,22 @@
 
 #include "../SDK.hpp"
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Parameters
 	//---------------------------------------------------------------------------
 
 	// Function BP_KillMessageListWidget.BP_KillMessageListWidget_C.AddKillMessage
-	struct UBP_KillMessageListWidget_C_AddKillMessage_Params
-	{
+	struct UBP_KillMessageListWidget_C_AddKillMessage_Params {
 		struct FDeathMessage                               Input;                                                    // (CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
 	};
 
 	// Function BP_KillMessageListWidget.BP_KillMessageListWidget_C.UpdateMessageListWidget
-	struct UBP_KillMessageListWidget_C_UpdateMessageListWidget_Params
-	{
+	struct UBP_KillMessageListWidget_C_UpdateMessageListWidget_Params {
 	};
 
 	// Function BP_KillMessageListWidget.BP_KillMessageListWidget_C.ExecuteUbergraph_BP_KillMessageListWidget
-	struct UBP_KillMessageListWidget_C_ExecuteUbergraph_BP_KillMessageListWidget_Params
-	{
+	struct UBP_KillMessageListWidget_C_ExecuteUbergraph_BP_KillMessageListWidget_Params {
 		int                                                EntryPoint;                                               // (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 

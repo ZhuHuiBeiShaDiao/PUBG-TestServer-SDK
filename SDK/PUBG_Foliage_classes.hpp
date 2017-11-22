@@ -6,22 +6,19 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class Foliage.FoliageInstancedStaticMeshComponent
 	// 0x0020 (0x0BD0 - 0x0BB0)
-	class UFoliageInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent
-	{
+	class UFoliageInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent {
 	public:
 		struct FScriptMulticastDelegate                    OnInstanceTakePointDamage;                                // 0x0BB0(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
 		struct FScriptMulticastDelegate                    OnInstanceTakeRadialDamage;                               // 0x0BC0(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xb057c160);
 			return ptr;
@@ -32,12 +29,10 @@ namespace Classes
 
 	// Class Foliage.FoliageStatistics
 	// 0x0000 (0x0028 - 0x0028)
-	class UFoliageStatistics : public UBlueprintFunctionLibrary
-	{
+	class UFoliageStatistics : public UBlueprintFunctionLibrary {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x9c9a4e);
 			return ptr;
@@ -51,8 +46,7 @@ namespace Classes
 
 	// Class Foliage.FoliageType
 	// 0x0428 (0x0450 - 0x0028)
-	class UFoliageType : public UObject
-	{
+	class UFoliageType : public UObject {
 	public:
 		struct FGuid                                       UpdateGuid;                                               // 0x0028(0x0010) (CPF_IsPlainOldData)
 		float                                              Density;                                                  // 0x0038(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -145,8 +139,7 @@ namespace Classes
 		unsigned char                                      bEnableDensityScaling : 1;                                // 0x0445(0x0001) (CPF_Edit)
 		unsigned char                                      UnknownData12[0xA];                                       // 0x0446(0x000A) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x61fe5667);
 			return ptr;
@@ -157,15 +150,13 @@ namespace Classes
 
 	// Class Foliage.FoliageType_InstancedStaticMesh
 	// 0x0020 (0x0470 - 0x0450)
-	class UFoliageType_InstancedStaticMesh : public UFoliageType
-	{
+	class UFoliageType_InstancedStaticMesh : public UFoliageType {
 	public:
 		TArray<class UMaterialInterface*>                  OverrideMaterials;                                        // 0x0450(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		class UClass*                                      ComponentClass;                                           // 0x0460(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0468(0x0008) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x27dd4984);
 			return ptr;
@@ -175,14 +166,12 @@ namespace Classes
 
 
 	// Class Foliage.InstancedFoliageActor
-	// 0x0050 (0x03F8 - 0x03A8)
-	class AInstancedFoliageActor : public AActor
-	{
+	// 0x0050 (0x0400 - 0x03B0)
+	class AInstancedFoliageActor : public AActor {
 	public:
-		unsigned char                                      UnknownData00[0x50];                                      // 0x03A8(0x0050) MISSED OFFSET
+		unsigned char                                      UnknownData00[0x50];                                      // 0x03B0(0x0050) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x19f5);
 			return ptr;
@@ -192,28 +181,26 @@ namespace Classes
 
 
 	// Class Foliage.InteractiveFoliageActor
-	// 0x0060 (0x0418 - 0x03B8)
-	class AInteractiveFoliageActor : public AStaticMeshActor
-	{
+	// 0x0060 (0x0420 - 0x03C0)
+	class AInteractiveFoliageActor : public AStaticMeshActor {
 	public:
-		class UCapsuleComponent*                           CapsuleComponent;                                         // 0x03B8(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-		struct FVector                                     TouchingActorEntryPosition;                               // 0x03C0(0x000C) (CPF_Transient, CPF_IsPlainOldData)
-		struct FVector                                     FoliageVelocity;                                          // 0x03CC(0x000C) (CPF_Transient, CPF_IsPlainOldData)
-		struct FVector                                     FoliageForce;                                             // 0x03D8(0x000C) (CPF_Transient, CPF_IsPlainOldData)
-		struct FVector                                     FoliagePosition;                                          // 0x03E4(0x000C) (CPF_Transient, CPF_IsPlainOldData)
-		float                                              FoliageDamageImpulseScale;                                // 0x03F0(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              FoliageTouchImpulseScale;                                 // 0x03F4(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              FoliageStiffness;                                         // 0x03F8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              FoliageStiffnessQuadratic;                                // 0x03FC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              FoliageDamping;                                           // 0x0400(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              MaxDamageImpulse;                                         // 0x0404(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              MaxTouchImpulse;                                          // 0x0408(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              MaxForce;                                                 // 0x040C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              Mass;                                                     // 0x0410(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData00[0x4];                                       // 0x0414(0x0004) MISSED OFFSET
+		class UCapsuleComponent*                           CapsuleComponent;                                         // 0x03C0(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
+		struct FVector                                     TouchingActorEntryPosition;                               // 0x03C8(0x000C) (CPF_Transient, CPF_IsPlainOldData)
+		struct FVector                                     FoliageVelocity;                                          // 0x03D4(0x000C) (CPF_Transient, CPF_IsPlainOldData)
+		struct FVector                                     FoliageForce;                                             // 0x03E0(0x000C) (CPF_Transient, CPF_IsPlainOldData)
+		struct FVector                                     FoliagePosition;                                          // 0x03EC(0x000C) (CPF_Transient, CPF_IsPlainOldData)
+		float                                              FoliageDamageImpulseScale;                                // 0x03F8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              FoliageTouchImpulseScale;                                 // 0x03FC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              FoliageStiffness;                                         // 0x0400(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              FoliageStiffnessQuadratic;                                // 0x0404(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              FoliageDamping;                                           // 0x0408(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              MaxDamageImpulse;                                         // 0x040C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              MaxTouchImpulse;                                          // 0x0410(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              MaxForce;                                                 // 0x0414(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              Mass;                                                     // 0x0418(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData00[0x4];                                       // 0x041C(0x0004) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x7593ce4e);
 			return ptr;
@@ -226,13 +213,11 @@ namespace Classes
 
 	// Class Foliage.InteractiveFoliageComponent
 	// 0x0010 (0x09D0 - 0x09C0)
-	class UInteractiveFoliageComponent : public UStaticMeshComponent
-	{
+	class UInteractiveFoliageComponent : public UStaticMeshComponent {
 	public:
 		unsigned char                                      UnknownData00[0x10];                                      // 0x09C0(0x0010) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xb1808720);
 			return ptr;
@@ -242,14 +227,12 @@ namespace Classes
 
 
 	// Class Foliage.ProceduralFoliageBlockingVolume
-	// 0x0008 (0x03E8 - 0x03E0)
-	class AProceduralFoliageBlockingVolume : public AVolume
-	{
+	// 0x0008 (0x03F0 - 0x03E8)
+	class AProceduralFoliageBlockingVolume : public AVolume {
 	public:
-		class AProceduralFoliageVolume*                    ProceduralFoliageVolume;                                  // 0x03E0(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		class AProceduralFoliageVolume*                    ProceduralFoliageVolume;                                  // 0x03E8(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x30eb4227);
 			return ptr;
@@ -260,16 +243,14 @@ namespace Classes
 
 	// Class Foliage.ProceduralFoliageComponent
 	// 0x0020 (0x0200 - 0x01E0)
-	class UProceduralFoliageComponent : public UActorComponent
-	{
+	class UProceduralFoliageComponent : public UActorComponent {
 	public:
 		float                                              TileOverlap;                                              // 0x01E0(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x01E4(0x0004) MISSED OFFSET
 		class AVolume*                                     SpawningVolume;                                           // 0x01E8(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FGuid                                       ProceduralGuid;                                           // 0x01F0(0x0010) (CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x9b0299d9);
 			return ptr;
@@ -280,8 +261,7 @@ namespace Classes
 
 	// Class Foliage.ProceduralFoliageSpawner
 	// 0x0048 (0x0070 - 0x0028)
-	class UProceduralFoliageSpawner : public UObject
-	{
+	class UProceduralFoliageSpawner : public UObject {
 	public:
 		int                                                RandomSeed;                                               // 0x0028(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              TileSize;                                                 // 0x002C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -292,8 +272,7 @@ namespace Classes
 		bool                                               bNeedsSimulation;                                         // 0x0050(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x1F];                                      // 0x0051(0x001F) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x24ec0be8);
 			return ptr;
@@ -306,16 +285,14 @@ namespace Classes
 
 	// Class Foliage.ProceduralFoliageTile
 	// 0x0130 (0x0158 - 0x0028)
-	class UProceduralFoliageTile : public UObject
-	{
+	class UProceduralFoliageTile : public UObject {
 	public:
 		class UProceduralFoliageSpawner*                   FoliageSpawner;                                           // 0x0028(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0xA0];                                      // 0x0030(0x00A0) MISSED OFFSET
 		TArray<struct FProceduralFoliageInstance>          InstancesArray;                                           // 0x00D0(0x0010) (CPF_ZeroConstructor)
 		unsigned char                                      UnknownData01[0x78];                                      // 0x00E0(0x0078) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xb94ae6d0);
 			return ptr;
@@ -325,14 +302,12 @@ namespace Classes
 
 
 	// Class Foliage.ProceduralFoliageVolume
-	// 0x0008 (0x03E8 - 0x03E0)
-	class AProceduralFoliageVolume : public AVolume
-	{
+	// 0x0008 (0x03F0 - 0x03E8)
+	class AProceduralFoliageVolume : public AVolume {
 	public:
-		class UProceduralFoliageComponent*                 ProceduralComponent;                                      // 0x03E0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
+		class UProceduralFoliageComponent*                 ProceduralComponent;                                      // 0x03E8(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x545c6762);
 			return ptr;

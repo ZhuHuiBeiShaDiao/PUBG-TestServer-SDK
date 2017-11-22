@@ -6,21 +6,18 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass TslLobbyGameMode.TSLLobbyGameMode_C
-	// 0x0008 (0x0480 - 0x0478)
-	class ATSLLobbyGameMode_C : public ATslEntryGameMode
-	{
+	// 0x0008 (0x0488 - 0x0480)
+	class ATSLLobbyGameMode_C : public ATslEntryGameMode {
 	public:
-		class USceneComponent*                             DefaultSceneRoot;                                         // 0x0478(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
+		class USceneComponent*                             DefaultSceneRoot;                                         // 0x0480(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x2e30ac25);
 			return ptr;

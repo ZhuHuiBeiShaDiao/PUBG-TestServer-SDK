@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass MouseSettingsWidget.MouseSettingsWidget_C
 	// 0x0044 (0x0330 - 0x02EC)
-	class UMouseSettingsWidget_C : public UBaseOptionWidget_C
-	{
+	class UMouseSettingsWidget_C : public UBaseOptionWidget_C {
 	public:
 		unsigned char                                      UnknownData00[0x4];                                       // 0x02EC(0x0004) MISSED OFFSET
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x02F0(0x0008) (CPF_Transient, CPF_DuplicateTransient)
@@ -26,8 +24,7 @@ namespace Classes
 		TArray<class UQualitySliderWidget_C*>              KeyBorders;                                               // 0x0318(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
 		class UQualitySliderWidget_C*                      NewVar_1;                                                 // 0x0328(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x8a902af5);
 			return ptr;

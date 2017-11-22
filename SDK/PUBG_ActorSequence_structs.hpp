@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum ActorSequence.EActorSequenceObjectReferenceType
-	enum class EActorSequenceObjectReferenceType : uint8_t
-	{
+	enum class EActorSequenceObjectReferenceType : uint8_t {
 		EActorSequenceObjectReferenceType__ContextActor = 0,
 		EActorSequenceObjectReferenceType__ExternalActor = 1,
 		EActorSequenceObjectReferenceType__Component = 2,
@@ -29,8 +27,7 @@ namespace Classes
 
 	// ScriptStruct ActorSequence.ActorSequenceObjectReference
 	// 0x0028
-	struct FActorSequenceObjectReference
-	{
+	struct FActorSequenceObjectReference {
 		EActorSequenceObjectReferenceType                  Type;                                                     // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 		struct FGuid                                       ActorId;                                                  // 0x0004(0x0010) (CPF_IsPlainOldData)
@@ -40,15 +37,13 @@ namespace Classes
 
 	// ScriptStruct ActorSequence.ActorSequenceObjectReferences
 	// 0x0010
-	struct FActorSequenceObjectReferences
-	{
+	struct FActorSequenceObjectReferences {
 		TArray<struct FActorSequenceObjectReference>       Array;                                                    // 0x0000(0x0010) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct ActorSequence.ActorSequenceObjectReferenceMap
 	// 0x0020
-	struct FActorSequenceObjectReferenceMap
-	{
+	struct FActorSequenceObjectReferenceMap {
 		TArray<struct FGuid>                               BindingIds;                                               // 0x0000(0x0010) (CPF_ZeroConstructor)
 		TArray<struct FActorSequenceObjectReferences>      References;                                               // 0x0010(0x0010) (CPF_ZeroConstructor)
 	};

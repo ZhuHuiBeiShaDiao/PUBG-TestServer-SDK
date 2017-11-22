@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum MovieScene.ESpawnOwnership
-	enum class ESpawnOwnership : uint8_t
-	{
+	enum class ESpawnOwnership : uint8_t {
 		ESpawnOwnership__InnerSequence = 0,
 		ESpawnOwnership__MasterSequence = 1,
 		ESpawnOwnership__External = 2,
@@ -23,8 +21,7 @@ namespace Classes
 
 
 	// Enum MovieScene.EMovieSceneObjectBindingSpace
-	enum class EMovieSceneObjectBindingSpace : uint8_t
-	{
+	enum class EMovieSceneObjectBindingSpace : uint8_t {
 		EMovieSceneObjectBindingSpace__Local = 0,
 		EMovieSceneObjectBindingSpace__Root = 1,
 		EMovieSceneObjectBindingSpace__EMovieSceneObjectBindingSpace_MAX = 2
@@ -32,8 +29,7 @@ namespace Classes
 
 
 	// Enum MovieScene.EMovieSceneKeyInterpolation
-	enum class EMovieSceneKeyInterpolation : uint8_t
-	{
+	enum class EMovieSceneKeyInterpolation : uint8_t {
 		EMovieSceneKeyInterpolation__Auto = 0,
 		EMovieSceneKeyInterpolation__User = 1,
 		EMovieSceneKeyInterpolation__Break = 2,
@@ -44,8 +40,7 @@ namespace Classes
 
 
 	// Enum MovieScene.EMovieSceneCompletionMode
-	enum class EMovieSceneCompletionMode : uint8_t
-	{
+	enum class EMovieSceneCompletionMode : uint8_t {
 		EMovieSceneCompletionMode__KeepState = 0,
 		EMovieSceneCompletionMode__RestoreState = 1,
 		EMovieSceneCompletionMode__EMovieSceneCompletionMode_MAX = 2
@@ -53,8 +48,7 @@ namespace Classes
 
 
 	// Enum MovieScene.ESectionEvaluationFlags
-	enum class ESectionEvaluationFlags : uint8_t
-	{
+	enum class ESectionEvaluationFlags : uint8_t {
 		ESectionEvaluationFlags__None = 0,
 		ESectionEvaluationFlags__PreRoll = 1,
 		ESectionEvaluationFlags__PostRoll = 2,
@@ -63,8 +57,7 @@ namespace Classes
 
 
 	// Enum MovieScene.EEvaluationMethod
-	enum class EEvaluationMethod : uint8_t
-	{
+	enum class EEvaluationMethod : uint8_t {
 		EEvaluationMethod__Static = 0,
 		EEvaluationMethod__Swept = 1,
 		EEvaluationMethod__EEvaluationMethod_MAX = 2
@@ -78,8 +71,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSpawnable
 	// 0x0040
-	struct FMovieSceneSpawnable
-	{
+	struct FMovieSceneSpawnable {
 		struct FGuid                                       Guid;                                                     // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FString                                     Name;                                                     // 0x0010(0x0010) (CPF_ZeroConstructor)
 		class UObject*                                     ObjectTemplate;                                           // 0x0020(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -90,8 +82,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieScenePossessable
 	// 0x0038
-	struct FMovieScenePossessable
-	{
+	struct FMovieScenePossessable {
 		struct FGuid                                       Guid;                                                     // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FString                                     Name;                                                     // 0x0010(0x0010) (CPF_ZeroConstructor)
 		class UClass*                                      PossessedObjectClass;                                     // 0x0020(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -100,8 +91,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneBinding
 	// 0x0030
-	struct FMovieSceneBinding
-	{
+	struct FMovieSceneBinding {
 		struct FGuid                                       ObjectGuid;                                               // 0x0000(0x0010) (CPF_IsPlainOldData)
 		struct FString                                     BindingName;                                              // 0x0010(0x0010) (CPF_ZeroConstructor)
 		TArray<class UMovieSceneTrack*>                    Tracks;                                                   // 0x0020(0x0010) (CPF_ExportObject, CPF_ZeroConstructor)
@@ -109,8 +99,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneObjectBindingID
 	// 0x0018
-	struct FMovieSceneObjectBindingID
-	{
+	struct FMovieSceneObjectBindingID {
 		int                                                SequenceID;                                               // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		EMovieSceneObjectBindingSpace                      Space;                                                    // 0x0004(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
@@ -119,8 +108,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneBindingOverrideData
 	// 0x0024
-	struct FMovieSceneBindingOverrideData
-	{
+	struct FMovieSceneBindingOverrideData {
 		struct FMovieSceneObjectBindingID                  ObjectBindingId;                                          // 0x0000(0x0018) (CPF_Edit)
 		TWeakObjectPtr<class UObject>                      Object;                                                   // 0x0018(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		bool                                               bOverridesDefault;                                        // 0x0020(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -129,8 +117,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSequencePlaybackSettings
 	// 0x0028
-	struct FMovieSceneSequencePlaybackSettings
-	{
+	struct FMovieSceneSequencePlaybackSettings {
 		int                                                LoopCount;                                                // 0x0000(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              PlayRate;                                                 // 0x0004(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		bool                                               bRandomStartTime;                                         // 0x0008(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -143,16 +130,14 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSectionEvalOptions
 	// 0x0002
-	struct FMovieSceneSectionEvalOptions
-	{
+	struct FMovieSceneSectionEvalOptions {
 		bool                                               bCanEditCompletionMode;                                   // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		EMovieSceneCompletionMode                          CompletionMode;                                           // 0x0001(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackEvalOptions
 	// 0x0004
-	struct FMovieSceneTrackEvalOptions
-	{
+	struct FMovieSceneTrackEvalOptions {
 		unsigned char                                      bCanEvaluateNearestSection : 1;                           // 0x0000(0x0001)
 		unsigned char                                      bEvaluateNearestSection : 1;                              // 0x0000(0x0001) (CPF_Edit)
 		unsigned char                                      bEvaluateInPreroll : 1;                                   // 0x0000(0x0001) (CPF_Edit)
@@ -162,29 +147,25 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSegment
 	// 0x0050
-	struct FMovieSceneSegment
-	{
+	struct FMovieSceneSegment {
 		unsigned char                                      UnknownData00[0x50];                                      // 0x0000(0x0050) MISSED OFFSET
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvalTemplatePtr
 	// 0x0038
-	struct FMovieSceneEvalTemplatePtr
-	{
+	struct FMovieSceneEvalTemplatePtr {
 		unsigned char                                      UnknownData00[0x38];                                      // 0x0000(0x0038) MISSED OFFSET
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackImplementationPtr
 	// 0x0038
-	struct FMovieSceneTrackImplementationPtr
-	{
+	struct FMovieSceneTrackImplementationPtr {
 		unsigned char                                      UnknownData00[0x38];                                      // 0x0000(0x0038) MISSED OFFSET
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationTrack
 	// 0x0080
-	struct FMovieSceneEvaluationTrack
-	{
+	struct FMovieSceneEvaluationTrack {
 		struct FGuid                                       ObjectBindingId;                                          // 0x0000(0x0010) (CPF_IsPlainOldData)
 		uint16_t                                           EvaluationPriority;                                       // 0x0010(0x0002) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		EEvaluationMethod                                  EvaluationMethod;                                         // 0x0012(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -200,8 +181,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationGroupLUTIndex
 	// 0x0010
-	struct FMovieSceneEvaluationGroupLUTIndex
-	{
+	struct FMovieSceneEvaluationGroupLUTIndex {
 		bool                                               bRequiresImmediateFlush;                                  // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 		int                                                LUTOffset;                                                // 0x0004(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -211,52 +191,45 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSequenceID
 	// 0x0004
-	struct FMovieSceneSequenceID
-	{
+	struct FMovieSceneSequenceID {
 		uint32_t                                           Value;                                                    // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackIdentifier
 	// 0x0004
-	struct FMovieSceneTrackIdentifier
-	{
+	struct FMovieSceneTrackIdentifier {
 		uint32_t                                           Value;                                                    // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationFieldTrackPtr
 	// 0x0008
-	struct FMovieSceneEvaluationFieldTrackPtr
-	{
+	struct FMovieSceneEvaluationFieldTrackPtr {
 		struct FMovieSceneSequenceID                       SequenceID;                                               // 0x0000(0x0004)
 		struct FMovieSceneTrackIdentifier                  TrackIdentifier;                                          // 0x0004(0x0004)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationFieldSegmentPtr
 	// 0x0004 (0x000C - 0x0008)
-	struct FMovieSceneEvaluationFieldSegmentPtr : public FMovieSceneEvaluationFieldTrackPtr
-	{
+	struct FMovieSceneEvaluationFieldSegmentPtr : public FMovieSceneEvaluationFieldTrackPtr {
 		int                                                SegmentIndex;                                             // 0x0008(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationGroup
 	// 0x0020
-	struct FMovieSceneEvaluationGroup
-	{
+	struct FMovieSceneEvaluationGroup {
 		TArray<struct FMovieSceneEvaluationGroupLUTIndex>  LUTIndices;                                               // 0x0000(0x0010) (CPF_ZeroConstructor)
 		TArray<struct FMovieSceneEvaluationFieldSegmentPtr> SegmentPtrLUT;                                            // 0x0010(0x0010) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationMetaData
 	// 0x0010
-	struct FMovieSceneEvaluationMetaData
-	{
+	struct FMovieSceneEvaluationMetaData {
 		TArray<struct FMovieSceneSequenceID>               ActiveSequences;                                          // 0x0000(0x0010) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationField
 	// 0x0030
-	struct FMovieSceneEvaluationField
-	{
+	struct FMovieSceneEvaluationField {
 		TArray<struct FFloatRange>                         Ranges;                                                   // 0x0000(0x0010) (CPF_ZeroConstructor)
 		TArray<struct FMovieSceneEvaluationGroup>          Groups;                                                   // 0x0010(0x0010) (CPF_ZeroConstructor)
 		TArray<struct FMovieSceneEvaluationMetaData>       MetaData;                                                 // 0x0020(0x0010) (CPF_ZeroConstructor)
@@ -264,16 +237,14 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSequenceTransform
 	// 0x0008
-	struct FMovieSceneSequenceTransform
-	{
+	struct FMovieSceneSequenceTransform {
 		float                                              TimeScale;                                                // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              Offset;                                                   // 0x0004(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneSubSequenceData
 	// 0x0050
-	struct FMovieSceneSubSequenceData
-	{
+	struct FMovieSceneSubSequenceData {
 		class UMovieSceneSequence*                         Sequence;                                                 // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UObject*                                     SequenceKeyObject;                                        // 0x0008(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FMovieSceneSequenceTransform                RootToSequenceTransform;                                  // 0x0010(0x0008)
@@ -286,8 +257,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSequenceHierarchyNode
 	// 0x0018
-	struct FMovieSceneSequenceHierarchyNode
-	{
+	struct FMovieSceneSequenceHierarchyNode {
 		struct FMovieSceneSequenceID                       ParentID;                                                 // 0x0000(0x0004)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 		TArray<struct FMovieSceneSequenceID>               Children;                                                 // 0x0008(0x0010) (CPF_ZeroConstructor)
@@ -295,23 +265,20 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSequenceHierarchy
 	// 0x00A0
-	struct FMovieSceneSequenceHierarchy
-	{
+	struct FMovieSceneSequenceHierarchy {
 		TMap<uint32_t, struct FMovieSceneSubSequenceData>  SubSequences;                                             // 0x0000(0x0050) (CPF_ZeroConstructor)
 		TMap<uint32_t, struct FMovieSceneSequenceHierarchyNode> Hierarchy;                                                // 0x0050(0x0050) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackIdentifiers
 	// 0x0010
-	struct FMovieSceneTrackIdentifiers
-	{
+	struct FMovieSceneTrackIdentifiers {
 		TArray<struct FMovieSceneTrackIdentifier>          Data;                                                     // 0x0000(0x0010) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTemplateGenerationLedger
 	// 0x00A8
-	struct FMovieSceneTemplateGenerationLedger
-	{
+	struct FMovieSceneTemplateGenerationLedger {
 		struct FMovieSceneTrackIdentifier                  LastTrackIdentifier;                                      // 0x0000(0x0004)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 		TMap<struct FMovieSceneTrackIdentifier, int>       TrackReferenceCounts;                                     // 0x0008(0x0050) (CPF_ZeroConstructor)
@@ -320,8 +287,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneEvaluationTemplate
 	// 0x0220
-	struct FMovieSceneEvaluationTemplate
-	{
+	struct FMovieSceneEvaluationTemplate {
 		TMap<uint32_t, struct FMovieSceneEvaluationTrack>  Tracks;                                                   // 0x0000(0x0050) (CPF_ZeroConstructor)
 		unsigned char                                      UnknownData00[0x50];                                      // 0x0050(0x0050) MISSED OFFSET
 		struct FMovieSceneEvaluationField                  EvaluationField;                                          // 0x00A0(0x0030)
@@ -334,37 +300,32 @@ namespace Classes
 
 	// ScriptStruct MovieScene.CachedMovieSceneEvaluationTemplate
 	// 0x0000 (0x0220 - 0x0220)
-	struct FCachedMovieSceneEvaluationTemplate : public FMovieSceneEvaluationTemplate
-	{
+	struct FCachedMovieSceneEvaluationTemplate : public FMovieSceneEvaluationTemplate {
 
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackCompilationParams
 	// 0x0002
-	struct FMovieSceneTrackCompilationParams
-	{
+	struct FMovieSceneTrackCompilationParams {
 		bool                                               bForEditorPreview;                                        // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		bool                                               bDuringBlueprintCompile;                                  // 0x0001(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackLabels
 	// 0x0010
-	struct FMovieSceneTrackLabels
-	{
+	struct FMovieSceneTrackLabels {
 		TArray<struct FString>                             Strings;                                                  // 0x0000(0x0010) (CPF_ZeroConstructor)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneExpansionState
 	// 0x0001
-	struct FMovieSceneExpansionState
-	{
+	struct FMovieSceneExpansionState {
 		bool                                               bExpanded;                                                // 0x0000(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEditorData
 	// 0x0070
-	struct FMovieSceneEditorData
-	{
+	struct FMovieSceneEditorData {
 		TMap<struct FString, struct FMovieSceneExpansionState> ExpansionStates;                                          // 0x0000(0x0050) (CPF_ZeroConstructor)
 		struct FFloatRange                                 WorkingRange;                                             // 0x0050(0x0010)
 		struct FFloatRange                                 ViewRange;                                                // 0x0060(0x0010)
@@ -372,8 +333,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.SectionEvaluationData
 	// 0x000C
-	struct FSectionEvaluationData
-	{
+	struct FSectionEvaluationData {
 		int                                                ImplIndex;                                                // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              ForcedTime;                                               // 0x0004(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		ESectionEvaluationFlags                            Flags;                                                    // 0x0008(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -382,37 +342,32 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneEvalTemplateBase
 	// 0x0010
-	struct FMovieSceneEvalTemplateBase
-	{
+	struct FMovieSceneEvalTemplateBase {
 		unsigned char                                      UnknownData00[0x10];                                      // 0x0000(0x0010) MISSED OFFSET
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEmptyStruct
 	// 0x0001
-	struct FMovieSceneEmptyStruct
-	{
+	struct FMovieSceneEmptyStruct {
 		unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 	};
 
 	// ScriptStruct MovieScene.MovieSceneEvalTemplate
 	// 0x0008 (0x0018 - 0x0010)
-	struct FMovieSceneEvalTemplate : public FMovieSceneEvalTemplateBase
-	{
+	struct FMovieSceneEvalTemplate : public FMovieSceneEvalTemplateBase {
 		EMovieSceneCompletionMode                          CompletionMode;                                           // 0x0010(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
 	};
 
 	// ScriptStruct MovieScene.MovieSceneTrackImplementation
 	// 0x0000 (0x0010 - 0x0010)
-	struct FMovieSceneTrackImplementation : public FMovieSceneEvalTemplateBase
-	{
+	struct FMovieSceneTrackImplementation : public FMovieSceneEvalTemplateBase {
 
 	};
 
 	// ScriptStruct MovieScene.MovieSceneSectionParameters
 	// 0x0014
-	struct FMovieSceneSectionParameters
-	{
+	struct FMovieSceneSectionParameters {
 		float                                              StartOffset;                                              // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              TimeScale;                                                // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		int                                                HierarchicalBias;                                         // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -422,23 +377,20 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneSequenceCachedSignature
 	// 0x0018
-	struct FMovieSceneSequenceCachedSignature
-	{
+	struct FMovieSceneSequenceCachedSignature {
 		TWeakObjectPtr<class UMovieSceneSequence>          Sequence;                                                 // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FGuid                                       CachedSignature;                                          // 0x0008(0x0010) (CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieSceneLegacyTrackInstanceTemplate
 	// 0x0008 (0x0020 - 0x0018)
-	struct FMovieSceneLegacyTrackInstanceTemplate : public FMovieSceneEvalTemplate
-	{
+	struct FMovieSceneLegacyTrackInstanceTemplate : public FMovieSceneEvalTemplate {
 		class UMovieSceneTrack*                            Track;                                                    // 0x0018(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct MovieScene.MovieScenePropertySectionData
 	// 0x0028
-	struct FMovieScenePropertySectionData
-	{
+	struct FMovieScenePropertySectionData {
 		struct FName                                       PropertyName;                                             // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		struct FString                                     PropertyPath;                                             // 0x0008(0x0010) (CPF_ZeroConstructor)
 		struct FName                                       FunctionName;                                             // 0x0018(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -447,8 +399,7 @@ namespace Classes
 
 	// ScriptStruct MovieScene.MovieSceneKeyStruct
 	// 0x0008
-	struct FMovieSceneKeyStruct
-	{
+	struct FMovieSceneKeyStruct {
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
 	};
 

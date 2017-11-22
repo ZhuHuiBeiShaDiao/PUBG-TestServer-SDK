@@ -6,20 +6,17 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class LocationServicesBPLibrary.LocationServices
 	// 0x0000 (0x0028 - 0x0028)
-	class ULocationServices : public UBlueprintFunctionLibrary
-	{
+	class ULocationServices : public UBlueprintFunctionLibrary {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x498d86a8);
 			return ptr;
@@ -38,13 +35,11 @@ namespace Classes
 
 	// Class LocationServicesBPLibrary.LocationServicesImpl
 	// 0x0010 (0x0038 - 0x0028)
-	class ULocationServicesImpl : public UObject
-	{
+	class ULocationServicesImpl : public UObject {
 	public:
 		struct FScriptMulticastDelegate                    OnLocationChanged;                                        // 0x0028(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x75b5ee32);
 			return ptr;

@@ -6,22 +6,19 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class MovieScene.MovieSceneSignedObject
 	// 0x0088 (0x00B0 - 0x0028)
-	class UMovieSceneSignedObject : public UObject
-	{
+	class UMovieSceneSignedObject : public UObject {
 	public:
 		struct FGuid                                       Signature;                                                // 0x0028(0x0010) (CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x78];                                      // 0x0038(0x0078) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x81542ba);
 			return ptr;
@@ -32,8 +29,7 @@ namespace Classes
 
 	// Class MovieScene.MovieScene
 	// 0x0080 (0x0130 - 0x00B0)
-	class UMovieScene : public UMovieSceneSignedObject
-	{
+	class UMovieScene : public UMovieSceneSignedObject {
 	public:
 		TArray<struct FMovieSceneSpawnable>                Spawnables;                                               // 0x00B0(0x0010) (CPF_ZeroConstructor)
 		TArray<struct FMovieScenePossessable>              Possessables;                                             // 0x00C0(0x0010) (CPF_ZeroConstructor)
@@ -50,8 +46,7 @@ namespace Classes
 		float                                              StartTime;                                                // 0x0128(0x0004) (CPF_ZeroConstructor, CPF_Deprecated, CPF_IsPlainOldData)
 		float                                              EndTime;                                                  // 0x012C(0x0004) (CPF_ZeroConstructor, CPF_Deprecated, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xad0d0963);
 			return ptr;
@@ -62,12 +57,10 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneBindingOverridesInterface
 	// 0x0000 (0x0028 - 0x0028)
-	class UMovieSceneBindingOverridesInterface : public UInterface
-	{
+	class UMovieSceneBindingOverridesInterface : public UInterface {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x9cb7061a);
 			return ptr;
@@ -78,15 +71,13 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneBindingOverrides
 	// 0x0070 (0x0098 - 0x0028)
-	class UMovieSceneBindingOverrides : public UObject
-	{
+	class UMovieSceneBindingOverrides : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
 		TArray<struct FMovieSceneBindingOverrideData>      BindingData;                                              // 0x0030(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		unsigned char                                      UnknownData01[0x58];                                      // 0x0040(0x0058) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x6d52760d);
 			return ptr;
@@ -97,12 +88,10 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneBindingOwnerInterface
 	// 0x0000 (0x0028 - 0x0028)
-	class UMovieSceneBindingOwnerInterface : public UInterface
-	{
+	class UMovieSceneBindingOwnerInterface : public UInterface {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x7f76072c);
 			return ptr;
@@ -113,8 +102,7 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneFolder
 	// 0x0048 (0x0070 - 0x0028)
-	class UMovieSceneFolder : public UObject
-	{
+	class UMovieSceneFolder : public UObject {
 	public:
 		struct FName                                       FolderName;                                               // 0x0028(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		TArray<class UMovieSceneFolder*>                   ChildFolders;                                             // 0x0030(0x0010) (CPF_ZeroConstructor)
@@ -122,8 +110,7 @@ namespace Classes
 		TArray<struct FString>                             ChildObjectBindingStrings;                                // 0x0050(0x0010) (CPF_ZeroConstructor)
 		unsigned char                                      UnknownData00[0x10];                                      // 0x0060(0x0010) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x18373ba3);
 			return ptr;
@@ -134,8 +121,7 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneSequencePlayer
 	// 0x06D8 (0x0700 - 0x0028)
-	class UMovieSceneSequencePlayer : public UObject
-	{
+	class UMovieSceneSequencePlayer : public UObject {
 	public:
 		unsigned char                                      UnknownData00[0x348];                                     // 0x0028(0x0348) MISSED OFFSET
 		struct FScriptMulticastDelegate                    OnPlay;                                                   // 0x0370(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
@@ -154,8 +140,7 @@ namespace Classes
 		struct FMovieSceneSequencePlaybackSettings         PlaybackSettings;                                         // 0x03D0(0x0028)
 		unsigned char                                      UnknownData03[0x308];                                     // 0x03F8(0x0308) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x6ddc4b43);
 			return ptr;
@@ -184,8 +169,7 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneSection
 	// 0x0020 (0x00D0 - 0x00B0)
-	class UMovieSceneSection : public UMovieSceneSignedObject
-	{
+	class UMovieSceneSection : public UMovieSceneSignedObject {
 	public:
 		struct FMovieSceneSectionEvalOptions               EvalOptions;                                              // 0x00B0(0x0002) (CPF_Edit)
 		unsigned char                                      UnknownData00[0x2];                                       // 0x00B2(0x0002) MISSED OFFSET
@@ -200,8 +184,7 @@ namespace Classes
 		float                                              PrerollTime;                                              // 0x00C8(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              PostrollTime;                                             // 0x00CC(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xccefd5d0);
 			return ptr;
@@ -212,14 +195,12 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneTrack
 	// 0x0010 (0x00C0 - 0x00B0)
-	class UMovieSceneTrack : public UMovieSceneSignedObject
-	{
+	class UMovieSceneTrack : public UMovieSceneSignedObject {
 	public:
 		struct FMovieSceneTrackEvalOptions                 EvalOptions;                                              // 0x00B0(0x0004) (CPF_Edit)
 		unsigned char                                      UnknownData00[0xC];                                       // 0x00B4(0x000C) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x72a9e938);
 			return ptr;
@@ -230,13 +211,11 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneSegmentCompilerTestTrack
 	// 0x0010 (0x00D0 - 0x00C0)
-	class UMovieSceneSegmentCompilerTestTrack : public UMovieSceneTrack
-	{
+	class UMovieSceneSegmentCompilerTestTrack : public UMovieSceneTrack {
 	public:
 		TArray<class UMovieSceneSection*>                  SectionArray;                                             // 0x00C0(0x0010) (CPF_ExportObject, CPF_ZeroConstructor)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xb155ff32);
 			return ptr;
@@ -247,12 +226,10 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneSegmentCompilerTestSection
 	// 0x0000 (0x00D0 - 0x00D0)
-	class UMovieSceneSegmentCompilerTestSection : public UMovieSceneSection
-	{
+	class UMovieSceneSegmentCompilerTestSection : public UMovieSceneSection {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x630e7c96);
 			return ptr;
@@ -263,8 +240,7 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneSequence
 	// 0x0280 (0x0330 - 0x00B0)
-	class UMovieSceneSequence : public UMovieSceneSignedObject
-	{
+	class UMovieSceneSequence : public UMovieSceneSignedObject {
 	public:
 		struct FCachedMovieSceneEvaluationTemplate         EvaluationTemplate;                                       // 0x00B0(0x0220)
 		struct FMovieSceneTrackCompilationParams           TemplateParameters;                                       // 0x02D0(0x0002)
@@ -273,8 +249,7 @@ namespace Classes
 		bool                                               bParentContextsAreSignificant;                            // 0x0328(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x7];                                       // 0x0329(0x0007) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xdca4ab94);
 			return ptr;
@@ -285,12 +260,10 @@ namespace Classes
 
 	// Class MovieScene.MovieSceneNameableTrack
 	// 0x0000 (0x00C0 - 0x00C0)
-	class UMovieSceneNameableTrack : public UMovieSceneTrack
-	{
+	class UMovieSceneNameableTrack : public UMovieSceneTrack {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x1adf3ae7);
 			return ptr;

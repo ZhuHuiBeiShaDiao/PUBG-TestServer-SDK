@@ -12,6 +12,50 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function GameplayOptionWidget_BP.GameplayOptionWidget_BP_C.Get_Killcam_bIsEnabled_1
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+bool UGameplayOptionWidget_BP_C::Get_Killcam_bIsEnabled_1()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe413be61);
+
+	UGameplayOptionWidget_BP_C_Get_Killcam_bIsEnabled_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function GameplayOptionWidget_BP.GameplayOptionWidget_BP_C.Get_Killcam_Visibility_1
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
+// Parameters:
+// ESlateVisibility               ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
+
+ESlateVisibility UGameplayOptionWidget_BP_C::Get_Killcam_Visibility_1()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x83b390a8);
+
+	UGameplayOptionWidget_BP_C_Get_Killcam_Visibility_1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function GameplayOptionWidget_BP.GameplayOptionWidget_BP_C.IsKeyUp
 // (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:

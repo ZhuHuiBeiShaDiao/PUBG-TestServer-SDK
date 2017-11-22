@@ -73,7 +73,7 @@ void UPlayerGroupWidget_C::Clear()
 
 
 // Function PlayerGroupWidget.PlayerGroupWidget_C.AddPlayerWidget
-// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
 // class UPlayerInfoWidget_C*     PlayerInfo                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
 

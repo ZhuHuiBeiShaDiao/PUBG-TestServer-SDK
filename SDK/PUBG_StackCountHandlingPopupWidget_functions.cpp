@@ -532,15 +532,15 @@ void UStackCountHandlingPopupWidget_C::Tick(struct FGeometry* MyGeometry, float*
 }
 
 
-// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.OnWidgetInputB
+// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.ONWidgetInputB
 // (FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
-void UStackCountHandlingPopupWidget_C::OnWidgetInputB()
+void UStackCountHandlingPopupWidget_C::ONWidgetInputB()
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xc8fb9cda);
+	if (!fn) fn = UObject::FindObject<UFunction>(0xca37287a);
 
-	UStackCountHandlingPopupWidget_C_OnWidgetInputB_Params params;
+	UStackCountHandlingPopupWidget_C_ONWidgetInputB_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -613,6 +613,27 @@ void UStackCountHandlingPopupWidget_C::CustomEvent_5()
 	if (!fn) fn = UObject::FindObject<UFunction>(0x854d62f2);
 
 	UStackCountHandlingPopupWidget_C_CustomEvent_5_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function StackCountHandlingPopupWidget.StackCountHandlingPopupWidget_C.BndEvt__InputAmountText_K2Node_ComponentBoundEvent_0_OnEditableTextChangedEvent__DelegateSignature
+// (FUNC_HasOutParms, FUNC_BlueprintEvent)
+// Parameters:
+// struct FText                   Text                           (CPF_ConstParm, CPF_Parm, CPF_OutParm, CPF_ReferenceParm)
+
+void UStackCountHandlingPopupWidget_C::BndEvt__InputAmountText_K2Node_ComponentBoundEvent_0_OnEditableTextChangedEvent__DelegateSignature(const struct FText& Text)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x7bb1c730);
+
+	UStackCountHandlingPopupWidget_C_BndEvt__InputAmountText_K2Node_ComponentBoundEvent_0_OnEditableTextChangedEvent__DelegateSignature_Params params;
+	params.Text = Text;
 
 	auto flags = fn->FunctionFlags;
 

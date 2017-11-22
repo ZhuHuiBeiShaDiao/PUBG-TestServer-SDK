@@ -12,6 +12,357 @@ namespace Classes
 //Functions
 //---------------------------------------------------------------------------
 
+// Function BattleListWidget.BattleListWidget_C.FindCharacterByShortcutNum
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// int                            ShortcutNum                    (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class ATslCharacter*           Character                      (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBattleListWidget_C::FindCharacterByShortcutNum(int ShortcutNum, class ATslCharacter** Character)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb5bfde2e);
+
+	UBattleListWidget_C_FindCharacterByShortcutNum_Params params;
+	params.ShortcutNum = ShortcutNum;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (Character != nullptr)
+		*Character = params.Character;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.AddSubTitle
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// struct FString                 SubTitle                       (CPF_Parm, CPF_ZeroConstructor)
+
+void UBattleListWidget_C::AddSubTitle(const struct FString& SubTitle)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x632646cc);
+
+	UBattleListWidget_C_AddSubTitle_Params params;
+	params.SubTitle = SubTitle;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.IsSameTeam
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class ATslCharacter*           Character1                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// class ATslCharacter*           Character2                     (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+// bool                           retVal                         (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBattleListWidget_C::IsSameTeam(class ATslCharacter* Character1, class ATslCharacter* Character2, bool* retVal)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbc31e99a);
+
+	UBattleListWidget_C_IsSameTeam_Params params;
+	params.Character1 = Character1;
+	params.Character2 = Character2;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (retVal != nullptr)
+		*retVal = params.retVal;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.SetNearbyPlayerIndex
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// int                            Index                          (CPF_Parm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBattleListWidget_C::SetNearbyPlayerIndex(int Index)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd7c17ed1);
+
+	UBattleListWidget_C_SetNearbyPlayerIndex_Params params;
+	params.Index = Index;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter10
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter10()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xc4f4d007);
+
+	UBattleListWidget_C_BattleListSetCharacter10_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter9
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter9()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x9ed38a55);
+
+	UBattleListWidget_C_BattleListSetCharacter9_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter8
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter8()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x78d10fec);
+
+	UBattleListWidget_C_BattleListSetCharacter8_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter7
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter7()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x22bac23b);
+
+	UBattleListWidget_C_BattleListSetCharacter7_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter6
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter6()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xfcb847d2);
+
+	UBattleListWidget_C_BattleListSetCharacter6_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter5
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter5()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xd6b5cd69);
+
+	UBattleListWidget_C_BattleListSetCharacter5_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter4
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter4()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xb0b35300);
+
+	UBattleListWidget_C_BattleListSetCharacter4_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter3
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter3()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbac4abdf);
+
+	UBattleListWidget_C_BattleListSetCharacter3_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter2
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter2()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x94c23176);
+
+	UBattleListWidget_C_BattleListSetCharacter2_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BattleListSetCharacter1
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BattleListSetCharacter1()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x6ebfb70d);
+
+	UBattleListWidget_C_BattleListSetCharacter1_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.BindKeyBattleList
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::BindKeyBattleList()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0xbaba15f9);
+
+	UBattleListWidget_C_BindKeyBattleList_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.UpdateEngagedEnemiesList
+// (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::UpdateEngagedEnemiesList()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x4f5f2065);
+
+	UBattleListWidget_C_UpdateEngagedEnemiesList_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.FindSpectateOrFollowCharacter
+// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// class ATslCharacter*           TslCharacter                   (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_IsPlainOldData)
+
+void UBattleListWidget_C::FindSpectateOrFollowCharacter(class ATslCharacter** TslCharacter)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x96fd7d64);
+
+	UBattleListWidget_C_FindSpectateOrFollowCharacter_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (TslCharacter != nullptr)
+		*TslCharacter = params.TslCharacter;
+}
+
+
+// Function BattleListWidget.BattleListWidget_C.UpdateNearbyPlayersList
+// (FUNC_Public, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+
+void UBattleListWidget_C::UpdateNearbyPlayersList()
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x21915dc1);
+
+	UBattleListWidget_C_UpdateNearbyPlayersList_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BattleListWidget.BattleListWidget_C.FindCharacterByPlayerState
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -37,15 +388,15 @@ void UBattleListWidget_C::FindCharacterByPlayerState(class APlayerState* PlayerS
 }
 
 
-// Function BattleListWidget.BattleListWidget_C.UpdateBattleList
+// Function BattleListWidget.BattleListWidget_C.UpdateOtherEngagementsList
 // (FUNC_Public, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 
-void UBattleListWidget_C::UpdateBattleList()
+void UBattleListWidget_C::UpdateOtherEngagementsList()
 {
 	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0x7e2a2ffa);
+	if (!fn) fn = UObject::FindObject<UFunction>(0xe913c8b2);
 
-	UBattleListWidget_C_UpdateBattleList_Params params;
+	UBattleListWidget_C_UpdateOtherEngagementsList_Params params;
 
 	auto flags = fn->FunctionFlags;
 

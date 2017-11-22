@@ -35,6 +35,32 @@ void UTslCheckBox_C::GetGamePadHelpWidgetClass(class UClass** GuideClass)
 }
 
 
+// Function TslCheckBox.TslCheckBox_C.OnKeyDown
+// (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
+// Parameters:
+// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
+// struct FKeyEvent*              InKeyEvent                     (CPF_Parm)
+// struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
+
+struct FEventReply UTslCheckBox_C::OnKeyDown(struct FGeometry* MyGeometry, struct FKeyEvent* InKeyEvent)
+{
+	static UFunction* fn = nullptr;
+	if (!fn) fn = UObject::FindObject<UFunction>(0x33e14059);
+
+	UTslCheckBox_C_OnKeyDown_Params params;
+	params.MyGeometry = MyGeometry;
+	params.InKeyEvent = InKeyEvent;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function TslCheckBox.TslCheckBox_C.OnKeyUp
 // (FUNC_BlueprintCosmetic, FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
 // Parameters:
@@ -126,32 +152,6 @@ void UTslCheckBox_C::ProcessKeyDown(const struct FKey& Key, struct FEventReply* 
 
 	if (Reply != nullptr)
 		*Reply = params.Reply;
-}
-
-
-// Function TslCheckBox.TslCheckBox_C.OnPreviewKeyDown
-// (FUNC_Event, FUNC_Public, FUNC_HasOutParms, FUNC_HasDefaults, FUNC_BlueprintCallable, FUNC_BlueprintEvent)
-// Parameters:
-// struct FGeometry*              MyGeometry                     (CPF_Parm, CPF_IsPlainOldData)
-// struct FKeyEvent*              InKeyEvent                     (CPF_Parm)
-// struct FEventReply             ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ReturnParm)
-
-struct FEventReply UTslCheckBox_C::OnPreviewKeyDown(struct FGeometry* MyGeometry, struct FKeyEvent* InKeyEvent)
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xdd16a9d5);
-
-	UTslCheckBox_C_OnPreviewKeyDown_Params params;
-	params.MyGeometry = MyGeometry;
-	params.InKeyEvent = InKeyEvent;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
 }
 
 

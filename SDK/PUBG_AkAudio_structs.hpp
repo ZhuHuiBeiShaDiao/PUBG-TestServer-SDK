@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Script Structs
 	//---------------------------------------------------------------------------
 
 	// ScriptStruct AkAudio.AkAudioEventTrackKey
 	// 0x0020
-	struct FAkAudioEventTrackKey
-	{
+	struct FAkAudioEventTrackKey {
 		float                                              Time;                                                     // 0x0000(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 		class UAkAudioEvent*                               AkAudioEvent;                                             // 0x0008(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_EditConst, CPF_IsPlainOldData)
@@ -24,24 +22,21 @@ namespace Classes
 
 	// ScriptStruct AkAudio.MovieSceneAkAudioEventTemplate
 	// 0x0020
-	struct FMovieSceneAkAudioEventTemplate
-	{
+	struct FMovieSceneAkAudioEventTemplate {
 		unsigned char                                      UnknownData00[0x18];                                      // 0x0000(0x0018) MISSED OFFSET
 		class UMovieSceneAkAudioEventSection*              Section;                                                  // 0x0018(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct AkAudio.MovieSceneAkAudioRTPCTemplate
 	// 0x0020
-	struct FMovieSceneAkAudioRTPCTemplate
-	{
+	struct FMovieSceneAkAudioRTPCTemplate {
 		unsigned char                                      UnknownData00[0x18];                                      // 0x0000(0x0018) MISSED OFFSET
 		class UMovieSceneAkAudioRTPCSection*               Section;                                                  // 0x0018(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct AkAudio.MovieSceneAkAudioRTPCSectionData
 	// 0x0080
-	struct FMovieSceneAkAudioRTPCSectionData
-	{
+	struct FMovieSceneAkAudioRTPCSectionData {
 		struct FString                                     RTPCName;                                                 // 0x0000(0x0010) (CPF_ZeroConstructor)
 		struct FRichCurve                                  RTPCCurve;                                                // 0x0010(0x0070)
 	};

@@ -115,28 +115,6 @@ bool UGeneralSettingWidget_C::IsChanged()
 }
 
 
-// Function GeneralSettingWidget.GeneralSettingWidget_C.GetResolutionEnabled
-// (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure)
-// Parameters:
-// bool                           ReturnValue                    (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
-
-bool UGeneralSettingWidget_C::GetResolutionEnabled()
-{
-	static UFunction* fn = nullptr;
-	if (!fn) fn = UObject::FindObject<UFunction>(0xce7e17d2);
-
-	UGeneralSettingWidget_C_GetResolutionEnabled_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function GeneralSettingWidget.GeneralSettingWidget_C.GetLanguageCultureName
 // (FUNC_Public, FUNC_HasOutParms, FUNC_BlueprintCallable, FUNC_BlueprintEvent, FUNC_BlueprintPure, FUNC_Const)
 // Parameters:

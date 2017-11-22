@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// BlueprintGeneratedClass CharacterProxyBase.CharacterProxyBase_C
 	// 0x0030 (0x0840 - 0x0810)
-	class ACharacterProxyBase_C : public ATslCharacterProxy
-	{
+	class ACharacterProxyBase_C : public ATslCharacterProxy {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0810(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		class UTslAccessoryComponent*                      Slot_Thrown;                                              // 0x0818(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -24,8 +22,7 @@ namespace Classes
 		class UTslAccessoryComponent*                      Slot_Secondary;                                           // 0x0830(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		class UTslAccessoryComponent*                      Slot_Primary;                                             // 0x0838(0x0008) (CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x8abd20cd);
 			return ptr;

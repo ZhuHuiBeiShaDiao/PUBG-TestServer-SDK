@@ -6,23 +6,20 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class RoadRuntime.CrossActor
-	// 0x0030 (0x03E8 - 0x03B8)
-	class ACrossActor : public AStaticMeshActor
-	{
+	// 0x0030 (0x03F0 - 0x03C0)
+	class ACrossActor : public AStaticMeshActor {
 	public:
-		struct FString                                     UniqueKey;                                                // 0x03B8(0x0010) (CPF_ZeroConstructor)
-		TArray<struct FCrossActorManager>                  SideActors;                                               // 0x03C8(0x0010) (CPF_ZeroConstructor)
-		TArray<struct FCrossMeshManager>                   SideMeshes;                                               // 0x03D8(0x0010) (CPF_ZeroConstructor)
+		struct FString                                     UniqueKey;                                                // 0x03C0(0x0010) (CPF_ZeroConstructor)
+		TArray<struct FCrossActorManager>                  SideActors;                                               // 0x03D0(0x0010) (CPF_ZeroConstructor)
+		TArray<struct FCrossMeshManager>                   SideMeshes;                                               // 0x03E0(0x0010) (CPF_ZeroConstructor)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x1abe78bc);
 			return ptr;
@@ -38,28 +35,26 @@ namespace Classes
 
 
 	// Class RoadRuntime.RoadActor
-	// 0x0088 (0x0430 - 0x03A8)
-	class ARoadActor : public AActor
-	{
+	// 0x0088 (0x0438 - 0x03B0)
+	class ARoadActor : public AActor {
 	public:
-		TEnumAsByte<ESplineMeshAxis>                       SplineMeshAxis;                                           // 0x03A8(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData00[0x3];                                       // 0x03A9(0x0003) MISSED OFFSET
-		struct FVector                                     LocalOffset;                                              // 0x03AC(0x000C) (CPF_IsPlainOldData)
-		class ARoadActor*                                  Father;                                                   // 0x03B8(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-		struct FString                                     UniqueKey;                                                // 0x03C0(0x0010) (CPF_ZeroConstructor)
-		class USplineComponent*                            Spline;                                                   // 0x03D0(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_Transient, CPF_InstancedReference, CPF_IsPlainOldData)
-		int                                                Index;                                                    // 0x03D8(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		int                                                Segmentation;                                             // 0x03DC(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		int                                                StepGeneration;                                           // 0x03E0(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		float                                              Size;                                                     // 0x03E4(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		class UStaticMesh*                                 RoadMesh;                                                 // 0x03E8(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-		TArray<class USplineMeshComponent*>                RoadMeshesComp;                                           // 0x03F0(0x0010) (CPF_ExportObject, CPF_ZeroConstructor)
-		TArray<struct FSideActorManager>                   SideActors;                                               // 0x0400(0x0010) (CPF_ZeroConstructor)
-		TArray<struct FSideMeshManager>                    SideMeshes;                                               // 0x0410(0x0010) (CPF_ZeroConstructor)
-		TArray<struct FCurbsManager>                       SideCurbs;                                                // 0x0420(0x0010) (CPF_ZeroConstructor)
+		TEnumAsByte<ESplineMeshAxis>                       SplineMeshAxis;                                           // 0x03B0(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData00[0x3];                                       // 0x03B1(0x0003) MISSED OFFSET
+		struct FVector                                     LocalOffset;                                              // 0x03B4(0x000C) (CPF_IsPlainOldData)
+		class ARoadActor*                                  Father;                                                   // 0x03C0(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
+		struct FString                                     UniqueKey;                                                // 0x03C8(0x0010) (CPF_ZeroConstructor)
+		class USplineComponent*                            Spline;                                                   // 0x03D8(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_Transient, CPF_InstancedReference, CPF_IsPlainOldData)
+		int                                                Index;                                                    // 0x03E0(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		int                                                Segmentation;                                             // 0x03E4(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		int                                                StepGeneration;                                           // 0x03E8(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		float                                              Size;                                                     // 0x03EC(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		class UStaticMesh*                                 RoadMesh;                                                 // 0x03F0(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
+		TArray<class USplineMeshComponent*>                RoadMeshesComp;                                           // 0x03F8(0x0010) (CPF_ExportObject, CPF_ZeroConstructor)
+		TArray<struct FSideActorManager>                   SideActors;                                               // 0x0408(0x0010) (CPF_ZeroConstructor)
+		TArray<struct FSideMeshManager>                    SideMeshes;                                               // 0x0418(0x0010) (CPF_ZeroConstructor)
+		TArray<struct FCurbsManager>                       SideCurbs;                                                // 0x0428(0x0010) (CPF_ZeroConstructor)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xb38f0c0c);
 			return ptr;

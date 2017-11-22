@@ -6,22 +6,19 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// Class PhysXVehicles.WheeledVehicle
-	// 0x0010 (0x0418 - 0x0408)
-	class AWheeledVehicle : public APawn
-	{
+	// 0x0010 (0x0420 - 0x0410)
+	class AWheeledVehicle : public APawn {
 	public:
-		class USkeletalMeshComponent*                      Mesh;                                                     // 0x0408(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
-		class UWheeledVehicleMovementComponent*            VehicleMovement;                                          // 0x0410(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
+		class USkeletalMeshComponent*                      Mesh;                                                     // 0x0410(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
+		class UWheeledVehicleMovementComponent*            VehicleMovement;                                          // 0x0418(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_EditConst, CPF_InstancedReference, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xc020a8e2);
 			return ptr;
@@ -32,8 +29,7 @@ namespace Classes
 
 	// Class PhysXVehicles.WheeledVehicleMovementComponent
 	// 0x0170 (0x03D0 - 0x0260)
-	class UWheeledVehicleMovementComponent : public UPawnMovementComponent
-	{
+	class UWheeledVehicleMovementComponent : public UPawnMovementComponent {
 	public:
 		unsigned char                                      UnknownData00[0x8];                                       // 0x0260(0x0008) MISSED OFFSET
 		unsigned char                                      bDeprecatedSpringOffsetMode : 1;                          // 0x0268(0x0001) (CPF_Edit)
@@ -97,8 +93,7 @@ namespace Classes
 		unsigned char                                      bWasAvoidanceUpdated : 1;                                 // 0x03A4(0x0001) (CPF_Transient)
 		unsigned char                                      UnknownData08[0x2B];                                      // 0x03A5(0x002B) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x9734c826);
 			return ptr;
@@ -133,8 +128,7 @@ namespace Classes
 
 	// Class PhysXVehicles.WheeledVehicleMovementComponent4W
 	// 0x0160 (0x0530 - 0x03D0)
-	class UWheeledVehicleMovementComponent4W : public UWheeledVehicleMovementComponent
-	{
+	class UWheeledVehicleMovementComponent4W : public UWheeledVehicleMovementComponent {
 	public:
 		struct FVehicleEngineData                          EngineSetup;                                              // 0x03D0(0x0090) (CPF_Edit)
 		struct FVehicleDifferential4WData                  DifferentialSetup;                                        // 0x0460(0x001C) (CPF_Edit)
@@ -144,8 +138,7 @@ namespace Classes
 		float                                              AckermannAccuracy;                                        // 0x0528(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData01[0x4];                                       // 0x052C(0x0004) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0x79fe4edd);
 			return ptr;
@@ -156,8 +149,7 @@ namespace Classes
 
 	// Class PhysXVehicles.VehicleWheel
 	// 0x00E0 (0x0108 - 0x0028)
-	class UVehicleWheel : public UObject
-	{
+	class UVehicleWheel : public UObject {
 	public:
 		class UStaticMesh*                                 CollisionMesh;                                            // 0x0028(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		bool                                               bDontCreateShape;                                         // 0x0030(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
@@ -202,8 +194,7 @@ namespace Classes
 		struct FVector                                     Velocity;                                                 // 0x00F0(0x000C) (CPF_Transient, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData04[0xC];                                       // 0x00FC(0x000C) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xe7a8a289);
 			return ptr;
@@ -221,8 +212,7 @@ namespace Classes
 
 	// Class PhysXVehicles.VehicleAnimInstance
 	// 0x0518 (0x0890 - 0x0378)
-	class UVehicleAnimInstance : public UAnimInstance
-	{
+	class UVehicleAnimInstance : public UAnimInstance {
 	public:
 		unsigned char                                      UnknownData00[0x4F8];                                     // 0x0378(0x04F8) MISSED OFFSET
 		class UWheeledVehicleMovementComponent*            WheeledVehicleMovementComponent;                          // 0x0870(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_Transient, CPF_InstancedReference, CPF_IsPlainOldData)
@@ -233,8 +223,7 @@ namespace Classes
 		float                                              VehicleSuspensionInterpSpeed_NoContact;                   // 0x0884(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData02[0x8];                                       // 0x0888(0x0008) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xff9361ca);
 			return ptr;
@@ -247,16 +236,14 @@ namespace Classes
 
 	// Class PhysXVehicles.TireConfig
 	// 0x0020 (0x0050 - 0x0030)
-	class UTireConfig : public UDataAsset
-	{
+	class UTireConfig : public UDataAsset {
 	public:
 		float                                              FrictionScale;                                            // 0x0030(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
 		TArray<struct FTireConfigMaterialFriction>         TireFrictionScales;                                       // 0x0038(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		unsigned char                                      UnknownData01[0x8];                                       // 0x0048(0x0008) MISSED OFFSET
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xc209385c);
 			return ptr;
@@ -267,12 +254,10 @@ namespace Classes
 
 	// Class PhysXVehicles.SimpleWheeledVehicleMovementComponent
 	// 0x0000 (0x03D0 - 0x03D0)
-	class USimpleWheeledVehicleMovementComponent : public UWheeledVehicleMovementComponent
-	{
+	class USimpleWheeledVehicleMovementComponent : public UWheeledVehicleMovementComponent {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xbbbe156c);
 			return ptr;

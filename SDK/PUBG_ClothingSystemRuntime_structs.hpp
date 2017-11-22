@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum ClothingSystemRuntime.EClothingWindMethod
-	enum class EClothingWindMethod : uint8_t
-	{
+	enum class EClothingWindMethod : uint8_t {
 		EClothingWindMethod__Legacy = 0,
 		EClothingWindMethod__Accurate = 1,
 		EClothingWindMethod__EClothingWindMethod_MAX = 2
@@ -22,8 +20,7 @@ namespace Classes
 
 
 	// Enum ClothingSystemRuntime.MaskTarget_PhysMesh
-	enum class EMaskTarget_PhysMesh : uint8_t
-	{
+	enum class EMaskTarget_PhysMesh : uint8_t {
 		MaskTarget_PhysMesh__None = 0,
 		MaskTarget_PhysMesh__MaxDistance = 1,
 		MaskTarget_PhysMesh__BackstopDistance = 2,
@@ -39,8 +36,7 @@ namespace Classes
 
 	// ScriptStruct ClothingSystemRuntime.ClothConstraintSetup
 	// 0x0010
-	struct FClothConstraintSetup
-	{
+	struct FClothConstraintSetup {
 		float                                              Stiffness;                                                // 0x0000(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              StiffnessMultiplier;                                      // 0x0004(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              StretchLimit;                                             // 0x0008(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
@@ -49,8 +45,7 @@ namespace Classes
 
 	// ScriptStruct ClothingSystemRuntime.ClothConfig
 	// 0x00BC
-	struct FClothConfig
-	{
+	struct FClothConfig {
 		EClothingWindMethod                                WindMethod;                                               // 0x0000(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 		struct FClothConstraintSetup                       VerticalConstraintConfig;                                 // 0x0004(0x0010) (CPF_Edit)
@@ -79,16 +74,14 @@ namespace Classes
 
 	// ScriptStruct ClothingSystemRuntime.ClothVertBoneData
 	// 0x0030
-	struct FClothVertBoneData
-	{
+	struct FClothVertBoneData {
 		uint16_t                                           BoneIndices[0x8];                                         // 0x0000(0x0002) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		float                                              BoneWeights[0x8];                                         // 0x0010(0x0004) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 	};
 
 	// ScriptStruct ClothingSystemRuntime.ClothPhysicalMeshData
 	// 0x0098
-	struct FClothPhysicalMeshData
-	{
+	struct FClothPhysicalMeshData {
 		TArray<struct FVector>                             Vertices;                                                 // 0x0000(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		TArray<struct FVector>                             Normals;                                                  // 0x0010(0x0010) (CPF_Edit, CPF_ZeroConstructor)
 		TArray<uint32_t>                                   Indices;                                                  // 0x0020(0x0010) (CPF_Edit, CPF_ZeroConstructor)
@@ -104,8 +97,7 @@ namespace Classes
 
 	// ScriptStruct ClothingSystemRuntime.ClothLODData
 	// 0x00E8
-	struct FClothLODData
-	{
+	struct FClothLODData {
 		struct FClothPhysicalMeshData                      PhysicalMeshData;                                         // 0x0000(0x0098) (CPF_Edit)
 		struct FClothCollisionData                         CollisionData;                                            // 0x0098(0x0030) (CPF_Edit)
 		unsigned char                                      UnknownData00[0x20];                                      // 0x00C8(0x0020) MISSED OFFSET
@@ -113,8 +105,7 @@ namespace Classes
 
 	// ScriptStruct ClothingSystemRuntime.ClothParameterMask_PhysMesh
 	// 0x0028
-	struct FClothParameterMask_PhysMesh
-	{
+	struct FClothParameterMask_PhysMesh {
 		struct FName                                       MaskName;                                                 // 0x0000(0x0008) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		EMaskTarget_PhysMesh                               CurrentTarget;                                            // 0x0008(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
 		unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET

@@ -8,27 +8,23 @@
 
 #include "../SDK.hpp"
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Parameters
 	//---------------------------------------------------------------------------
 
 	// Function CinematicCamera.CineCameraActor.GetCineCameraComponent
-	struct ACineCameraActor_GetCineCameraComponent_Params
-	{
+	struct ACineCameraActor_GetCineCameraComponent_Params {
 		class UCineCameraComponent*                        ReturnValue;                                              // (CPF_ExportObject, CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_InstancedReference, CPF_IsPlainOldData)
 	};
 
 	// Function CinematicCamera.CineCameraComponent.GetVerticalFieldOfView
-	struct UCineCameraComponent_GetVerticalFieldOfView_Params
-	{
+	struct UCineCameraComponent_GetVerticalFieldOfView_Params {
 		float                                              ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 
 	// Function CinematicCamera.CineCameraComponent.GetHorizontalFieldOfView
-	struct UCineCameraComponent_GetHorizontalFieldOfView_Params
-	{
+	struct UCineCameraComponent_GetHorizontalFieldOfView_Params {
 		float                                              ReturnValue;                                              // (CPF_Parm, CPF_OutParm, CPF_ZeroConstructor, CPF_ReturnParm, CPF_IsPlainOldData)
 	};
 

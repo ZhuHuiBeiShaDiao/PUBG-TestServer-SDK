@@ -6,15 +6,13 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Enums
 	//---------------------------------------------------------------------------
 
 	// Enum ZipUtility.EZipUtilityCompletionState
-	enum class EZipUtilityCompletionState : uint8_t
-	{
+	enum class EZipUtilityCompletionState : uint8_t {
 		SUCCESS = 0,
 		FAILURE_NOT_FOUND = 1,
 		FAILURE_UNKNOWN = 2,
@@ -23,8 +21,7 @@ namespace Classes
 
 
 	// Enum ZipUtility.ZipUtilityCompressionLevel
-	enum class EZipUtilityCompressionLevel : uint8_t
-	{
+	enum class EZipUtilityCompressionLevel : uint8_t {
 		COMPRESSION_LEVEL_NONE = 0,
 		COMPRESSION_LEVEL_FAST = 1,
 		COMPRESSION_LEVEL_NORMAL = 2,
@@ -33,8 +30,7 @@ namespace Classes
 
 
 	// Enum ZipUtility.ZipUtilityCompressionFormat
-	enum class EZipUtilityCompressionFormat : uint8_t
-	{
+	enum class EZipUtilityCompressionFormat : uint8_t {
 		COMPRESSION_FORMAT_UNKNOWN = 0,
 		COMPRESSION_FORMAT_SEVEN_ZIP = 1,
 		COMPRESSION_FORMAT_ZIP = 2,

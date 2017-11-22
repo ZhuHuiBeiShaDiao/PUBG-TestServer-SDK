@@ -6,20 +6,17 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// WidgetBlueprintGeneratedClass MapGridWidget.MapGridWidget_C
-	// 0x0000 (0x0690 - 0x0690)
-	class UMapGridWidget_C : public UMapGridWidget
-	{
+	// 0x0000 (0x06A8 - 0x06A8)
+	class UMapGridWidget_C : public UMapGridWidget {
 	public:
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xae6af85);
 			return ptr;

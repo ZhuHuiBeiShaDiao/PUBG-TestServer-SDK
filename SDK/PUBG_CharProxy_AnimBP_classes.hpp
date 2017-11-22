@@ -6,16 +6,14 @@
 #pragma pack(push, 0x8)
 #endif
 
-namespace Classes
-{
+namespace Classes {
 	//---------------------------------------------------------------------------
 	//Classes
 	//---------------------------------------------------------------------------
 
 	// AnimBlueprintGeneratedClass CharProxy_AnimBP.CharProxy_AnimBP_C
-	// 0x1B88 (0x1F00 - 0x0378)
-	class UCharProxy_AnimBP_C : public UAnimInstance
-	{
+	// 0x3870 (0x3BE8 - 0x0378)
+	class UCharProxy_AnimBP_C : public UAnimInstance {
 	public:
 		struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0378(0x0008) (CPF_Transient, CPF_DuplicateTransient)
 		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_88CAAB864B27793D6A4FEA9278275EBA;// 0x0380(0x0070)
@@ -69,45 +67,114 @@ namespace Classes
 		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_E481FAF8441BC5F4CF0E21AB02D536F8;// 0x1CA8(0x0070)
 		struct FAnimNode_BlendSpacePlayer                  AnimGraphNode_BlendSpacePlayer_50CC758845EBAE09DFE0FFA151BC45A3;// 0x1D18(0x0128)
 		struct FAnimNode_TwoWayBlend                       AnimGraphNode_TwoWayBlend_F55B74BC41101BEBCB2E1FB32E00F62E;// 0x1E40(0x0078)
-		TEnumAsByte<EAnimWeaponType>                       AnimWeaponType;                                           // 0x1EB8(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData01[0x7];                                       // 0x1EB9(0x0007) MISSED OFFSET
-		class UBlendSpaceBase*                             GripBlendSpace;                                           // 0x1EC0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              Yaw;                                                      // 0x1EC8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              Pitch;                                                    // 0x1ECC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              Aimstate;                                                 // 0x1ED0(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              BlendTime;                                                // 0x1ED4(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		struct FVector                                     PistolOffset;                                             // 0x1ED8(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              GripType;                                                 // 0x1EE4(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		float                                              BlinkAlpha;                                               // 0x1EE8(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		EWeaponClass                                       WeaponClassEnum;                                          // 0x1EEC(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData02[0x3];                                       // 0x1EED(0x0003) MISSED OFFSET
-		float                                              LH_GripIndex;                                             // 0x1EF0(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-		unsigned char                                      UnknownData03[0x4];                                       // 0x1EF4(0x0004) MISSED OFFSET
-		class UBlendSpaceBase*                             LH_GripBS;                                                // 0x1EF8(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData01[0x8];                                       // 0x1EB8(0x0008) MISSED OFFSET
+		struct FAnimNode_TransitionResult                  AnimGraphNode_TransitionResult_BFBC4F03438CEF46794AF49E56D43629;// 0x1EC0(0x0080)
+		struct FAnimNode_TransitionResult                  AnimGraphNode_TransitionResult_5C591DE54F0AB6A9C9ADEEB4FDDC4C62;// 0x1F40(0x0080)
+		struct FAnimNode_TransitionResult                  AnimGraphNode_TransitionResult_B23A39644DB5ECB2C2CC0A9BBA7BD3B7;// 0x1FC0(0x0080)
+		struct FAnimNode_TransitionResult                  AnimGraphNode_TransitionResult_B4789EB84B94BAF324DEDE8E04D6F50B;// 0x2040(0x0080)
+		struct FAnimNode_TransitionResult                  AnimGraphNode_TransitionResult_1B9B424241FB104B11A537B7349DA4C7;// 0x20C0(0x0080)
+		struct FAnimNode_TransitionResult                  AnimGraphNode_TransitionResult_3DA5C7214658D193C32CA1B3EDEC5B06;// 0x2140(0x0080)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_92D324C64C8D97B7EC404CBE29647A6A;// 0x21C0(0x0070)
+		struct FAnimNode_BlendListByEnum                   AnimGraphNode_BlendListByEnum_8C6BE6834B8224190077FA9A0125327F;// 0x2230(0x00E0)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_7913876244FB5B565F3A1995825A2839;// 0x2310(0x0070)
+		struct FAnimNode_Root                              AnimGraphNode_StateResult_A5965D5342D8C33B8E9E9393808FB6FD4;// 0x2380(0x0048)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_04463918456C9EE24D2FC6BA60D5888A;// 0x23C8(0x0070)
+		struct FAnimNode_BlendListByEnum                   AnimGraphNode_BlendListByEnum_03098CEB4560DEA557CDB4A432C2B741;// 0x2438(0x00E0)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_D493424D42CF2DC582D781A0C47C3BFC;// 0x2518(0x0070)
+		struct FAnimNode_Root                              AnimGraphNode_StateResult_A5965D5342D8C33B8E9E9393808FB6FD3;// 0x2588(0x0048)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_464FCB144FE9F7DD18711892CC5132BC;// 0x25D0(0x0070)
+		struct FAnimNode_BlendListByEnum                   AnimGraphNode_BlendListByEnum_3EA0D8134E453388078DF7956E1EE968;// 0x2640(0x00E0)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_A1A21FA3437F9F7B351CEDAEB541E857;// 0x2720(0x0070)
+		struct FAnimNode_Root                              AnimGraphNode_StateResult_A5965D5342D8C33B8E9E9393808FB6FD2;// 0x2790(0x0048)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_DD2252F14ECBEB3C7ED9A8BCA6D0D021;// 0x27D8(0x0070)
+		struct FAnimNode_BlendListByEnum                   AnimGraphNode_BlendListByEnum_22F0D7B94E96A178C615A99283D38A74;// 0x2848(0x00E0)
+		struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_9F588AE94089767D8A9EA6AA0DBA117A;// 0x2928(0x0070)
+		struct FAnimNode_Root                              AnimGraphNode_StateResult_A5965D5342D8C33B8E9E9393808FB6FD;// 0x2998(0x0048)
+		struct FAnimNode_StateMachine                      AnimGraphNode_StateMachine_42B4671A4DA1A6449F28E6BF77BB3235;// 0x29E0(0x00D8)
+		struct FAnimNode_BlendListByBool                   AnimGraphNode_BlendListByBool_DE260CEA407C68776D9118B2960C17E9;// 0x2AB8(0x00D0)
+		struct FAnimNode_AnimDynamics                      AnimGraphNode_AnimDynamics_FC292CB34C9D970E666EF9B7433D62D3;// 0x2B88(0x0280)
+		struct FAnimNode_AnimDynamics                      AnimGraphNode_AnimDynamics_631C88D546201C974F742CB8806E8F09;// 0x2E08(0x0280)
+		struct FAnimNode_AnimDynamics                      AnimGraphNode_AnimDynamics_E9C191E14BB06C296AAC56B0AB1FA6BF;// 0x3088(0x0280)
+		struct FAnimNode_AnimDynamics                      AnimGraphNode_AnimDynamics_5991C3C04B715B36A0D33080B66FBECE;// 0x3308(0x0280)
+		struct FAnimNode_AnimDynamics                      AnimGraphNode_AnimDynamics_01099A7D4A5ABA33AFBA468333D3C0E6;// 0x3588(0x0280)
+		struct FAnimNode_ConvertComponentToLocalSpace      AnimGraphNode_ComponentToLocalSpace_C5CD9ED54ED82C595A0FE5993B0D51A7;// 0x3808(0x0048)
+		struct FAnimNode_ConvertLocalToComponentSpace      AnimGraphNode_LocalToComponentSpace_0E4D3D22478115959F38A99EB1EFED42;// 0x3850(0x0048)
+		struct FAnimNode_AnimDynamics                      AnimGraphNode_AnimDynamics_5AC0BDB14D2A3D1267886E90B77FE3C8;// 0x3898(0x0280)
+		TEnumAsByte<EAnimWeaponType>                       AnimWeaponType;                                           // 0x3B18(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData02[0x7];                                       // 0x3B19(0x0007) MISSED OFFSET
+		class UBlendSpaceBase*                             GripBlendSpace;                                           // 0x3B20(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              Yaw;                                                      // 0x3B28(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              Pitch;                                                    // 0x3B2C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              Aimstate;                                                 // 0x3B30(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              BlendTime;                                                // 0x3B34(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		struct FVector                                     PistolOffset;                                             // 0x3B38(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              GripType;                                                 // 0x3B44(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		float                                              BlinkAlpha;                                               // 0x3B48(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		EWeaponClass                                       WeaponClassEnum;                                          // 0x3B4C(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData03[0x3];                                       // 0x3B4D(0x0003) MISSED OFFSET
+		float                                              LH_GripIndex;                                             // 0x3B50(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData04[0x4];                                       // 0x3B54(0x0004) MISSED OFFSET
+		class UBlendSpaceBase*                             LH_GripBS;                                                // 0x3B58(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		int                                                Position;                                                 // 0x3B60(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData05[0x4];                                       // 0x3B64(0x0004) MISSED OFFSET
+		class ALobbyCharacter*                             LobbyCharacterRerefence;                                  // 0x3B68(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		bool                                               IsLobbyReady;                                             // 0x3B70(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData06[0x7];                                       // 0x3B71(0x0007) MISSED OFFSET
+		TArray<class UAnimSequence*>                       AnimNotReady;                                             // 0x3B78(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
+		TArray<class UAnimSequence*>                       AnimReady;                                                // 0x3B88(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
+		TArray<class UAnimSequence*>                       AnimNotReadyToReady;                                      // 0x3B98(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
+		TArray<class UAnimSequence*>                       AnimReadyToNotReady;                                      // 0x3BA8(0x0010) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
+		struct FVector                                     Wind;                                                     // 0x3BB8(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		struct FVector                                     InitialWind;                                              // 0x3BC4(0x000C) (CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		class UCurveFloat*                                 Curve;                                                    // 0x3BD0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		ELobbyCameraStates                                 CameraState;                                              // 0x3BD8(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
+		unsigned char                                      UnknownData07[0x7];                                       // 0x3BD9(0x0007) MISSED OFFSET
+		class ALobbyHUD*                                   LobbyHUDRef;                                              // 0x3BE0(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
 
-		static UClass* StaticClass()
-		{
+		static UClass* StaticClass() {
 			static UClass* ptr = nullptr;
 			if (!ptr) ptr = UObject::FindClass(0xaeb393d8);
 			return ptr;
 		}
 
 
+		void ProcessLobbyCharacter(class ALobbyCharacter* LobbyCharRef);
 		void UpdateBlink();
 		void GetAnimWeaponIKLeft(struct FTransform* IKLeft);
 		void GetAnimWeaponType(TEnumAsByte<EAnimWeaponType>* AnimWeaponType);
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_SequencePlayer_D493424D42CF2DC582D781A0C47C3BFC();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_TransitionResult_1B9B424241FB104B11A537B7349DA4C7();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_3EA0D8134E453388078DF7956E1EE968();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_SequencePlayer_A1A21FA3437F9F7B351CEDAEB541E857();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_TransitionResult_B4789EB84B94BAF324DEDE8E04D6F50B();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_22F0D7B94E96A178C615A99283D38A74();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_SequencePlayer_9F588AE94089767D8A9EA6AA0DBA117A();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_TransitionResult_5C591DE54F0AB6A9C9ADEEB4FDDC4C62();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_TwoWayBlend_F55B74BC41101BEBCB2E1FB32E00F62E();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByBool_DE260CEA407C68776D9118B2960C17E9();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_AnimDynamics_FC292CB34C9D970E666EF9B7433D62D3();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_AnimDynamics_631C88D546201C974F742CB8806E8F09();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_AnimDynamics_E9C191E14BB06C296AAC56B0AB1FA6BF();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_AnimDynamics_5991C3C04B715B36A0D33080B66FBECE();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_AnimDynamics_01099A7D4A5ABA33AFBA468333D3C0E6();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_AnimDynamics_5AC0BDB14D2A3D1267886E90B77FE3C8();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendSpacePlayer_50CC758845EBAE09DFE0FFA151BC45A3();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_341CAEF947395CE8613E1AA1A1B0CEB9();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_TransitionResult_3DA5C7214658D193C32CA1B3EDEC5B06();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_D9BD57E94786BDB98B1024BAA5B2A680();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_60F7F60D46063AC788F6DAA1F7DDBE0D();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_044C21FF45F8C9135ED72E90A1317ACF();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendSpacePlayer_FE57F22747D2CBE68A6B6C8735A0AA7D();
-		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_ModifyBone_D9BD57E94786BDB98B1024BAA5B2A680();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_LayeredBoneBlend_C2F30D7E4BD89239D23E298DD1729B77();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_CopyBone_94E5E49E48018345AB9C488D9EB44172();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_Fabrik_50E1CCC144ED9B7CFB3C1890CBA2E662();
 		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_7DD4DF2E4EE51B857C8F8BBA6ADD08B0();
-		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_341CAEF947395CE8613E1AA1A1B0CEB9();
-		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_TwoWayBlend_F55B74BC41101BEBCB2E1FB32E00F62E();
-		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendSpacePlayer_50CC758845EBAE09DFE0FFA151BC45A3();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_SequencePlayer_7913876244FB5B565F3A1995825A2839();
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_8C6BE6834B8224190077FA9A0125327F();
 		void BlueprintUpdateAnimation(float* DeltaTimeX);
+		void EvaluateGraphExposedInputs_ExecuteUbergraph_CharProxy_AnimBP_AnimGraphNode_BlendListByEnum_03098CEB4560DEA557CDB4A432C2B741();
+		void BlueprintInitializeAnimation();
+		void OnReady_Event_1(bool bReady);
 		void ExecuteUbergraph_CharProxy_AnimBP(int EntryPoint);
 	};
 
